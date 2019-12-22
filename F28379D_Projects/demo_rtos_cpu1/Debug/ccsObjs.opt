@@ -1,0 +1,1 @@
+"./F2837xD_Adc.obj" "./F2837xD_EPwm.obj" "./F2837xD_EQep.obj" "./F2837xD_GlobalVariableDefs.obj" "./F2837xD_Gpio.obj" "./F2837xD_I2C.obj" "./F2837xD_Spi.obj" "./F2837xD_SysCtrl.obj" "./F2837xD_can.obj" "./F2837xD_usDelay.obj" "./demo_rtos_cpu1.obj" "../F2837xD_Headers_BIOS_cpu1.cmd" "../TMS320F28379D.cmd" -l"configPkg/linker.cmd" -llibc.a 
