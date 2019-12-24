@@ -12,7 +12,7 @@ var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
         cfgScript: 'C:/Github_Repo/DSP_TI_TMS320F28379D/F28379D_Projects/demo_rtos_cpu1/demo_rtos_cpu1.cfg',
-        profile: 'release',
+        profile: 'debug',
         cfgHome: 'configPkg',
 });
 

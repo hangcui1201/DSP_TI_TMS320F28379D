@@ -18579,7 +18579,7 @@ __o = __obj[1189]
     __o['cfgHome'] = String(java.net.URLDecoder.decode('configPkg', 'UTF-8'))
     __o['cfgScript'] = String(java.net.URLDecoder.decode('C%3A%2FGithub_Repo%2FDSP_TI_TMS320F28379D%2FF28379D_Projects%2Fdemo_rtos_cpu1%2Fdemo_rtos_cpu1.cfg', 'UTF-8'))
     __o['prelink'] = false
-    __o['profile'] = String(java.net.URLDecoder.decode('release', 'UTF-8'))
+    __o['profile'] = String(java.net.URLDecoder.decode('debug', 'UTF-8'))
     __o['releases'] = __obj[1190.0]
     __o['target'] = __obj[1195.0]
 
