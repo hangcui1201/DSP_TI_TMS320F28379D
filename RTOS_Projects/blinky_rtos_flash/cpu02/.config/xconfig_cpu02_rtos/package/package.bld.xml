@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_cpu02_rtos" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/cpu02_rtos_p28FP.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu02/cpu02_rtos.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/cpu02_rtos_p28FP.mak" src="package.bld"/>
+        <srcFile name="package/cfg/cpu02_rtos_p28FP.o28FP.dep" src="package/cfg/cpu02_rtos_p28FP.c"/>
+        <srcFile name="package/cfg/cpu02_rtos_p28FP.dep" src="package/cfg/cpu02_rtos_p28FP.cfg"/>
+        <srcFile name="package/cfg/cpu02_rtos.x28FP.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_cpu02_rtos.tar.dep" src="package/rel/xconfig_cpu02_rtos.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C28_float"
+            version="ti.targets.C28_float{1,0,18.12,4"
+            rawVersion="18.12.4"
+            platform="ti.platforms.sim28xx"
+            isa="28FP"
+            suffix="28FP"
+            rootDir="C:/ti/ccs920/ccs/tools/compiler/ti-cgt-c2000_18.12.4.LTS"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="cpu02_rtos"
+        pname="cpu02_rtos.p28FP"
+        target="ti.targets.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F28379D"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/cpu02_rtos_p28FP.cfg"
+        xCfgPrefix="package/cfg/cpu02_rtos_p28FP"
+        cfgScript="C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu02/cpu02_rtos.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="cpu02_rtos"
+        pname="cpu02_rtos.x28FP"
+        target="ti.targets.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F28379D"
+        profile="release"
+        xCfgScript="package/cfg/cpu02_rtos_p28FP.cfg"
+        xCfgPrefix="package/cfg/cpu02_rtos_p28FP"
+        cfgScript="C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu02/cpu02_rtos.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="cpu02_rtos.x28FP"
+        args=""
+        groupName="cpu02_rtos.x28FP"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_cpu02_rtos"
+        pname="xconfig_cpu02_rtos.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
