@@ -112,12 +112,17 @@ SECTIONS
 #endif
 
     /* Allocate uninitalized data sections: */
-    .stack              : > M01SARAM | LS05SARAM    PAGE = 1
-    .ebss               : > M01SARAM | LS05SARAM    PAGE = 1
+
+    // This works
+    .stack              : > M01SARAM | LS05SARAM               PAGE = 1
+    .ebss               : > M01SARAM | LS05SARAM | RAMGS815    PAGE = 1
+
+    // This does not work
 //    .stack              : > LS05SARAM               PAGE = 1
 //    .ebss               : > RAMGS815	              PAGE = 1
-    .esysmem            : > LS05SARAM | M01SARAM    PAGE = 1
-    .cio                : > LS05SARAM | M01SARAM    PAGE = 1
+
+    .esysmem            : > LS05SARAM | M01SARAM               PAGE = 1
+    .cio                : > LS05SARAM | M01SARAM               PAGE = 1
 
     /* Initalized sections go in Flash */
     .econst             : > FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |

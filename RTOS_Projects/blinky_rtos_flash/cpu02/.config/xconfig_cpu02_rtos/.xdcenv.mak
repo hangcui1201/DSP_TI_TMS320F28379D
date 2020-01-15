@@ -1,7 +1,7 @@
 #
-_XDCBUILDCOUNT = 
+_XDCBUILDCOUNT = 0
 ifneq (,$(findstring path,$(_USEXDCENV_)))
-override XDCPATH = C:/ti/bios_6_76_02_02/packages;C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu02/.config
+override XDCPATH = C:/ti/bios_6_76_02_02/packages;C:/Github_Repo/DSP_TI_TMS320F28379D/RTOS_Projects/blinky_rtos_flash/cpu02/.config
 override XDCROOT = C:/ti/ccs920/xdctools_3_60_01_27_core
 override XDCBUILDCFG = ./config.bld
 endif
@@ -11,6 +11,6 @@ override XDCTARGETS =
 endif
 #
 ifeq (0,1)
-PKGPATH = C:/ti/bios_6_76_02_02/packages;C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu02/.config;C:/ti/ccs920/xdctools_3_60_01_27_core/packages;..
+PKGPATH = C:/ti/bios_6_76_02_02/packages;C:/Github_Repo/DSP_TI_TMS320F28379D/RTOS_Projects/blinky_rtos_flash/cpu02/.config;C:/ti/ccs920/xdctools_3_60_01_27_core/packages;..
 HOSTOS = Windows
 endif
