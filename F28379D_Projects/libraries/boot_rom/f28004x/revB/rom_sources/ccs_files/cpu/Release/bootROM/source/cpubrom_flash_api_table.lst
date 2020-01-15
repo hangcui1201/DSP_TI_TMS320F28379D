@@ -1,0 +1,140 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:42 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/bootROM/source/cpubrom_flash_api_table.asm PAGE    1
+
+       1              ;;###########################################################################
+       2              ;;
+       3              ;; FILE:    rom_flash_api_table.asm
+       4              ;;
+       5              ;; TITLE:   Defines the FLash ROM API tables
+       6              ;;
+       7              ;;###########################################################################
+       8              ;; $TI Release: F28004x Boot ROM V1.1 $
+       9              ;; $Release Date: February 2017 $
+      10              ;;###########################################################################
+      11              
+      12              
+      13                  .def    _rom_flash_ApiTable_start
+      14                  .def    __romApi_Fapi_getLibraryInfo
+      15                  .def    __romApi_Fapi_initializeAPI
+      16                  .def    __romApi_Fapi_setActiveFlashBank
+      17                  .def    __romApi_Fapi_issueAsyncCommandWithAddress
+      18                  .def    __romApi_Fapi_doBlankCheck
+      19                  .def    __romApi_Fapi_issueProgrammingCommand
+      20                  .def    __romApi_Fapi_issueProgrammingCommandForEccAddresses
+      21                  .def    __romApi_Fapi_doVerify
+      22                  .def    __romApi_Fapi_doVerifyBy16bits
+      23                  .def    __romApi_Fapi_issueAsyncCommand
+      24                  .def    __romApi_Fapi_issueFsmSuspendCommand
+      25                  .def    __romApi_Fapi_checkFsmForReady
+      26                  .def    __romApi_Fapi_getFsmStatus
+      27                  .def    __romApi_Fapi_calculateEcc
+      28                  .def    __romApi_Fapi_calculateFletcherChecksum
+      29                  .def    __romApi_Fapi_isAddressEcc
+      30                  .def    __romApi_Fapi_remapEccAddress
+      31                  .def    __romApi_Fapi_flushPipeline
+      32                  .def    __romApi_Fapi_calculatePsa
+      33                  .def    __romApi_Fapi_doPsaVerify
+      34                  .def    _rom_flash_ApiTable_end
+      35              
+      36              
+      37                  .ref    _Fapi_getLibraryInfo
+      38                  .ref    _Fapi_initializeAPI
+      39                  .ref    _Fapi_setActiveFlashBank
+      40                  .ref    _Fapi_issueAsyncCommandWithAddress
+      41                  .ref    _Fapi_doBlankCheck
+      42                  .ref    _Fapi_issueProgrammingCommand
+      43                  .ref    _Fapi_issueProgrammingCommandForEccAddresses
+      44                  .ref    _Fapi_doVerify
+      45                  .ref    _Fapi_doVerifyBy16bits
+      46                  .ref    _Fapi_issueAsyncCommand
+      47                  .ref    _Fapi_issueFsmSuspendCommand
+      48                  .ref    _Fapi_checkFsmForReady
+      49                  .ref    _Fapi_getFsmStatus
+      50                  .ref    _Fapi_calculateEcc
+      51                  .ref    _Fapi_calculateFletcherChecksum
+      52                  .ref    _Fapi_isAddressEcc
+      53                  .ref    _Fapi_remapEccAddress
+      54                  .ref    _Fapi_flushPipeline
+      55                  .ref    _Fapi_calculatePsa
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:42 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/bootROM/source/cpubrom_flash_api_table.asm PAGE    2
+
+      56                  .ref    _Fapi_doPsaVerify
+      57              
+      58              
+      59 00000000           .sect ".romFlashApiTable"
+      60 00000000       _rom_flash_ApiTable_start:
+      61 00000000       __romApi_Fapi_getLibraryInfo:
+      62 00000000 0040!     LB _Fapi_getLibraryInfo
+         00000001 0000 
+      63 00000002       __romApi_Fapi_initializeAPI:
+      64 00000002 0040!     LB _Fapi_initializeAPI
+         00000003 0000 
+      65 00000004       __romApi_Fapi_setActiveFlashBank:
+      66 00000004 0040!     LB _Fapi_setActiveFlashBank
+         00000005 0000 
+      67 00000006       __romApi_Fapi_issueAsyncCommandWithAddress:
+      68 00000006 0040!     LB _Fapi_issueAsyncCommandWithAddress
+         00000007 0000 
+      69 00000008       __romApi_Fapi_doBlankCheck:
+      70 00000008 0040!     LB _Fapi_doBlankCheck
+         00000009 0000 
+      71 0000000a       __romApi_Fapi_issueProgrammingCommand:
+      72 0000000a 0040!     LB _Fapi_issueProgrammingCommand
+         0000000b 0000 
+      73 0000000c       __romApi_Fapi_issueProgrammingCommandForEccAddresses:
+      74 0000000c 0040!     LB _Fapi_issueProgrammingCommandForEccAddresses
+         0000000d 0000 
+      75 0000000e       __romApi_Fapi_doVerify:
+      76 0000000e 0040!     LB _Fapi_doVerify
+         0000000f 0000 
+      77 00000010       __romApi_Fapi_doVerifyBy16bits:
+      78 00000010 0040!     LB _Fapi_doVerifyBy16bits
+         00000011 0000 
+      79 00000012       __romApi_Fapi_issueAsyncCommand:
+      80 00000012 0040!     LB _Fapi_issueAsyncCommand
+         00000013 0000 
+      81 00000014       __romApi_Fapi_issueFsmSuspendCommand:
+      82 00000014 0040!     LB _Fapi_issueFsmSuspendCommand
+         00000015 0000 
+      83 00000016       __romApi_Fapi_checkFsmForReady:
+      84 00000016 0040!     LB _Fapi_checkFsmForReady
+         00000017 0000 
+      85 00000018       __romApi_Fapi_getFsmStatus:
+      86 00000018 0040!     LB _Fapi_getFsmStatus
+         00000019 0000 
+      87 0000001a       __romApi_Fapi_calculateEcc:
+      88 0000001a 0040!     LB _Fapi_calculateEcc
+         0000001b 0000 
+      89 0000001c       __romApi_Fapi_calculateFletcherChecksum:
+      90 0000001c 0040!     LB _Fapi_calculateFletcherChecksum
+         0000001d 0000 
+      91 0000001e       __romApi_Fapi_isAddressEcc:
+      92 0000001e 0040!     LB _Fapi_isAddressEcc
+         0000001f 0000 
+      93 00000020       __romApi_Fapi_remapEccAddress:
+      94 00000020 0040!     LB _Fapi_remapEccAddress
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:42 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/bootROM/source/cpubrom_flash_api_table.asm PAGE    3
+
+         00000021 0000 
+      95 00000022       __romApi_Fapi_flushPipeline:
+      96 00000022 0040!     LB _Fapi_flushPipeline
+         00000023 0000 
+      97 00000024       __romApi_Fapi_calculatePsa:
+      98 00000024 0040!     LB _Fapi_calculatePsa
+         00000025 0000 
+      99 00000026       __romApi_Fapi_doPsaVerify:
+     100 00000026 0040!     LB _Fapi_doPsaVerify
+         00000027 0000 
+     101 00000028       _rom_flash_ApiTable_end:
+     102              
+     103              
+
+No Assembly Errors, No Assembly Warnings

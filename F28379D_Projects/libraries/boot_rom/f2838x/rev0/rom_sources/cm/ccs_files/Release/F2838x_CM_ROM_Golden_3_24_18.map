@@ -1,0 +1,360 @@
+******************************************************************************
+                  TI ARM Linker PC v17.6.0                     
+******************************************************************************
+>> Linked Sun Mar 25 11:29:22 2018
+
+OUTPUT FILE NAME:   <F2838x_CM_ROM.out>
+ENTRY POINT SYMBOL: "CM_resetISR"  address: 00001511
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  VECS                  00000000   00000140  00000140  00000000  RWIX
+  VERSION               00000140   00000004  00000004  00000000  RWIX
+  BOOT_CHECKSUM         00000144   00000084  00000084  00000000  RWIX
+  CHECKSUM              000001c8   00000084  00000084  00000000  RWIX
+  BOOT                  0000024c   00003dcc  000017ca  00002602  RWIX
+  INTERRUPT_HANDLERS    00004018   00000204  00000204  00000000  RWIX
+  RESERVED              0000421c   0000b9e0  00000000  0000b9e0  RWIX
+  CRCTABLE_ROM          0000fbfc   00000400  00000400  00000000  RWIX
+  ROM_SIGNATURE         0000fffc   00000004  00000004  00000000  RWIX
+  Z1_SCC_ROM_Secure_Fla 00010000   00005000  00000746  000048ba  RWIX
+  Z1_SCC_ROM            00015000   00001000  00000baa  00000456  RWIX
+  Z2_SCC_ROM            00016000   00001000  00000baa  00000456  RWIX
+  Z2_RESERVED           00017000   00001000  00000000  00001000  RWIX
+  CM_BROM_STATUS        20000000   00000004  00000004  00000000  RWIX
+  CM_BROM_BOOTMODE      20000004   00000004  00000004  00000000  RWIX
+  BSS                   20000008   00000004  00000004  00000000  RWIX
+  STACK                 2000000c   000007f4  00000000  000007f4  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001a1c   00001a1c    r-x
+  00000000    00000000    00000140   00000140    r-- .BootVecs
+  00000140    00000140    00000004   00000004    r-- .CMVersion
+  00000144    00000144    00000084   00000084    r-- .BOOT_CKSUMLOC
+  000001c8    000001c8    00000084   00000084    r-- .CKSUMLOC
+  0000024c    0000024c    00000d04   00000d04    r-x .checksumfuncs
+  00000f50    00000f50    00000a92   00000a92    r-x .text
+  000019e8    000019e8    00000034   00000034    r-- .cinit
+00004018    00004018    00000204   00000204    r-x
+  00004018    00004018    000001ac   000001ac    r-x CMBROM_NMI_HANDLER
+  000041c4    000041c4    00000026   00000026    r-x CMBROM_HARDFAULT_HANDLER
+  000041ea    000041ea    00000032   00000032    r-x CMBROM_DEFAULT_HANDLER
+0000fbfc    0000fbfc    00000b4a   00000b4a    r-x
+  0000fbfc    0000fbfc    00000400   00000400    r-- .bootrom_func
+  0000fffc    0000fffc    00000004   00000004    r-- .test_signature1
+  00010000    00010000    00000746   00000746    r-x SCCLSFZ1
+00015000    00015000    00000baa   00000baa    r-x
+  00015000    00015000    00000baa   00000baa    r-x SCCLZ1
+00016000    00016000    00000baa   00000baa    r-x
+  00016000    00016000    00000baa   00000baa    r-x SCCLZ2
+20000000    20000000    0000000c   00000000    rw-
+  20000000    20000000    00000004   00000000    rw- BootStatusVariable
+  20000004    20000004    00000004   00000000    rw- UserBootModeVariable
+  20000008    20000008    00000004   00000000    rw- .bss
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.CMVersion 
+*          0    00000140    00000004     
+                  00000140    00000004     cmbrom_init_boot.obj (.CMVersion)
+
+.checksumfuncs 
+*          0    0000024c    00000d04     
+                  0000024c    000005fc     cmbrom_checksum.obj (.checksumfuncs:calculate_checksum)
+                  00000848    000001ee     cmbrom_checksum.obj (.checksumfuncs:compare_two_composite_checksums)
+                  00000a36    0000015e     cmbrom_checksum.obj (.checksumfuncs:calculate_composite_checksum_on_rom)
+                  00000b94    00000136     cmbrom_checksum.obj (.checksumfuncs:add_to_bitcolumn_checksum)
+                  00000cca    000000ea     cmbrom_checksum.obj (.checksumfuncs:add_to_factorial_sum)
+                  00000db4    000000da     cmbrom_checksum.obj (.checksumfuncs:add_to_row_weight_sum)
+                  00000e8e    0000008c     cmbrom_checksum.obj (.checksumfuncs:verify_checksum_onROM)
+                  00000f1a    00000036     cmbrom_checksum.obj (.checksumfuncs:test_reserved_memory)
+
+CMBROM_NMI_HANDLER 
+*          0    00004018    000001ac     
+                  00004018    000001ac     cmbrom_interrupts.obj (CMBROM_NMI_HANDLER:CMBROM_nmiHandler)
+
+CMBROM_HARDFAULT_HANDLER 
+*          0    000041c4    00000026     
+                  000041c4    00000026     cmbrom_interrupts.obj (CMBROM_HARDFAULT_HANDLER:CMBROM_hardFaultISR)
+
+CMBROM_DEFAULT_HANDLER 
+*          0    000041ea    00000032     
+                  000041ea    00000032     cmbrom_interrupts.obj (CMBROM_DEFAULT_HANDLER:CMBROM_defaultHandler)
+
+.bootrom_func 
+*          0    0000fbfc    00000400     
+                  0000fbfc    00000400     sw_crc.obj (.bootrom_func)
+
+.test_signature1 
+*          0    0000fffc    00000004     
+                  0000fffc    00000004     cmbrom_init_boot.obj (.test_signature1)
+
+.text      0    00000f50    00000a92     
+                  00000f50    00000298     cmbrom_system_boot.obj (.text:CMBROM_runSelectedBootMode)
+                  000011e8    000001da     cmbrom_system_boot.obj (.text:CMBROM_startSystemBoot)
+                  000013c2    0000014e     cmbrom_system_boot.obj (.text:CMBROM_setupDeviceSystems)
+                  00001510    00000108     cmbrom_init_boot.obj (.text)
+                  00001618    000000b0     cmbrom_system_boot.obj (.text:CMBROM_verifyBootCommand)
+                  000016c8    0000007a     cmbrom_ipc_msg_copy.obj (.text:CMBROM_performCopyToRAM)
+                  00001742    0000007a     rtsv7M4_T_le_xo_eabi.lib : memset_t2.obj (.text)
+                  000017bc    00000072     cmbrom_system_boot.obj (.text:CMBROM_waitForCommand)
+                  0000182e    00000064     cmbrom_system_boot.obj (.text:CMBROM_verifySecureFlash)
+                  00001892    00000044     cmbrom_ipc.obj (.text:CMBROM_sendErrorIPC)
+                  000018d6    00000030     cmbrom_system_boot.obj (.text:Flash_setBankPowerMode)
+                  00001906    00000024     cmbrom_system_boot.obj (.text:Flash_setPumpWakeupTime)
+                  0000192a    00000022     cmbrom_system_boot.obj (.text:Flash_setWaitstates)
+                  0000194c    00000020     cmbrom_system_boot.obj (.text:Flash_setPumpPowerMode)
+                  0000196c    0000001a     cmbrom_system_boot.obj (.text:SysCtl_enableWatchdog)
+                  00001986    00000016     cmbrom_ipc.obj (.text:CMBROM_setIPCBootStatus)
+                  0000199c    00000016     cmbrom_system_boot.obj (.text:SysCtl_clearResetCause)
+                  000019b2    00000014     cmbrom_system_boot.obj (.text:Flash_unlockCtrlRegisters)
+                  000019c6    00000010     cmbrom_checksum.obj (.text:SysCtl_disableWatchdog)
+                  000019d6    0000000c     rtsv7M4_T_le_xo_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+
+.BootVecs 
+*          0    00000000    00000140     
+                  00000000    00000140     cmbrom_vector_table.obj (.BootVecs)
+
+.BOOT_CKSUMLOC 
+*          0    00000144    00000084     
+                  00000144    00000084     cmbrom_checksum.obj (.BOOT_CKSUMLOC)
+
+.CKSUMLOC 
+*          0    000001c8    00000084     
+                  000001c8    00000084     cmbrom_checksum.obj (.CKSUMLOC)
+
+.bss       0    20000008    00000004     UNINITIALIZED
+                  20000008    00000004     (.common:CMBROM_nmiStatus)
+
+.cinit     0    000019e8    00000034     
+                  000019e8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000019f0    00000008     (.cinit.BootStatusVariable.load) [load image, compression = zero_init]
+                  000019f8    00000008     (.cinit.UserBootModeVariable.load) [load image, compression = zero_init]
+                  00001a00    00000004     (__TI_handler_table)
+                  00001a04    00000018     (__TI_cinit_table)
+
+SCCLSFZ1   0    00010000    00000746     
+                  00010000    00000456     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMBROM_calculateCMAC)
+                  00010456    000000ac     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_readMemoryBlockWithSigMask)
+                  00010502    0000009a     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_generateKey0)
+                  0001059c    00000072     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_performOneBitLeftshift)
+                  0001060e    0000006e     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_generateKey1)
+                  0001067c    00000054     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_readGoldenSignature)
+                  000106d0    0000003c     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_readMemoryBlock)
+                  0001070c    00000030     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_memset)
+                  0001073c    0000000a     cmbrom_calculate_cmac.obj (SCCLSFZ1:CMAC_getControlReg)
+
+SCCLZ1     0    00015000    00000baa     
+                  00015000    00000678     ti_internal_cm.obj (SCCLZ1:SecureCRCCalcZ1)
+                  00015678    00000444     ti_internal_cm.obj (SCCLZ1:SecureCopyCodeZ1)
+                  00015abc    000000ee     sw_crc.obj (SCCLZ1:CRCCalcZ1)
+
+SCCLZ2     0    00016000    00000baa     
+                  00016000    00000678     ti_internal_cm.obj (SCCLZ2:SecureCRCCalcZ2)
+                  00016678    00000444     ti_internal_cm.obj (SCCLZ2:SecureCopyCodeZ2)
+                  00016abc    000000ee     sw_crc.obj (SCCLZ2:CRCCalcZ2)
+
+BootStatusVariable 
+*          0    20000000    00000004     UNINITIALIZED
+                  20000000    00000004     cmbrom_system_boot.obj (BootStatusVariable)
+
+UserBootModeVariable 
+*          0    20000004    00000004     UNINITIALIZED
+                  20000004    00000004     cmbrom_system_boot.obj (UserBootModeVariable)
+
+MODULE SUMMARY
+
+       Module                      code    ro data   rw data
+       ------                      ----    -------   -------
+    .\bootROM\source\
+       cmbrom_checksum.obj         3348    264       0      
+       cmbrom_system_boot.obj      2080    0         8      
+       cmbrom_interrupts.obj       516     0         4      
+       cmbrom_vector_table.obj     0       320       0      
+       cmbrom_init_boot.obj        264     8         0      
+       cmbrom_ipc_msg_copy.obj     122     0         0      
+       cmbrom_ipc.obj              90      0         0      
+    +--+---------------------------+-------+---------+---------+
+       Total:                      6420    592       12     
+                                                            
+    .\secureROM\
+       ti_internal_cm.obj          5496    0         0      
+       cmbrom_calculate_cmac.obj   1862    0         0      
+       sw_crc.obj                  476     1024      0      
+    +--+---------------------------+-------+---------+---------+
+       Total:                      7834    1024      0      
+                                                            
+    C:\ti\ccsv7\tools\compiler\ti-cgt-arm_17.6.0.STS\lib\rtsv7M4_T_le_xo_eabi.lib
+       memset_t2.obj               122     0         0      
+       copy_zero_init.obj          12      0         0      
+    +--+---------------------------+-------+---------+---------+
+       Total:                      134     0         0      
+                                                            
+       Linker Generated:           0       52        0      
+    +--+---------------------------+-------+---------+---------+
+       Grand Total:                14388   1668      12     
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001a04 records: 3, size/record: 8, table size: 24
+	.bss: load addr=000019e8, load size=00000008 bytes, run addr=20000008, run size=00000004 bytes, compression=zero_init
+	BootStatusVariable: load addr=000019f0, load size=00000008 bytes, run addr=20000000, run size=00000004 bytes, compression=zero_init
+	UserBootModeVariable: load addr=000019f8, load size=00000008 bytes, run addr=20000004, run size=00000004 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001a00 records: 1, size/record: 4, table size: 4
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                               
+-------   ----                               
+00010503  CMAC_generateKey0                  
+0001060f  CMAC_generateKey1                  
+0001073d  CMAC_getControlReg                 
+0001070d  CMAC_memset                        
+0001059d  CMAC_performOneBitLeftshift        
+0001067d  CMAC_readGoldenSignature           
+000106d1  CMAC_readMemoryBlock               
+00010457  CMAC_readMemoryBlockWithSigMask    
+20000004  CMBROM_bootMode                    
+20000000  CMBROM_bootStatus                  
+00010001  CMBROM_calculateCMAC               
+000041eb  CMBROM_defaultHandler              
+000041c5  CMBROM_hardFaultISR                
+00004019  CMBROM_nmiHandler                  
+20000008  CMBROM_nmiStatus                   
+000016c9  CMBROM_performCopyToRAM            
+00000f51  CMBROM_runSelectedBootMode         
+00001893  CMBROM_sendErrorIPC                
+00001987  CMBROM_setIPCBootStatus            
+000013c3  CMBROM_setupDeviceSystems          
+000011e9  CMBROM_startSystemBoot             
+00001619  CMBROM_verifyBootCommand           
+0000182f  CMBROM_verifySecureFlash           
+000017bd  CMBROM_waitForCommand              
+00001613  CM_performDelay                    
+00001511  CM_resetISR                        
+00015abd  CRCCalcZ1                          
+00016abd  CRCCalcZ2                          
+00015001  SecureCRCCalcZ1                    
+00016001  SecureCRCCalcZ2                    
+00015679  SecureCopyCodeZ1                   
+00016679  SecureCopyCodeZ2                   
+00000000  Vectors                            
+00001a04  __TI_CINIT_Base                    
+00001a1c  __TI_CINIT_Limit                   
+00001a00  __TI_Handler_Table_Base            
+00001a04  __TI_Handler_Table_Limit           
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+00000000  __TI_static_base__                 
+000019d7  __TI_zero_init                     
+00001743  __aeabi_memclr                     
+00001743  __aeabi_memclr4                    
+00001743  __aeabi_memclr8                    
+00001745  __aeabi_memset                     
+00001745  __aeabi_memset4                    
+00001745  __aeabi_memset8                    
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+00000b95  add_to_bitcolumn_checksum          
+00000ccb  add_to_factorial_sum               
+00000db5  add_to_row_weight_sum              
+ffffffff  binit                              
+00000144  boot_csum_rom                      
+0000024d  calculate_checksum                 
+00000a37  calculate_composite_checksum_on_rom
+00000140  cmbrom_version                     
+00000849  compare_two_composite_checksums    
+000001c8  composite_checksum_in_rom          
+0000174b  memset                             
+00000f1b  test_reserved_memory               
+00000e8f  verify_checksum_onROM              
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                               
+-------   ----                               
+00000000  Vectors                            
+00000000  __TI_static_base__                 
+00000140  cmbrom_version                     
+00000144  boot_csum_rom                      
+000001c8  composite_checksum_in_rom          
+0000024d  calculate_checksum                 
+00000849  compare_two_composite_checksums    
+00000a37  calculate_composite_checksum_on_rom
+00000b95  add_to_bitcolumn_checksum          
+00000ccb  add_to_factorial_sum               
+00000db5  add_to_row_weight_sum              
+00000e8f  verify_checksum_onROM              
+00000f1b  test_reserved_memory               
+00000f51  CMBROM_runSelectedBootMode         
+000011e9  CMBROM_startSystemBoot             
+000013c3  CMBROM_setupDeviceSystems          
+00001511  CM_resetISR                        
+00001613  CM_performDelay                    
+00001619  CMBROM_verifyBootCommand           
+000016c9  CMBROM_performCopyToRAM            
+00001743  __aeabi_memclr                     
+00001743  __aeabi_memclr4                    
+00001743  __aeabi_memclr8                    
+00001745  __aeabi_memset                     
+00001745  __aeabi_memset4                    
+00001745  __aeabi_memset8                    
+0000174b  memset                             
+000017bd  CMBROM_waitForCommand              
+0000182f  CMBROM_verifySecureFlash           
+00001893  CMBROM_sendErrorIPC                
+00001987  CMBROM_setIPCBootStatus            
+000019d7  __TI_zero_init                     
+00001a00  __TI_Handler_Table_Base            
+00001a04  __TI_CINIT_Base                    
+00001a04  __TI_Handler_Table_Limit           
+00001a1c  __TI_CINIT_Limit                   
+00004019  CMBROM_nmiHandler                  
+000041c5  CMBROM_hardFaultISR                
+000041eb  CMBROM_defaultHandler              
+00010001  CMBROM_calculateCMAC               
+00010457  CMAC_readMemoryBlockWithSigMask    
+00010503  CMAC_generateKey0                  
+0001059d  CMAC_performOneBitLeftshift        
+0001060f  CMAC_generateKey1                  
+0001067d  CMAC_readGoldenSignature           
+000106d1  CMAC_readMemoryBlock               
+0001070d  CMAC_memset                        
+0001073d  CMAC_getControlReg                 
+00015001  SecureCRCCalcZ1                    
+00015679  SecureCopyCodeZ1                   
+00015abd  CRCCalcZ1                          
+00016001  SecureCRCCalcZ2                    
+00016679  SecureCopyCodeZ2                   
+00016abd  CRCCalcZ2                          
+20000000  CMBROM_bootStatus                  
+20000004  CMBROM_bootMode                    
+20000008  CMBROM_nmiStatus                   
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+ffffffff  binit                              
+
+[63 symbols]

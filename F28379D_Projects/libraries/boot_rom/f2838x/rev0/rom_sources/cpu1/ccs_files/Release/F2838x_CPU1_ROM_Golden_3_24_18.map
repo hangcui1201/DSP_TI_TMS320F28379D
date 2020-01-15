@@ -1,0 +1,1371 @@
+******************************************************************************
+             TMS320C2000 Linker PC v17.7.0                     
+******************************************************************************
+>> Linked Sat Mar 24 14:27:29 2018
+
+OUTPUT FILE NAME:   <F2838x_CPU1_ROM.out>
+ENTRY POINT SYMBOL: "InitBoot"  address: 003fd226
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  CPU1_BROM_STATUS      00000002   00000002  00000002  00000000  RWIX
+  CPU1_BROM_BOOTMODE    00000004   00000002  00000002  00000000  RWIX
+  CPU1_PBIST_STATUS     00000006   00000002  00000002  00000000  RWIX
+  BSS                   00000008   00000058  00000058  00000000  RWIX
+  STACK                 00000060   00000150  00000150  00000000  RWIX
+  CLA1_DATAROM_RESERVED 0000f000   00000070  00000000  00000070  RWIX
+  CLA1_FFT_TABLES_RUN   0000f070   00000800  00000000  00000800  RWIX
+  CLA1_DATAROM_RUN      0000f870   0000078a  00000000  0000078a  RWIX
+  CROM_VERSION_RUN      0000fffa   00000006  00000000  00000006  RWIX
+  Z1_SCC_ROM_Secure_Fla 003e0000   00002000  00000d99  00001267  RWIX
+  Z1_SCC_ROM            003e2000   00000800  00000597  00000269  RWIX
+  Z2_SCC_ROM            003e2800   00000800  0000054f  000002b1  RWIX
+  Z1_SECURE_ROM         003e3000   00005000  00000000  00005000  RWIX
+  ROM_SIGNATURE         003e8000   00000002  00000002  00000000  RWIX
+  AES_TABLES            003e8002   00001400  00001400  00000000  RWIX
+  IQMATH                003e9402   0000166d  0000166d  00000000  RWIX
+  RESERVED_1            003eaa6f   0000bed7  00000000  0000bed7  RWIX
+  FPU32_FAST_TABLES     003f6946   0000081a  0000081a  00000000  RWIX
+  FPU64_FAST_TABLES     003f7160   00000d30  00000d30  00000000  RWIX
+  FPU32_TWIDDLE_TABLES  003f7e90   00000df8  00000df8  00000000  RWIX
+  FPU64_TWIDDLE_TABLES  003f8dd0   00001bf0  00001bf0  00000000  RWIX
+  BOOT                  003fa9c0   00003e00  0000292e  000014d2  RWIX
+  INTERRUPT_HANDLERS    003fe7c0   000001b1  000001b1  00000000  RWIX
+  RESERVED_2            003fe971   000000b1  00000000  000000b1  RWIX
+  CPU_FAST_DATA_ROM     003fea22   00000100  00000000  00000100  RWIX
+  RESERVED_3            003feb22   0000131e  00000000  0000131e  RWIX
+  BOOT_PBIST_CHECKSUM   003ffe40   00000042  00000042  00000000  RWIX
+  RESERVED_4            003ffe82   0000003e  00000000  0000003e  RWIX
+  CHECKSUM              003ffec0   00000042  00000042  00000000  RWIX
+  RESERVED_5            003fff02   00000030  00000000  00000030  RWIX
+  CRCTABLE_ROM          003fff32   00000008  00000008  00000000  RWIX
+  RESERVED_6            003fff3a   00000040  00000000  00000040  RWIX
+  VERSION               003fff7a   00000002  00000002  00000000  RWIX
+  RESERVED_7            003fff7c   00000042  00000000  00000042  RWIX
+  VECS                  003fffbe   00000042  00000042  00000000  RWIX
+  CLA1_DATAROM_RESERVED 01001000   00000070  00000000  00000070  RWIX
+  CLA1_FFT_TABLES       01001070   00000800  00000800  00000000  RWIX
+  CLA1_DATAROM          01001870   0000078a  00000784  00000006  RWIX
+  CROM_VERSION          01001ffa   00000006  00000002  00000004  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+BootStatusVariable 
+*          0    00000002    00000002     UNINITIALIZED
+                  00000002    00000002     cpu1brom_system_boot.obj (BootStatusVariable)
+
+UserBootModeVariable 
+*          0    00000004    00000002     UNINITIALIZED
+                  00000004    00000002     cpu1brom_system_boot.obj (UserBootModeVariable)
+
+PBISTStatusVariable 
+*          0    00000006    00000002     UNINITIALIZED
+                  00000006    00000002     cpu1brom_system_boot.obj (PBISTStatusVariable)
+
+.bss       0    00000008    00000058     UNINITIALIZED
+                  00000008    00000020     bootloader_usb_support_funcs.obj (.bss:rxBuffer)
+                  00000028    00000014     rijndael.obj (.bss)
+                  0000003c    00000004     bootloader_sci.obj (.bss)
+                  00000040    0000000a     bootloader_usb_support_funcs.obj (.bss)
+                  0000004a    00000008     cpu1brom_dcsm.obj (.bss)
+                  00000052    00000006     cpu1brom_system_boot.obj (.bss)
+                  00000058    00000004     bootloader_usb.obj (.bss)
+                  0000005c    00000002     bootloader_shared_funcs.obj (.bss)
+                  0000005e    00000002     cpu1brom_interrupts.obj (.bss)
+
+.stack     0    00000060    00000150     UNINITIALIZED
+                  00000060    00000150     --HOLE--
+
+SCCLSFZ1   0    003e0000    00000d99     
+                  003e0000    000009ae     rijndael.obj (SCCLSFZ1)
+                  003e09ae    000003eb     cpu1brom_calculate_cmac.obj (SCCLSFZ1)
+
+SCCLZ1     0    003e2000    00000597     
+                  003e2000    0000056c     ti_internal.obj (SCCLZ1)
+                  003e256c    0000002b     SecureCRCCalc.obj (SCCLZ1)
+
+SCCLZ2     0    003e2800    0000054f     
+                  003e2800    00000524     ti_internal.obj (SCCLZ2)
+                  003e2d24    0000002b     SecureCRCCalc.obj (SCCLZ2)
+
+.test_signature1 
+*          0    003e8000    00000002     
+                  003e8000    00000002     cpu1brom_init_boot.obj (.test_signature1)
+
+IQmathTables 
+*          0    003e9402    0000166d     
+                  003e9402    00000b50     IQmath_fpu32_eabi.lib : IQmathTables.obj (IQmathTables)
+                  003e9f52    0000009d                           : IQ20log.obj (IQmath)
+                  003e9fef    0000009d                           : IQ24log.obj (IQmath)
+                  003ea08c    0000008c                           : IQNexpTable.obj (IQmathTablesRam)
+                  003ea118    0000007e                           : IQ15atan2.obj (IQmath)
+                  003ea196    0000007b                           : IQ20atan2.obj (IQmath)
+                  003ea211    0000007b                           : IQ24atan2.obj (IQmath)
+                  003ea28c    0000007b                           : IQ29atan2.obj (IQmath)
+                  003ea307    00000060                           : IQ15mag.obj (IQmath)
+                  003ea367    00000060                           : IQ20mag.obj (IQmath)
+                  003ea3c7    00000060                           : IQ24mag.obj (IQmath)
+                  003ea427    00000060                           : IQ29mag.obj (IQmath)
+                  003ea487    00000047                           : IQ15div.obj (IQmath)
+                  003ea4ce    00000047                           : IQ20div.obj (IQmath)
+                  003ea515    00000047                           : IQ24div.obj (IQmath)
+                  003ea55c    00000047                           : IQ29div.obj (IQmath)
+                  003ea5a3    00000046                           : IQ15isqrt.obj (IQmath)
+                  003ea5e9    00000045                           : IQ20isqrt.obj (IQmath)
+                  003ea62e    00000045                           : IQ24isqrt.obj (IQmath)
+                  003ea673    00000045                           : IQ29isqrt.obj (IQmath)
+                  003ea6b8    00000042                           : IQ15sqrt.obj (IQmath)
+                  003ea6fa    00000042                           : IQ20sqrt.obj (IQmath)
+                  003ea73c    00000042                           : IQ24sqrt.obj (IQmath)
+                  003ea77e    00000042                           : IQ29sqrt.obj (IQmath)
+                  003ea7c0    0000003d                           : IQ20exp.obj (IQmath)
+                  003ea7fd    0000003d                           : IQ24exp.obj (IQmath)
+                  003ea83a    00000032                           : IQ29sin.obj (IQmath)
+                  003ea86c    00000031                           : IQ15sin.obj (IQmath)
+                  003ea89d    00000031                           : IQ20sin.obj (IQmath)
+                  003ea8ce    00000031                           : IQ24sin.obj (IQmath)
+                  003ea8ff    00000030                           : IQ29cos.obj (IQmath)
+                  003ea92f    0000002f                           : IQ15cos.obj (IQmath)
+                  003ea95e    0000002f                           : IQ20cos.obj (IQmath)
+                  003ea98d    0000002f                           : IQ24cos.obj (IQmath)
+                  003ea9bc    00000029                           : IQ24sinPU.obj (IQmath)
+                  003ea9e5    00000027                           : IQ24cosPU.obj (IQmath)
+                  003eaa0c    00000016                           : IQ24toF.obj (IQmath)
+                  003eaa22    00000016                           : IQ30toF.obj (IQmath)
+                  003eaa38    00000015                           : IQ29rsmpy.obj (IQmath)
+                  003eaa4d    00000015                           : IQ30rsmpy.obj (IQmath)
+                  003eaa62    0000000d                           : IQ24rmpy.obj (IQmath)
+
+FPUmathTables 
+*          0    003f6946    0000081a     
+                  003f6946    0000068c     FPUmathTables.obj (FPUmathTables)
+                  003f6fd2    000000d0     logtable_f32.obj (FPUmathTables)
+                  003f70a2    000000be     exptable_f32.obj (FPUmathTables)
+
+FPU64mathTables 
+*          0    003f7160    00000d30     
+                  003f7160    00000a1c     sincostable_f64.obj (FPU64mathTables)
+                  003f7b7c    00000314     atan2table_f64.obj (FPU64mathTables)
+
+FPUfftTables 
+*          0    003f7e90    00000df8     
+                  003f7e90    000007f8     RFFT_f32_twiddleFactors.obj (FPUfftTables)
+                  003f8688    00000600     CFFT_f32_twiddleFactors.obj (FPUfftTables)
+
+FPU64fftTables 
+*          0    003f8dd0    00001bf0     
+                  003f8dd0    00001bf0     fft_tables.obj (FPU64fftTables)
+
+.text      0    003fa9c0    00002059     
+                  003fa9c0    00000771     cpu1brom_system_boot.obj (.text)
+                  003fb131    000002e8     cpu1brom_pbist.obj (.text)
+                  003fb419    0000027d     cpu1brom_pll.obj (.text)
+                  003fb696    00000224     bootloader_i2c.obj (.text)
+                  003fb8ba    00000213     bootloader_spi.obj (.text)
+                  003fbacd    000001f0     bootloader_can.obj (.text)
+                  003fbcbd    000001e1     cpu1brom_select_bootmode.obj (.text)
+                  003fbe9e    000001d5     bootloader_sci.obj (.text)
+                  003fc073    0000019c     bootloader_usb_support_funcs.obj (.text)
+                  003fc20f    00000193     bootloader_usb.obj (.text)
+                  003fc3a2    00000156     cpu1brom_dcsm.obj (.text)
+                  003fc4f8    00000107     bootloader_parallel.obj (.text)
+                  003fc5ff    0000007f     interrupt.obj (.text:Interrupt_clearIFR)
+                  003fc67e    0000005f     bootloader_usb_support_funcs.obj (.text:retain)
+                  003fc6dd    00000058     bootloader_usb_structs.obj (.text)
+                  003fc735    00000054     interrupt.obj (.text:Interrupt_initModule)
+                  003fc789    0000004d     i2c.obj (.text:I2C_initMaster)
+                  003fc7d6    0000004b     interrupt.obj (.text:Interrupt_disable)
+                  003fc821    00000048     gpio.obj (.text:GPIO_setPadConfig)
+                  003fc869    00000046     bootloader_shared_funcs.obj (.text)
+                  003fc8af    00000037     gpio.obj (.text:GPIO_setPinConfig)
+                  003fc8e6    00000034     interrupt.obj (.text:Interrupt_enable)
+                  003fc91a    0000002e     cpu1brom_interrupts.obj (.text)
+                  003fc948    0000002c     gpio.obj (.text:GPIO_setQualificationMode)
+                  003fc974    00000029     spi.obj (.text:SPI_setConfig)
+                  003fc99d    00000027     gpio.obj (.text:GPIO_setDirectionMode)
+                  003fc9c4    00000025     spi.obj (.text:SPI_getInterruptStatus)
+                  003fc9e9    0000000d     interrupt.obj (.text:Interrupt_disableMaster)
+                  003fc9f6    0000000d     interrupt.obj (.text:Interrupt_enableMaster)
+                  003fca03    0000000b     rts2800_fpu32_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  003fca0e    00000008     cpu1brom_checksum.obj (.text)
+                  003fca16    00000003     cpu1brom_utility_funcs.obj (.text)
+
+.CKSUMFUNCS 
+*          0    003fca1a    00000743     
+                  003fca1a    00000743     cpu1brom_checksum.obj (.CKSUMFUNCS)
+
+.const     0    003fd15e    000000c8     
+                  003fd15e    0000001e     cpu1brom_dcsm.obj (.const:dcsm_default_keys_z1)
+                  003fd17c    00000002     bootloader_usb_structs.obj (.const:.string:serialString)
+                  003fd17e    00000002     --HOLE-- [fill = 0]
+                  003fd180    0000002d     bootloader_usb_structs.obj (.const)
+                  003fd1ad    00000001     --HOLE-- [fill = 0]
+                  003fd1ae    0000001e     cpu1brom_dcsm.obj (.const:dcsm_default_keys_z2)
+                  003fd1cc    0000001d     bootloader_usb_structs.obj (.const:.string:productString)
+                  003fd1e9    00000001     --HOLE-- [fill = 0]
+                  003fd1ea    00000014     rijndael.obj (.const:rcon)
+                  003fd1fe    00000012     bootloader_usb_structs.obj (.const:.string:manufacturerString)
+                  003fd210    0000000b     bootloader_usb_structs.obj (.const:.string:loaderString)
+                  003fd21b    00000001     --HOLE-- [fill = 0]
+                  003fd21c    0000000a     bootloader_usb_structs.obj (.const:stringDescriptors)
+
+.InitBoot 
+*          0    003fd226    000000a6     
+                  003fd226    000000a6     cpu1brom_init_boot.obj (.InitBoot)
+
+.cinit     0    003fd2cc    00000024     
+                  003fd2cc    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  003fd2d0    00000004     (.cinit.BootStatusVariable.load) [load image, compression = zero_init]
+                  003fd2d4    00000004     (.cinit.PBISTStatusVariable.load) [load image, compression = zero_init]
+                  003fd2d8    00000004     (.cinit.UserBootModeVariable.load) [load image, compression = zero_init]
+                  003fd2dc    00000002     (__TI_handler_table)
+                  003fd2de    00000002     --HOLE-- [fill = 0]
+                  003fd2e0    00000010     (__TI_cinit_table)
+
+CPU1BROM_DEFAULT_HANDLER 
+*          0    003fe7c0    00000031     
+                  003fe7c0    00000031     cpu1brom_interrupts.obj (CPU1BROM_DEFAULT_HANDLER:retain)
+
+CPU1BROM_PIE_MISMATCH_HANDLER 
+*          0    003fe7f1    00000048     
+                  003fe7f1    00000048     cpu1brom_interrupts.obj (CPU1BROM_PIE_MISMATCH_HANDLER:retain)
+
+CPU1BROM_NMI_HANDLER 
+*          0    003fe839    0000010b     
+                  003fe839    0000010b     cpu1brom_interrupts.obj (CPU1BROM_NMI_HANDLER:retain)
+
+CPU1BROM_ITRAP_HANDLER 
+*          0    003fe944    0000002d     
+                  003fe944    0000002d     cpu1brom_interrupts.obj (CPU1BROM_ITRAP_HANDLER:retain)
+
+.PBIST_CKSUMLOC 
+*          0    003ffe40    00000042     
+                  003ffe40    00000042     cpu1brom_checksum.obj (.PBIST_CKSUMLOC)
+
+.CKSUMLOC 
+*          0    003ffec0    00000042     
+                  003ffec0    00000042     cpu1brom_checksum.obj (.CKSUMLOC)
+
+.bootrom_func 
+*          0    003fff32    00000008     
+                  003fff32    00000008     SecureCRCCalc.obj (.bootrom_func)
+
+.CPU1Version 
+*          0    003fff7a    00000002     
+                  003fff7a    00000002     cpu1brom_init_boot.obj (.CPU1Version)
+
+.CLA1fftTables 
+*          0    01001070    00000800     
+                  01001070    00000800     fft_twiddle_bit_reverse.obj (.CLA1fftTables)
+
+CLA1mathTables 
+*          0    01001870    00000784     
+                  01001870    0000018c     CLAatanTable.obj (CLA1mathTables)
+                  010019fc    0000018a     CLAasineTable.obj (CLA1mathTables)
+                  01001b86    00000184     CLAacosineTable.obj (CLA1mathTables)
+                  01001d0a    00000156     CLASinCosTable.obj (CLA1mathTables)
+                  01001e60    000000d2     CLAlnTable.obj (CLA1mathTables)
+                  01001f32    000000c2     CLAexpTable.obj (CLA1mathTables)
+
+.CROMVersion 
+*          0    01001ffa    00000002     
+                  01001ffa    00000002     cla_rom_version.obj (.CROMVersion)
+
+.BootVecs 
+*          0    003fffbe    00000042     
+                  003fffbe    00000042     cpu1brom_vector_table.obj (.BootVecs)
+
+AES_TABLE 
+*          0    003e8002    00001400     
+                  003e8002    00001400     aes_tables.obj (AES_TABLE)
+
+MODULE SUMMARY
+
+       Module                             code    ro data   rw data
+       ------                             ----    -------   -------
+    .\ClaROM\source\
+       fft_twiddle_bit_reverse.obj        0       2048      0      
+       cla_rom_version.obj                0       2         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       2050      0      
+                                                                   
+    .\ClaROM\source\tables\
+       CLAatanTable.obj                   0       396       0      
+       CLAasineTable.obj                  0       394       0      
+       CLAacosineTable.obj                0       388       0      
+       CLASinCosTable.obj                 0       342       0      
+       CLAlnTable.obj                     0       210       0      
+       CLAexpTable.obj                    0       194       0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       1924      0      
+                                                                   
+    .\bootROM\source\
+       cpu1brom_checksum.obj              1867    132       0      
+       cpu1brom_system_boot.obj           1905    0         12     
+       cpu1brom_pbist.obj                 744     0         0      
+       cpu1brom_pll.obj                   637     0         0      
+       bootloader_usb_support_funcs.obj   507     0         42     
+       bootloader_i2c.obj                 548     0         0      
+       bootloader_spi.obj                 531     0         0      
+       bootloader_can.obj                 496     0         0      
+       cpu1brom_interrupts.obj            479     0         2      
+       cpu1brom_select_bootmode.obj       481     0         0      
+       bootloader_sci.obj                 469     0         4      
+       cpu1brom_dcsm.obj                  342     60        8      
+       bootloader_usb.obj                 403     0         4      
+       bootloader_parallel.obj            263     0         0      
+       bootloader_usb_structs.obj         88      115       0      
+       cpu1brom_init_boot.obj             166     4         0      
+       bootloader_shared_funcs.obj        70      0         2      
+       cpu1brom_vector_table.obj          66      0         0      
+       cpu1brom_utility_funcs.obj         3       0         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             10065   311       74     
+                                                                   
+    .\bootROM\source\tables\
+       aes_tables.obj                     0       5120      0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       5120      0      
+                                                                   
+    .\bootROM\source\tables\fpu32_math\
+       FPUmathTables.obj                  0       1676      0      
+       logtable_f32.obj                   0       208       0      
+       exptable_f32.obj                   0       190       0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       2074      0      
+                                                                   
+    .\bootROM\source\tables\fpu32_twiddle\
+       RFFT_f32_twiddleFactors.obj        0       2040      0      
+       CFFT_f32_twiddleFactors.obj        0       1536      0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       3576      0      
+                                                                   
+    .\bootROM\source\tables\fpu64_math\
+       sincostable_f64.obj                0       2588      0      
+       atan2table_f64.obj                 0       788       0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       3376      0      
+                                                                   
+    .\bootROM\source\tables\fpu64_twiddle\
+       fft_tables.obj                     0       7152      0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             0       7152      0      
+                                                                   
+    .\driverlib\
+       interrupt.obj                      364     0         0      
+       gpio.obj                           210     0         0      
+       spi.obj                            78      0         0      
+       i2c.obj                            77      0         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             729     0         0      
+                                                                   
+    .\secureROM\
+       ti_internal.obj                    2704    0         0      
+       cpu1brom_calculate_cmac.obj        1003    0         0      
+       SecureCRCCalc.obj                  86      8         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             3793    8         0      
+                                                                   
+    .\secureROM\aes_algorithm\
+       rijndael.obj                       2478    20        20     
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             2478    20        20     
+                                                                   
+    C:/Users/a0221343/Git/bootROM/bootrom_f2838x/F2838x_ROM_dev_PG1.0/cpu1/F2838x_ROM/bootROM/source/IQmath/IQmath_fpu32_eabi.lib
+       IQmathTables.obj                   0       2896      0      
+       IQ20log.obj                        157     0         0      
+       IQ24log.obj                        157     0         0      
+       IQNexpTable.obj                    0       140       0      
+       IQ15atan2.obj                      126     0         0      
+       IQ20atan2.obj                      123     0         0      
+       IQ24atan2.obj                      123     0         0      
+       IQ29atan2.obj                      123     0         0      
+       IQ15mag.obj                        96      0         0      
+       IQ20mag.obj                        96      0         0      
+       IQ24mag.obj                        96      0         0      
+       IQ29mag.obj                        96      0         0      
+       IQ15div.obj                        71      0         0      
+       IQ20div.obj                        71      0         0      
+       IQ24div.obj                        71      0         0      
+       IQ29div.obj                        71      0         0      
+       IQ15isqrt.obj                      70      0         0      
+       IQ20isqrt.obj                      69      0         0      
+       IQ24isqrt.obj                      69      0         0      
+       IQ29isqrt.obj                      69      0         0      
+       IQ15sqrt.obj                       66      0         0      
+       IQ20sqrt.obj                       66      0         0      
+       IQ24sqrt.obj                       66      0         0      
+       IQ29sqrt.obj                       66      0         0      
+       IQ20exp.obj                        61      0         0      
+       IQ24exp.obj                        61      0         0      
+       IQ29sin.obj                        50      0         0      
+       IQ15sin.obj                        49      0         0      
+       IQ20sin.obj                        49      0         0      
+       IQ24sin.obj                        49      0         0      
+       IQ29cos.obj                        48      0         0      
+       IQ15cos.obj                        47      0         0      
+       IQ20cos.obj                        47      0         0      
+       IQ24cos.obj                        47      0         0      
+       IQ24sinPU.obj                      41      0         0      
+       IQ24cosPU.obj                      39      0         0      
+       IQ24toF.obj                        22      0         0      
+       IQ30toF.obj                        22      0         0      
+       IQ29rsmpy.obj                      21      0         0      
+       IQ30rsmpy.obj                      21      0         0      
+       IQ24rmpy.obj                       13      0         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             2705    3036      0      
+                                                                   
+    C:/ti/ccsv7/tools/compiler/ti-cgt-c2000_17.7.0A17209/lib/rts2800_fpu32_eabi.lib
+       copy_zero_init.obj                 11      0         0      
+    +--+----------------------------------+-------+---------+---------+
+       Total:                             11      0         0      
+                                                                   
+       Stack:                             0       0         336    
+       Linker Generated:                  0       34        0      
+    +--+----------------------------------+-------+---------+---------+
+       Grand Total:                       19781   28681     430    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 003fd2e0 records: 4, size/record: 4, table size: 16
+	.bss: load addr=003fd2cc, load size=00000004 bytes, run addr=00000008, run size=00000058 bytes, compression=zero_init
+	BootStatusVariable: load addr=003fd2d0, load size=00000004 bytes, run addr=00000002, run size=00000002 bytes, compression=zero_init
+	PBISTStatusVariable: load addr=003fd2d4, load size=00000004 bytes, run addr=00000006, run size=00000002 bytes, compression=zero_init
+	UserBootModeVariable: load addr=003fd2d8, load size=00000004 bytes, run addr=00000004, run size=00000002 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 003fd2dc records: 1, size/record: 2, table size: 2
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000002       0 (00000000)     CPU1BROM_bootStatus
+00000004       0 (00000000)     CPU1BROM_bootMode
+00000006       0 (00000000)     CPU1BROM_pbistStatus
+00000028       0 (00000000)     t0
+0000002a       0 (00000000)     t1
+0000002c       0 (00000000)     s3
+0000002e       0 (00000000)     s1
+00000030       0 (00000000)     s2
+00000032       0 (00000000)     t0_asm
+00000034       0 (00000000)     t_input
+00000036       0 (00000000)     t2
+00000038       0 (00000000)     t3
+0000003a       0 (00000000)     s0
+0000003c       0 (00000000)     SCI_gpioTx
+0000003e       0 (00000000)     SCI_gpioTxPinConfig
+
+00000041       1 (00000040)     g_UsbRxDataLength
+00000042       1 (00000040)     g_UsbRxPacketLength
+00000046       1 (00000040)     g_UsbRxBuffer
+0000004a       1 (00000040)     z1_key1
+0000004c       1 (00000040)     z2_key1
+0000004e       1 (00000040)     Z2_ZSB
+00000050       1 (00000040)     Z1_ZSB
+00000052       1 (00000040)     CPU1BROM_nmiStatus
+00000054       1 (00000040)     CPU1BROM_flashSingleBitError_highAddress
+00000056       1 (00000040)     CPU1BROM_flashSingleBitError_lowAddress
+00000058       1 (00000040)     userPIEIERStatus
+0000005a       1 (00000040)     userUSBHandler
+0000005c       1 (00000040)     GetWordData
+0000005e       1 (00000040)     CPU1BROM_itrapAddress
+
+003e8002    fa00 (003e8000)     Td1
+
+003e8202    fa08 (003e8200)     Td0
+
+003e8402    fa10 (003e8400)     Td3
+
+003e8602    fa18 (003e8600)     Td2
+
+003e8802    fa20 (003e8800)     Td4
+
+003e8a02    fa28 (003e8a00)     Te1
+
+003e8c02    fa30 (003e8c00)     Te0
+
+003e8e02    fa38 (003e8e00)     Te3
+
+003e9002    fa40 (003e9000)     Te2
+
+003e9202    fa48 (003e9200)     Te4
+
+003f6946    fda5 (003f6940)     FPU32sinTable
+003f6946    fda5 (003f6940)     FPUsinTable
+
+003f6a46    fda9 (003f6a40)     FPU32cosTable
+003f6a46    fda9 (003f6a40)     FPUcosTable
+
+003f6d46    fdb5 (003f6d40)     FPU32sinTableEnd
+003f6d46    fdb5 (003f6d40)     FPUsinTableEnd
+
+003f6e48    fdb9 (003f6e40)     FPU32atan2HalfPITable
+003f6e48    fdb9 (003f6e40)     FPU32cosTableEnd
+003f6e48    fdb9 (003f6e40)     FPUatan2HalfPITable
+003f6e48    fdb9 (003f6e40)     FPUcosTableEnd
+003f6e4c    fdb9 (003f6e40)     FPU32atan2Table
+003f6e4c    fdb9 (003f6e40)     FPUatan2Table
+
+003f6fd2    fdbf (003f6fc0)     FPU32LOG2
+003f6fd2    fdbf (003f6fc0)     FPU32atan2TableEnd
+003f6fd2    fdbf (003f6fc0)     FPUatan2TableEnd
+003f6fd4    fdbf (003f6fc0)     FPU32INVLOG10
+003f6fd6    fdbf (003f6fc0)     FPU32EXPBIAS
+003f6fd8    fdbf (003f6fc0)     FPU32LOG_TABLE_MASK1
+003f6fda    fdbf (003f6fc0)     FPU32LOG_TABLE_MASK2
+003f6fdc    fdbf (003f6fc0)     FPU32logTable
+
+003f70a2    fdc2 (003f7080)     FPU32expTableCoeff
+003f70a2    fdc2 (003f7080)     FPU32logTableEnd
+003f70ae    fdc2 (003f7080)     FPU32expTable
+003f70ae    fdc2 (003f7080)     FPU32expTableCoeffEnd
+
+003f7160    fdc5 (003f7140)     FPU32expTableEnd
+003f7160    fdc5 (003f7140)     FPU64sincos_TABLE_SIZE_O_TWOPI
+003f7164    fdc5 (003f7140)     FPU64sincos_TWOPI_O_TABLE_SIZE
+003f7168    fdc5 (003f7140)     FPU64sincos_Coef1
+003f716c    fdc5 (003f7140)     FPU64sincos_Coef2
+003f7170    fdc5 (003f7140)     FPU64sincos_Coef3
+003f7174    fdc5 (003f7140)     FPU64sincos_Coef4
+003f7178    fdc5 (003f7140)     FPU64sinTable
+
+003f7378    fdcd (003f7340)     FPU64cosTable
+
+003f7978    fde5 (003f7940)     FPU64sinTableEnd
+
+003f7b7c    fded (003f7b40)     FPU64atan2HalfPITable
+003f7b7c    fded (003f7b40)     FPU64cosTableEnd
+
+003f7b84    fdee (003f7b80)     FPU64atan2Table
+
+003f7e90    fdfa (003f7e80)     FPU32RFFTtwiddleFactors
+003f7e90    fdfa (003f7e80)     FPU64atan2TableEnd
+003f7e90    fdfa (003f7e80)     RFFT_f32_twiddleFactors
+
+003f8688    fe1a (003f8680)     CFFT_f32_twiddleFactors
+003f8688    fe1a (003f8680)     FPU32CFFTtwiddleFactors
+
+003f8dd0    fe37 (003f8dc0)     FPU64CFFTtwiddleFactors
+
+003f99d0    fe67 (003f99c0)     FPU64CFFTtwiddleFactorsEnd
+003f99d0    fe67 (003f99c0)     FPU64RFFTtwiddleFactors
+
+003fa9c0    fea7 (003fa9c0)     FPU64RFFTtwiddleFactorsEnd
+
+003fd15e    ff45 (003fd140)     dcsm_default_keys_z1
+003fd17c    ff45 (003fd140)     serialString
+
+003fd180    ff46 (003fd180)     langID
+003fd181    ff46 (003fd180)     loaderEndpointDescriptor
+003fd186    ff46 (003fd180)     langDescriptor
+003fd18a    ff46 (003fd180)     mfgDescriptor
+003fd18e    ff46 (003fd180)     serialDescriptor
+003fd192    ff46 (003fd180)     prodDescriptor
+003fd196    ff46 (003fd180)     loaderStringDescriptor
+003fd19a    ff46 (003fd180)     loaderConfigDescriptor
+003fd19f    ff46 (003fd180)     loaderInterfaceDescriptor
+003fd1a4    ff46 (003fd180)     loaderDeviceDescriptor
+003fd1ae    ff46 (003fd180)     dcsm_default_keys_z2
+
+003fd1cc    ff47 (003fd1c0)     productString
+003fd1fe    ff47 (003fd1c0)     manufacturerString
+
+003fd210    ff48 (003fd200)     loaderString
+003fd21c    ff48 (003fd200)     stringDescriptors
+
+003ffe40    fff9 (003ffe40)     pbist_csum_rom
+
+003ffec0    fffb (003ffec0)     csum_rom
+
+003fff7a    fffd (003fff40)     cpu1brom_version
+
+01001070    40041 (01001040)     cla_twiddleFactors
+
+01001470    40051 (01001440)     cla_bitReversalTable
+
+01001870    40061 (01001840)     CLAatan2HalfPITable
+01001874    40061 (01001840)     CLAINV2PI
+01001876    40061 (01001840)     CLAatan2Table
+
+010019fc    40067 (010019c0)     CLAasinHalfPITable
+010019fc    40067 (010019c0)     CLAatan2TableEnd
+
+01001a00    40068 (01001a00)     CLAasinTable
+
+01001b86    4006e (01001b80)     CLAacosinHalfPITable
+01001b86    4006e (01001b80)     CLAasinTableEnd
+01001b8a    4006e (01001b80)     CLAacosinTable
+
+01001d0a    40074 (01001d00)     CLAacosinTableEnd
+01001d0a    40074 (01001d00)     CLAsinTable
+01001d0a    40074 (01001d00)     CLAsincosTable
+01001d0a    40074 (01001d00)     CLAsincosTable_Sin0
+
+01001d4a    40075 (01001d40)     CLAcosTable
+01001d4a    40075 (01001d40)     CLAsincosTable_Cos0
+
+01001e0a    40078 (01001e00)     CLAsinTableEnd
+
+01001e4c    40079 (01001e40)     CLAcosTableEnd
+01001e4c    40079 (01001e40)     CLAsincosTable_TABLE_SIZE
+01001e4e    40079 (01001e40)     CLAsincosTable_TABLE_SIZEDivTwoPi
+01001e50    40079 (01001e40)     CLAsincosTable_TwoPiDivTABLE_SIZE
+01001e52    40079 (01001e40)     CLAsincosTable_TABLE_MASK
+01001e54    40079 (01001e40)     CLAsincosTable_Coef0
+01001e56    40079 (01001e40)     CLAsincosTable_Coef1
+01001e58    40079 (01001e40)     CLAsincosTable_Coef1_pos
+01001e5a    40079 (01001e40)     CLAsincosTable_Coef2
+01001e5c    40079 (01001e40)     CLAsincosTable_Coef3
+01001e5e    40079 (01001e40)     CLAsincosTable_Coef3_neg
+01001e60    40079 (01001e40)     CLALNV2
+01001e60    40079 (01001e40)     CLAsincosTableEnd
+01001e62    40079 (01001e40)     CLALNVe
+01001e64    40079 (01001e40)     CLALNV10
+01001e66    40079 (01001e40)     CLABIAS
+01001e68    40079 (01001e40)     CLALN_TABLE_MASK1
+01001e6a    40079 (01001e40)     CLALN_TABLE_MASK2
+01001e6c    40079 (01001e40)     CLALnTable
+
+01001f32    4007c (01001f00)     CLAINV1
+01001f32    4007c (01001f00)     CLALnTableEnd
+01001f34    4007c (01001f00)     CLAINV2
+01001f36    4007c (01001f00)     CLAINV3
+01001f38    4007c (01001f00)     CLAINV4
+01001f3a    4007c (01001f00)     CLAINV5
+01001f3c    4007c (01001f00)     CLAINV6
+01001f3e    4007c (01001f00)     CLAINV7
+
+01001f40    4007d (01001f40)     CLALOG10
+01001f42    4007d (01001f40)     CLAExpTable
+
+01001ff4    4007f (01001fc0)     CLAExpTableEnd
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                                    
+----  -------   ----                                    
+0     003fc1e4  AckEp0                                  
+0     003fc20a  AckEp1                                  
+0     003fb63c  BROMDCC_verifySingleShotClock           
+0     003f8688  CFFT_f32_twiddleFactors                 
+0     01001e66  CLABIAS                                 
+0     01001f42  CLAExpTable                             
+0     01001ff4  CLAExpTableEnd                          
+0     01001f32  CLAINV1                                 
+0     01001f34  CLAINV2                                 
+0     01001874  CLAINV2PI                               
+0     01001f36  CLAINV3                                 
+0     01001f38  CLAINV4                                 
+0     01001f3a  CLAINV5                                 
+0     01001f3c  CLAINV6                                 
+0     01001f3e  CLAINV7                                 
+0     01001e64  CLALNV10                                
+0     01001e60  CLALNV2                                 
+0     01001e62  CLALNVe                                 
+0     01001e68  CLALN_TABLE_MASK1                       
+0     01001e6a  CLALN_TABLE_MASK2                       
+0     01001f40  CLALOG10                                
+0     01001e6c  CLALnTable                              
+0     01001f32  CLALnTableEnd                           
+0     01001b86  CLAacosinHalfPITable                    
+0     01001b8a  CLAacosinTable                          
+0     01001d0a  CLAacosinTableEnd                       
+0     010019fc  CLAasinHalfPITable                      
+0     01001a00  CLAasinTable                            
+0     01001b86  CLAasinTableEnd                         
+0     01001870  CLAatan2HalfPITable                     
+0     01001876  CLAatan2Table                           
+0     010019fc  CLAatan2TableEnd                        
+0     01001d4a  CLAcosTable                             
+0     01001e4c  CLAcosTableEnd                          
+0     01001d0a  CLAsinTable                             
+0     01001e0a  CLAsinTableEnd                          
+0     01001d0a  CLAsincosTable                          
+0     01001e60  CLAsincosTableEnd                       
+0     01001e54  CLAsincosTable_Coef0                    
+0     01001e56  CLAsincosTable_Coef1                    
+0     01001e58  CLAsincosTable_Coef1_pos                
+0     01001e5a  CLAsincosTable_Coef2                    
+0     01001e5c  CLAsincosTable_Coef3                    
+0     01001e5e  CLAsincosTable_Coef3_neg                
+0     01001d4a  CLAsincosTable_Cos0                     
+0     01001d0a  CLAsincosTable_Sin0                     
+0     01001e52  CLAsincosTable_TABLE_MASK               
+0     01001e4c  CLAsincosTable_TABLE_SIZE               
+0     01001e4e  CLAsincosTable_TABLE_SIZEDivTwoPi       
+0     01001e50  CLAsincosTable_TwoPiDivTABLE_SIZE       
+0     003e0d64  CMAC_convertToWordArray                 
+0     003e0d81  CMAC_memset                             
+0     003e0c65  CMAC_perform128bitXOR                   
+0     003e0c83  CMAC_performOneBitLeftshift             
+0     003e0d46  CMAC_readGoldenSignature                
+0     003e0caa  CMAC_readMemoryBlock                    
+0     003e0cdd  CMAC_readMemoryBlockWithSigMask         
+0     00000004  CPU1BROM_bootMode                       
+0     00000002  CPU1BROM_bootStatus                     
+0     003e09ae  CPU1BROM_calculateCMAC                  
+0     003faa9c  CPU1BROM_configureAPLL                  
+0     003fbcdf  CPU1BROM_decodeBootPins                 
+0     003fe7c0  CPU1BROM_defaultHandler                 
+0     003fb598  CPU1BROM_enableAuxPLL                   
+0     003fc924  CPU1BROM_enablePIEinBoot                
+0     003fb4fd  CPU1BROM_enableSysPLL                   
+0     003facdf  CPU1BROM_enableUnbondedGpioPullups      
+0     00000054  CPU1BROM_flashSingleBitError_highAddress
+0     00000056  CPU1BROM_flashSingleBitError_lowAddress 
+0     003fbe32  CPU1BROM_getEmulationBootMode           
+0     003fbd88  CPU1BROM_getStandaloneBootMode          
+0     003fc3a2  CPU1BROM_initDCSM                       
+0     003fbcd5  CPU1BROM_isFlashProgrammed              
+0     0000005e  CPU1BROM_itrapAddress                   
+0     003fe944  CPU1BROM_itrapISR                       
+0     003fe839  CPU1BROM_nmiHandler                     
+0     00000052  CPU1BROM_nmiStatus                      
+0     00000006  CPU1BROM_pbistStatus                    
+0     003fabe4  CPU1BROM_performDeviceConfiguration     
+0     003fe7f1  CPU1BROM_pieVectorMismatchHandler       
+0     003fbe87  CPU1BROM_selectBootMode                 
+0     003faa79  CPU1BROM_setIntOscTrims                 
+0     003faa51  CPU1BROM_setPMMTrims                    
+0     003fab63  CPU1BROM_setupDeviceSystems             
+0     003facf1  CPU1BROM_startSystemBoot                
+0     003fb10c  CPU1BROM_verifySecureFlash              
+0     003e256c  CRCCalcZ1                               
+0     003e2d24  CRCCalcZ2                               
+0     003fc6dd  CombineUsbDescriptors                   
+0     003fc869  CopyData                                
+0     003fbae2  DCAN_Boot                               
+0     003fd2b4  ExitBoot                                
+0     003fd2b2  ExitPBISTLoc                            
+0     003f8688  FPU32CFFTtwiddleFactors                 
+0     003f6fd6  FPU32EXPBIAS                            
+0     003f6fd4  FPU32INVLOG10                           
+0     003f6fd2  FPU32LOG2                               
+0     003f6fd8  FPU32LOG_TABLE_MASK1                    
+0     003f6fda  FPU32LOG_TABLE_MASK2                    
+0     003f7e90  FPU32RFFTtwiddleFactors                 
+0     003f6e48  FPU32atan2HalfPITable                   
+0     003f6e4c  FPU32atan2Table                         
+0     003f6fd2  FPU32atan2TableEnd                      
+0     003f6a46  FPU32cosTable                           
+0     003f6e48  FPU32cosTableEnd                        
+0     003f70ae  FPU32expTable                           
+0     003f70a2  FPU32expTableCoeff                      
+0     003f70ae  FPU32expTableCoeffEnd                   
+0     003f7160  FPU32expTableEnd                        
+0     003f6fdc  FPU32logTable                           
+0     003f70a2  FPU32logTableEnd                        
+0     003f6946  FPU32sinTable                           
+0     003f6d46  FPU32sinTableEnd                        
+0     003f8dd0  FPU64CFFTtwiddleFactors                 
+0     003f99d0  FPU64CFFTtwiddleFactorsEnd              
+0     003f99d0  FPU64RFFTtwiddleFactors                 
+0     003fa9c0  FPU64RFFTtwiddleFactorsEnd              
+0     003f7b7c  FPU64atan2HalfPITable                   
+0     003f7b84  FPU64atan2Table                         
+0     003f7e90  FPU64atan2TableEnd                      
+0     003f7378  FPU64cosTable                           
+0     003f7b7c  FPU64cosTableEnd                        
+0     003f7178  FPU64sinTable                           
+0     003f7978  FPU64sinTableEnd                        
+0     003f7168  FPU64sincos_Coef1                       
+0     003f716c  FPU64sincos_Coef2                       
+0     003f7170  FPU64sincos_Coef3                       
+0     003f7174  FPU64sincos_Coef4                       
+0     003f7160  FPU64sincos_TABLE_SIZE_O_TWOPI          
+0     003f7164  FPU64sincos_TWOPI_O_TABLE_SIZE          
+0     003f6e48  FPUatan2HalfPITable                     
+0     003f6e4c  FPUatan2Table                           
+0     003f6fd2  FPUatan2TableEnd                        
+0     003f6a46  FPUcosTable                             
+0     003f6e48  FPUcosTableEnd                          
+0     003f6946  FPUsinTable                             
+0     003f6d46  FPUsinTableEnd                          
+0     003fc99d  GPIO_setDirectionMode                   
+0     003fc821  GPIO_setPadConfig                       
+0     003fc8af  GPIO_setPinConfig                       
+0     003fc948  GPIO_setQualificationMode               
+0     003fc482  Gather_Z1_ZSB                           
+0     003fc4bd  Gather_Z2_ZSB                           
+0     003fc88d  GetLongData                             
+0     0000005c  GetWordData                             
+0     003fb837  I2CBOOT_configure_gpio                  
+0     003fb7a6  I2C_Boot                                
+0     003fb80a  I2C_GetWord                             
+0     003fc789  I2C_initMaster                          
+0     003fd226  InitBoot                                
+0     003fc7d6  Interrupt_disable                       
+0     003fc8e6  Interrupt_enable                        
+0     003fc735  Interrupt_initModule                    
+0     003fb131  PBIST_PORMemoryTest                     
+0     003fc539  Parallel_Boot                           
+0     003fc59c  Parallel_GPIOSelect                     
+0     003fc562  Parallel_GetWordData_8bit               
+0     003fc5dd  Parallel_readPortData                   
+0     003f7e90  RFFT_f32_twiddleFactors                 
+0     003fc89f  ReadReservedFn                          
+0     003fc1a8  ResetUsbDriver                          
+0     003fc1cf  RxDataEp0                               
+0     003fc1f5  RxDataEp1                               
+0     003fbfb7  SCIA_GetWordData                        
+0     003fbf39  SCI_Boot                                
+0     0000003c  SCI_gpioTx                              
+0     0000003e  SCI_gpioTxPinConfig                     
+0     003fb9e1  SPIA_GetWordData                        
+0     003fbaa8  SPIA_Init                               
+0     003fb9c0  SPIA_SetAddress_KeyChk                  
+0     003fb9ef  SPIBOOT_configure_gpio                  
+0     003fb96c  SPI_Boot                                
+0     003fc9c4  SPI_getInterruptStatus                  
+0     003fc974  SPI_setConfig                           
+0     003fb99f  SPI_start_Boot                          
+0     003e221c  SecureCRCCalcZ1                         
+0     003e2a1e  SecureCRCCalcZ2                         
+0     003e2000  SecureCopyCodeZ1                        
+0     003e2800  SecureCopyCodeZ2                        
+0     003e8202  Td0                                     
+0     003e8002  Td1                                     
+0     003e8602  Td2                                     
+0     003e8402  Td3                                     
+0     003e8802  Td4                                     
+0     003e8c02  Te0                                     
+0     003e8a02  Te1                                     
+0     003e9002  Te2                                     
+0     003e8e02  Te3                                     
+0     003e9202  Te4                                     
+0     003fc1b3  TxDataEp0                               
+0     003fc240  USB_Boot                                
+0     003fc2e4  USB_Boot_Init                           
+0     003fc388  USB_GetWordData                         
+0     003fc67e  UsbIntHandler                           
+0     00000050  Z1_ZSB                                  
+0     0000004e  Z2_ZSB                                  
+0     003e9eda  _IQ10mpyRndSatTable                     
+0     003e9ece  _IQ11mpyRndSatTable                     
+0     003e9ec2  _IQ12mpyRndSatTable                     
+0     003e9eb6  _IQ13mpyRndSatTable                     
+0     003e9eaa  _IQ14mpyRndSatTable                     
+0     003ea118  _IQ15atan2                              
+0     003ea92f  _IQ15cos                                
+0     003ea487  _IQ15div                                
+0     003ea5a3  _IQ15isqrt                              
+0     003ea307  _IQ15mag                                
+0     003e9e9e  _IQ15mpyRndSatTable                     
+0     003ea86c  _IQ15sin                                
+0     003ea6b8  _IQ15sqrt                               
+0     003e9e92  _IQ16mpyRndSatTable                     
+0     003e9e86  _IQ17mpyRndSatTable                     
+0     003e9e7a  _IQ18mpyRndSatTable                     
+0     003e9e6e  _IQ19mpyRndSatTable                     
+0     003e9f46  _IQ1mpyRndSatTable                      
+0     003ea196  _IQ20atan2                              
+0     003ea95e  _IQ20cos                                
+0     003ea4ce  _IQ20div                                
+0     003ea7c0  _IQ20exp                                
+0     003ea5e9  _IQ20isqrt                              
+0     003e9f52  _IQ20log                                
+0     003ea367  _IQ20mag                                
+0     003e9e62  _IQ20mpyRndSatTable                     
+0     003ea89d  _IQ20sin                                
+0     003ea6fa  _IQ20sqrt                               
+0     003e9e56  _IQ21mpyRndSatTable                     
+0     003e9e4a  _IQ22mpyRndSatTable                     
+0     003e9e3e  _IQ23mpyRndSatTable                     
+0     003ea211  _IQ24atan2                              
+0     003ea98d  _IQ24cos                                
+0     003ea9e5  _IQ24cosPU                              
+0     003ea515  _IQ24div                                
+0     003ea7fd  _IQ24exp                                
+0     003ea62e  _IQ24isqrt                              
+0     003e9fef  _IQ24log                                
+0     003ea3c7  _IQ24mag                                
+0     003e9e32  _IQ24mpyRndSatTable                     
+0     003eaa62  _IQ24rmpy                               
+0     003ea8ce  _IQ24sin                                
+0     003ea9bc  _IQ24sinPU                              
+0     003ea73c  _IQ24sqrt                               
+0     003eaa0c  _IQ24toF                                
+0     003e9e26  _IQ25mpyRndSatTable                     
+0     003e9e1a  _IQ26mpyRndSatTable                     
+0     003e9e0e  _IQ27mpyRndSatTable                     
+0     003e9e02  _IQ28mpyRndSatTable                     
+0     003ea28c  _IQ29atan2                              
+0     003ea8ff  _IQ29cos                                
+0     003ea55c  _IQ29div                                
+0     003ea673  _IQ29isqrt                              
+0     003ea427  _IQ29mag                                
+0     003e9df6  _IQ29mpyRndSatTable                     
+0     003eaa38  _IQ29rsmpy                              
+0     003ea83a  _IQ29sin                                
+0     003ea77e  _IQ29sqrt                               
+0     003e9f3a  _IQ2mpyRndSatTable                      
+0     003e9dea  _IQ30mpyRndSatTable                     
+0     003eaa4d  _IQ30rsmpy                              
+0     003eaa22  _IQ30toF                                
+0     003e9f2e  _IQ3mpyRndSatTable                      
+0     003e9f22  _IQ4mpyRndSatTable                      
+0     003e9f16  _IQ5mpyRndSatTable                      
+0     003e9f0a  _IQ6mpyRndSatTable                      
+0     003e9efe  _IQ7mpyRndSatTable                      
+0     003e9ef2  _IQ8mpyRndSatTable                      
+0     003e9ee6  _IQ9mpyRndSatTable                      
+0     003e9c26  _IQatan2HalfPITable                     
+0     003e9c64  _IQatan2Table                           
+0     003e9dea  _IQatan2TableEnd                        
+0     003e9502  _IQcosTable                             
+0     003e9904  _IQcosTableEnd                          
+0     003e9904  _IQdivRoundSatTable                     
+0     003e9912  _IQdivTable                             
+0     003e9b14  _IQdivTableEnd                          
+0     003ea08c  _IQexpTable                             
+0     003ea104  _IQexpTableCoeff                        
+0     003ea118  _IQexpTableCoeffEnd                     
+0     003ea08c  _IQexpTableMinMax                       
+0     003ea104  _IQexpTableMinMaxEnd                    
+0     003e9b14  _IQisqrtRoundSatTable                   
+0     003e9b24  _IQisqrtTable                           
+0     003e9c26  _IQisqrtTableEnd                        
+0     003e9dea  _IQmpyRndSatTable                       
+0     003e9f52  _IQmpyRndSatTableEnd                    
+0     003e9402  _IQsinTable                             
+0     003e9802  _IQsinTableEnd                          
+0     003e9b14  _IQsqrtRoundSatTable                    
+0     003e9b24  _IQsqrtTable                            
+0     003e9c26  _IQsqrtTableEnd                         
+0     003fd2e0  __TI_CINIT_Base                         
+0     003fd2f0  __TI_CINIT_Limit                        
+0     003fd2dc  __TI_Handler_Table_Base                 
+0     003fd2de  __TI_Handler_Table_Limit                
+0     000001b0  __TI_STACK_END                          
+abs   00000150  __TI_STACK_SIZE                         
+abs   ffffffff  __TI_pprof_out_hndl                     
+abs   ffffffff  __TI_prof_data_size                     
+abs   ffffffff  __TI_prof_data_start                    
+0     003fca03  __TI_zero_init_nomemset                 
+abs   ffffffff  __c_args__                              
+0     003fcc10  add_to_bitcolumn_checksum               
+0     003fcb04  add_to_factorial_sum                    
+0     003fcb8a  add_to_row_weight_sum                   
+0     003fcc84  calculate_checksum                      
+0     003fca4c  calculate_composite_checksum_on_rom     
+0     01001470  cla_bitReversalTable                    
+0     01001070  cla_twiddleFactors                      
+0     003fcf97  compare_two_composite_checksums         
+0     003fff7a  cpu1brom_version                        
+0     003ffec0  csum_rom                                
+0     003fd15e  dcsm_default_keys_z1                    
+0     003fd1ae  dcsm_default_keys_z2                    
+0     00000046  g_UsbRxBuffer                           
+0     00000041  g_UsbRxDataLength                       
+0     00000042  g_UsbRxPacketLength                     
+0     003fd186  langDescriptor                          
+0     003fd180  langID                                  
+0     003fca16  load_itrap_address                      
+0     003fd19a  loaderConfigDescriptor                  
+0     003fd1a4  loaderDeviceDescriptor                  
+0     003fd181  loaderEndpointDescriptor                
+0     003fd19f  loaderInterfaceDescriptor               
+0     003fd210  loaderString                            
+0     003fd196  loaderStringDescriptor                  
+0     003fd1fe  manufacturerString                      
+0     003fd18a  mfgDescriptor                           
+0     003ffe40  pbist_csum_rom                          
+0     003fd192  prodDescriptor                          
+0     003fd1cc  productString                           
+0     003e063e  rijndaelDecrypt                         
+0     003e02d4  rijndaelEncrypt                         
+0     003e00fc  rijndaelSetupDecrypt                    
+0     003e0000  rijndaelSetupEncrypt                    
+0     0000003a  s0                                      
+0     0000002e  s1                                      
+0     00000030  s2                                      
+0     0000002c  s3                                      
+0     003fd18e  serialDescriptor                        
+0     003fd17c  serialString                            
+0     003fd21c  stringDescriptors                       
+0     00000028  t0                                      
+0     00000032  t0_asm                                  
+0     0000002a  t1                                      
+0     00000036  t2                                      
+0     00000038  t3                                      
+0     00000034  t_input                                 
+0     003fca1a  test_reserved_memory                    
+0     00000058  userPIEIERStatus                        
+0     0000005a  userUSBHandler                          
+0     003fd0fd  verify_pbist_checksum_onROM             
+0     0000004a  z1_key1                                 
+0     0000004c  z2_key1                                 
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                                    
+----  -------   ----                                    
+0     00000002  CPU1BROM_bootStatus                     
+0     00000004  CPU1BROM_bootMode                       
+0     00000006  CPU1BROM_pbistStatus                    
+0     00000028  t0                                      
+0     0000002a  t1                                      
+0     0000002c  s3                                      
+0     0000002e  s1                                      
+0     00000030  s2                                      
+0     00000032  t0_asm                                  
+0     00000034  t_input                                 
+0     00000036  t2                                      
+0     00000038  t3                                      
+0     0000003a  s0                                      
+0     0000003c  SCI_gpioTx                              
+0     0000003e  SCI_gpioTxPinConfig                     
+0     00000041  g_UsbRxDataLength                       
+0     00000042  g_UsbRxPacketLength                     
+0     00000046  g_UsbRxBuffer                           
+0     0000004a  z1_key1                                 
+0     0000004c  z2_key1                                 
+0     0000004e  Z2_ZSB                                  
+0     00000050  Z1_ZSB                                  
+0     00000052  CPU1BROM_nmiStatus                      
+0     00000054  CPU1BROM_flashSingleBitError_highAddress
+0     00000056  CPU1BROM_flashSingleBitError_lowAddress 
+0     00000058  userPIEIERStatus                        
+0     0000005a  userUSBHandler                          
+0     0000005c  GetWordData                             
+0     0000005e  CPU1BROM_itrapAddress                   
+0     000001b0  __TI_STACK_END                          
+0     003e0000  rijndaelSetupEncrypt                    
+0     003e00fc  rijndaelSetupDecrypt                    
+0     003e02d4  rijndaelEncrypt                         
+0     003e063e  rijndaelDecrypt                         
+0     003e09ae  CPU1BROM_calculateCMAC                  
+0     003e0c65  CMAC_perform128bitXOR                   
+0     003e0c83  CMAC_performOneBitLeftshift             
+0     003e0caa  CMAC_readMemoryBlock                    
+0     003e0cdd  CMAC_readMemoryBlockWithSigMask         
+0     003e0d46  CMAC_readGoldenSignature                
+0     003e0d64  CMAC_convertToWordArray                 
+0     003e0d81  CMAC_memset                             
+0     003e2000  SecureCopyCodeZ1                        
+0     003e221c  SecureCRCCalcZ1                         
+0     003e256c  CRCCalcZ1                               
+0     003e2800  SecureCopyCodeZ2                        
+0     003e2a1e  SecureCRCCalcZ2                         
+0     003e2d24  CRCCalcZ2                               
+0     003e8002  Td1                                     
+0     003e8202  Td0                                     
+0     003e8402  Td3                                     
+0     003e8602  Td2                                     
+0     003e8802  Td4                                     
+0     003e8a02  Te1                                     
+0     003e8c02  Te0                                     
+0     003e8e02  Te3                                     
+0     003e9002  Te2                                     
+0     003e9202  Te4                                     
+0     003e9402  _IQsinTable                             
+0     003e9502  _IQcosTable                             
+0     003e9802  _IQsinTableEnd                          
+0     003e9904  _IQcosTableEnd                          
+0     003e9904  _IQdivRoundSatTable                     
+0     003e9912  _IQdivTable                             
+0     003e9b14  _IQdivTableEnd                          
+0     003e9b14  _IQisqrtRoundSatTable                   
+0     003e9b14  _IQsqrtRoundSatTable                    
+0     003e9b24  _IQisqrtTable                           
+0     003e9b24  _IQsqrtTable                            
+0     003e9c26  _IQatan2HalfPITable                     
+0     003e9c26  _IQisqrtTableEnd                        
+0     003e9c26  _IQsqrtTableEnd                         
+0     003e9c64  _IQatan2Table                           
+0     003e9dea  _IQ30mpyRndSatTable                     
+0     003e9dea  _IQatan2TableEnd                        
+0     003e9dea  _IQmpyRndSatTable                       
+0     003e9df6  _IQ29mpyRndSatTable                     
+0     003e9e02  _IQ28mpyRndSatTable                     
+0     003e9e0e  _IQ27mpyRndSatTable                     
+0     003e9e1a  _IQ26mpyRndSatTable                     
+0     003e9e26  _IQ25mpyRndSatTable                     
+0     003e9e32  _IQ24mpyRndSatTable                     
+0     003e9e3e  _IQ23mpyRndSatTable                     
+0     003e9e4a  _IQ22mpyRndSatTable                     
+0     003e9e56  _IQ21mpyRndSatTable                     
+0     003e9e62  _IQ20mpyRndSatTable                     
+0     003e9e6e  _IQ19mpyRndSatTable                     
+0     003e9e7a  _IQ18mpyRndSatTable                     
+0     003e9e86  _IQ17mpyRndSatTable                     
+0     003e9e92  _IQ16mpyRndSatTable                     
+0     003e9e9e  _IQ15mpyRndSatTable                     
+0     003e9eaa  _IQ14mpyRndSatTable                     
+0     003e9eb6  _IQ13mpyRndSatTable                     
+0     003e9ec2  _IQ12mpyRndSatTable                     
+0     003e9ece  _IQ11mpyRndSatTable                     
+0     003e9eda  _IQ10mpyRndSatTable                     
+0     003e9ee6  _IQ9mpyRndSatTable                      
+0     003e9ef2  _IQ8mpyRndSatTable                      
+0     003e9efe  _IQ7mpyRndSatTable                      
+0     003e9f0a  _IQ6mpyRndSatTable                      
+0     003e9f16  _IQ5mpyRndSatTable                      
+0     003e9f22  _IQ4mpyRndSatTable                      
+0     003e9f2e  _IQ3mpyRndSatTable                      
+0     003e9f3a  _IQ2mpyRndSatTable                      
+0     003e9f46  _IQ1mpyRndSatTable                      
+0     003e9f52  _IQ20log                                
+0     003e9f52  _IQmpyRndSatTableEnd                    
+0     003e9fef  _IQ24log                                
+0     003ea08c  _IQexpTable                             
+0     003ea08c  _IQexpTableMinMax                       
+0     003ea104  _IQexpTableCoeff                        
+0     003ea104  _IQexpTableMinMaxEnd                    
+0     003ea118  _IQ15atan2                              
+0     003ea118  _IQexpTableCoeffEnd                     
+0     003ea196  _IQ20atan2                              
+0     003ea211  _IQ24atan2                              
+0     003ea28c  _IQ29atan2                              
+0     003ea307  _IQ15mag                                
+0     003ea367  _IQ20mag                                
+0     003ea3c7  _IQ24mag                                
+0     003ea427  _IQ29mag                                
+0     003ea487  _IQ15div                                
+0     003ea4ce  _IQ20div                                
+0     003ea515  _IQ24div                                
+0     003ea55c  _IQ29div                                
+0     003ea5a3  _IQ15isqrt                              
+0     003ea5e9  _IQ20isqrt                              
+0     003ea62e  _IQ24isqrt                              
+0     003ea673  _IQ29isqrt                              
+0     003ea6b8  _IQ15sqrt                               
+0     003ea6fa  _IQ20sqrt                               
+0     003ea73c  _IQ24sqrt                               
+0     003ea77e  _IQ29sqrt                               
+0     003ea7c0  _IQ20exp                                
+0     003ea7fd  _IQ24exp                                
+0     003ea83a  _IQ29sin                                
+0     003ea86c  _IQ15sin                                
+0     003ea89d  _IQ20sin                                
+0     003ea8ce  _IQ24sin                                
+0     003ea8ff  _IQ29cos                                
+0     003ea92f  _IQ15cos                                
+0     003ea95e  _IQ20cos                                
+0     003ea98d  _IQ24cos                                
+0     003ea9bc  _IQ24sinPU                              
+0     003ea9e5  _IQ24cosPU                              
+0     003eaa0c  _IQ24toF                                
+0     003eaa22  _IQ30toF                                
+0     003eaa38  _IQ29rsmpy                              
+0     003eaa4d  _IQ30rsmpy                              
+0     003eaa62  _IQ24rmpy                               
+0     003f6946  FPU32sinTable                           
+0     003f6946  FPUsinTable                             
+0     003f6a46  FPU32cosTable                           
+0     003f6a46  FPUcosTable                             
+0     003f6d46  FPU32sinTableEnd                        
+0     003f6d46  FPUsinTableEnd                          
+0     003f6e48  FPU32atan2HalfPITable                   
+0     003f6e48  FPU32cosTableEnd                        
+0     003f6e48  FPUatan2HalfPITable                     
+0     003f6e48  FPUcosTableEnd                          
+0     003f6e4c  FPU32atan2Table                         
+0     003f6e4c  FPUatan2Table                           
+0     003f6fd2  FPU32LOG2                               
+0     003f6fd2  FPU32atan2TableEnd                      
+0     003f6fd2  FPUatan2TableEnd                        
+0     003f6fd4  FPU32INVLOG10                           
+0     003f6fd6  FPU32EXPBIAS                            
+0     003f6fd8  FPU32LOG_TABLE_MASK1                    
+0     003f6fda  FPU32LOG_TABLE_MASK2                    
+0     003f6fdc  FPU32logTable                           
+0     003f70a2  FPU32expTableCoeff                      
+0     003f70a2  FPU32logTableEnd                        
+0     003f70ae  FPU32expTable                           
+0     003f70ae  FPU32expTableCoeffEnd                   
+0     003f7160  FPU32expTableEnd                        
+0     003f7160  FPU64sincos_TABLE_SIZE_O_TWOPI          
+0     003f7164  FPU64sincos_TWOPI_O_TABLE_SIZE          
+0     003f7168  FPU64sincos_Coef1                       
+0     003f716c  FPU64sincos_Coef2                       
+0     003f7170  FPU64sincos_Coef3                       
+0     003f7174  FPU64sincos_Coef4                       
+0     003f7178  FPU64sinTable                           
+0     003f7378  FPU64cosTable                           
+0     003f7978  FPU64sinTableEnd                        
+0     003f7b7c  FPU64atan2HalfPITable                   
+0     003f7b7c  FPU64cosTableEnd                        
+0     003f7b84  FPU64atan2Table                         
+0     003f7e90  FPU32RFFTtwiddleFactors                 
+0     003f7e90  FPU64atan2TableEnd                      
+0     003f7e90  RFFT_f32_twiddleFactors                 
+0     003f8688  CFFT_f32_twiddleFactors                 
+0     003f8688  FPU32CFFTtwiddleFactors                 
+0     003f8dd0  FPU64CFFTtwiddleFactors                 
+0     003f99d0  FPU64CFFTtwiddleFactorsEnd              
+0     003f99d0  FPU64RFFTtwiddleFactors                 
+0     003fa9c0  FPU64RFFTtwiddleFactorsEnd              
+0     003faa51  CPU1BROM_setPMMTrims                    
+0     003faa79  CPU1BROM_setIntOscTrims                 
+0     003faa9c  CPU1BROM_configureAPLL                  
+0     003fab63  CPU1BROM_setupDeviceSystems             
+0     003fabe4  CPU1BROM_performDeviceConfiguration     
+0     003facdf  CPU1BROM_enableUnbondedGpioPullups      
+0     003facf1  CPU1BROM_startSystemBoot                
+0     003fb10c  CPU1BROM_verifySecureFlash              
+0     003fb131  PBIST_PORMemoryTest                     
+0     003fb4fd  CPU1BROM_enableSysPLL                   
+0     003fb598  CPU1BROM_enableAuxPLL                   
+0     003fb63c  BROMDCC_verifySingleShotClock           
+0     003fb7a6  I2C_Boot                                
+0     003fb80a  I2C_GetWord                             
+0     003fb837  I2CBOOT_configure_gpio                  
+0     003fb96c  SPI_Boot                                
+0     003fb99f  SPI_start_Boot                          
+0     003fb9c0  SPIA_SetAddress_KeyChk                  
+0     003fb9e1  SPIA_GetWordData                        
+0     003fb9ef  SPIBOOT_configure_gpio                  
+0     003fbaa8  SPIA_Init                               
+0     003fbae2  DCAN_Boot                               
+0     003fbcd5  CPU1BROM_isFlashProgrammed              
+0     003fbcdf  CPU1BROM_decodeBootPins                 
+0     003fbd88  CPU1BROM_getStandaloneBootMode          
+0     003fbe32  CPU1BROM_getEmulationBootMode           
+0     003fbe87  CPU1BROM_selectBootMode                 
+0     003fbf39  SCI_Boot                                
+0     003fbfb7  SCIA_GetWordData                        
+0     003fc1a8  ResetUsbDriver                          
+0     003fc1b3  TxDataEp0                               
+0     003fc1cf  RxDataEp0                               
+0     003fc1e4  AckEp0                                  
+0     003fc1f5  RxDataEp1                               
+0     003fc20a  AckEp1                                  
+0     003fc240  USB_Boot                                
+0     003fc2e4  USB_Boot_Init                           
+0     003fc388  USB_GetWordData                         
+0     003fc3a2  CPU1BROM_initDCSM                       
+0     003fc482  Gather_Z1_ZSB                           
+0     003fc4bd  Gather_Z2_ZSB                           
+0     003fc539  Parallel_Boot                           
+0     003fc562  Parallel_GetWordData_8bit               
+0     003fc59c  Parallel_GPIOSelect                     
+0     003fc5dd  Parallel_readPortData                   
+0     003fc67e  UsbIntHandler                           
+0     003fc6dd  CombineUsbDescriptors                   
+0     003fc735  Interrupt_initModule                    
+0     003fc789  I2C_initMaster                          
+0     003fc7d6  Interrupt_disable                       
+0     003fc821  GPIO_setPadConfig                       
+0     003fc869  CopyData                                
+0     003fc88d  GetLongData                             
+0     003fc89f  ReadReservedFn                          
+0     003fc8af  GPIO_setPinConfig                       
+0     003fc8e6  Interrupt_enable                        
+0     003fc924  CPU1BROM_enablePIEinBoot                
+0     003fc948  GPIO_setQualificationMode               
+0     003fc974  SPI_setConfig                           
+0     003fc99d  GPIO_setDirectionMode                   
+0     003fc9c4  SPI_getInterruptStatus                  
+0     003fca03  __TI_zero_init_nomemset                 
+0     003fca16  load_itrap_address                      
+0     003fca1a  test_reserved_memory                    
+0     003fca4c  calculate_composite_checksum_on_rom     
+0     003fcb04  add_to_factorial_sum                    
+0     003fcb8a  add_to_row_weight_sum                   
+0     003fcc10  add_to_bitcolumn_checksum               
+0     003fcc84  calculate_checksum                      
+0     003fcf97  compare_two_composite_checksums         
+0     003fd0fd  verify_pbist_checksum_onROM             
+0     003fd15e  dcsm_default_keys_z1                    
+0     003fd17c  serialString                            
+0     003fd180  langID                                  
+0     003fd181  loaderEndpointDescriptor                
+0     003fd186  langDescriptor                          
+0     003fd18a  mfgDescriptor                           
+0     003fd18e  serialDescriptor                        
+0     003fd192  prodDescriptor                          
+0     003fd196  loaderStringDescriptor                  
+0     003fd19a  loaderConfigDescriptor                  
+0     003fd19f  loaderInterfaceDescriptor               
+0     003fd1a4  loaderDeviceDescriptor                  
+0     003fd1ae  dcsm_default_keys_z2                    
+0     003fd1cc  productString                           
+0     003fd1fe  manufacturerString                      
+0     003fd210  loaderString                            
+0     003fd21c  stringDescriptors                       
+0     003fd226  InitBoot                                
+0     003fd2b2  ExitPBISTLoc                            
+0     003fd2b4  ExitBoot                                
+0     003fd2dc  __TI_Handler_Table_Base                 
+0     003fd2de  __TI_Handler_Table_Limit                
+0     003fd2e0  __TI_CINIT_Base                         
+0     003fd2f0  __TI_CINIT_Limit                        
+0     003fe7c0  CPU1BROM_defaultHandler                 
+0     003fe7f1  CPU1BROM_pieVectorMismatchHandler       
+0     003fe839  CPU1BROM_nmiHandler                     
+0     003fe944  CPU1BROM_itrapISR                       
+0     003ffe40  pbist_csum_rom                          
+0     003ffec0  csum_rom                                
+0     003fff7a  cpu1brom_version                        
+0     01001070  cla_twiddleFactors                      
+0     01001470  cla_bitReversalTable                    
+0     01001870  CLAatan2HalfPITable                     
+0     01001874  CLAINV2PI                               
+0     01001876  CLAatan2Table                           
+0     010019fc  CLAasinHalfPITable                      
+0     010019fc  CLAatan2TableEnd                        
+0     01001a00  CLAasinTable                            
+0     01001b86  CLAacosinHalfPITable                    
+0     01001b86  CLAasinTableEnd                         
+0     01001b8a  CLAacosinTable                          
+0     01001d0a  CLAacosinTableEnd                       
+0     01001d0a  CLAsinTable                             
+0     01001d0a  CLAsincosTable                          
+0     01001d0a  CLAsincosTable_Sin0                     
+0     01001d4a  CLAcosTable                             
+0     01001d4a  CLAsincosTable_Cos0                     
+0     01001e0a  CLAsinTableEnd                          
+0     01001e4c  CLAcosTableEnd                          
+0     01001e4c  CLAsincosTable_TABLE_SIZE               
+0     01001e4e  CLAsincosTable_TABLE_SIZEDivTwoPi       
+0     01001e50  CLAsincosTable_TwoPiDivTABLE_SIZE       
+0     01001e52  CLAsincosTable_TABLE_MASK               
+0     01001e54  CLAsincosTable_Coef0                    
+0     01001e56  CLAsincosTable_Coef1                    
+0     01001e58  CLAsincosTable_Coef1_pos                
+0     01001e5a  CLAsincosTable_Coef2                    
+0     01001e5c  CLAsincosTable_Coef3                    
+0     01001e5e  CLAsincosTable_Coef3_neg                
+0     01001e60  CLALNV2                                 
+0     01001e60  CLAsincosTableEnd                       
+0     01001e62  CLALNVe                                 
+0     01001e64  CLALNV10                                
+0     01001e66  CLABIAS                                 
+0     01001e68  CLALN_TABLE_MASK1                       
+0     01001e6a  CLALN_TABLE_MASK2                       
+0     01001e6c  CLALnTable                              
+0     01001f32  CLAINV1                                 
+0     01001f32  CLALnTableEnd                           
+0     01001f34  CLAINV2                                 
+0     01001f36  CLAINV3                                 
+0     01001f38  CLAINV4                                 
+0     01001f3a  CLAINV5                                 
+0     01001f3c  CLAINV6                                 
+0     01001f3e  CLAINV7                                 
+0     01001f40  CLALOG10                                
+0     01001f42  CLAExpTable                             
+0     01001ff4  CLAExpTableEnd                          
+abs   00000150  __TI_STACK_SIZE                         
+abs   ffffffff  __TI_pprof_out_hndl                     
+abs   ffffffff  __TI_prof_data_size                     
+abs   ffffffff  __TI_prof_data_start                    
+abs   ffffffff  __c_args__                              
+
+[351 symbols]

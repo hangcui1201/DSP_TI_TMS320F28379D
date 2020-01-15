@@ -1,0 +1,2358 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.4.4 *
+       3              ;* Date/Time created: Tue Feb 14 14:42:52 2017                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --cla_support=cla0 --float_support=fpu32 --hll_source=on --mem_model:code=flat --mem_m
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C2000 C/C++ Codegen PC v6.4.4 Copyright (c) 1996-2015 Texa
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0
+      13                      .global _PHY_tf512pFFTTable
+      14 00000000               .sect   "tf512pFFTTable"
+      15                      .align  2
+      16 00000000       _PHY_tf512pFFTTable:
+      17 00000000 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[0] @ 0
+         00000001 7FFF 
+      18 00000002 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[1] @ 32
+         00000003 7FFF 
+      19 00000004 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[2] @ 64
+         00000005 0000 
+      20 00000006 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[3] @ 96
+         00000007 7FFF 
+      21 00000008 A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[4] @ 128
+         00000009 5A82 
+      22 0000000a 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[5] @ 160
+         0000000b 0000 
+      23 0000000c A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[6] @ 192
+         0000000d A57E 
+      24 0000000e 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[7] @ 224
+         0000000f 7FFF 
+      25 00000010 CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[8] @ 256
+         00000011 7641 
+      26 00000012 A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[9] @ 288
+         00000013 5A82 
+      27 00000014 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[10] @ 320
+         00000015 30FB 
+      28 00000016 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[11] @ 352
+         00000017 0000 
+      29 00000018 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[12] @ 384
+         00000019 CF05 
+      30 0000001a A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[13] @ 416
+         0000001b A57E 
+      31 0000001c CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[14] @ 448
+         0000001d 89BF 
+      32 0000001e 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[15] @ 480
+         0000001f 7FFF 
+      33 00000020 E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[16] @ 512
+         00000021 7D89 
+      34 00000022 CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[17] @ 544
+         00000023 7641 
+      35 00000024 B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[18] @ 576
+         00000025 6A6D 
+      36 00000026 A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[19] @ 608
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    2
+
+         00000027 5A82 
+      37 00000028 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[20] @ 640
+         00000029 471C 
+      38 0000002a 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[21] @ 672
+         0000002b 30FB 
+      39 0000002c 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[22] @ 704
+         0000002d 18F9 
+      40 0000002e 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[23] @ 736
+         0000002f 0000 
+      41 00000030 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[24] @ 768
+         00000031 E707 
+      42 00000032 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[25] @ 800
+         00000033 CF05 
+      43 00000034 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[26] @ 832
+         00000035 B8E4 
+      44 00000036 A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[27] @ 864
+         00000037 A57E 
+      45 00000038 B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[28] @ 896
+         00000039 9593 
+      46 0000003a CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[29] @ 928
+         0000003b 89BF 
+      47 0000003c E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[30] @ 960
+         0000003d 8277 
+      48 0000003e 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[31] @ 992
+         0000003f 7FFF 
+      49 00000040 F374          .bits   2137125748,32                   ; _PHY_tf512pFFTTable[32] @ 1024
+         00000041 7F61 
+      50 00000042 E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[33] @ 1056
+         00000043 7D89 
+      51 00000044 DAD8          .bits   2055002840,32                   ; _PHY_tf512pFFTTable[34] @ 1088
+         00000045 7A7C 
+      52 00000046 CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[35] @ 1120
+         00000047 7641 
+      53 00000048 C3AA          .bits   1893909418,32                   ; _PHY_tf512pFFTTable[36] @ 1152
+         00000049 70E2 
+      54 0000004a B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[37] @ 1184
+         0000004b 6A6D 
+      55 0000004c AECD          .bits   1660006093,32                   ; _PHY_tf512pFFTTable[38] @ 1216
+         0000004d 62F1 
+      56 0000004e A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[39] @ 1248
+         0000004f 5A82 
+      57 00000050 9D0F          .bits   1362337039,32                   ; _PHY_tf512pFFTTable[40] @ 1280
+         00000051 5133 
+      58 00000052 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[41] @ 1312
+         00000053 471C 
+      59 00000054 8F1E          .bits   1012305694,32                   ; _PHY_tf512pFFTTable[42] @ 1344
+         00000055 3C56 
+      60 00000056 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[43] @ 1376
+         00000057 30FB 
+      61 00000058 8584          .bits   623412612,32                    ; _PHY_tf512pFFTTable[44] @ 1408
+         00000059 2528 
+      62 0000005a 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[45] @ 1440
+         0000005b 18F9 
+      63 0000005c 809F          .bits   210534559,32                    ; _PHY_tf512pFFTTable[46] @ 1472
+         0000005d 0C8C 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    3
+
+      64 0000005e 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[47] @ 1504
+         0000005f 0000 
+      65 00000060 809F          .bits   -210468705,32                   ; _PHY_tf512pFFTTable[48] @ 1536
+         00000061 F374 
+      66 00000062 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[49] @ 1568
+         00000063 E707 
+      67 00000064 8584          .bits   -623344252,32                   ; _PHY_tf512pFFTTable[50] @ 1600
+         00000065 DAD8 
+      68 00000066 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[51] @ 1632
+         00000067 CF05 
+      69 00000068 8F1E          .bits   -1012232418,32                  ; _PHY_tf512pFFTTable[52] @ 1664
+         00000069 C3AA 
+      70 0000006a 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[53] @ 1696
+         0000006b B8E4 
+      71 0000006c 9D0F          .bits   -1362256625,32                  ; _PHY_tf512pFFTTable[54] @ 1728
+         0000006d AECD 
+      72 0000006e A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[55] @ 1760
+         0000006f A57E 
+      73 00000070 AECD          .bits   -1659916595,32                  ; _PHY_tf512pFFTTable[56] @ 1792
+         00000071 9D0F 
+      74 00000072 B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[57] @ 1824
+         00000073 9593 
+      75 00000074 C3AA          .bits   -1893809238,32                  ; _PHY_tf512pFFTTable[58] @ 1856
+         00000075 8F1E 
+      76 00000076 CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[59] @ 1888
+         00000077 89BF 
+      77 00000078 DAD8          .bits   -2054890792,32                  ; _PHY_tf512pFFTTable[60] @ 1920
+         00000079 8584 
+      78 0000007a E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[61] @ 1952
+         0000007b 8277 
+      79 0000007c F374          .bits   -2137001100,32                  ; _PHY_tf512pFFTTable[62] @ 1984
+         0000007d 809F 
+      80 0000007e 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[63] @ 2016
+         0000007f 7FFF 
+      81 00000080 F9B8          .bits   2144926136,32                   ; _PHY_tf512pFFTTable[64] @ 2048
+         00000081 7FD8 
+      82 00000082 F374          .bits   2137125748,32                   ; _PHY_tf512pFFTTable[65] @ 2080
+         00000083 7F61 
+      83 00000084 ED38          .bits   2124213560,32                   ; _PHY_tf512pFFTTable[66] @ 2112
+         00000085 7E9C 
+      84 00000086 E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[67] @ 2144
+         00000087 7D89 
+      85 00000088 E0E6          .bits   2083119334,32                   ; _PHY_tf512pFFTTable[68] @ 2176
+         00000089 7C29 
+      86 0000008a DAD8          .bits   2055002840,32                   ; _PHY_tf512pFFTTable[69] @ 2208
+         0000008b 7A7C 
+      87 0000008c D4E1          .bits   2021971169,32                   ; _PHY_tf512pFFTTable[70] @ 2240
+         0000008d 7884 
+      88 0000008e CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[71] @ 2272
+         0000008f 7641 
+      89 00000090 C946          .bits   1941293382,32                   ; _PHY_tf512pFFTTable[72] @ 2304
+         00000091 73B5 
+      90 00000092 C3AA          .bits   1893909418,32                   ; _PHY_tf512pFFTTable[73] @ 2336
+         00000093 70E2 
+      91 00000094 BE32          .bits   1841937970,32                   ; _PHY_tf512pFFTTable[74] @ 2368
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    4
+
+         00000095 6DC9 
+      92 00000096 B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[75] @ 2400
+         00000097 6A6D 
+      93 00000098 B3C1          .bits   1724888001,32                   ; _PHY_tf512pFFTTable[76] @ 2432
+         00000099 66CF 
+      94 0000009a AECD          .bits   1660006093,32                   ; _PHY_tf512pFFTTable[77] @ 2464
+         0000009b 62F1 
+      95 0000009c AA0B          .bits   1591192075,32                   ; _PHY_tf512pFFTTable[78] @ 2496
+         0000009d 5ED7 
+      96 0000009e A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[79] @ 2528
+         0000009f 5A82 
+      97 000000a0 A129          .bits   1442160937,32                   ; _PHY_tf512pFFTTable[80] @ 2560
+         000000a1 55F5 
+      98 000000a2 9D0F          .bits   1362337039,32                   ; _PHY_tf512pFFTTable[81] @ 2592
+         000000a3 5133 
+      99 000000a4 9931          .bits   1279236401,32                   ; _PHY_tf512pFFTTable[82] @ 2624
+         000000a5 4C3F 
+     100 000000a6 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[83] @ 2656
+         000000a7 471C 
+     101 000000a8 9237          .bits   1104056887,32                   ; _PHY_tf512pFFTTable[84] @ 2688
+         000000a9 41CE 
+     102 000000aa 8F1E          .bits   1012305694,32                   ; _PHY_tf512pFFTTable[85] @ 2720
+         000000ab 3C56 
+     103 000000ac 8C4B          .bits   918195275,32                    ; _PHY_tf512pFFTTable[86] @ 2752
+         000000ad 36BA 
+     104 000000ae 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[87] @ 2784
+         000000af 30FB 
+     105 000000b0 877C          .bits   723486588,32                    ; _PHY_tf512pFFTTable[88] @ 2816
+         000000b1 2B1F 
+     106 000000b2 8584          .bits   623412612,32                    ; _PHY_tf512pFFTTable[89] @ 2848
+         000000b3 2528 
+     107 000000b4 83D7          .bits   521831383,32                    ; _PHY_tf512pFFTTable[90] @ 2880
+         000000b5 1F1A 
+     108 000000b6 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[91] @ 2912
+         000000b7 18F9 
+     109 000000b8 8164          .bits   315130212,32                    ; _PHY_tf512pFFTTable[92] @ 2944
+         000000b9 12C8 
+     110 000000ba 809F          .bits   210534559,32                    ; _PHY_tf512pFFTTable[93] @ 2976
+         000000bb 0C8C 
+     111 000000bc 8028          .bits   105414696,32                    ; _PHY_tf512pFFTTable[94] @ 3008
+         000000bd 0648 
+     112 000000be 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[95] @ 3040
+         000000bf 0000 
+     113 000000c0 8028          .bits   -105349080,32                   ; _PHY_tf512pFFTTable[96] @ 3072
+         000000c1 F9B8 
+     114 000000c2 809F          .bits   -210468705,32                   ; _PHY_tf512pFFTTable[97] @ 3104
+         000000c3 F374 
+     115 000000c4 8164          .bits   -315063964,32                   ; _PHY_tf512pFFTTable[98] @ 3136
+         000000c5 ED38 
+     116 000000c6 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[99] @ 3168
+         000000c7 E707 
+     117 000000c8 83D7          .bits   -521763881,32                   ; _PHY_tf512pFFTTable[100] @ 3200
+         000000c9 E0E6 
+     118 000000ca 8584          .bits   -623344252,32                   ; _PHY_tf512pFFTTable[101] @ 3232
+         000000cb DAD8 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    5
+
+     119 000000cc 877C          .bits   -723417220,32                   ; _PHY_tf512pFFTTable[102] @ 3264
+         000000cd D4E1 
+     120 000000ce 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[103] @ 3296
+         000000cf CF05 
+     121 000000d0 8C4B          .bits   -918123445,32                   ; _PHY_tf512pFFTTable[104] @ 3328
+         000000d1 C946 
+     122 000000d2 8F1E          .bits   -1012232418,32                  ; _PHY_tf512pFFTTable[105] @ 3360
+         000000d3 C3AA 
+     123 000000d4 9237          .bits   -1103982025,32                  ; _PHY_tf512pFFTTable[106] @ 3392
+         000000d5 BE32 
+     124 000000d6 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[107] @ 3424
+         000000d7 B8E4 
+     125 000000d8 9931          .bits   -1279157967,32                  ; _PHY_tf512pFFTTable[108] @ 3456
+         000000d9 B3C1 
+     126 000000da 9D0F          .bits   -1362256625,32                  ; _PHY_tf512pFFTTable[109] @ 3488
+         000000db AECD 
+     127 000000dc A129          .bits   -1442078423,32                  ; _PHY_tf512pFFTTable[110] @ 3520
+         000000dd AA0B 
+     128 000000de A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[111] @ 3552
+         000000df A57E 
+     129 000000e0 AA0B          .bits   -1591105013,32                  ; _PHY_tf512pFFTTable[112] @ 3584
+         000000e1 A129 
+     130 000000e2 AECD          .bits   -1659916595,32                  ; _PHY_tf512pFFTTable[113] @ 3616
+         000000e3 9D0F 
+     131 000000e4 B3C1          .bits   -1724795967,32                  ; _PHY_tf512pFFTTable[114] @ 3648
+         000000e5 9931 
+     132 000000e6 B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[115] @ 3680
+         000000e7 9593 
+     133 000000e8 BE32          .bits   -1841840590,32                  ; _PHY_tf512pFFTTable[116] @ 3712
+         000000e9 9237 
+     134 000000ea C3AA          .bits   -1893809238,32                  ; _PHY_tf512pFFTTable[117] @ 3744
+         000000eb 8F1E 
+     135 000000ec C946          .bits   -1941190330,32                  ; _PHY_tf512pFFTTable[118] @ 3776
+         000000ed 8C4B 
+     136 000000ee CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[119] @ 3808
+         000000ef 89BF 
+     137 000000f0 D4E1          .bits   -2021862175,32                  ; _PHY_tf512pFFTTable[120] @ 3840
+         000000f1 877C 
+     138 000000f2 DAD8          .bits   -2054890792,32                  ; _PHY_tf512pFFTTable[121] @ 3872
+         000000f3 8584 
+     139 000000f4 E0E6          .bits   -2083004186,32                  ; _PHY_tf512pFFTTable[122] @ 3904
+         000000f5 83D7 
+     140 000000f6 E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[123] @ 3936
+         000000f7 8277 
+     141 000000f8 ED38          .bits   -2124092104,32                  ; _PHY_tf512pFFTTable[124] @ 3968
+         000000f9 8164 
+     142 000000fa F374          .bits   -2137001100,32                  ; _PHY_tf512pFFTTable[125] @ 4000
+         000000fb 809F 
+     143 000000fc F9B8          .bits   -2144798280,32                  ; _PHY_tf512pFFTTable[126] @ 4032
+         000000fd 8028 
+     144 000000fe 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[127] @ 4064
+         000000ff 7FFF 
+     145 00000100 FCDC          .bits   2146827484,32                   ; _PHY_tf512pFFTTable[128] @ 4096
+         00000101 7FF5 
+     146 00000102 F9B8          .bits   2144926136,32                   ; _PHY_tf512pFFTTable[129] @ 4128
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    6
+
+         00000103 7FD8 
+     147 00000104 F696          .bits   2141648534,32                   ; _PHY_tf512pFFTTable[130] @ 4160
+         00000105 7FA6 
+     148 00000106 F374          .bits   2137125748,32                   ; _PHY_tf512pFFTTable[131] @ 4192
+         00000107 7F61 
+     149 00000108 F055          .bits   2131357781,32                   ; _PHY_tf512pFFTTable[132] @ 4224
+         00000109 7F09 
+     150 0000010a ED38          .bits   2124213560,32                   ; _PHY_tf512pFFTTable[133] @ 4256
+         0000010b 7E9C 
+     151 0000010c EA1E          .bits   2115889694,32                   ; _PHY_tf512pFFTTable[134] @ 4288
+         0000010d 7E1D 
+     152 0000010e E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[135] @ 4320
+         0000010f 7D89 
+     153 00000110 E3F5          .bits   2095309813,32                   ; _PHY_tf512pFFTTable[136] @ 4352
+         00000111 7CE3 
+     154 00000112 E0E6          .bits   2083119334,32                   ; _PHY_tf512pFFTTable[137] @ 4384
+         00000113 7C29 
+     155 00000114 DDDD          .bits   2069683677,32                   ; _PHY_tf512pFFTTable[138] @ 4416
+         00000115 7B5C 
+     156 00000116 DAD8          .bits   2055002840,32                   ; _PHY_tf512pFFTTable[139] @ 4448
+         00000117 7A7C 
+     157 00000118 D7DA          .bits   2039076826,32                   ; _PHY_tf512pFFTTable[140] @ 4480
+         00000119 7989 
+     158 0000011a D4E1          .bits   2021971169,32                   ; _PHY_tf512pFFTTable[141] @ 4512
+         0000011b 7884 
+     159 0000011c D1EF          .bits   2003554799,32                   ; _PHY_tf512pFFTTable[142] @ 4544
+         0000011d 776B 
+     160 0000011e CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[143] @ 4576
+         0000011f 7641 
+     161 00000120 CC21          .bits   1963248673,32                   ; _PHY_tf512pFFTTable[144] @ 4608
+         00000121 7504 
+     162 00000122 C946          .bits   1941293382,32                   ; _PHY_tf512pFFTTable[145] @ 4640
+         00000123 73B5 
+     163 00000124 C674          .bits   1918158452,32                   ; _PHY_tf512pFFTTable[146] @ 4672
+         00000125 7254 
+     164 00000126 C3AA          .bits   1893909418,32                   ; _PHY_tf512pFFTTable[147] @ 4704
+         00000127 70E2 
+     165 00000128 C0E9          .bits   1868480745,32                   ; _PHY_tf512pFFTTable[148] @ 4736
+         00000129 6F5E 
+     166 0000012a BE32          .bits   1841937970,32                   ; _PHY_tf512pFFTTable[149] @ 4768
+         0000012b 6DC9 
+     167 0000012c BB86          .bits   1814281094,32                   ; _PHY_tf512pFFTTable[150] @ 4800
+         0000012d 6C23 
+     168 0000012e B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[151] @ 4832
+         0000012f 6A6D 
+     169 00000130 B64C          .bits   1755756108,32                   ; _PHY_tf512pFFTTable[152] @ 4864
+         00000131 68A6 
+     170 00000132 B3C1          .bits   1724888001,32                   ; _PHY_tf512pFFTTable[153] @ 4896
+         00000133 66CF 
+     171 00000134 B141          .bits   1692971329,32                   ; _PHY_tf512pFFTTable[154] @ 4928
+         00000135 64E8 
+     172 00000136 AECD          .bits   1660006093,32                   ; _PHY_tf512pFFTTable[155] @ 4960
+         00000137 62F1 
+     173 00000138 AC65          .bits   1626057829,32                   ; _PHY_tf512pFFTTable[156] @ 4992
+         00000139 60EB 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    7
+
+     174 0000013a AA0B          .bits   1591192075,32                   ; _PHY_tf512pFFTTable[157] @ 5024
+         0000013b 5ED7 
+     175 0000013c A7BE          .bits   1555277758,32                   ; _PHY_tf512pFFTTable[158] @ 5056
+         0000013d 5CB3 
+     176 0000013e A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[159] @ 5088
+         0000013f 5A82 
+     177 00000140 A34D          .bits   1480762189,32                   ; _PHY_tf512pFFTTable[160] @ 5120
+         00000141 5842 
+     178 00000142 A129          .bits   1442160937,32                   ; _PHY_tf512pFFTTable[161] @ 5152
+         00000143 55F5 
+     179 00000144 9F15          .bits   1402707733,32                   ; _PHY_tf512pFFTTable[162] @ 5184
+         00000145 539B 
+     180 00000146 9D0F          .bits   1362337039,32                   ; _PHY_tf512pFFTTable[163] @ 5216
+         00000147 5133 
+     181 00000148 9B18          .bits   1321179928,32                   ; _PHY_tf512pFFTTable[164] @ 5248
+         00000149 4EBF 
+     182 0000014a 9931          .bits   1279236401,32                   ; _PHY_tf512pFFTTable[165] @ 5280
+         0000014b 4C3F 
+     183 0000014c 975A          .bits   1236571994,32                   ; _PHY_tf512pFFTTable[166] @ 5312
+         0000014d 49B4 
+     184 0000014e 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[167] @ 5344
+         0000014f 471C 
+     185 00000150 93DD          .bits   1148883933,32                   ; _PHY_tf512pFFTTable[168] @ 5376
+         00000151 447A 
+     186 00000152 9237          .bits   1104056887,32                   ; _PHY_tf512pFFTTable[169] @ 5408
+         00000153 41CE 
+     187 00000154 90A2          .bits   1058508962,32                   ; _PHY_tf512pFFTTable[170] @ 5440
+         00000155 3F17 
+     188 00000156 8F1E          .bits   1012305694,32                   ; _PHY_tf512pFFTTable[171] @ 5472
+         00000157 3C56 
+     189 00000158 8DAC          .bits   965512620,32                    ; _PHY_tf512pFFTTable[172] @ 5504
+         00000159 398C 
+     190 0000015a 8C4B          .bits   918195275,32                    ; _PHY_tf512pFFTTable[173] @ 5536
+         0000015b 36BA 
+     191 0000015c 8AFC          .bits   870288124,32                    ; _PHY_tf512pFFTTable[174] @ 5568
+         0000015d 33DF 
+     192 0000015e 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[175] @ 5600
+         0000015f 30FB 
+     193 00000160 8895          .bits   772901013,32                    ; _PHY_tf512pFFTTable[176] @ 5632
+         00000161 2E11 
+     194 00000162 877C          .bits   723486588,32                    ; _PHY_tf512pFFTTable[177] @ 5664
+         00000163 2B1F 
+     195 00000164 8677          .bits   673613431,32                    ; _PHY_tf512pFFTTable[178] @ 5696
+         00000165 2826 
+     196 00000166 8584          .bits   623412612,32                    ; _PHY_tf512pFFTTable[179] @ 5728
+         00000167 2528 
+     197 00000168 84A4          .bits   572753060,32                    ; _PHY_tf512pFFTTable[180] @ 5760
+         00000169 2223 
+     198 0000016a 83D7          .bits   521831383,32                    ; _PHY_tf512pFFTTable[181] @ 5792
+         0000016b 1F1A 
+     199 0000016c 831D          .bits   470516509,32                    ; _PHY_tf512pFFTTable[182] @ 5824
+         0000016d 1C0B 
+     200 0000016e 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[183] @ 5856
+         0000016f 18F9 
+     201 00000170 81E3          .bits   367165923,32                    ; _PHY_tf512pFFTTable[184] @ 5888
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    8
+
+         00000171 15E2 
+     202 00000172 8164          .bits   315130212,32                    ; _PHY_tf512pFFTTable[185] @ 5920
+         00000173 12C8 
+     203 00000174 80F7          .bits   262897911,32                    ; _PHY_tf512pFFTTable[186] @ 5952
+         00000175 0FAB 
+     204 00000176 809F          .bits   210534559,32                    ; _PHY_tf512pFFTTable[187] @ 5984
+         00000177 0C8C 
+     205 00000178 805A          .bits   157974618,32                    ; _PHY_tf512pFFTTable[188] @ 6016
+         00000179 096A 
+     206 0000017a 8028          .bits   105414696,32                    ; _PHY_tf512pFFTTable[189] @ 6048
+         0000017b 0648 
+     207 0000017c 800B          .bits   52723723,32                     ; _PHY_tf512pFFTTable[190] @ 6080
+         0000017d 0324 
+     208 0000017e 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[191] @ 6112
+         0000017f 0000 
+     209 00000180 800B          .bits   -52658165,32                    ; _PHY_tf512pFFTTable[192] @ 6144
+         00000181 FCDC 
+     210 00000182 8028          .bits   -105349080,32                   ; _PHY_tf512pFFTTable[193] @ 6176
+         00000183 F9B8 
+     211 00000184 805A          .bits   -157908902,32                   ; _PHY_tf512pFFTTable[194] @ 6208
+         00000185 F696 
+     212 00000186 809F          .bits   -210468705,32                   ; _PHY_tf512pFFTTable[195] @ 6240
+         00000187 F374 
+     213 00000188 80F7          .bits   -262831881,32                   ; _PHY_tf512pFFTTable[196] @ 6272
+         00000189 F055 
+     214 0000018a 8164          .bits   -315063964,32                   ; _PHY_tf512pFFTTable[197] @ 6304
+         0000018b ED38 
+     215 0000018c 81E3          .bits   -367099421,32                   ; _PHY_tf512pFFTTable[198] @ 6336
+         0000018d EA1E 
+     216 0000018e 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[199] @ 6368
+         0000018f E707 
+     217 00000190 831D          .bits   -470449379,32                   ; _PHY_tf512pFFTTable[200] @ 6400
+         00000191 E3F5 
+     218 00000192 83D7          .bits   -521763881,32                   ; _PHY_tf512pFFTTable[201] @ 6432
+         00000193 E0E6 
+     219 00000194 84A4          .bits   -572685148,32                   ; _PHY_tf512pFFTTable[202] @ 6464
+         00000195 DDDD 
+     220 00000196 8584          .bits   -623344252,32                   ; _PHY_tf512pFFTTable[203] @ 6496
+         00000197 DAD8 
+     221 00000198 8677          .bits   -673544585,32                   ; _PHY_tf512pFFTTable[204] @ 6528
+         00000199 D7DA 
+     222 0000019a 877C          .bits   -723417220,32                   ; _PHY_tf512pFFTTable[205] @ 6560
+         0000019b D4E1 
+     223 0000019c 8895          .bits   -772831083,32                   ; _PHY_tf512pFFTTable[206] @ 6592
+         0000019d D1EF 
+     224 0000019e 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[207] @ 6624
+         0000019f CF05 
+     225 000001a0 8AFC          .bits   -870216964,32                   ; _PHY_tf512pFFTTable[208] @ 6656
+         000001a1 CC21 
+     226 000001a2 8C4B          .bits   -918123445,32                   ; _PHY_tf512pFFTTable[209] @ 6688
+         000001a3 C946 
+     227 000001a4 8DAC          .bits   -965440084,32                   ; _PHY_tf512pFFTTable[210] @ 6720
+         000001a5 C674 
+     228 000001a6 8F1E          .bits   -1012232418,32                  ; _PHY_tf512pFFTTable[211] @ 6752
+         000001a7 C3AA 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE    9
+
+     229 000001a8 90A2          .bits   -1058434910,32                  ; _PHY_tf512pFFTTable[212] @ 6784
+         000001a9 C0E9 
+     230 000001aa 9237          .bits   -1103982025,32                  ; _PHY_tf512pFFTTable[213] @ 6816
+         000001ab BE32 
+     231 000001ac 93DD          .bits   -1148808227,32                  ; _PHY_tf512pFFTTable[214] @ 6848
+         000001ad BB86 
+     232 000001ae 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[215] @ 6880
+         000001af B8E4 
+     233 000001b0 975A          .bits   -1236494502,32                  ; _PHY_tf512pFFTTable[216] @ 6912
+         000001b1 B64C 
+     234 000001b2 9931          .bits   -1279157967,32                  ; _PHY_tf512pFFTTable[217] @ 6944
+         000001b3 B3C1 
+     235 000001b4 9B18          .bits   -1321100520,32                  ; _PHY_tf512pFFTTable[218] @ 6976
+         000001b5 B141 
+     236 000001b6 9D0F          .bits   -1362256625,32                  ; _PHY_tf512pFFTTable[219] @ 7008
+         000001b7 AECD 
+     237 000001b8 9F15          .bits   -1402626283,32                  ; _PHY_tf512pFFTTable[220] @ 7040
+         000001b9 AC65 
+     238 000001ba A129          .bits   -1442078423,32                  ; _PHY_tf512pFFTTable[221] @ 7072
+         000001bb AA0B 
+     239 000001bc A34D          .bits   -1480678579,32                  ; _PHY_tf512pFFTTable[222] @ 7104
+         000001bd A7BE 
+     240 000001be A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[223] @ 7136
+         000001bf A57E 
+     241 000001c0 A7BE          .bits   -1555191874,32                  ; _PHY_tf512pFFTTable[224] @ 7168
+         000001c1 A34D 
+     242 000001c2 AA0B          .bits   -1591105013,32                  ; _PHY_tf512pFFTTable[225] @ 7200
+         000001c3 A129 
+     243 000001c4 AC65          .bits   -1625969563,32                  ; _PHY_tf512pFFTTable[226] @ 7232
+         000001c5 9F15 
+     244 000001c6 AECD          .bits   -1659916595,32                  ; _PHY_tf512pFFTTable[227] @ 7264
+         000001c7 9D0F 
+     245 000001c8 B141          .bits   -1692880575,32                  ; _PHY_tf512pFFTTable[228] @ 7296
+         000001c9 9B18 
+     246 000001ca B3C1          .bits   -1724795967,32                  ; _PHY_tf512pFFTTable[229] @ 7328
+         000001cb 9931 
+     247 000001cc B64C          .bits   -1755662772,32                  ; _PHY_tf512pFFTTable[230] @ 7360
+         000001cd 975A 
+     248 000001ce B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[231] @ 7392
+         000001cf 9593 
+     249 000001d0 BB86          .bits   -1814185082,32                  ; _PHY_tf512pFFTTable[232] @ 7424
+         000001d1 93DD 
+     250 000001d2 BE32          .bits   -1841840590,32                  ; _PHY_tf512pFFTTable[233] @ 7456
+         000001d3 9237 
+     251 000001d4 C0E9          .bits   -1868381975,32                  ; _PHY_tf512pFFTTable[234] @ 7488
+         000001d5 90A2 
+     252 000001d6 C3AA          .bits   -1893809238,32                  ; _PHY_tf512pFFTTable[235] @ 7520
+         000001d7 8F1E 
+     253 000001d8 C674          .bits   -1918056844,32                  ; _PHY_tf512pFFTTable[236] @ 7552
+         000001d9 8DAC 
+     254 000001da C946          .bits   -1941190330,32                  ; _PHY_tf512pFFTTable[237] @ 7584
+         000001db 8C4B 
+     255 000001dc CC21          .bits   -1963144159,32                  ; _PHY_tf512pFFTTable[238] @ 7616
+         000001dd 8AFC 
+     256 000001de CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[239] @ 7648
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   10
+
+         000001df 89BF 
+     257 000001e0 D1EF          .bits   -2003447313,32                  ; _PHY_tf512pFFTTable[240] @ 7680
+         000001e1 8895 
+     258 000001e2 D4E1          .bits   -2021862175,32                  ; _PHY_tf512pFFTTable[241] @ 7712
+         000001e3 877C 
+     259 000001e4 D7DA          .bits   -2038966310,32                  ; _PHY_tf512pFFTTable[242] @ 7744
+         000001e5 8677 
+     260 000001e6 DAD8          .bits   -2054890792,32                  ; _PHY_tf512pFFTTable[243] @ 7776
+         000001e7 8584 
+     261 000001e8 DDDD          .bits   -2069570083,32                  ; _PHY_tf512pFFTTable[244] @ 7808
+         000001e9 84A4 
+     262 000001ea E0E6          .bits   -2083004186,32                  ; _PHY_tf512pFFTTable[245] @ 7840
+         000001eb 83D7 
+     263 000001ec E3F5          .bits   -2095193099,32                  ; _PHY_tf512pFFTTable[246] @ 7872
+         000001ed 831D 
+     264 000001ee E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[247] @ 7904
+         000001ef 8277 
+     265 000001f0 EA1E          .bits   -2115769826,32                  ; _PHY_tf512pFFTTable[248] @ 7936
+         000001f1 81E3 
+     266 000001f2 ED38          .bits   -2124092104,32                  ; _PHY_tf512pFFTTable[249] @ 7968
+         000001f3 8164 
+     267 000001f4 F055          .bits   -2131234731,32                  ; _PHY_tf512pFFTTable[250] @ 8000
+         000001f5 80F7 
+     268 000001f6 F374          .bits   -2137001100,32                  ; _PHY_tf512pFFTTable[251] @ 8032
+         000001f7 809F 
+     269 000001f8 F696          .bits   -2141522282,32                  ; _PHY_tf512pFFTTable[252] @ 8064
+         000001f9 805A 
+     270 000001fa F9B8          .bits   -2144798280,32                  ; _PHY_tf512pFFTTable[253] @ 8096
+         000001fb 8028 
+     271 000001fc FCDC          .bits   -2146698020,32                  ; _PHY_tf512pFFTTable[254] @ 8128
+         000001fd 800B 
+     272 000001fe 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[255] @ 8160
+         000001ff 7FFF 
+     273 00000200 FE6E          .bits   2147352174,32                   ; _PHY_tf512pFFTTable[256] @ 8192
+         00000201 7FFD 
+     274 00000202 FCDC          .bits   2146827484,32                   ; _PHY_tf512pFFTTable[257] @ 8224
+         00000203 7FF5 
+     275 00000204 FB4A          .bits   2146040650,32                   ; _PHY_tf512pFFTTable[258] @ 8256
+         00000205 7FE9 
+     276 00000206 F9B8          .bits   2144926136,32                   ; _PHY_tf512pFFTTable[259] @ 8288
+         00000207 7FD8 
+     277 00000208 F827          .bits   2143418407,32                   ; _PHY_tf512pFFTTable[260] @ 8320
+         00000209 7FC1 
+     278 0000020a F696          .bits   2141648534,32                   ; _PHY_tf512pFFTTable[261] @ 8352
+         0000020b 7FA6 
+     279 0000020c F505          .bits   2139550981,32                   ; _PHY_tf512pFFTTable[262] @ 8384
+         0000020d 7F86 
+     280 0000020e F374          .bits   2137125748,32                   ; _PHY_tf512pFFTTable[263] @ 8416
+         0000020f 7F61 
+     281 00000210 F1E4          .bits   2134372836,32                   ; _PHY_tf512pFFTTable[264] @ 8448
+         00000211 7F37 
+     282 00000212 F055          .bits   2131357781,32                   ; _PHY_tf512pFFTTable[265] @ 8480
+         00000213 7F09 
+     283 00000214 EEC6          .bits   2127949510,32                   ; _PHY_tf512pFFTTable[266] @ 8512
+         00000215 7ED5 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   11
+
+     284 00000216 ED38          .bits   2124213560,32                   ; _PHY_tf512pFFTTable[267] @ 8544
+         00000217 7E9C 
+     285 00000218 EBAB          .bits   2120215467,32                   ; _PHY_tf512pFFTTable[268] @ 8576
+         00000219 7E5F 
+     286 0000021a EA1E          .bits   2115889694,32                   ; _PHY_tf512pFFTTable[269] @ 8608
+         0000021b 7E1D 
+     287 0000021c E892          .bits   2111170706,32                   ; _PHY_tf512pFFTTable[270] @ 8640
+         0000021d 7DD5 
+     288 0000021e E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[271] @ 8672
+         0000021f 7D89 
+     289 00000220 E57E          .bits   2100946302,32                   ; _PHY_tf512pFFTTable[272] @ 8704
+         00000221 7D39 
+     290 00000222 E3F5          .bits   2095309813,32                   ; _PHY_tf512pFFTTable[273] @ 8736
+         00000223 7CE3 
+     291 00000224 E26D          .bits   2089345645,32                   ; _PHY_tf512pFFTTable[274] @ 8768
+         00000225 7C88 
+     292 00000226 E0E6          .bits   2083119334,32                   ; _PHY_tf512pFFTTable[275] @ 8800
+         00000227 7C29 
+     293 00000228 DF61          .bits   2076565345,32                   ; _PHY_tf512pFFTTable[276] @ 8832
+         00000229 7BC5 
+     294 0000022a DDDD          .bits   2069683677,32                   ; _PHY_tf512pFFTTable[277] @ 8864
+         0000022b 7B5C 
+     295 0000022c DC5A          .bits   2062474330,32                   ; _PHY_tf512pFFTTable[278] @ 8896
+         0000022d 7AEE 
+     296 0000022e DAD8          .bits   2055002840,32                   ; _PHY_tf512pFFTTable[279] @ 8928
+         0000022f 7A7C 
+     297 00000230 D958          .bits   2047203672,32                   ; _PHY_tf512pFFTTable[280] @ 8960
+         00000231 7A05 
+     298 00000232 D7DA          .bits   2039076826,32                   ; _PHY_tf512pFFTTable[281] @ 8992
+         00000233 7989 
+     299 00000234 D65D          .bits   2030687837,32                   ; _PHY_tf512pFFTTable[282] @ 9024
+         00000235 7909 
+     300 00000236 D4E1          .bits   2021971169,32                   ; _PHY_tf512pFFTTable[283] @ 9056
+         00000237 7884 
+     301 00000238 D367          .bits   2012926823,32                   ; _PHY_tf512pFFTTable[284] @ 9088
+         00000239 77FA 
+     302 0000023a D1EF          .bits   2003554799,32                   ; _PHY_tf512pFFTTable[285] @ 9120
+         0000023b 776B 
+     303 0000023c D079          .bits   1993920633,32                   ; _PHY_tf512pFFTTable[286] @ 9152
+         0000023d 76D8 
+     304 0000023e CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[287] @ 9184
+         0000023f 7641 
+     305 00000240 CD92          .bits   1973800338,32                   ; _PHY_tf512pFFTTable[288] @ 9216
+         00000241 75A5 
+     306 00000242 CC21          .bits   1963248673,32                   ; _PHY_tf512pFFTTable[289] @ 9248
+         00000243 7504 
+     307 00000244 CAB3          .bits   1952434867,32                   ; _PHY_tf512pFFTTable[290] @ 9280
+         00000245 745F 
+     308 00000246 C946          .bits   1941293382,32                   ; _PHY_tf512pFFTTable[291] @ 9312
+         00000247 73B5 
+     309 00000248 C7DC          .bits   1929889756,32                   ; _PHY_tf512pFFTTable[292] @ 9344
+         00000249 7307 
+     310 0000024a C674          .bits   1918158452,32                   ; _PHY_tf512pFFTTable[293] @ 9376
+         0000024b 7254 
+     311 0000024c C50E          .bits   1906165006,32                   ; _PHY_tf512pFFTTable[294] @ 9408
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   12
+
+         0000024d 719D 
+     312 0000024e C3AA          .bits   1893909418,32                   ; _PHY_tf512pFFTTable[295] @ 9440
+         0000024f 70E2 
+     313 00000250 C248          .bits   1881326152,32                   ; _PHY_tf512pFFTTable[296] @ 9472
+         00000251 7022 
+     314 00000252 C0E9          .bits   1868480745,32                   ; _PHY_tf512pFFTTable[297] @ 9504
+         00000253 6F5E 
+     315 00000254 BF8D          .bits   1855373197,32                   ; _PHY_tf512pFFTTable[298] @ 9536
+         00000255 6E96 
+     316 00000256 BE32          .bits   1841937970,32                   ; _PHY_tf512pFFTTable[299] @ 9568
+         00000257 6DC9 
+     317 00000258 BCDB          .bits   1828240603,32                   ; _PHY_tf512pFFTTable[300] @ 9600
+         00000259 6CF8 
+     318 0000025a BB86          .bits   1814281094,32                   ; _PHY_tf512pFFTTable[301] @ 9632
+         0000025b 6C23 
+     319 0000025c BA33          .bits   1800059443,32                   ; _PHY_tf512pFFTTable[302] @ 9664
+         0000025d 6B4A 
+     320 0000025e B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[303] @ 9696
+         0000025f 6A6D 
+     321 00000260 B797          .bits   1770764183,32                   ; _PHY_tf512pFFTTable[304] @ 9728
+         00000261 698B 
+     322 00000262 B64C          .bits   1755756108,32                   ; _PHY_tf512pFFTTable[305] @ 9760
+         00000263 68A6 
+     323 00000264 B505          .bits   1740420357,32                   ; _PHY_tf512pFFTTable[306] @ 9792
+         00000265 67BC 
+     324 00000266 B3C1          .bits   1724888001,32                   ; _PHY_tf512pFFTTable[307] @ 9824
+         00000267 66CF 
+     325 00000268 B27F          .bits   1709027967,32                   ; _PHY_tf512pFFTTable[308] @ 9856
+         00000269 65DD 
+     326 0000026a B141          .bits   1692971329,32                   ; _PHY_tf512pFFTTable[309] @ 9888
+         0000026b 64E8 
+     327 0000026c B005          .bits   1676587013,32                   ; _PHY_tf512pFFTTable[310] @ 9920
+         0000026d 63EE 
+     328 0000026e AECD          .bits   1660006093,32                   ; _PHY_tf512pFFTTable[311] @ 9952
+         0000026f 62F1 
+     329 00000270 AD98          .bits   1643163032,32                   ; _PHY_tf512pFFTTable[312] @ 9984
+         00000271 61F0 
+     330 00000272 AC65          .bits   1626057829,32                   ; _PHY_tf512pFFTTable[313] @ 10016
+         00000273 60EB 
+     331 00000274 AB37          .bits   1608756023,32                   ; _PHY_tf512pFFTTable[314] @ 10048
+         00000275 5FE3 
+     332 00000276 AA0B          .bits   1591192075,32                   ; _PHY_tf512pFFTTable[315] @ 10080
+         00000277 5ED7 
+     333 00000278 A8E3          .bits   1573365987,32                   ; _PHY_tf512pFFTTable[316] @ 10112
+         00000279 5DC7 
+     334 0000027a A7BE          .bits   1555277758,32                   ; _PHY_tf512pFFTTable[317] @ 10144
+         0000027b 5CB3 
+     335 0000027c A69C          .bits   1536992924,32                   ; _PHY_tf512pFFTTable[318] @ 10176
+         0000027d 5B9C 
+     336 0000027e A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[319] @ 10208
+         0000027f 5A82 
+     337 00000280 A464          .bits   1499767908,32                   ; _PHY_tf512pFFTTable[320] @ 10240
+         00000281 5964 
+     338 00000282 A34D          .bits   1480762189,32                   ; _PHY_tf512pFFTTable[321] @ 10272
+         00000283 5842 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   13
+
+     339 00000284 A239          .bits   1461559865,32                   ; _PHY_tf512pFFTTable[322] @ 10304
+         00000285 571D 
+     340 00000286 A129          .bits   1442160937,32                   ; _PHY_tf512pFFTTable[323] @ 10336
+         00000287 55F5 
+     341 00000288 A01D          .bits   1422499869,32                   ; _PHY_tf512pFFTTable[324] @ 10368
+         00000289 54C9 
+     342 0000028a 9F15          .bits   1402707733,32                   ; _PHY_tf512pFFTTable[325] @ 10400
+         0000028b 539B 
+     343 0000028c 9E10          .bits   1382587920,32                   ; _PHY_tf512pFFTTable[326] @ 10432
+         0000028d 5268 
+     344 0000028e 9D0F          .bits   1362337039,32                   ; _PHY_tf512pFFTTable[327] @ 10464
+         0000028f 5133 
+     345 00000290 9C12          .bits   1341889554,32                   ; _PHY_tf512pFFTTable[328] @ 10496
+         00000291 4FFB 
+     346 00000292 9B18          .bits   1321179928,32                   ; _PHY_tf512pFFTTable[329] @ 10528
+         00000293 4EBF 
+     347 00000294 9A23          .bits   1300339235,32                   ; _PHY_tf512pFFTTable[330] @ 10560
+         00000295 4D81 
+     348 00000296 9931          .bits   1279236401,32                   ; _PHY_tf512pFFTTable[331] @ 10592
+         00000297 4C3F 
+     349 00000298 9844          .bits   1258002500,32                   ; _PHY_tf512pFFTTable[332] @ 10624
+         00000299 4AFB 
+     350 0000029a 975A          .bits   1236571994,32                   ; _PHY_tf512pFFTTable[333] @ 10656
+         0000029b 49B4 
+     351 0000029c 9675          .bits   1214879349,32                   ; _PHY_tf512pFFTTable[334] @ 10688
+         0000029d 4869 
+     352 0000029e 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[335] @ 10720
+         0000029f 471C 
+     353 000002a0 94B6          .bits   1171100854,32                   ; _PHY_tf512pFFTTable[336] @ 10752
+         000002a1 45CD 
+     354 000002a2 93DD          .bits   1148883933,32                   ; _PHY_tf512pFFTTable[337] @ 10784
+         000002a3 447A 
+     355 000002a4 9308          .bits   1126535944,32                   ; _PHY_tf512pFFTTable[338] @ 10816
+         000002a5 4325 
+     356 000002a6 9237          .bits   1104056887,32                   ; _PHY_tf512pFFTTable[339] @ 10848
+         000002a7 41CE 
+     357 000002a8 916A          .bits   1081315690,32                   ; _PHY_tf512pFFTTable[340] @ 10880
+         000002a9 4073 
+     358 000002aa 90A2          .bits   1058508962,32                   ; _PHY_tf512pFFTTable[341] @ 10912
+         000002ab 3F17 
+     359 000002ac 8FDE          .bits   1035505630,32                   ; _PHY_tf512pFFTTable[342] @ 10944
+         000002ad 3DB8 
+     360 000002ae 8F1E          .bits   1012305694,32                   ; _PHY_tf512pFFTTable[343] @ 10976
+         000002af 3C56 
+     361 000002b0 8E63          .bits   988974691,32                    ; _PHY_tf512pFFTTable[344] @ 11008
+         000002b1 3AF2 
+     362 000002b2 8DAC          .bits   965512620,32                    ; _PHY_tf512pFFTTable[345] @ 11040
+         000002b3 398C 
+     363 000002b4 8CF9          .bits   941919481,32                    ; _PHY_tf512pFFTTable[346] @ 11072
+         000002b5 3824 
+     364 000002b6 8C4B          .bits   918195275,32                    ; _PHY_tf512pFFTTable[347] @ 11104
+         000002b7 36BA 
+     365 000002b8 8BA1          .bits   894274465,32                    ; _PHY_tf512pFFTTable[348] @ 11136
+         000002b9 354D 
+     366 000002ba 8AFC          .bits   870288124,32                    ; _PHY_tf512pFFTTable[349] @ 11168
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   14
+
+         000002bb 33DF 
+     367 000002bc 8A5B          .bits   846105179,32                    ; _PHY_tf512pFFTTable[350] @ 11200
+         000002bd 326E 
+     368 000002be 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[351] @ 11232
+         000002bf 30FB 
+     369 000002c0 8928          .bits   797411624,32                    ; _PHY_tf512pFFTTable[352] @ 11264
+         000002c1 2F87 
+     370 000002c2 8895          .bits   772901013,32                    ; _PHY_tf512pFFTTable[353] @ 11296
+         000002c3 2E11 
+     371 000002c4 8806          .bits   748259334,32                    ; _PHY_tf512pFFTTable[354] @ 11328
+         000002c5 2C99 
+     372 000002c6 877C          .bits   723486588,32                    ; _PHY_tf512pFFTTable[355] @ 11360
+         000002c7 2B1F 
+     373 000002c8 86F7          .bits   698582775,32                    ; _PHY_tf512pFFTTable[356] @ 11392
+         000002c9 29A3 
+     374 000002ca 8677          .bits   673613431,32                    ; _PHY_tf512pFFTTable[357] @ 11424
+         000002cb 2826 
+     375 000002cc 85FB          .bits   648578555,32                    ; _PHY_tf512pFFTTable[358] @ 11456
+         000002cd 26A8 
+     376 000002ce 8584          .bits   623412612,32                    ; _PHY_tf512pFFTTable[359] @ 11488
+         000002cf 2528 
+     377 000002d0 8512          .bits   598115602,32                    ; _PHY_tf512pFFTTable[360] @ 11520
+         000002d1 23A6 
+     378 000002d2 84A4          .bits   572753060,32                    ; _PHY_tf512pFFTTable[361] @ 11552
+         000002d3 2223 
+     379 000002d4 843B          .bits   547324987,32                    ; _PHY_tf512pFFTTable[362] @ 11584
+         000002d5 209F 
+     380 000002d6 83D7          .bits   521831383,32                    ; _PHY_tf512pFFTTable[363] @ 11616
+         000002d7 1F1A 
+     381 000002d8 8378          .bits   496206712,32                    ; _PHY_tf512pFFTTable[364] @ 11648
+         000002d9 1D93 
+     382 000002da 831D          .bits   470516509,32                    ; _PHY_tf512pFFTTable[365] @ 11680
+         000002db 1C0B 
+     383 000002dc 82C7          .bits   444760775,32                    ; _PHY_tf512pFFTTable[366] @ 11712
+         000002dd 1A82 
+     384 000002de 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[367] @ 11744
+         000002df 18F9 
+     385 000002e0 822B          .bits   393118251,32                    ; _PHY_tf512pFFTTable[368] @ 11776
+         000002e1 176E 
+     386 000002e2 81E3          .bits   367165923,32                    ; _PHY_tf512pFFTTable[369] @ 11808
+         000002e3 15E2 
+     387 000002e4 81A1          .bits   341148065,32                    ; _PHY_tf512pFFTTable[370] @ 11840
+         000002e5 1455 
+     388 000002e6 8164          .bits   315130212,32                    ; _PHY_tf512pFFTTable[371] @ 11872
+         000002e7 12C8 
+     389 000002e8 812B          .bits   289046827,32                    ; _PHY_tf512pFFTTable[372] @ 11904
+         000002e9 113A 
+     390 000002ea 80F7          .bits   262897911,32                    ; _PHY_tf512pFFTTable[373] @ 11936
+         000002eb 0FAB 
+     391 000002ec 80C9          .bits   236749001,32                    ; _PHY_tf512pFFTTable[374] @ 11968
+         000002ed 0E1C 
+     392 000002ee 809F          .bits   210534559,32                    ; _PHY_tf512pFFTTable[375] @ 12000
+         000002ef 0C8C 
+     393 000002f0 807A          .bits   184254586,32                    ; _PHY_tf512pFFTTable[376] @ 12032
+         000002f1 0AFB 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   15
+
+     394 000002f2 805A          .bits   157974618,32                    ; _PHY_tf512pFFTTable[377] @ 12064
+         000002f3 096A 
+     395 000002f4 803F          .bits   131694655,32                    ; _PHY_tf512pFFTTable[378] @ 12096
+         000002f5 07D9 
+     396 000002f6 8028          .bits   105414696,32                    ; _PHY_tf512pFFTTable[379] @ 12128
+         000002f7 0648 
+     397 000002f8 8017          .bits   79069207,32                     ; _PHY_tf512pFFTTable[380] @ 12160
+         000002f9 04B6 
+     398 000002fa 800B          .bits   52723723,32                     ; _PHY_tf512pFFTTable[381] @ 12192
+         000002fb 0324 
+     399 000002fc 8003          .bits   26378243,32                     ; _PHY_tf512pFFTTable[382] @ 12224
+         000002fd 0192 
+     400 000002fe 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[383] @ 12256
+         000002ff 0000 
+     401 00000300 8003          .bits   -26312701,32                    ; _PHY_tf512pFFTTable[384] @ 12288
+         00000301 FE6E 
+     402 00000302 800B          .bits   -52658165,32                    ; _PHY_tf512pFFTTable[385] @ 12320
+         00000303 FCDC 
+     403 00000304 8017          .bits   -79003625,32                    ; _PHY_tf512pFFTTable[386] @ 12352
+         00000305 FB4A 
+     404 00000306 8028          .bits   -105349080,32                   ; _PHY_tf512pFFTTable[387] @ 12384
+         00000307 F9B8 
+     405 00000308 803F          .bits   -131628993,32                   ; _PHY_tf512pFFTTable[388] @ 12416
+         00000309 F827 
+     406 0000030a 805A          .bits   -157908902,32                   ; _PHY_tf512pFFTTable[389] @ 12448
+         0000030b F696 
+     407 0000030c 807A          .bits   -184188806,32                   ; _PHY_tf512pFFTTable[390] @ 12480
+         0000030d F505 
+     408 0000030e 809F          .bits   -210468705,32                   ; _PHY_tf512pFFTTable[391] @ 12512
+         0000030f F374 
+     409 00000310 80C9          .bits   -236683063,32                   ; _PHY_tf512pFFTTable[392] @ 12544
+         00000311 F1E4 
+     410 00000312 80F7          .bits   -262831881,32                   ; _PHY_tf512pFFTTable[393] @ 12576
+         00000313 F055 
+     411 00000314 812B          .bits   -288980693,32                   ; _PHY_tf512pFFTTable[394] @ 12608
+         00000315 EEC6 
+     412 00000316 8164          .bits   -315063964,32                   ; _PHY_tf512pFFTTable[395] @ 12640
+         00000317 ED38 
+     413 00000318 81A1          .bits   -341081695,32                   ; _PHY_tf512pFFTTable[396] @ 12672
+         00000319 EBAB 
+     414 0000031a 81E3          .bits   -367099421,32                   ; _PHY_tf512pFFTTable[397] @ 12704
+         0000031b EA1E 
+     415 0000031c 822B          .bits   -393051605,32                   ; _PHY_tf512pFFTTable[398] @ 12736
+         0000031d E892 
+     416 0000031e 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[399] @ 12768
+         0000031f E707 
+     417 00000320 82C7          .bits   -444693817,32                   ; _PHY_tf512pFFTTable[400] @ 12800
+         00000321 E57E 
+     418 00000322 831D          .bits   -470449379,32                   ; _PHY_tf512pFFTTable[401] @ 12832
+         00000323 E3F5 
+     419 00000324 8378          .bits   -496139400,32                   ; _PHY_tf512pFFTTable[402] @ 12864
+         00000325 E26D 
+     420 00000326 83D7          .bits   -521763881,32                   ; _PHY_tf512pFFTTable[403] @ 12896
+         00000327 E0E6 
+     421 00000328 843B          .bits   -547257285,32                   ; _PHY_tf512pFFTTable[404] @ 12928
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   16
+
+         00000329 DF61 
+     422 0000032a 84A4          .bits   -572685148,32                   ; _PHY_tf512pFFTTable[405] @ 12960
+         0000032b DDDD 
+     423 0000032c 8512          .bits   -598047470,32                   ; _PHY_tf512pFFTTable[406] @ 12992
+         0000032d DC5A 
+     424 0000032e 8584          .bits   -623344252,32                   ; _PHY_tf512pFFTTable[407] @ 13024
+         0000032f DAD8 
+     425 00000330 85FB          .bits   -648509957,32                   ; _PHY_tf512pFFTTable[408] @ 13056
+         00000331 D958 
+     426 00000332 8677          .bits   -673544585,32                   ; _PHY_tf512pFFTTable[409] @ 13088
+         00000333 D7DA 
+     427 00000334 86F7          .bits   -698513673,32                   ; _PHY_tf512pFFTTable[410] @ 13120
+         00000335 D65D 
+     428 00000336 877C          .bits   -723417220,32                   ; _PHY_tf512pFFTTable[411] @ 13152
+         00000337 D4E1 
+     429 00000338 8806          .bits   -748189690,32                   ; _PHY_tf512pFFTTable[412] @ 13184
+         00000339 D367 
+     430 0000033a 8895          .bits   -772831083,32                   ; _PHY_tf512pFFTTable[413] @ 13216
+         0000033b D1EF 
+     431 0000033c 8928          .bits   -797341400,32                   ; _PHY_tf512pFFTTable[414] @ 13248
+         0000033d D079 
+     432 0000033e 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[415] @ 13280
+         0000033f CF05 
+     433 00000340 8A5B          .bits   -846034341,32                   ; _PHY_tf512pFFTTable[416] @ 13312
+         00000341 CD92 
+     434 00000342 8AFC          .bits   -870216964,32                   ; _PHY_tf512pFFTTable[417] @ 13344
+         00000343 CC21 
+     435 00000344 8BA1          .bits   -894202975,32                   ; _PHY_tf512pFFTTable[418] @ 13376
+         00000345 CAB3 
+     436 00000346 8C4B          .bits   -918123445,32                   ; _PHY_tf512pFFTTable[419] @ 13408
+         00000347 C946 
+     437 00000348 8CF9          .bits   -941847303,32                   ; _PHY_tf512pFFTTable[420] @ 13440
+         00000349 C7DC 
+     438 0000034a 8DAC          .bits   -965440084,32                   ; _PHY_tf512pFFTTable[421] @ 13472
+         0000034b C674 
+     439 0000034c 8E63          .bits   -988901789,32                   ; _PHY_tf512pFFTTable[422] @ 13504
+         0000034d C50E 
+     440 0000034e 8F1E          .bits   -1012232418,32                  ; _PHY_tf512pFFTTable[423] @ 13536
+         0000034f C3AA 
+     441 00000350 8FDE          .bits   -1035431970,32                  ; _PHY_tf512pFFTTable[424] @ 13568
+         00000351 C248 
+     442 00000352 90A2          .bits   -1058434910,32                  ; _PHY_tf512pFFTTable[425] @ 13600
+         00000353 C0E9 
+     443 00000354 916A          .bits   -1081241238,32                  ; _PHY_tf512pFFTTable[426] @ 13632
+         00000355 BF8D 
+     444 00000356 9237          .bits   -1103982025,32                  ; _PHY_tf512pFFTTable[427] @ 13664
+         00000357 BE32 
+     445 00000358 9308          .bits   -1126460664,32                  ; _PHY_tf512pFFTTable[428] @ 13696
+         00000359 BCDB 
+     446 0000035a 93DD          .bits   -1148808227,32                  ; _PHY_tf512pFFTTable[429] @ 13728
+         0000035b BB86 
+     447 0000035c 94B6          .bits   -1171024714,32                  ; _PHY_tf512pFFTTable[430] @ 13760
+         0000035d BA33 
+     448 0000035e 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[431] @ 13792
+         0000035f B8E4 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   17
+
+     449 00000360 9675          .bits   -1214802315,32                  ; _PHY_tf512pFFTTable[432] @ 13824
+         00000361 B797 
+     450 00000362 975A          .bits   -1236494502,32                  ; _PHY_tf512pFFTTable[433] @ 13856
+         00000363 B64C 
+     451 00000364 9844          .bits   -1257924540,32                  ; _PHY_tf512pFFTTable[434] @ 13888
+         00000365 B505 
+     452 00000366 9931          .bits   -1279157967,32                  ; _PHY_tf512pFFTTable[435] @ 13920
+         00000367 B3C1 
+     453 00000368 9A23          .bits   -1300260317,32                  ; _PHY_tf512pFFTTable[436] @ 13952
+         00000369 B27F 
+     454 0000036a 9B18          .bits   -1321100520,32                  ; _PHY_tf512pFFTTable[437] @ 13984
+         0000036b B141 
+     455 0000036c 9C12          .bits   -1341809646,32                  ; _PHY_tf512pFFTTable[438] @ 14016
+         0000036d B005 
+     456 0000036e 9D0F          .bits   -1362256625,32                  ; _PHY_tf512pFFTTable[439] @ 14048
+         0000036f AECD 
+     457 00000370 9E10          .bits   -1382506992,32                  ; _PHY_tf512pFFTTable[440] @ 14080
+         00000371 AD98 
+     458 00000372 9F15          .bits   -1402626283,32                  ; _PHY_tf512pFFTTable[441] @ 14112
+         00000373 AC65 
+     459 00000374 A01D          .bits   -1422417891,32                  ; _PHY_tf512pFFTTable[442] @ 14144
+         00000375 AB37 
+     460 00000376 A129          .bits   -1442078423,32                  ; _PHY_tf512pFFTTable[443] @ 14176
+         00000377 AA0B 
+     461 00000378 A239          .bits   -1461476807,32                  ; _PHY_tf512pFFTTable[444] @ 14208
+         00000379 A8E3 
+     462 0000037a A34D          .bits   -1480678579,32                  ; _PHY_tf512pFFTTable[445] @ 14240
+         0000037b A7BE 
+     463 0000037c A464          .bits   -1499683740,32                  ; _PHY_tf512pFFTTable[446] @ 14272
+         0000037d A69C 
+     464 0000037e A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[447] @ 14304
+         0000037f A57E 
+     465 00000380 A69C          .bits   -1536907620,32                  ; _PHY_tf512pFFTTable[448] @ 14336
+         00000381 A464 
+     466 00000382 A7BE          .bits   -1555191874,32                  ; _PHY_tf512pFFTTable[449] @ 14368
+         00000383 A34D 
+     467 00000384 A8E3          .bits   -1573279517,32                  ; _PHY_tf512pFFTTable[450] @ 14400
+         00000385 A239 
+     468 00000386 AA0B          .bits   -1591105013,32                  ; _PHY_tf512pFFTTable[451] @ 14432
+         00000387 A129 
+     469 00000388 AB37          .bits   -1608668361,32                  ; _PHY_tf512pFFTTable[452] @ 14464
+         00000389 A01D 
+     470 0000038a AC65          .bits   -1625969563,32                  ; _PHY_tf512pFFTTable[453] @ 14496
+         0000038b 9F15 
+     471 0000038c AD98          .bits   -1643074152,32                  ; _PHY_tf512pFFTTable[454] @ 14528
+         0000038d 9E10 
+     472 0000038e AECD          .bits   -1659916595,32                  ; _PHY_tf512pFFTTable[455] @ 14560
+         0000038f 9D0F 
+     473 00000390 B005          .bits   -1676496891,32                  ; _PHY_tf512pFFTTable[456] @ 14592
+         00000391 9C12 
+     474 00000392 B141          .bits   -1692880575,32                  ; _PHY_tf512pFFTTable[457] @ 14624
+         00000393 9B18 
+     475 00000394 B27F          .bits   -1708936577,32                  ; _PHY_tf512pFFTTable[458] @ 14656
+         00000395 9A23 
+     476 00000396 B3C1          .bits   -1724795967,32                  ; _PHY_tf512pFFTTable[459] @ 14688
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   18
+
+         00000397 9931 
+     477 00000398 B505          .bits   -1740327675,32                  ; _PHY_tf512pFFTTable[460] @ 14720
+         00000399 9844 
+     478 0000039a B64C          .bits   -1755662772,32                  ; _PHY_tf512pFFTTable[461] @ 14752
+         0000039b 975A 
+     479 0000039c B797          .bits   -1770670185,32                  ; _PHY_tf512pFFTTable[462] @ 14784
+         0000039d 9675 
+     480 0000039e B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[463] @ 14816
+         0000039f 9593 
+     481 000003a0 BA33          .bits   -1799964109,32                  ; _PHY_tf512pFFTTable[464] @ 14848
+         000003a1 94B6 
+     482 000003a2 BB86          .bits   -1814185082,32                  ; _PHY_tf512pFFTTable[465] @ 14880
+         000003a3 93DD 
+     483 000003a4 BCDB          .bits   -1828143909,32                  ; _PHY_tf512pFFTTable[466] @ 14912
+         000003a5 9308 
+     484 000003a6 BE32          .bits   -1841840590,32                  ; _PHY_tf512pFFTTable[467] @ 14944
+         000003a7 9237 
+     485 000003a8 BF8D          .bits   -1855275123,32                  ; _PHY_tf512pFFTTable[468] @ 14976
+         000003a9 916A 
+     486 000003aa C0E9          .bits   -1868381975,32                  ; _PHY_tf512pFFTTable[469] @ 15008
+         000003ab 90A2 
+     487 000003ac C248          .bits   -1881226680,32                  ; _PHY_tf512pFFTTable[470] @ 15040
+         000003ad 8FDE 
+     488 000003ae C3AA          .bits   -1893809238,32                  ; _PHY_tf512pFFTTable[471] @ 15072
+         000003af 8F1E 
+     489 000003b0 C50E          .bits   -1906064114,32                  ; _PHY_tf512pFFTTable[472] @ 15104
+         000003b1 8E63 
+     490 000003b2 C674          .bits   -1918056844,32                  ; _PHY_tf512pFFTTable[473] @ 15136
+         000003b3 8DAC 
+     491 000003b4 C7DC          .bits   -1929787428,32                  ; _PHY_tf512pFFTTable[474] @ 15168
+         000003b5 8CF9 
+     492 000003b6 C946          .bits   -1941190330,32                  ; _PHY_tf512pFFTTable[475] @ 15200
+         000003b7 8C4B 
+     493 000003b8 CAB3          .bits   -1952331085,32                  ; _PHY_tf512pFFTTable[476] @ 15232
+         000003b9 8BA1 
+     494 000003ba CC21          .bits   -1963144159,32                  ; _PHY_tf512pFFTTable[477] @ 15264
+         000003bb 8AFC 
+     495 000003bc CD92          .bits   -1973695086,32                  ; _PHY_tf512pFFTTable[478] @ 15296
+         000003bd 8A5B 
+     496 000003be CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[479] @ 15328
+         000003bf 89BF 
+     497 000003c0 D079          .bits   -1993813895,32                  ; _PHY_tf512pFFTTable[480] @ 15360
+         000003c1 8928 
+     498 000003c2 D1EF          .bits   -2003447313,32                  ; _PHY_tf512pFFTTable[481] @ 15392
+         000003c3 8895 
+     499 000003c4 D367          .bits   -2012818585,32                  ; _PHY_tf512pFFTTable[482] @ 15424
+         000003c5 8806 
+     500 000003c6 D4E1          .bits   -2021862175,32                  ; _PHY_tf512pFFTTable[483] @ 15456
+         000003c7 877C 
+     501 000003c8 D65D          .bits   -2030578083,32                  ; _PHY_tf512pFFTTable[484] @ 15488
+         000003c9 86F7 
+     502 000003ca D7DA          .bits   -2038966310,32                  ; _PHY_tf512pFFTTable[485] @ 15520
+         000003cb 8677 
+     503 000003cc D958          .bits   -2047092392,32                  ; _PHY_tf512pFFTTable[486] @ 15552
+         000003cd 85FB 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   19
+
+     504 000003ce DAD8          .bits   -2054890792,32                  ; _PHY_tf512pFFTTable[487] @ 15584
+         000003cf 8584 
+     505 000003d0 DC5A          .bits   -2062361510,32                  ; _PHY_tf512pFFTTable[488] @ 15616
+         000003d1 8512 
+     506 000003d2 DDDD          .bits   -2069570083,32                  ; _PHY_tf512pFFTTable[489] @ 15648
+         000003d3 84A4 
+     507 000003d4 DF61          .bits   -2076450975,32                  ; _PHY_tf512pFFTTable[490] @ 15680
+         000003d5 843B 
+     508 000003d6 E0E6          .bits   -2083004186,32                  ; _PHY_tf512pFFTTable[491] @ 15712
+         000003d7 83D7 
+     509 000003d8 E26D          .bits   -2089229715,32                  ; _PHY_tf512pFFTTable[492] @ 15744
+         000003d9 8378 
+     510 000003da E3F5          .bits   -2095193099,32                  ; _PHY_tf512pFFTTable[493] @ 15776
+         000003db 831D 
+     511 000003dc E57E          .bits   -2100828802,32                  ; _PHY_tf512pFFTTable[494] @ 15808
+         000003dd 82C7 
+     512 000003de E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[495] @ 15840
+         000003df 8277 
+     513 000003e0 E892          .bits   -2111051630,32                  ; _PHY_tf512pFFTTable[496] @ 15872
+         000003e1 822B 
+     514 000003e2 EA1E          .bits   -2115769826,32                  ; _PHY_tf512pFFTTable[497] @ 15904
+         000003e3 81E3 
+     515 000003e4 EBAB          .bits   -2120094805,32                  ; _PHY_tf512pFFTTable[498] @ 15936
+         000003e5 81A1 
+     516 000003e6 ED38          .bits   -2124092104,32                  ; _PHY_tf512pFFTTable[499] @ 15968
+         000003e7 8164 
+     517 000003e8 EEC6          .bits   -2127827258,32                  ; _PHY_tf512pFFTTable[500] @ 16000
+         000003e9 812B 
+     518 000003ea F055          .bits   -2131234731,32                  ; _PHY_tf512pFFTTable[501] @ 16032
+         000003eb 80F7 
+     519 000003ec F1E4          .bits   -2134248988,32                  ; _PHY_tf512pFFTTable[502] @ 16064
+         000003ed 80C9 
+     520 000003ee F374          .bits   -2137001100,32                  ; _PHY_tf512pFFTTable[503] @ 16096
+         000003ef 809F 
+     521 000003f0 F505          .bits   -2139425531,32                  ; _PHY_tf512pFFTTable[504] @ 16128
+         000003f1 807A 
+     522 000003f2 F696          .bits   -2141522282,32                  ; _PHY_tf512pFFTTable[505] @ 16160
+         000003f3 805A 
+     523 000003f4 F827          .bits   -2143291353,32                  ; _PHY_tf512pFFTTable[506] @ 16192
+         000003f5 803F 
+     524 000003f6 F9B8          .bits   -2144798280,32                  ; _PHY_tf512pFFTTable[507] @ 16224
+         000003f7 8028 
+     525 000003f8 FB4A          .bits   -2145911990,32                  ; _PHY_tf512pFFTTable[508] @ 16256
+         000003f9 8017 
+     526 000003fa FCDC          .bits   -2146698020,32                  ; _PHY_tf512pFFTTable[509] @ 16288
+         000003fb 800B 
+     527 000003fc FE6E          .bits   -2147221906,32                  ; _PHY_tf512pFFTTable[510] @ 16320
+         000003fd 8003 
+     528 000003fe 0000          .bits   2147418112,32                   ; _PHY_tf512pFFTTable[511] @ 16352
+         000003ff 7FFF 
+     529 00000400 FF37          .bits   2147417911,32                   ; _PHY_tf512pFFTTable[512] @ 16384
+         00000401 7FFE 
+     530 00000402 FE6E          .bits   2147352174,32                   ; _PHY_tf512pFFTTable[513] @ 16416
+         00000403 7FFD 
+     531 00000404 FDA5          .bits   2147089829,32                   ; _PHY_tf512pFFTTable[514] @ 16448
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   20
+
+         00000405 7FF9 
+     532 00000406 FCDC          .bits   2146827484,32                   ; _PHY_tf512pFFTTable[515] @ 16480
+         00000407 7FF5 
+     533 00000408 FC13          .bits   2146499603,32                   ; _PHY_tf512pFFTTable[516] @ 16512
+         00000409 7FF0 
+     534 0000040a FB4A          .bits   2146040650,32                   ; _PHY_tf512pFFTTable[517] @ 16544
+         0000040b 7FE9 
+     535 0000040c FA81          .bits   2145516161,32                   ; _PHY_tf512pFFTTable[518] @ 16576
+         0000040d 7FE1 
+     536 0000040e F9B8          .bits   2144926136,32                   ; _PHY_tf512pFFTTable[519] @ 16608
+         0000040f 7FD8 
+     537 00000410 F8EF          .bits   2144205039,32                   ; _PHY_tf512pFFTTable[520] @ 16640
+         00000411 7FCD 
+     538 00000412 F827          .bits   2143418407,32                   ; _PHY_tf512pFFTTable[521] @ 16672
+         00000413 7FC1 
+     539 00000414 F75E          .bits   2142566238,32                   ; _PHY_tf512pFFTTable[522] @ 16704
+         00000415 7FB4 
+     540 00000416 F696          .bits   2141648534,32                   ; _PHY_tf512pFFTTable[523] @ 16736
+         00000417 7FA6 
+     541 00000418 F5CD          .bits   2140665293,32                   ; _PHY_tf512pFFTTable[524] @ 16768
+         00000419 7F97 
+     542 0000041a F505          .bits   2139550981,32                   ; _PHY_tf512pFFTTable[525] @ 16800
+         0000041b 7F86 
+     543 0000041c F43C          .bits   2138371132,32                   ; _PHY_tf512pFFTTable[526] @ 16832
+         0000041d 7F74 
+     544 0000041e F374          .bits   2137125748,32                   ; _PHY_tf512pFFTTable[527] @ 16864
+         0000041f 7F61 
+     545 00000420 F2AC          .bits   2135814828,32                   ; _PHY_tf512pFFTTable[528] @ 16896
+         00000421 7F4D 
+     546 00000422 F1E4          .bits   2134372836,32                   ; _PHY_tf512pFFTTable[529] @ 16928
+         00000423 7F37 
+     547 00000424 F11D          .bits   2132930845,32                   ; _PHY_tf512pFFTTable[530] @ 16960
+         00000425 7F21 
+     548 00000426 F055          .bits   2131357781,32                   ; _PHY_tf512pFFTTable[531] @ 16992
+         00000427 7F09 
+     549 00000428 EF8E          .bits   2129653646,32                   ; _PHY_tf512pFFTTable[532] @ 17024
+         00000429 7EEF 
+     550 0000042a EEC6          .bits   2127949510,32                   ; _PHY_tf512pFFTTable[533] @ 17056
+         0000042b 7ED5 
+     551 0000042c EDFF          .bits   2126114303,32                   ; _PHY_tf512pFFTTable[534] @ 17088
+         0000042d 7EB9 
+     552 0000042e ED38          .bits   2124213560,32                   ; _PHY_tf512pFFTTable[535] @ 17120
+         0000042f 7E9C 
+     553 00000430 EC71          .bits   2122247281,32                   ; _PHY_tf512pFFTTable[536] @ 17152
+         00000431 7E7E 
+     554 00000432 EBAB          .bits   2120215467,32                   ; _PHY_tf512pFFTTable[537] @ 17184
+         00000433 7E5F 
+     555 00000434 EAE4          .bits   2118052580,32                   ; _PHY_tf512pFFTTable[538] @ 17216
+         00000435 7E3E 
+     556 00000436 EA1E          .bits   2115889694,32                   ; _PHY_tf512pFFTTable[539] @ 17248
+         00000437 7E1D 
+     557 00000438 E958          .bits   2113595736,32                   ; _PHY_tf512pFFTTable[540] @ 17280
+         00000439 7DFA 
+     558 0000043a E892          .bits   2111170706,32                   ; _PHY_tf512pFFTTable[541] @ 17312
+         0000043b 7DD5 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   21
+
+     559 0000043c E7CD          .bits   2108745677,32                   ; _PHY_tf512pFFTTable[542] @ 17344
+         0000043d 7DB0 
+     560 0000043e E707          .bits   2106189575,32                   ; _PHY_tf512pFFTTable[543] @ 17376
+         0000043f 7D89 
+     561 00000440 E642          .bits   2103633474,32                   ; _PHY_tf512pFFTTable[544] @ 17408
+         00000441 7D62 
+     562 00000442 E57E          .bits   2100946302,32                   ; _PHY_tf512pFFTTable[545] @ 17440
+         00000443 7D39 
+     563 00000444 E4B9          .bits   2098128057,32                   ; _PHY_tf512pFFTTable[546] @ 17472
+         00000445 7D0E 
+     564 00000446 E3F5          .bits   2095309813,32                   ; _PHY_tf512pFFTTable[547] @ 17504
+         00000447 7CE3 
+     565 00000448 E331          .bits   2092360497,32                   ; _PHY_tf512pFFTTable[548] @ 17536
+         00000449 7CB6 
+     566 0000044a E26D          .bits   2089345645,32                   ; _PHY_tf512pFFTTable[549] @ 17568
+         0000044b 7C88 
+     567 0000044c E1A9          .bits   2086265257,32                   ; _PHY_tf512pFFTTable[550] @ 17600
+         0000044d 7C59 
+     568 0000044e E0E6          .bits   2083119334,32                   ; _PHY_tf512pFFTTable[551] @ 17632
+         0000044f 7C29 
+     569 00000450 E023          .bits   2079907875,32                   ; _PHY_tf512pFFTTable[552] @ 17664
+         00000451 7BF8 
+     570 00000452 DF61          .bits   2076565345,32                   ; _PHY_tf512pFFTTable[553] @ 17696
+         00000453 7BC5 
+     571 00000454 DE9F          .bits   2073157279,32                   ; _PHY_tf512pFFTTable[554] @ 17728
+         00000455 7B91 
+     572 00000456 DDDD          .bits   2069683677,32                   ; _PHY_tf512pFFTTable[555] @ 17760
+         00000457 7B5C 
+     573 00000458 DD1B          .bits   2066144539,32                   ; _PHY_tf512pFFTTable[556] @ 17792
+         00000459 7B26 
+     574 0000045a DC5A          .bits   2062474330,32                   ; _PHY_tf512pFFTTable[557] @ 17824
+         0000045b 7AEE 
+     575 0000045c DB99          .bits   2058804121,32                   ; _PHY_tf512pFFTTable[558] @ 17856
+         0000045d 7AB6 
+     576 0000045e DAD8          .bits   2055002840,32                   ; _PHY_tf512pFFTTable[559] @ 17888
+         0000045f 7A7C 
+     577 00000460 DA18          .bits   2051136024,32                   ; _PHY_tf512pFFTTable[560] @ 17920
+         00000461 7A41 
+     578 00000462 D958          .bits   2047203672,32                   ; _PHY_tf512pFFTTable[561] @ 17952
+         00000463 7A05 
+     579 00000464 D899          .bits   2043205785,32                   ; _PHY_tf512pFFTTable[562] @ 17984
+         00000465 79C8 
+     580 00000466 D7DA          .bits   2039076826,32                   ; _PHY_tf512pFFTTable[563] @ 18016
+         00000467 7989 
+     581 00000468 D71B          .bits   2034947867,32                   ; _PHY_tf512pFFTTable[564] @ 18048
+         00000469 794A 
+     582 0000046a D65D          .bits   2030687837,32                   ; _PHY_tf512pFFTTable[565] @ 18080
+         0000046b 7909 
+     583 0000046c D59F          .bits   2026362271,32                   ; _PHY_tf512pFFTTable[566] @ 18112
+         0000046d 78C7 
+     584 0000046e D4E1          .bits   2021971169,32                   ; _PHY_tf512pFFTTable[567] @ 18144
+         0000046f 7884 
+     585 00000470 D424          .bits   2017448996,32                   ; _PHY_tf512pFFTTable[568] @ 18176
+         00000471 783F 
+     586 00000472 D367          .bits   2012926823,32                   ; _PHY_tf512pFFTTable[569] @ 18208
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   22
+
+         00000473 77FA 
+     587 00000474 D2AB          .bits   2008273579,32                   ; _PHY_tf512pFFTTable[570] @ 18240
+         00000475 77B3 
+     588 00000476 D1EF          .bits   2003554799,32                   ; _PHY_tf512pFFTTable[571] @ 18272
+         00000477 776B 
+     589 00000478 D134          .bits   1998770484,32                   ; _PHY_tf512pFFTTable[572] @ 18304
+         00000479 7722 
+     590 0000047a D079          .bits   1993920633,32                   ; _PHY_tf512pFFTTable[573] @ 18336
+         0000047b 76D8 
+     591 0000047c CFBF          .bits   1989005247,32                   ; _PHY_tf512pFFTTable[574] @ 18368
+         0000047d 768D 
+     592 0000047e CF05          .bits   1984024325,32                   ; _PHY_tf512pFFTTable[575] @ 18400
+         0000047f 7641 
+     593 00000480 CE4B          .bits   1978912331,32                   ; _PHY_tf512pFFTTable[576] @ 18432
+         00000481 75F3 
+     594 00000482 CD92          .bits   1973800338,32                   ; _PHY_tf512pFFTTable[577] @ 18464
+         00000483 75A5 
+     595 00000484 CCDA          .bits   1968557274,32                   ; _PHY_tf512pFFTTable[578] @ 18496
+         00000485 7555 
+     596 00000486 CC21          .bits   1963248673,32                   ; _PHY_tf512pFFTTable[579] @ 18528
+         00000487 7504 
+     597 00000488 CB6A          .bits   1957874538,32                   ; _PHY_tf512pFFTTable[580] @ 18560
+         00000489 74B2 
+     598 0000048a CAB3          .bits   1952434867,32                   ; _PHY_tf512pFFTTable[581] @ 18592
+         0000048b 745F 
+     599 0000048c C9FC          .bits   1946864124,32                   ; _PHY_tf512pFFTTable[582] @ 18624
+         0000048d 740A 
+     600 0000048e C946          .bits   1941293382,32                   ; _PHY_tf512pFFTTable[583] @ 18656
+         0000048f 73B5 
+     601 00000490 C891          .bits   1935591569,32                   ; _PHY_tf512pFFTTable[584] @ 18688
+         00000491 735E 
+     602 00000492 C7DC          .bits   1929889756,32                   ; _PHY_tf512pFFTTable[585] @ 18720
+         00000493 7307 
+     603 00000494 C727          .bits   1924056871,32                   ; _PHY_tf512pFFTTable[586] @ 18752
+         00000495 72AE 
+     604 00000496 C674          .bits   1918158452,32                   ; _PHY_tf512pFFTTable[587] @ 18784
+         00000497 7254 
+     605 00000498 C5C0          .bits   1912194496,32                   ; _PHY_tf512pFFTTable[588] @ 18816
+         00000499 71F9 
+     606 0000049a C50E          .bits   1906165006,32                   ; _PHY_tf512pFFTTable[589] @ 18848
+         0000049b 719D 
+     607 0000049c C45B          .bits   1900069979,32                   ; _PHY_tf512pFFTTable[590] @ 18880
+         0000049d 7140 
+     608 0000049e C3AA          .bits   1893909418,32                   ; _PHY_tf512pFFTTable[591] @ 18912
+         0000049f 70E2 
+     609 000004a0 C2F9          .bits   1887683321,32                   ; _PHY_tf512pFFTTable[592] @ 18944
+         000004a1 7083 
+     610 000004a2 C248          .bits   1881326152,32                   ; _PHY_tf512pFFTTable[593] @ 18976
+         000004a3 7022 
+     611 000004a4 C198          .bits   1874968984,32                   ; _PHY_tf512pFFTTable[594] @ 19008
+         000004a5 6FC1 
+     612 000004a6 C0E9          .bits   1868480745,32                   ; _PHY_tf512pFFTTable[595] @ 19040
+         000004a7 6F5E 
+     613 000004a8 C03B          .bits   1861992507,32                   ; _PHY_tf512pFFTTable[596] @ 19072
+         000004a9 6EFB 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   23
+
+     614 000004aa BF8D          .bits   1855373197,32                   ; _PHY_tf512pFFTTable[597] @ 19104
+         000004ab 6E96 
+     615 000004ac BEDF          .bits   1848688351,32                   ; _PHY_tf512pFFTTable[598] @ 19136
+         000004ad 6E30 
+     616 000004ae BE32          .bits   1841937970,32                   ; _PHY_tf512pFFTTable[599] @ 19168
+         000004af 6DC9 
+     617 000004b0 BD86          .bits   1835122054,32                   ; _PHY_tf512pFFTTable[600] @ 19200
+         000004b1 6D61 
+     618 000004b2 BCDB          .bits   1828240603,32                   ; _PHY_tf512pFFTTable[601] @ 19232
+         000004b3 6CF8 
+     619 000004b4 BC30          .bits   1821293616,32                   ; _PHY_tf512pFFTTable[602] @ 19264
+         000004b5 6C8E 
+     620 000004b6 BB86          .bits   1814281094,32                   ; _PHY_tf512pFFTTable[603] @ 19296
+         000004b7 6C23 
+     621 000004b8 BADC          .bits   1807203036,32                   ; _PHY_tf512pFFTTable[604] @ 19328
+         000004b9 6BB7 
+     622 000004ba BA33          .bits   1800059443,32                   ; _PHY_tf512pFFTTable[605] @ 19360
+         000004bb 6B4A 
+     623 000004bc B98B          .bits   1792850315,32                   ; _PHY_tf512pFFTTable[606] @ 19392
+         000004bd 6ADC 
+     624 000004be B8E4          .bits   1785575652,32                   ; _PHY_tf512pFFTTable[607] @ 19424
+         000004bf 6A6D 
+     625 000004c0 B83D          .bits   1778235453,32                   ; _PHY_tf512pFFTTable[608] @ 19456
+         000004c1 69FD 
+     626 000004c2 B797          .bits   1770764183,32                   ; _PHY_tf512pFFTTable[609] @ 19488
+         000004c3 698B 
+     627 000004c4 B6F1          .bits   1763292913,32                   ; _PHY_tf512pFFTTable[610] @ 19520
+         000004c5 6919 
+     628 000004c6 B64C          .bits   1755756108,32                   ; _PHY_tf512pFFTTable[611] @ 19552
+         000004c7 68A6 
+     629 000004c8 B5A8          .bits   1748153768,32                   ; _PHY_tf512pFFTTable[612] @ 19584
+         000004c9 6832 
+     630 000004ca B505          .bits   1740420357,32                   ; _PHY_tf512pFFTTable[613] @ 19616
+         000004cb 67BC 
+     631 000004cc B463          .bits   1732686947,32                   ; _PHY_tf512pFFTTable[614] @ 19648
+         000004cd 6746 
+     632 000004ce B3C1          .bits   1724888001,32                   ; _PHY_tf512pFFTTable[615] @ 19680
+         000004cf 66CF 
+     633 000004d0 B320          .bits   1716957984,32                   ; _PHY_tf512pFFTTable[616] @ 19712
+         000004d1 6656 
+     634 000004d2 B27F          .bits   1709027967,32                   ; _PHY_tf512pFFTTable[617] @ 19744
+         000004d3 65DD 
+     635 000004d4 B1E0          .bits   1701032416,32                   ; _PHY_tf512pFFTTable[618] @ 19776
+         000004d5 6563 
+     636 000004d6 B141          .bits   1692971329,32                   ; _PHY_tf512pFFTTable[619] @ 19808
+         000004d7 64E8 
+     637 000004d8 B0A3          .bits   1684844707,32                   ; _PHY_tf512pFFTTable[620] @ 19840
+         000004d9 646C 
+     638 000004da B005          .bits   1676587013,32                   ; _PHY_tf512pFFTTable[621] @ 19872
+         000004db 63EE 
+     639 000004dc AF69          .bits   1668329321,32                   ; _PHY_tf512pFFTTable[622] @ 19904
+         000004dd 6370 
+     640 000004de AECD          .bits   1660006093,32                   ; _PHY_tf512pFFTTable[623] @ 19936
+         000004df 62F1 
+     641 000004e0 AE32          .bits   1651617330,32                   ; _PHY_tf512pFFTTable[624] @ 19968
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   24
+
+         000004e1 6271 
+     642 000004e2 AD98          .bits   1643163032,32                   ; _PHY_tf512pFFTTable[625] @ 20000
+         000004e3 61F0 
+     643 000004e4 ACFE          .bits   1634643198,32                   ; _PHY_tf512pFFTTable[626] @ 20032
+         000004e5 616E 
+     644 000004e6 AC65          .bits   1626057829,32                   ; _PHY_tf512pFFTTable[627] @ 20064
+         000004e7 60EB 
+     645 000004e8 ABCE          .bits   1617472462,32                   ; _PHY_tf512pFFTTable[628] @ 20096
+         000004e9 6068 
+     646 000004ea AB37          .bits   1608756023,32                   ; _PHY_tf512pFFTTable[629] @ 20128
+         000004eb 5FE3 
+     647 000004ec AAA0          .bits   1599974048,32                   ; _PHY_tf512pFFTTable[630] @ 20160
+         000004ed 5F5D 
+     648 000004ee AA0B          .bits   1591192075,32                   ; _PHY_tf512pFFTTable[631] @ 20192
+         000004ef 5ED7 
+     649 000004f0 A976          .bits   1582279030,32                   ; _PHY_tf512pFFTTable[632] @ 20224
+         000004f1 5E4F 
+     650 000004f2 A8E3          .bits   1573365987,32                   ; _PHY_tf512pFFTTable[633] @ 20256
+         000004f3 5DC7 
+     651 000004f4 A850          .bits   1564387408,32                   ; _PHY_tf512pFFTTable[634] @ 20288
+         000004f5 5D3E 
+     652 000004f6 A7BE          .bits   1555277758,32                   ; _PHY_tf512pFFTTable[635] @ 20320
+         000004f7 5CB3 
+     653 000004f8 A72D          .bits   1546168109,32                   ; _PHY_tf512pFFTTable[636] @ 20352
+         000004f9 5C28 
+     654 000004fa A69C          .bits   1536992924,32                   ; _PHY_tf512pFFTTable[637] @ 20384
+         000004fb 5B9C 
+     655 000004fc A60D          .bits   1527752205,32                   ; _PHY_tf512pFFTTable[638] @ 20416
+         000004fd 5B0F 
+     656 000004fe A57E          .bits   1518511486,32                   ; _PHY_tf512pFFTTable[639] @ 20448
+         000004ff 5A82 
+     657 00000500 A4F1          .bits   1509139697,32                   ; _PHY_tf512pFFTTable[640] @ 20480
+         00000501 59F3 
+     658 00000502 A464          .bits   1499767908,32                   ; _PHY_tf512pFFTTable[641] @ 20512
+         00000503 5964 
+     659 00000504 A3D8          .bits   1490265048,32                   ; _PHY_tf512pFFTTable[642] @ 20544
+         00000505 58D3 
+     660 00000506 A34D          .bits   1480762189,32                   ; _PHY_tf512pFFTTable[643] @ 20576
+         00000507 5842 
+     661 00000508 A2C2          .bits   1471193794,32                   ; _PHY_tf512pFFTTable[644] @ 20608
+         00000509 57B0 
+     662 0000050a A239          .bits   1461559865,32                   ; _PHY_tf512pFFTTable[645] @ 20640
+         0000050b 571D 
+     663 0000050c A1B1          .bits   1451925937,32                   ; _PHY_tf512pFFTTable[646] @ 20672
+         0000050d 568A 
+     664 0000050e A129          .bits   1442160937,32                   ; _PHY_tf512pFFTTable[647] @ 20704
+         0000050f 55F5 
+     665 00000510 A0A3          .bits   1432395939,32                   ; _PHY_tf512pFFTTable[648] @ 20736
+         00000511 5560 
+     666 00000512 A01D          .bits   1422499869,32                   ; _PHY_tf512pFFTTable[649] @ 20768
+         00000513 54C9 
+     667 00000514 9F98          .bits   1412603800,32                   ; _PHY_tf512pFFTTable[650] @ 20800
+         00000515 5432 
+     668 00000516 9F15          .bits   1402707733,32                   ; _PHY_tf512pFFTTable[651] @ 20832
+         00000517 539B 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   25
+
+     669 00000518 9E92          .bits   1392680594,32                   ; _PHY_tf512pFFTTable[652] @ 20864
+         00000519 5302 
+     670 0000051a 9E10          .bits   1382587920,32                   ; _PHY_tf512pFFTTable[653] @ 20896
+         0000051b 5268 
+     671 0000051c 9D8F          .bits   1372495247,32                   ; _PHY_tf512pFFTTable[654] @ 20928
+         0000051d 51CE 
+     672 0000051e 9D0F          .bits   1362337039,32                   ; _PHY_tf512pFFTTable[655] @ 20960
+         0000051f 5133 
+     673 00000520 9C90          .bits   1352113296,32                   ; _PHY_tf512pFFTTable[656] @ 20992
+         00000521 5097 
+     674 00000522 9C12          .bits   1341889554,32                   ; _PHY_tf512pFFTTable[657] @ 21024
+         00000523 4FFB 
+     675 00000524 9B94          .bits   1331534740,32                   ; _PHY_tf512pFFTTable[658] @ 21056
+         00000525 4F5D 
+     676 00000526 9B18          .bits   1321179928,32                   ; _PHY_tf512pFFTTable[659] @ 21088
+         00000527 4EBF 
+     677 00000528 9A9D          .bits   1310759581,32                   ; _PHY_tf512pFFTTable[660] @ 21120
+         00000529 4E20 
+     678 0000052a 9A23          .bits   1300339235,32                   ; _PHY_tf512pFFTTable[661] @ 21152
+         0000052b 4D81 
+     679 0000052c 99AA          .bits   1289787818,32                   ; _PHY_tf512pFFTTable[662] @ 21184
+         0000052d 4CE0 
+     680 0000052e 9931          .bits   1279236401,32                   ; _PHY_tf512pFFTTable[663] @ 21216
+         0000052f 4C3F 
+     681 00000530 98BA          .bits   1268619450,32                   ; _PHY_tf512pFFTTable[664] @ 21248
+         00000531 4B9D 
+     682 00000532 9844          .bits   1258002500,32                   ; _PHY_tf512pFFTTable[665] @ 21280
+         00000533 4AFB 
+     683 00000534 97CE          .bits   1247320014,32                   ; _PHY_tf512pFFTTable[666] @ 21312
+         00000535 4A58 
+     684 00000536 975A          .bits   1236571994,32                   ; _PHY_tf512pFFTTable[667] @ 21344
+         00000537 49B4 
+     685 00000538 96E7          .bits   1225758439,32                   ; _PHY_tf512pFFTTable[668] @ 21376
+         00000539 490F 
+     686 0000053a 9675          .bits   1214879349,32                   ; _PHY_tf512pFFTTable[669] @ 21408
+         0000053b 4869 
+     687 0000053c 9603          .bits   1204000259,32                   ; _PHY_tf512pFFTTable[670] @ 21440
+         0000053d 47C3 
+     688 0000053e 9593          .bits   1193055635,32                   ; _PHY_tf512pFFTTable[671] @ 21472
+         0000053f 471C 
+     689 00000540 9524          .bits   1182111012,32                   ; _PHY_tf512pFFTTable[672] @ 21504
+         00000541 4675 
+     690 00000542 94B6          .bits   1171100854,32                   ; _PHY_tf512pFFTTable[673] @ 21536
+         00000543 45CD 
+     691 00000544 9449          .bits   1160025161,32                   ; _PHY_tf512pFFTTable[674] @ 21568
+         00000545 4524 
+     692 00000546 93DD          .bits   1148883933,32                   ; _PHY_tf512pFFTTable[675] @ 21600
+         00000547 447A 
+     693 00000548 9372          .bits   1137742706,32                   ; _PHY_tf512pFFTTable[676] @ 21632
+         00000549 43D0 
+     694 0000054a 9308          .bits   1126535944,32                   ; _PHY_tf512pFFTTable[677] @ 21664
+         0000054b 4325 
+     695 0000054c 929F          .bits   1115329183,32                   ; _PHY_tf512pFFTTable[678] @ 21696
+         0000054d 427A 
+     696 0000054e 9237          .bits   1104056887,32                   ; _PHY_tf512pFFTTable[679] @ 21728
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   26
+
+         0000054f 41CE 
+     697 00000550 91D0          .bits   1092719056,32                   ; _PHY_tf512pFFTTable[680] @ 21760
+         00000551 4121 
+     698 00000552 916A          .bits   1081315690,32                   ; _PHY_tf512pFFTTable[681] @ 21792
+         00000553 4073 
+     699 00000554 9105          .bits   1069912325,32                   ; _PHY_tf512pFFTTable[682] @ 21824
+         00000555 3FC5 
+     700 00000556 90A2          .bits   1058508962,32                   ; _PHY_tf512pFFTTable[683] @ 21856
+         00000557 3F17 
+     701 00000558 903F          .bits   1047040063,32                   ; _PHY_tf512pFFTTable[684] @ 21888
+         00000559 3E68 
+     702 0000055a 8FDE          .bits   1035505630,32                   ; _PHY_tf512pFFTTable[685] @ 21920
+         0000055b 3DB8 
+     703 0000055c 8F7D          .bits   1023905661,32                   ; _PHY_tf512pFFTTable[686] @ 21952
+         0000055d 3D07 
+     704 0000055e 8F1E          .bits   1012305694,32                   ; _PHY_tf512pFFTTable[687] @ 21984
+         0000055f 3C56 
+     705 00000560 8EC0          .bits   1000705728,32                   ; _PHY_tf512pFFTTable[688] @ 22016
+         00000561 3BA5 
+     706 00000562 8E63          .bits   988974691,32                    ; _PHY_tf512pFFTTable[689] @ 22048
+         00000563 3AF2 
+     707 00000564 8E07          .bits   977309191,32                    ; _PHY_tf512pFFTTable[690] @ 22080
+         00000565 3A40 
+     708 00000566 8DAC          .bits   965512620,32                    ; _PHY_tf512pFFTTable[691] @ 22112
+         00000567 398C 
+     709 00000568 8D52          .bits   953781586,32                    ; _PHY_tf512pFFTTable[692] @ 22144
+         00000569 38D9 
+     710 0000056a 8CF9          .bits   941919481,32                    ; _PHY_tf512pFFTTable[693] @ 22176
+         0000056b 3824 
+     711 0000056c 8CA2          .bits   930057378,32                    ; _PHY_tf512pFFTTable[694] @ 22208
+         0000056d 376F 
+     712 0000056e 8C4B          .bits   918195275,32                    ; _PHY_tf512pFFTTable[695] @ 22240
+         0000056f 36BA 
+     713 00000570 8BF6          .bits   906267638,32                    ; _PHY_tf512pFFTTable[696] @ 22272
+         00000571 3604 
+     714 00000572 8BA1          .bits   894274465,32                    ; _PHY_tf512pFFTTable[697] @ 22304
+         00000573 354D 
+     715 00000574 8B4E          .bits   882281294,32                    ; _PHY_tf512pFFTTable[698] @ 22336
+         00000575 3496 
+     716 00000576 8AFC          .bits   870288124,32                    ; _PHY_tf512pFFTTable[699] @ 22368
+         00000577 33DF 
+     717 00000578 8AAB          .bits   858163883,32                    ; _PHY_tf512pFFTTable[700] @ 22400
+         00000579 3326 
+     718 0000057a 8A5B          .bits   846105179,32                    ; _PHY_tf512pFFTTable[701] @ 22432
+         0000057b 326E 
+     719 0000057c 8A0D          .bits   833980941,32                    ; _PHY_tf512pFFTTable[702] @ 22464
+         0000057d 31B5 
+     720 0000057e 89BF          .bits   821791167,32                    ; _PHY_tf512pFFTTable[703] @ 22496
+         0000057f 30FB 
+     721 00000580 8973          .bits   809601395,32                    ; _PHY_tf512pFFTTable[704] @ 22528
+         00000581 3041 
+     722 00000582 8928          .bits   797411624,32                    ; _PHY_tf512pFFTTable[705] @ 22560
+         00000583 2F87 
+     723 00000584 88DE          .bits   785156318,32                    ; _PHY_tf512pFFTTable[706] @ 22592
+         00000585 2ECC 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   27
+
+     724 00000586 8895          .bits   772901013,32                    ; _PHY_tf512pFFTTable[707] @ 22624
+         00000587 2E11 
+     725 00000588 884D          .bits   760580173,32                    ; _PHY_tf512pFFTTable[708] @ 22656
+         00000589 2D55 
+     726 0000058a 8806          .bits   748259334,32                    ; _PHY_tf512pFFTTable[709] @ 22688
+         0000058b 2C99 
+     727 0000058c 87C1          .bits   735872961,32                    ; _PHY_tf512pFFTTable[710] @ 22720
+         0000058d 2BDC 
+     728 0000058e 877C          .bits   723486588,32                    ; _PHY_tf512pFFTTable[711] @ 22752
+         0000058f 2B1F 
+     729 00000590 8739          .bits   711034681,32                    ; _PHY_tf512pFFTTable[712] @ 22784
+         00000591 2A61 
+     730 00000592 86F7          .bits   698582775,32                    ; _PHY_tf512pFFTTable[713] @ 22816
+         00000593 29A3 
+     731 00000594 86B6          .bits   686130870,32                    ; _PHY_tf512pFFTTable[714] @ 22848
+         00000595 28E5 
+     732 00000596 8677          .bits   673613431,32                    ; _PHY_tf512pFFTTable[715] @ 22880
+         00000597 2826 
+     733 00000598 8638          .bits   661095992,32                    ; _PHY_tf512pFFTTable[716] @ 22912
+         00000599 2767 
+     734 0000059a 85FB          .bits   648578555,32                    ; _PHY_tf512pFFTTable[717] @ 22944
+         0000059b 26A8 
+     735 0000059c 85BF          .bits   635995583,32                    ; _PHY_tf512pFFTTable[718] @ 22976
+         0000059d 25E8 
+     736 0000059e 8584          .bits   623412612,32                    ; _PHY_tf512pFFTTable[719] @ 23008
+         0000059f 2528 
+     737 000005a0 854A          .bits   610764106,32                    ; _PHY_tf512pFFTTable[720] @ 23040
+         000005a1 2467 
+     738 000005a2 8512          .bits   598115602,32                    ; _PHY_tf512pFFTTable[721] @ 23072
+         000005a3 23A6 
+     739 000005a4 84DA          .bits   585467098,32                    ; _PHY_tf512pFFTTable[722] @ 23104
+         000005a5 22E5 
+     740 000005a6 84A4          .bits   572753060,32                    ; _PHY_tf512pFFTTable[723] @ 23136
+         000005a7 2223 
+     741 000005a8 846F          .bits   560039023,32                    ; _PHY_tf512pFFTTable[724] @ 23168
+         000005a9 2161 
+     742 000005aa 843B          .bits   547324987,32                    ; _PHY_tf512pFFTTable[725] @ 23200
+         000005ab 209F 
+     743 000005ac 8408          .bits   534610952,32                    ; _PHY_tf512pFFTTable[726] @ 23232
+         000005ad 1FDD 
+     744 000005ae 83D7          .bits   521831383,32                    ; _PHY_tf512pFFTTable[727] @ 23264
+         000005af 1F1A 
+     745 000005b0 83A7          .bits   509051815,32                    ; _PHY_tf512pFFTTable[728] @ 23296
+         000005b1 1E57 
+     746 000005b2 8378          .bits   496206712,32                    ; _PHY_tf512pFFTTable[729] @ 23328
+         000005b3 1D93 
+     747 000005b4 834A          .bits   483361610,32                    ; _PHY_tf512pFFTTable[730] @ 23360
+         000005b5 1CCF 
+     748 000005b6 831D          .bits   470516509,32                    ; _PHY_tf512pFFTTable[731] @ 23392
+         000005b7 1C0B 
+     749 000005b8 82F2          .bits   457671410,32                    ; _PHY_tf512pFFTTable[732] @ 23424
+         000005b9 1B47 
+     750 000005ba 82C7          .bits   444760775,32                    ; _PHY_tf512pFFTTable[733] @ 23456
+         000005bb 1A82 
+     751 000005bc 829E          .bits   431915678,32                    ; _PHY_tf512pFFTTable[734] @ 23488
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   28
+
+         000005bd 19BE 
+     752 000005be 8277          .bits   419005047,32                    ; _PHY_tf512pFFTTable[735] @ 23520
+         000005bf 18F9 
+     753 000005c0 8250          .bits   406028880,32                    ; _PHY_tf512pFFTTable[736] @ 23552
+         000005c1 1833 
+     754 000005c2 822B          .bits   393118251,32                    ; _PHY_tf512pFFTTable[737] @ 23584
+         000005c3 176E 
+     755 000005c4 8206          .bits   380142086,32                    ; _PHY_tf512pFFTTable[738] @ 23616
+         000005c5 16A8 
+     756 000005c6 81E3          .bits   367165923,32                    ; _PHY_tf512pFFTTable[739] @ 23648
+         000005c7 15E2 
+     757 000005c8 81C2          .bits   354189762,32                    ; _PHY_tf512pFFTTable[740] @ 23680
+         000005c9 151C 
+     758 000005ca 81A1          .bits   341148065,32                    ; _PHY_tf512pFFTTable[741] @ 23712
+         000005cb 1455 
+     759 000005cc 8182          .bits   328171906,32                    ; _PHY_tf512pFFTTable[742] @ 23744
+         000005cd 138F 
+     760 000005ce 8164          .bits   315130212,32                    ; _PHY_tf512pFFTTable[743] @ 23776
+         000005cf 12C8 
+     761 000005d0 8147          .bits   302088519,32                    ; _PHY_tf512pFFTTable[744] @ 23808
+         000005d1 1201 
+     762 000005d2 812B          .bits   289046827,32                    ; _PHY_tf512pFFTTable[745] @ 23840
+         000005d3 113A 
+     763 000005d4 8111          .bits   275939601,32                    ; _PHY_tf512pFFTTable[746] @ 23872
+         000005d5 1072 
+     764 000005d6 80F7          .bits   262897911,32                    ; _PHY_tf512pFFTTable[747] @ 23904
+         000005d7 0FAB 
+     765 000005d8 80DF          .bits   249790687,32                    ; _PHY_tf512pFFTTable[748] @ 23936
+         000005d9 0EE3 
+     766 000005da 80C9          .bits   236749001,32                    ; _PHY_tf512pFFTTable[749] @ 23968
+         000005db 0E1C 
+     767 000005dc 80B3          .bits   223641779,32                    ; _PHY_tf512pFFTTable[750] @ 24000
+         000005dd 0D54 
+     768 000005de 809F          .bits   210534559,32                    ; _PHY_tf512pFFTTable[751] @ 24032
+         000005df 0C8C 
+     769 000005e0 808C          .bits   197427340,32                    ; _PHY_tf512pFFTTable[752] @ 24064
+         000005e1 0BC4 
+     770 000005e2 807A          .bits   184254586,32                    ; _PHY_tf512pFFTTable[753] @ 24096
+         000005e3 0AFB 
+     771 000005e4 8069          .bits   171147369,32                    ; _PHY_tf512pFFTTable[754] @ 24128
+         000005e5 0A33 
+     772 000005e6 805A          .bits   157974618,32                    ; _PHY_tf512pFFTTable[755] @ 24160
+         000005e7 096A 
+     773 000005e8 804C          .bits   144867404,32                    ; _PHY_tf512pFFTTable[756] @ 24192
+         000005e9 08A2 
+     774 000005ea 803F          .bits   131694655,32                    ; _PHY_tf512pFFTTable[757] @ 24224
+         000005eb 07D9 
+     775 000005ec 8033          .bits   118587443,32                    ; _PHY_tf512pFFTTable[758] @ 24256
+         000005ed 0711 
+     776 000005ee 8028          .bits   105414696,32                    ; _PHY_tf512pFFTTable[759] @ 24288
+         000005ef 0648 
+     777 000005f0 801F          .bits   92241951,32                     ; _PHY_tf512pFFTTable[760] @ 24320
+         000005f1 057F 
+     778 000005f2 8017          .bits   79069207,32                     ; _PHY_tf512pFFTTable[761] @ 24352
+         000005f3 04B6 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   29
+
+     779 000005f4 8010          .bits   65896464,32                     ; _PHY_tf512pFFTTable[762] @ 24384
+         000005f5 03ED 
+     780 000005f6 800B          .bits   52723723,32                     ; _PHY_tf512pFFTTable[763] @ 24416
+         000005f7 0324 
+     781 000005f8 8007          .bits   39550983,32                     ; _PHY_tf512pFFTTable[764] @ 24448
+         000005f9 025B 
+     782 000005fa 8003          .bits   26378243,32                     ; _PHY_tf512pFFTTable[765] @ 24480
+         000005fb 0192 
+     783 000005fc 8002          .bits   13205506,32                     ; _PHY_tf512pFFTTable[766] @ 24512
+         000005fd 00C9 
+     784 000005fe 8001          .bits   32769,32                        ; _PHY_tf512pFFTTable[767] @ 24544
+         000005ff 0000 
+     785 00000600 8002          .bits   -13139966,32                    ; _PHY_tf512pFFTTable[768] @ 24576
+         00000601 FF37 
+     786 00000602 8003          .bits   -26312701,32                    ; _PHY_tf512pFFTTable[769] @ 24608
+         00000603 FE6E 
+     787 00000604 8007          .bits   -39485433,32                    ; _PHY_tf512pFFTTable[770] @ 24640
+         00000605 FDA5 
+     788 00000606 800B          .bits   -52658165,32                    ; _PHY_tf512pFFTTable[771] @ 24672
+         00000607 FCDC 
+     789 00000608 8010          .bits   -65830896,32                    ; _PHY_tf512pFFTTable[772] @ 24704
+         00000609 FC13 
+     790 0000060a 8017          .bits   -79003625,32                    ; _PHY_tf512pFFTTable[773] @ 24736
+         0000060b FB4A 
+     791 0000060c 801F          .bits   -92176353,32                    ; _PHY_tf512pFFTTable[774] @ 24768
+         0000060d FA81 
+     792 0000060e 8028          .bits   -105349080,32                   ; _PHY_tf512pFFTTable[775] @ 24800
+         0000060f F9B8 
+     793 00000610 8033          .bits   -118521805,32                   ; _PHY_tf512pFFTTable[776] @ 24832
+         00000611 F8EF 
+     794 00000612 803F          .bits   -131628993,32                   ; _PHY_tf512pFFTTable[777] @ 24864
+         00000613 F827 
+     795 00000614 804C          .bits   -144801716,32                   ; _PHY_tf512pFFTTable[778] @ 24896
+         00000615 F75E 
+     796 00000616 805A          .bits   -157908902,32                   ; _PHY_tf512pFFTTable[779] @ 24928
+         00000617 F696 
+     797 00000618 8069          .bits   -171081623,32                   ; _PHY_tf512pFFTTable[780] @ 24960
+         00000619 F5CD 
+     798 0000061a 807A          .bits   -184188806,32                   ; _PHY_tf512pFFTTable[781] @ 24992
+         0000061b F505 
+     799 0000061c 808C          .bits   -197361524,32                   ; _PHY_tf512pFFTTable[782] @ 25024
+         0000061d F43C 
+     800 0000061e 809F          .bits   -210468705,32                   ; _PHY_tf512pFFTTable[783] @ 25056
+         0000061f F374 
+     801 00000620 80B3          .bits   -223575885,32                   ; _PHY_tf512pFFTTable[784] @ 25088
+         00000621 F2AC 
+     802 00000622 80C9          .bits   -236683063,32                   ; _PHY_tf512pFFTTable[785] @ 25120
+         00000623 F1E4 
+     803 00000624 80DF          .bits   -249724705,32                   ; _PHY_tf512pFFTTable[786] @ 25152
+         00000625 F11D 
+     804 00000626 80F7          .bits   -262831881,32                   ; _PHY_tf512pFFTTable[787] @ 25184
+         00000627 F055 
+     805 00000628 8111          .bits   -275873519,32                   ; _PHY_tf512pFFTTable[788] @ 25216
+         00000629 EF8E 
+     806 0000062a 812B          .bits   -288980693,32                   ; _PHY_tf512pFFTTable[789] @ 25248
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   30
+
+         0000062b EEC6 
+     807 0000062c 8147          .bits   -302022329,32                   ; _PHY_tf512pFFTTable[790] @ 25280
+         0000062d EDFF 
+     808 0000062e 8164          .bits   -315063964,32                   ; _PHY_tf512pFFTTable[791] @ 25312
+         0000062f ED38 
+     809 00000630 8182          .bits   -328105598,32                   ; _PHY_tf512pFFTTable[792] @ 25344
+         00000631 EC71 
+     810 00000632 81A1          .bits   -341081695,32                   ; _PHY_tf512pFFTTable[793] @ 25376
+         00000633 EBAB 
+     811 00000634 81C2          .bits   -354123326,32                   ; _PHY_tf512pFFTTable[794] @ 25408
+         00000635 EAE4 
+     812 00000636 81E3          .bits   -367099421,32                   ; _PHY_tf512pFFTTable[795] @ 25440
+         00000637 EA1E 
+     813 00000638 8206          .bits   -380075514,32                   ; _PHY_tf512pFFTTable[796] @ 25472
+         00000639 E958 
+     814 0000063a 822B          .bits   -393051605,32                   ; _PHY_tf512pFFTTable[797] @ 25504
+         0000063b E892 
+     815 0000063c 8250          .bits   -405962160,32                   ; _PHY_tf512pFFTTable[798] @ 25536
+         0000063d E7CD 
+     816 0000063e 8277          .bits   -418938249,32                   ; _PHY_tf512pFFTTable[799] @ 25568
+         0000063f E707 
+     817 00000640 829E          .bits   -431848802,32                   ; _PHY_tf512pFFTTable[800] @ 25600
+         00000641 E642 
+     818 00000642 82C7          .bits   -444693817,32                   ; _PHY_tf512pFFTTable[801] @ 25632
+         00000643 E57E 
+     819 00000644 82F2          .bits   -457604366,32                   ; _PHY_tf512pFFTTable[802] @ 25664
+         00000645 E4B9 
+     820 00000646 831D          .bits   -470449379,32                   ; _PHY_tf512pFFTTable[803] @ 25696
+         00000647 E3F5 
+     821 00000648 834A          .bits   -483294390,32                   ; _PHY_tf512pFFTTable[804] @ 25728
+         00000649 E331 
+     822 0000064a 8378          .bits   -496139400,32                   ; _PHY_tf512pFFTTable[805] @ 25760
+         0000064b E26D 
+     823 0000064c 83A7          .bits   -508984409,32                   ; _PHY_tf512pFFTTable[806] @ 25792
+         0000064d E1A9 
+     824 0000064e 83D7          .bits   -521763881,32                   ; _PHY_tf512pFFTTable[807] @ 25824
+         0000064f E0E6 
+     825 00000650 8408          .bits   -534543352,32                   ; _PHY_tf512pFFTTable[808] @ 25856
+         00000651 E023 
+     826 00000652 843B          .bits   -547257285,32                   ; _PHY_tf512pFFTTable[809] @ 25888
+         00000653 DF61 
+     827 00000654 846F          .bits   -559971217,32                   ; _PHY_tf512pFFTTable[810] @ 25920
+         00000655 DE9F 
+     828 00000656 84A4          .bits   -572685148,32                   ; _PHY_tf512pFFTTable[811] @ 25952
+         00000657 DDDD 
+     829 00000658 84DA          .bits   -585399078,32                   ; _PHY_tf512pFFTTable[812] @ 25984
+         00000659 DD1B 
+     830 0000065a 8512          .bits   -598047470,32                   ; _PHY_tf512pFFTTable[813] @ 26016
+         0000065b DC5A 
+     831 0000065c 854A          .bits   -610695862,32                   ; _PHY_tf512pFFTTable[814] @ 26048
+         0000065d DB99 
+     832 0000065e 8584          .bits   -623344252,32                   ; _PHY_tf512pFFTTable[815] @ 26080
+         0000065f DAD8 
+     833 00000660 85BF          .bits   -635927105,32                   ; _PHY_tf512pFFTTable[816] @ 26112
+         00000661 DA18 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   31
+
+     834 00000662 85FB          .bits   -648509957,32                   ; _PHY_tf512pFFTTable[817] @ 26144
+         00000663 D958 
+     835 00000664 8638          .bits   -661027272,32                   ; _PHY_tf512pFFTTable[818] @ 26176
+         00000665 D899 
+     836 00000666 8677          .bits   -673544585,32                   ; _PHY_tf512pFFTTable[819] @ 26208
+         00000667 D7DA 
+     837 00000668 86B6          .bits   -686061898,32                   ; _PHY_tf512pFFTTable[820] @ 26240
+         00000669 D71B 
+     838 0000066a 86F7          .bits   -698513673,32                   ; _PHY_tf512pFFTTable[821] @ 26272
+         0000066b D65D 
+     839 0000066c 8739          .bits   -710965447,32                   ; _PHY_tf512pFFTTable[822] @ 26304
+         0000066d D59F 
+     840 0000066e 877C          .bits   -723417220,32                   ; _PHY_tf512pFFTTable[823] @ 26336
+         0000066f D4E1 
+     841 00000670 87C1          .bits   -735803455,32                   ; _PHY_tf512pFFTTable[824] @ 26368
+         00000671 D424 
+     842 00000672 8806          .bits   -748189690,32                   ; _PHY_tf512pFFTTable[825] @ 26400
+         00000673 D367 
+     843 00000674 884D          .bits   -760510387,32                   ; _PHY_tf512pFFTTable[826] @ 26432
+         00000675 D2AB 
+     844 00000676 8895          .bits   -772831083,32                   ; _PHY_tf512pFFTTable[827] @ 26464
+         00000677 D1EF 
+     845 00000678 88DE          .bits   -785086242,32                   ; _PHY_tf512pFFTTable[828] @ 26496
+         00000679 D134 
+     846 0000067a 8928          .bits   -797341400,32                   ; _PHY_tf512pFFTTable[829] @ 26528
+         0000067b D079 
+     847 0000067c 8973          .bits   -809531021,32                   ; _PHY_tf512pFFTTable[830] @ 26560
+         0000067d CFBF 
+     848 0000067e 89BF          .bits   -821720641,32                   ; _PHY_tf512pFFTTable[831] @ 26592
+         0000067f CF05 
+     849 00000680 8A0D          .bits   -833910259,32                   ; _PHY_tf512pFFTTable[832] @ 26624
+         00000681 CE4B 
+     850 00000682 8A5B          .bits   -846034341,32                   ; _PHY_tf512pFFTTable[833] @ 26656
+         00000683 CD92 
+     851 00000684 8AAB          .bits   -858092885,32                   ; _PHY_tf512pFFTTable[834] @ 26688
+         00000685 CCDA 
+     852 00000686 8AFC          .bits   -870216964,32                   ; _PHY_tf512pFFTTable[835] @ 26720
+         00000687 CC21 
+     853 00000688 8B4E          .bits   -882209970,32                   ; _PHY_tf512pFFTTable[836] @ 26752
+         00000689 CB6A 
+     854 0000068a 8BA1          .bits   -894202975,32                   ; _PHY_tf512pFFTTable[837] @ 26784
+         0000068b CAB3 
+     855 0000068c 8BF6          .bits   -906195978,32                   ; _PHY_tf512pFFTTable[838] @ 26816
+         0000068d C9FC 
+     856 0000068e 8C4B          .bits   -918123445,32                   ; _PHY_tf512pFFTTable[839] @ 26848
+         0000068f C946 
+     857 00000690 8CA2          .bits   -929985374,32                   ; _PHY_tf512pFFTTable[840] @ 26880
+         00000691 C891 
+     858 00000692 8CF9          .bits   -941847303,32                   ; _PHY_tf512pFFTTable[841] @ 26912
+         00000693 C7DC 
+     859 00000694 8D52          .bits   -953709230,32                   ; _PHY_tf512pFFTTable[842] @ 26944
+         00000695 C727 
+     860 00000696 8DAC          .bits   -965440084,32                   ; _PHY_tf512pFFTTable[843] @ 26976
+         00000697 C674 
+     861 00000698 8E07          .bits   -977236473,32                   ; _PHY_tf512pFFTTable[844] @ 27008
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   32
+
+         00000699 C5C0 
+     862 0000069a 8E63          .bits   -988901789,32                   ; _PHY_tf512pFFTTable[845] @ 27040
+         0000069b C50E 
+     863 0000069c 8EC0          .bits   -1000632640,32                  ; _PHY_tf512pFFTTable[846] @ 27072
+         0000069d C45B 
+     864 0000069e 8F1E          .bits   -1012232418,32                  ; _PHY_tf512pFFTTable[847] @ 27104
+         0000069f C3AA 
+     865 000006a0 8F7D          .bits   -1023832195,32                  ; _PHY_tf512pFFTTable[848] @ 27136
+         000006a1 C2F9 
+     866 000006a2 8FDE          .bits   -1035431970,32                  ; _PHY_tf512pFFTTable[849] @ 27168
+         000006a3 C248 
+     867 000006a4 903F          .bits   -1046966209,32                  ; _PHY_tf512pFFTTable[850] @ 27200
+         000006a5 C198 
+     868 000006a6 90A2          .bits   -1058434910,32                  ; _PHY_tf512pFFTTable[851] @ 27232
+         000006a7 C0E9 
+     869 000006a8 9105          .bits   -1069838075,32                  ; _PHY_tf512pFFTTable[852] @ 27264
+         000006a9 C03B 
+     870 000006aa 916A          .bits   -1081241238,32                  ; _PHY_tf512pFFTTable[853] @ 27296
+         000006ab BF8D 
+     871 000006ac 91D0          .bits   -1092644400,32                  ; _PHY_tf512pFFTTable[854] @ 27328
+         000006ad BEDF 
+     872 000006ae 9237          .bits   -1103982025,32                  ; _PHY_tf512pFFTTable[855] @ 27360
+         000006af BE32 
+     873 000006b0 929F          .bits   -1115254113,32                  ; _PHY_tf512pFFTTable[856] @ 27392
+         000006b1 BD86 
+     874 000006b2 9308          .bits   -1126460664,32                  ; _PHY_tf512pFFTTable[857] @ 27424
+         000006b3 BCDB 
+     875 000006b4 9372          .bits   -1137667214,32                  ; _PHY_tf512pFFTTable[858] @ 27456
+         000006b5 BC30 
+     876 000006b6 93DD          .bits   -1148808227,32                  ; _PHY_tf512pFFTTable[859] @ 27488
+         000006b7 BB86 
+     877 000006b8 9449          .bits   -1159949239,32                  ; _PHY_tf512pFFTTable[860] @ 27520
+         000006b9 BADC 
+     878 000006ba 94B6          .bits   -1171024714,32                  ; _PHY_tf512pFFTTable[861] @ 27552
+         000006bb BA33 
+     879 000006bc 9524          .bits   -1182034652,32                  ; _PHY_tf512pFFTTable[862] @ 27584
+         000006bd B98B 
+     880 000006be 9593          .bits   -1192979053,32                  ; _PHY_tf512pFFTTable[863] @ 27616
+         000006bf B8E4 
+     881 000006c0 9603          .bits   -1203923453,32                  ; _PHY_tf512pFFTTable[864] @ 27648
+         000006c1 B83D 
+     882 000006c2 9675          .bits   -1214802315,32                  ; _PHY_tf512pFFTTable[865] @ 27680
+         000006c3 B797 
+     883 000006c4 96E7          .bits   -1225681177,32                  ; _PHY_tf512pFFTTable[866] @ 27712
+         000006c5 B6F1 
+     884 000006c6 975A          .bits   -1236494502,32                  ; _PHY_tf512pFFTTable[867] @ 27744
+         000006c7 B64C 
+     885 000006c8 97CE          .bits   -1247242290,32                  ; _PHY_tf512pFFTTable[868] @ 27776
+         000006c9 B5A8 
+     886 000006ca 9844          .bits   -1257924540,32                  ; _PHY_tf512pFFTTable[869] @ 27808
+         000006cb B505 
+     887 000006cc 98BA          .bits   -1268541254,32                  ; _PHY_tf512pFFTTable[870] @ 27840
+         000006cd B463 
+     888 000006ce 9931          .bits   -1279157967,32                  ; _PHY_tf512pFFTTable[871] @ 27872
+         000006cf B3C1 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   33
+
+     889 000006d0 99AA          .bits   -1289709142,32                  ; _PHY_tf512pFFTTable[872] @ 27904
+         000006d1 B320 
+     890 000006d2 9A23          .bits   -1300260317,32                  ; _PHY_tf512pFFTTable[873] @ 27936
+         000006d3 B27F 
+     891 000006d4 9A9D          .bits   -1310680419,32                  ; _PHY_tf512pFFTTable[874] @ 27968
+         000006d5 B1E0 
+     892 000006d6 9B18          .bits   -1321100520,32                  ; _PHY_tf512pFFTTable[875] @ 28000
+         000006d7 B141 
+     893 000006d8 9B94          .bits   -1331455084,32                  ; _PHY_tf512pFFTTable[876] @ 28032
+         000006d9 B0A3 
+     894 000006da 9C12          .bits   -1341809646,32                  ; _PHY_tf512pFFTTable[877] @ 28064
+         000006db B005 
+     895 000006dc 9C90          .bits   -1352033136,32                  ; _PHY_tf512pFFTTable[878] @ 28096
+         000006dd AF69 
+     896 000006de 9D0F          .bits   -1362256625,32                  ; _PHY_tf512pFFTTable[879] @ 28128
+         000006df AECD 
+     897 000006e0 9D8F          .bits   -1372414577,32                  ; _PHY_tf512pFFTTable[880] @ 28160
+         000006e1 AE32 
+     898 000006e2 9E10          .bits   -1382506992,32                  ; _PHY_tf512pFFTTable[881] @ 28192
+         000006e3 AD98 
+     899 000006e4 9E92          .bits   -1392599406,32                  ; _PHY_tf512pFFTTable[882] @ 28224
+         000006e5 ACFE 
+     900 000006e6 9F15          .bits   -1402626283,32                  ; _PHY_tf512pFFTTable[883] @ 28256
+         000006e7 AC65 
+     901 000006e8 9F98          .bits   -1412522088,32                  ; _PHY_tf512pFFTTable[884] @ 28288
+         000006e9 ABCE 
+     902 000006ea A01D          .bits   -1422417891,32                  ; _PHY_tf512pFFTTable[885] @ 28320
+         000006eb AB37 
+     903 000006ec A0A3          .bits   -1432313693,32                  ; _PHY_tf512pFFTTable[886] @ 28352
+         000006ed AAA0 
+     904 000006ee A129          .bits   -1442078423,32                  ; _PHY_tf512pFFTTable[887] @ 28384
+         000006ef AA0B 
+     905 000006f0 A1B1          .bits   -1451843151,32                  ; _PHY_tf512pFFTTable[888] @ 28416
+         000006f1 A976 
+     906 000006f2 A239          .bits   -1461476807,32                  ; _PHY_tf512pFFTTable[889] @ 28448
+         000006f3 A8E3 
+     907 000006f4 A2C2          .bits   -1471110462,32                  ; _PHY_tf512pFFTTable[890] @ 28480
+         000006f5 A850 
+     908 000006f6 A34D          .bits   -1480678579,32                  ; _PHY_tf512pFFTTable[891] @ 28512
+         000006f7 A7BE 
+     909 000006f8 A3D8          .bits   -1490181160,32                  ; _PHY_tf512pFFTTable[892] @ 28544
+         000006f9 A72D 
+     910 000006fa A464          .bits   -1499683740,32                  ; _PHY_tf512pFFTTable[893] @ 28576
+         000006fb A69C 
+     911 000006fc A4F1          .bits   -1509055247,32                  ; _PHY_tf512pFFTTable[894] @ 28608
+         000006fd A60D 
+     912 000006fe A57E          .bits   -1518426754,32                  ; _PHY_tf512pFFTTable[895] @ 28640
+         000006ff A57E 
+     913 00000700 A60D          .bits   -1527667187,32                  ; _PHY_tf512pFFTTable[896] @ 28672
+         00000701 A4F1 
+     914 00000702 A69C          .bits   -1536907620,32                  ; _PHY_tf512pFFTTable[897] @ 28704
+         00000703 A464 
+     915 00000704 A72D          .bits   -1546082515,32                  ; _PHY_tf512pFFTTable[898] @ 28736
+         00000705 A3D8 
+     916 00000706 A7BE          .bits   -1555191874,32                  ; _PHY_tf512pFFTTable[899] @ 28768
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   34
+
+         00000707 A34D 
+     917 00000708 A850          .bits   -1564301232,32                  ; _PHY_tf512pFFTTable[900] @ 28800
+         00000709 A2C2 
+     918 0000070a A8E3          .bits   -1573279517,32                  ; _PHY_tf512pFFTTable[901] @ 28832
+         0000070b A239 
+     919 0000070c A976          .bits   -1582192266,32                  ; _PHY_tf512pFFTTable[902] @ 28864
+         0000070d A1B1 
+     920 0000070e AA0B          .bits   -1591105013,32                  ; _PHY_tf512pFFTTable[903] @ 28896
+         0000070f A129 
+     921 00000710 AAA0          .bits   -1599886688,32                  ; _PHY_tf512pFFTTable[904] @ 28928
+         00000711 A0A3 
+     922 00000712 AB37          .bits   -1608668361,32                  ; _PHY_tf512pFFTTable[905] @ 28960
+         00000713 A01D 
+     923 00000714 ABCE          .bits   -1617384498,32                  ; _PHY_tf512pFFTTable[906] @ 28992
+         00000715 9F98 
+     924 00000716 AC65          .bits   -1625969563,32                  ; _PHY_tf512pFFTTable[907] @ 29024
+         00000717 9F15 
+     925 00000718 ACFE          .bits   -1634554626,32                  ; _PHY_tf512pFFTTable[908] @ 29056
+         00000719 9E92 
+     926 0000071a AD98          .bits   -1643074152,32                  ; _PHY_tf512pFFTTable[909] @ 29088
+         0000071b 9E10 
+     927 0000071c AE32          .bits   -1651528142,32                  ; _PHY_tf512pFFTTable[910] @ 29120
+         0000071d 9D8F 
+     928 0000071e AECD          .bits   -1659916595,32                  ; _PHY_tf512pFFTTable[911] @ 29152
+         0000071f 9D0F 
+     929 00000720 AF69          .bits   -1668239511,32                  ; _PHY_tf512pFFTTable[912] @ 29184
+         00000721 9C90 
+     930 00000722 B005          .bits   -1676496891,32                  ; _PHY_tf512pFFTTable[913] @ 29216
+         00000723 9C12 
+     931 00000724 B0A3          .bits   -1684754269,32                  ; _PHY_tf512pFFTTable[914] @ 29248
+         00000725 9B94 
+     932 00000726 B141          .bits   -1692880575,32                  ; _PHY_tf512pFFTTable[915] @ 29280
+         00000727 9B18 
+     933 00000728 B1E0          .bits   -1700941344,32                  ; _PHY_tf512pFFTTable[916] @ 29312
+         00000729 9A9D 
+     934 0000072a B27F          .bits   -1708936577,32                  ; _PHY_tf512pFFTTable[917] @ 29344
+         0000072b 9A23 
+     935 0000072c B320          .bits   -1716866272,32                  ; _PHY_tf512pFFTTable[918] @ 29376
+         0000072d 99AA 
+     936 0000072e B3C1          .bits   -1724795967,32                  ; _PHY_tf512pFFTTable[919] @ 29408
+         0000072f 9931 
+     937 00000730 B463          .bits   -1732594589,32                  ; _PHY_tf512pFFTTable[920] @ 29440
+         00000731 98BA 
+     938 00000732 B505          .bits   -1740327675,32                  ; _PHY_tf512pFFTTable[921] @ 29472
+         00000733 9844 
+     939 00000734 B5A8          .bits   -1748060760,32                  ; _PHY_tf512pFFTTable[922] @ 29504
+         00000735 97CE 
+     940 00000736 B64C          .bits   -1755662772,32                  ; _PHY_tf512pFFTTable[923] @ 29536
+         00000737 975A 
+     941 00000738 B6F1          .bits   -1763199247,32                  ; _PHY_tf512pFFTTable[924] @ 29568
+         00000739 96E7 
+     942 0000073a B797          .bits   -1770670185,32                  ; _PHY_tf512pFFTTable[925] @ 29600
+         0000073b 9675 
+     943 0000073c B83D          .bits   -1778141123,32                  ; _PHY_tf512pFFTTable[926] @ 29632
+         0000073d 9603 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   35
+
+     944 0000073e B8E4          .bits   -1785480988,32                  ; _PHY_tf512pFFTTable[927] @ 29664
+         0000073f 9593 
+     945 00000740 B98B          .bits   -1792755317,32                  ; _PHY_tf512pFFTTable[928] @ 29696
+         00000741 9524 
+     946 00000742 BA33          .bits   -1799964109,32                  ; _PHY_tf512pFFTTable[929] @ 29728
+         00000743 94B6 
+     947 00000744 BADC          .bits   -1807107364,32                  ; _PHY_tf512pFFTTable[930] @ 29760
+         00000745 9449 
+     948 00000746 BB86          .bits   -1814185082,32                  ; _PHY_tf512pFFTTable[931] @ 29792
+         00000747 93DD 
+     949 00000748 BC30          .bits   -1821197264,32                  ; _PHY_tf512pFFTTable[932] @ 29824
+         00000749 9372 
+     950 0000074a BCDB          .bits   -1828143909,32                  ; _PHY_tf512pFFTTable[933] @ 29856
+         0000074b 9308 
+     951 0000074c BD86          .bits   -1835025018,32                  ; _PHY_tf512pFFTTable[934] @ 29888
+         0000074d 929F 
+     952 0000074e BE32          .bits   -1841840590,32                  ; _PHY_tf512pFFTTable[935] @ 29920
+         0000074f 9237 
+     953 00000750 BEDF          .bits   -1848590625,32                  ; _PHY_tf512pFFTTable[936] @ 29952
+         00000751 91D0 
+     954 00000752 BF8D          .bits   -1855275123,32                  ; _PHY_tf512pFFTTable[937] @ 29984
+         00000753 916A 
+     955 00000754 C03B          .bits   -1861894085,32                  ; _PHY_tf512pFFTTable[938] @ 30016
+         00000755 9105 
+     956 00000756 C0E9          .bits   -1868381975,32                  ; _PHY_tf512pFFTTable[939] @ 30048
+         00000757 90A2 
+     957 00000758 C198          .bits   -1874869864,32                  ; _PHY_tf512pFFTTable[940] @ 30080
+         00000759 903F 
+     958 0000075a C248          .bits   -1881226680,32                  ; _PHY_tf512pFFTTable[941] @ 30112
+         0000075b 8FDE 
+     959 0000075c C2F9          .bits   -1887583495,32                  ; _PHY_tf512pFFTTable[942] @ 30144
+         0000075d 8F7D 
+     960 0000075e C3AA          .bits   -1893809238,32                  ; _PHY_tf512pFFTTable[943] @ 30176
+         0000075f 8F1E 
+     961 00000760 C45B          .bits   -1899969445,32                  ; _PHY_tf512pFFTTable[944] @ 30208
+         00000761 8EC0 
+     962 00000762 C50E          .bits   -1906064114,32                  ; _PHY_tf512pFFTTable[945] @ 30240
+         00000763 8E63 
+     963 00000764 C5C0          .bits   -1912093248,32                  ; _PHY_tf512pFFTTable[946] @ 30272
+         00000765 8E07 
+     964 00000766 C674          .bits   -1918056844,32                  ; _PHY_tf512pFFTTable[947] @ 30304
+         00000767 8DAC 
+     965 00000768 C727          .bits   -1923954905,32                  ; _PHY_tf512pFFTTable[948] @ 30336
+         00000769 8D52 
+     966 0000076a C7DC          .bits   -1929787428,32                  ; _PHY_tf512pFFTTable[949] @ 30368
+         0000076b 8CF9 
+     967 0000076c C891          .bits   -1935488879,32                  ; _PHY_tf512pFFTTable[950] @ 30400
+         0000076d 8CA2 
+     968 0000076e C946          .bits   -1941190330,32                  ; _PHY_tf512pFFTTable[951] @ 30432
+         0000076f 8C4B 
+     969 00000770 C9FC          .bits   -1946760708,32                  ; _PHY_tf512pFFTTable[952] @ 30464
+         00000771 8BF6 
+     970 00000772 CAB3          .bits   -1952331085,32                  ; _PHY_tf512pFFTTable[953] @ 30496
+         00000773 8BA1 
+     971 00000774 CB6A          .bits   -1957770390,32                  ; _PHY_tf512pFFTTable[954] @ 30528
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   36
+
+         00000775 8B4E 
+     972 00000776 CC21          .bits   -1963144159,32                  ; _PHY_tf512pFFTTable[955] @ 30560
+         00000777 8AFC 
+     973 00000778 CCDA          .bits   -1968452390,32                  ; _PHY_tf512pFFTTable[956] @ 30592
+         00000779 8AAB 
+     974 0000077a CD92          .bits   -1973695086,32                  ; _PHY_tf512pFFTTable[957] @ 30624
+         0000077b 8A5B 
+     975 0000077c CE4B          .bits   -1978806709,32                  ; _PHY_tf512pFFTTable[958] @ 30656
+         0000077d 8A0D 
+     976 0000077e CF05          .bits   -1983918331,32                  ; _PHY_tf512pFFTTable[959] @ 30688
+         0000077f 89BF 
+     977 00000780 CFBF          .bits   -1988898881,32                  ; _PHY_tf512pFFTTable[960] @ 30720
+         00000781 8973 
+     978 00000782 D079          .bits   -1993813895,32                  ; _PHY_tf512pFFTTable[961] @ 30752
+         00000783 8928 
+     979 00000784 D134          .bits   -1998663372,32                  ; _PHY_tf512pFFTTable[962] @ 30784
+         00000785 88DE 
+     980 00000786 D1EF          .bits   -2003447313,32                  ; _PHY_tf512pFFTTable[963] @ 30816
+         00000787 8895 
+     981 00000788 D2AB          .bits   -2008165717,32                  ; _PHY_tf512pFFTTable[964] @ 30848
+         00000789 884D 
+     982 0000078a D367          .bits   -2012818585,32                  ; _PHY_tf512pFFTTable[965] @ 30880
+         0000078b 8806 
+     983 0000078c D424          .bits   -2017340380,32                  ; _PHY_tf512pFFTTable[966] @ 30912
+         0000078d 87C1 
+     984 0000078e D4E1          .bits   -2021862175,32                  ; _PHY_tf512pFFTTable[967] @ 30944
+         0000078f 877C 
+     985 00000790 D59F          .bits   -2026252897,32                  ; _PHY_tf512pFFTTable[968] @ 30976
+         00000791 8739 
+     986 00000792 D65D          .bits   -2030578083,32                  ; _PHY_tf512pFFTTable[969] @ 31008
+         00000793 86F7 
+     987 00000794 D71B          .bits   -2034837733,32                  ; _PHY_tf512pFFTTable[970] @ 31040
+         00000795 86B6 
+     988 00000796 D7DA          .bits   -2038966310,32                  ; _PHY_tf512pFFTTable[971] @ 31072
+         00000797 8677 
+     989 00000798 D899          .bits   -2043094887,32                  ; _PHY_tf512pFFTTable[972] @ 31104
+         00000799 8638 
+     990 0000079a D958          .bits   -2047092392,32                  ; _PHY_tf512pFFTTable[973] @ 31136
+         0000079b 85FB 
+     991 0000079c DA18          .bits   -2051024360,32                  ; _PHY_tf512pFFTTable[974] @ 31168
+         0000079d 85BF 
+     992 0000079e DAD8          .bits   -2054890792,32                  ; _PHY_tf512pFFTTable[975] @ 31200
+         0000079f 8584 
+     993 000007a0 DB99          .bits   -2058691687,32                  ; _PHY_tf512pFFTTable[976] @ 31232
+         000007a1 854A 
+     994 000007a2 DC5A          .bits   -2062361510,32                  ; _PHY_tf512pFFTTable[977] @ 31264
+         000007a3 8512 
+     995 000007a4 DD1B          .bits   -2066031333,32                  ; _PHY_tf512pFFTTable[978] @ 31296
+         000007a5 84DA 
+     996 000007a6 DDDD          .bits   -2069570083,32                  ; _PHY_tf512pFFTTable[979] @ 31328
+         000007a7 84A4 
+     997 000007a8 DE9F          .bits   -2073043297,32                  ; _PHY_tf512pFFTTable[980] @ 31360
+         000007a9 846F 
+     998 000007aa DF61          .bits   -2076450975,32                  ; _PHY_tf512pFFTTable[981] @ 31392
+         000007ab 843B 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   37
+
+     999 000007ac E023          .bits   -2079793117,32                  ; _PHY_tf512pFFTTable[982] @ 31424
+         000007ad 8408 
+    1000 000007ae E0E6          .bits   -2083004186,32                  ; _PHY_tf512pFFTTable[983] @ 31456
+         000007af 83D7 
+    1001 000007b0 E1A9          .bits   -2086149719,32                  ; _PHY_tf512pFFTTable[984] @ 31488
+         000007b1 83A7 
+    1002 000007b2 E26D          .bits   -2089229715,32                  ; _PHY_tf512pFFTTable[985] @ 31520
+         000007b3 8378 
+    1003 000007b4 E331          .bits   -2092244175,32                  ; _PHY_tf512pFFTTable[986] @ 31552
+         000007b5 834A 
+    1004 000007b6 E3F5          .bits   -2095193099,32                  ; _PHY_tf512pFFTTable[987] @ 31584
+         000007b7 831D 
+    1005 000007b8 E4B9          .bits   -2098010951,32                  ; _PHY_tf512pFFTTable[988] @ 31616
+         000007b9 82F2 
+    1006 000007ba E57E          .bits   -2100828802,32                  ; _PHY_tf512pFFTTable[989] @ 31648
+         000007bb 82C7 
+    1007 000007bc E642          .bits   -2103515582,32                  ; _PHY_tf512pFFTTable[990] @ 31680
+         000007bd 829E 
+    1008 000007be E707          .bits   -2106071289,32                  ; _PHY_tf512pFFTTable[991] @ 31712
+         000007bf 8277 
+    1009 000007c0 E7CD          .bits   -2108626995,32                  ; _PHY_tf512pFFTTable[992] @ 31744
+         000007c1 8250 
+    1010 000007c2 E892          .bits   -2111051630,32                  ; _PHY_tf512pFFTTable[993] @ 31776
+         000007c3 822B 
+    1011 000007c4 E958          .bits   -2113476264,32                  ; _PHY_tf512pFFTTable[994] @ 31808
+         000007c5 8206 
+    1012 000007c6 EA1E          .bits   -2115769826,32                  ; _PHY_tf512pFFTTable[995] @ 31840
+         000007c7 81E3 
+    1013 000007c8 EAE4          .bits   -2117932316,32                  ; _PHY_tf512pFFTTable[996] @ 31872
+         000007c9 81C2 
+    1014 000007ca EBAB          .bits   -2120094805,32                  ; _PHY_tf512pFFTTable[997] @ 31904
+         000007cb 81A1 
+    1015 000007cc EC71          .bits   -2122126223,32                  ; _PHY_tf512pFFTTable[998] @ 31936
+         000007cd 8182 
+    1016 000007ce ED38          .bits   -2124092104,32                  ; _PHY_tf512pFFTTable[999] @ 31968
+         000007cf 8164 
+    1017 000007d0 EDFF          .bits   -2125992449,32                  ; _PHY_tf512pFFTTable[1000] @ 32000
+         000007d1 8147 
+    1018 000007d2 EEC6          .bits   -2127827258,32                  ; _PHY_tf512pFFTTable[1001] @ 32032
+         000007d3 812B 
+    1019 000007d4 EF8E          .bits   -2129530994,32                  ; _PHY_tf512pFFTTable[1002] @ 32064
+         000007d5 8111 
+    1020 000007d6 F055          .bits   -2131234731,32                  ; _PHY_tf512pFFTTable[1003] @ 32096
+         000007d7 80F7 
+    1021 000007d8 F11D          .bits   -2132807395,32                  ; _PHY_tf512pFFTTable[1004] @ 32128
+         000007d9 80DF 
+    1022 000007da F1E4          .bits   -2134248988,32                  ; _PHY_tf512pFFTTable[1005] @ 32160
+         000007db 80C9 
+    1023 000007dc F2AC          .bits   -2135690580,32                  ; _PHY_tf512pFFTTable[1006] @ 32192
+         000007dd 80B3 
+    1024 000007de F374          .bits   -2137001100,32                  ; _PHY_tf512pFFTTable[1007] @ 32224
+         000007df 809F 
+    1025 000007e0 F43C          .bits   -2138246084,32                  ; _PHY_tf512pFFTTable[1008] @ 32256
+         000007e1 808C 
+    1026 000007e2 F505          .bits   -2139425531,32                  ; _PHY_tf512pFFTTable[1009] @ 32288
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   38
+
+         000007e3 807A 
+    1027 000007e4 F5CD          .bits   -2140539443,32                  ; _PHY_tf512pFFTTable[1010] @ 32320
+         000007e5 8069 
+    1028 000007e6 F696          .bits   -2141522282,32                  ; _PHY_tf512pFFTTable[1011] @ 32352
+         000007e7 805A 
+    1029 000007e8 F75E          .bits   -2142439586,32                  ; _PHY_tf512pFFTTable[1012] @ 32384
+         000007e9 804C 
+    1030 000007ea F827          .bits   -2143291353,32                  ; _PHY_tf512pFFTTable[1013] @ 32416
+         000007eb 803F 
+    1031 000007ec F8EF          .bits   -2144077585,32                  ; _PHY_tf512pFFTTable[1014] @ 32448
+         000007ed 8033 
+    1032 000007ee F9B8          .bits   -2144798280,32                  ; _PHY_tf512pFFTTable[1015] @ 32480
+         000007ef 8028 
+    1033 000007f0 FA81          .bits   -2145387903,32                  ; _PHY_tf512pFFTTable[1016] @ 32512
+         000007f1 801F 
+    1034 000007f2 FB4A          .bits   -2145911990,32                  ; _PHY_tf512pFFTTable[1017] @ 32544
+         000007f3 8017 
+    1035 000007f4 FC13          .bits   -2146370541,32                  ; _PHY_tf512pFFTTable[1018] @ 32576
+         000007f5 8010 
+    1036 000007f6 FCDC          .bits   -2146698020,32                  ; _PHY_tf512pFFTTable[1019] @ 32608
+         000007f7 800B 
+    1037 000007f8 FDA5          .bits   -2146959963,32                  ; _PHY_tf512pFFTTable[1020] @ 32640
+         000007f9 8007 
+    1038 000007fa FE6E          .bits   -2147221906,32                  ; _PHY_tf512pFFTTable[1021] @ 32672
+         000007fb 8003 
+    1039 000007fc FF37          .bits   -2147287241,32                  ; _PHY_tf512pFFTTable[1022] @ 32704
+         000007fd 8002 
+    1040 000007fe 0000          .bits   0,32                    ; _PHY_tf512pFFTTable[1023] @ 32736
+         000007ff 0000 
+    1041              
+    1042              $C$DW$1 .dwtag  DW_TAG_variable, DW_AT_name("PHY_tf512pFFTTable")
+    1043                      .dwattr $C$DW$1, DW_AT_TI_symbol_name("_PHY_tf512pFFTTable")
+    1044                      .dwattr $C$DW$1, DW_AT_location[DW_OP_addr _PHY_tf512pFFTTable]
+    1045                      .dwattr $C$DW$1, DW_AT_type(*$C$DW$T$21)
+    1046                      .dwattr $C$DW$1, DW_AT_external
+    1047              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.4\bin\ac2000.exe -@C:\\Users\\a0221343\\AppData\\Local\\T
+    1048              
+    1049              ;***************************************************************
+    1050              ;* TYPE INFORMATION                                            *
+    1051              ;***************************************************************
+    1052              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+    1053                      .dwattr $C$DW$T$2, DW_AT_name("void")
+    1054              $C$DW$T$4       .dwtag  DW_TAG_base_type
+    1055                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+    1056                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+    1057                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+    1058              $C$DW$T$5       .dwtag  DW_TAG_base_type
+    1059                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+    1060                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+    1061                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+    1062              $C$DW$T$6       .dwtag  DW_TAG_base_type
+    1063                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+    1064                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+    1065                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+    1066              $C$DW$T$7       .dwtag  DW_TAG_base_type
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   39
+
+    1067                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+    1068                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+    1069                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+    1070              $C$DW$T$8       .dwtag  DW_TAG_base_type
+    1071                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+    1072                      .dwattr $C$DW$T$8, DW_AT_name("short")
+    1073                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+    1074              $C$DW$T$9       .dwtag  DW_TAG_base_type
+    1075                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+    1076                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+    1077                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+    1078              $C$DW$T$10      .dwtag  DW_TAG_base_type
+    1079                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+    1080                      .dwattr $C$DW$T$10, DW_AT_name("int")
+    1081                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+    1082              $C$DW$T$11      .dwtag  DW_TAG_base_type
+    1083                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+    1084                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+    1085                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+    1086              $C$DW$T$12      .dwtag  DW_TAG_base_type
+    1087                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+    1088                      .dwattr $C$DW$T$12, DW_AT_name("long")
+    1089                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+    1090              $C$DW$T$13      .dwtag  DW_TAG_base_type
+    1091                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+    1092                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+    1093                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+    1094              $C$DW$T$19      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+    1095                      .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$13)
+    1096                      .dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+    1097              $C$DW$2 .dwtag  DW_TAG_TI_far_type
+    1098                      .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$19)
+    1099              $C$DW$T$20      .dwtag  DW_TAG_const_type
+    1100                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$2)
+    1101              
+    1102              $C$DW$T$21      .dwtag  DW_TAG_array_type
+    1103                      .dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$20)
+    1104                      .dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+    1105                      .dwattr $C$DW$T$21, DW_AT_byte_size(0x800)
+    1106              $C$DW$3 .dwtag  DW_TAG_subrange_type
+    1107                      .dwattr $C$DW$3, DW_AT_upper_bound(0x3ff)
+    1108                      .dwendtag $C$DW$T$21
+    1109              
+    1110              $C$DW$T$14      .dwtag  DW_TAG_base_type
+    1111                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+    1112                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+    1113                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+    1114              $C$DW$T$15      .dwtag  DW_TAG_base_type
+    1115                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+    1116                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+    1117                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+    1118              $C$DW$T$16      .dwtag  DW_TAG_base_type
+    1119                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+    1120                      .dwattr $C$DW$T$16, DW_AT_name("float")
+    1121                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:52 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0016410                         PAGE   40
+
+    1122              $C$DW$T$17      .dwtag  DW_TAG_base_type
+    1123                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+    1124                      .dwattr $C$DW$T$17, DW_AT_name("double")
+    1125                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+    1126              $C$DW$T$18      .dwtag  DW_TAG_base_type
+    1127                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+    1128                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+    1129                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+    1130                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+    1131                      .dwendtag $C$DW$CU
+    1132              
+
+No Assembly Errors, No Assembly Warnings

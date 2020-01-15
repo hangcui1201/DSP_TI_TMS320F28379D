@@ -1,0 +1,65 @@
+//#############################################################################
+//
+// FILE:   cla_asin.cla
+//
+// TITLE:  This example calls the arc-sine function (CLAasin) of the CLA
+//         math library on a test vector and compares the result with the
+//         expected results "math.h" routine
+//
+//###########################################################################
+// $TI Release: CLA Math Library 4.03.00.00 $
+// $Release Date: May 27, 2019 $
+// $Copyright: Copyright (C) 2019 Texas Instruments Incorporated -
+//             http://www.ti.com/ ALL RIGHTS RESERVED $
+//###########################################################################
+
+//
+// Includes
+//
+#include "CLAmath.h"
+#include "cla_shared.h"
+
+//
+// Task 1 : Calculate asin(X)
+//
+__attribute__((interrupt)) void Cla1Task1(void)
+{
+    __mdebugstop();
+    fResult1 = CLAasin(fVal);
+}
+__attribute__((interrupt)) void Cla1Task2(void)
+{
+    //
+    // Test inline function
+    //
+    __mdebugstop();
+    fResult2 = CLAasin_inline(fVal);
+}
+__attribute__((interrupt)) void Cla1Task3(void)
+{
+
+}
+__attribute__((interrupt)) void Cla1Task4(void)
+{
+
+}
+__attribute__((interrupt)) void Cla1Task5(void)
+{
+
+}
+__attribute__((interrupt)) void Cla1Task6(void)
+{
+
+}
+__attribute__((interrupt)) void Cla1Task7(void)
+{
+
+}
+__attribute__((interrupt)) void Cla1Task8(void)
+{
+
+}
+
+//
+// End of file
+//

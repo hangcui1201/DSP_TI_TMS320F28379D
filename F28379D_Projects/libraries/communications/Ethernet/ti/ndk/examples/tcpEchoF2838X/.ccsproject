@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="8.2.0"/>
+	<deviceVariant value="Cortex M.F2838x"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="18.1.3.LTS"/>
+	<isElfFormat value="true"/>
+	<linkerCommandFile value="2838x_flash_lnk_cm.cmd"/>
+	<rts value="rtsv7M3_T_le_eabi.lib"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate"/>
+	<filesToOpen value="main.c"/>
+	<isTargetManual value="false"/>
+</projectOptions>

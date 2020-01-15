@@ -1,0 +1,1052 @@
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.2.9 *
+       3              ;* Date/Time created: Tue Apr 14 13:31:49 2015                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --cla_support=cla0 --float_support=fpu32 --hll_source=on --mem_model:code=flat --mem_m
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_RO
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TMS320C2000 C/C++ Codegen PC v6.2.9 Copyright (c) 1996-2014 Texas I
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\work\grepos\c2000_bootROM\f28004x_bootrom\F28004x_ROM_dev\ccs_fi
+      13              
+      14              $C$DW$1 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_disable")
+      15                      .dwattr $C$DW$1, DW_AT_TI_symbol_name("_Interrupt_disable")
+      16                      .dwattr $C$DW$1, DW_AT_declaration
+      17                      .dwattr $C$DW$1, DW_AT_external
+      18              $C$DW$2 .dwtag  DW_TAG_formal_parameter
+      19                      .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$24)
+      20                      .dwendtag $C$DW$1
+      21              
+      22              
+      23              $C$DW$3 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_enable")
+      24                      .dwattr $C$DW$3, DW_AT_TI_symbol_name("_Interrupt_enable")
+      25                      .dwattr $C$DW$3, DW_AT_declaration
+      26                      .dwattr $C$DW$3, DW_AT_external
+      27              $C$DW$4 .dwtag  DW_TAG_formal_parameter
+      28                      .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$24)
+      29                      .dwendtag $C$DW$3
+      30              
+      31              ;       c:\ti\ccsv6\tools\compiler\c2000_6.2.9\bin\ac2000.exe -@C:\\Users\\a0272466\\AppData\\Local\\Temp\\04
+      32 00000000               .sect   ".text"
+      33                      .clink
+      34              
+      35              $C$DW$5 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_register")
+      36                      .dwattr $C$DW$5, DW_AT_low_pc(_Interrupt_register)
+      37                      .dwattr $C$DW$5, DW_AT_high_pc(0x00)
+      38                      .dwattr $C$DW$5, DW_AT_TI_symbol_name("_Interrupt_register")
+      39                      .dwattr $C$DW$5, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F2
+      40                      .dwattr $C$DW$5, DW_AT_TI_begin_line(0xa0)
+      41                      .dwattr $C$DW$5, DW_AT_TI_begin_column(0x01)
+      42                      .dwattr $C$DW$5, DW_AT_TI_max_frame_size(-6)
+      43                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+      44              
+      45                      .dwfde $C$DW$CIE, _Interrupt_register
+      46              $C$DW$6 .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+      47                      .dwattr $C$DW$6, DW_AT_TI_symbol_name("_interruptNumber")
+      48                      .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$24)
+      49                      .dwattr $C$DW$6, DW_AT_location[DW_OP_reg0]
+      50              $C$DW$7 .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+      51                      .dwattr $C$DW$7, DW_AT_TI_symbol_name("_handler")
+      52                      .dwattr $C$DW$7, DW_AT_type(*$C$DW$T$23)
+      53                      .dwattr $C$DW$7, DW_AT_location[DW_OP_reg12]
+      54              
+      55              ;***************************************************************
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    2
+
+      56              ;* FNAME: _Interrupt_register           FR SIZE:   4           *
+      57              ;*                                                             *
+      58              ;* FUNCTION ENVIRONMENT                                        *
+      59              ;*                                                             *
+      60              ;* FUNCTION PROPERTIES                                         *
+      61              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+      62              ;***************************************************************
+      63              
+      64 00000000       _Interrupt_register:
+      65                      .dwcfi  cfa_offset, -2
+      66                      .dwcfi  save_reg_to_mem, 26, 0
+      67                      .dwcfi  save_reg_to_reg, 78, 26
+      68 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+      69                      .dwcfi  cfa_offset, -6
+      70              $C$DW$8 .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+      71                      .dwattr $C$DW$8, DW_AT_TI_symbol_name("_interruptNumber")
+      72                      .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$24)
+      73                      .dwattr $C$DW$8, DW_AT_location[DW_OP_breg20 -2]
+      74              $C$DW$9 .dwtag  DW_TAG_variable, DW_AT_name("handler")
+      75                      .dwattr $C$DW$9, DW_AT_TI_symbol_name("_handler")
+      76                      .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$23)
+      77                      .dwattr $C$DW$9, DW_AT_location[DW_OP_breg20 -4]
+      78 00000001 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |161| 
+      79 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |161| 
+      80                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+      81 00000003 7622   EALLOW
+      82                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+      83 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |164| 
+      84 00000005 C444          MOVL      XAR6,*-SP[4]          ; [CPU_] |164| 
+      85 00000006 0EA8          MOVU      ACC,AH                ; [CPU_] |164| 
+      86 00000007 FF30          LSL       ACC,1                 ; [CPU_] |164| 
+      87 00000008 FF18          ADD       ACC,#13 << 8          ; [CPU_] |164| 
+         00000009 000D 
+      88 0000000a 8AA9          MOVL      XAR4,ACC              ; [CPU_] |164| 
+      89 0000000b C2C4          MOVL      *+XAR4[0],XAR6        ; [CPU_] |164| 
+      90                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+      91 0000000c 761A   EDIS
+      92                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+      93 0000000d FF69          SPM       #0                    ; [CPU_] 
+      94 0000000e FE84          SUBB      SP,#4                 ; [CPU_U] 
+      95                      .dwcfi  cfa_offset, -2
+      96              $C$DW$10        .dwtag  DW_TAG_TI_branch
+      97                      .dwattr $C$DW$10, DW_AT_low_pc(0x00)
+      98                      .dwattr $C$DW$10, DW_AT_TI_return
+      99 0000000f 0006          LRETR     ; [CPU_] 
+     100                      ; return occurs ; [] 
+     101                      .dwattr $C$DW$5, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F280
+     102                      .dwattr $C$DW$5, DW_AT_TI_end_line(0xa7)
+     103                      .dwattr $C$DW$5, DW_AT_TI_end_column(0x01)
+     104                      .dwendentry
+     105                      .dwendtag $C$DW$5
+     106              
+     107 00000010               .sect   ".text"
+     108                      .clink
+     109              
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    3
+
+     110              $C$DW$11        .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_unregister")
+     111                      .dwattr $C$DW$11, DW_AT_low_pc(_Interrupt_unregister)
+     112                      .dwattr $C$DW$11, DW_AT_high_pc(0x00)
+     113                      .dwattr $C$DW$11, DW_AT_TI_symbol_name("_Interrupt_unregister")
+     114                      .dwattr $C$DW$11, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     115                      .dwattr $C$DW$11, DW_AT_TI_begin_line(0xba)
+     116                      .dwattr $C$DW$11, DW_AT_TI_begin_column(0x01)
+     117                      .dwattr $C$DW$11, DW_AT_TI_max_frame_size(-4)
+     118                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     119              
+     120                      .dwfde $C$DW$CIE, _Interrupt_unregister
+     121              $C$DW$12        .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+     122                      .dwattr $C$DW$12, DW_AT_TI_symbol_name("_interruptNumber")
+     123                      .dwattr $C$DW$12, DW_AT_type(*$C$DW$T$24)
+     124                      .dwattr $C$DW$12, DW_AT_location[DW_OP_reg0]
+     125              
+     126              ;***************************************************************
+     127              ;* FNAME: _Interrupt_unregister         FR SIZE:   2           *
+     128              ;*                                                             *
+     129              ;* FUNCTION ENVIRONMENT                                        *
+     130              ;*                                                             *
+     131              ;* FUNCTION PROPERTIES                                         *
+     132              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     133              ;***************************************************************
+     134              
+     135 00000010       _Interrupt_unregister:
+     136                      .dwcfi  cfa_offset, -2
+     137                      .dwcfi  save_reg_to_mem, 26, 0
+     138                      .dwcfi  save_reg_to_reg, 78, 26
+     139 00000010 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     140                      .dwcfi  cfa_offset, -4
+     141              $C$DW$13        .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+     142                      .dwattr $C$DW$13, DW_AT_TI_symbol_name("_interruptNumber")
+     143                      .dwattr $C$DW$13, DW_AT_type(*$C$DW$T$24)
+     144                      .dwattr $C$DW$13, DW_AT_location[DW_OP_breg20 -2]
+     145 00000011 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |187| 
+     146                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     147 00000012 7622   EALLOW
+     148                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     149 00000013 8F40'         MOVL      XAR5,#_Interrupt_defaultHandler ; [CPU_U] |190| 
+         00000014 0020 
+     150 00000015 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |190| 
+     151 00000016 0EA8          MOVU      ACC,AH                ; [CPU_] |190| 
+     152 00000017 FF30          LSL       ACC,1                 ; [CPU_] |190| 
+     153 00000018 FF18          ADD       ACC,#13 << 8          ; [CPU_] |190| 
+         00000019 000D 
+     154 0000001a 8AA9          MOVL      XAR4,ACC              ; [CPU_] |190| 
+     155 0000001b A0C4          MOVL      *+XAR4[0],XAR5        ; [CPU_] |190| 
+     156                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     157 0000001c 761A   EDIS
+     158                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     159 0000001d FF69          SPM       #0                    ; [CPU_] 
+     160 0000001e FE82          SUBB      SP,#2                 ; [CPU_U] 
+     161                      .dwcfi  cfa_offset, -2
+     162              $C$DW$14        .dwtag  DW_TAG_TI_branch
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    4
+
+     163                      .dwattr $C$DW$14, DW_AT_low_pc(0x00)
+     164                      .dwattr $C$DW$14, DW_AT_TI_return
+     165 0000001f 0006          LRETR     ; [CPU_] 
+     166                      ; return occurs ; [] 
+     167                      .dwattr $C$DW$11, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     168                      .dwattr $C$DW$11, DW_AT_TI_end_line(0xc1)
+     169                      .dwattr $C$DW$11, DW_AT_TI_end_column(0x01)
+     170                      .dwendentry
+     171                      .dwendtag $C$DW$11
+     172              
+     173 00000020               .sect   ".text"
+     174                      .clink
+     175              
+     176              $C$DW$15        .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_defaultHandler")
+     177                      .dwattr $C$DW$15, DW_AT_low_pc(_Interrupt_defaultHandler)
+     178                      .dwattr $C$DW$15, DW_AT_high_pc(0x00)
+     179                      .dwattr $C$DW$15, DW_AT_TI_symbol_name("_Interrupt_defaultHandler")
+     180                      .dwattr $C$DW$15, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     181                      .dwattr $C$DW$15, DW_AT_TI_begin_line(0x51)
+     182                      .dwattr $C$DW$15, DW_AT_TI_begin_column(0x0d)
+     183                      .dwattr $C$DW$15, DW_AT_TI_max_frame_size(-2)
+     184                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     185              
+     186                      .dwfde $C$DW$CIE, _Interrupt_defaultHandler
+     187              
+     188              ;***************************************************************
+     189              ;* FNAME: _Interrupt_defaultHandler     FR SIZE:   0           *
+     190              ;*                                                             *
+     191              ;* FUNCTION ENVIRONMENT                                        *
+     192              ;*                                                             *
+     193              ;* FUNCTION PROPERTIES                                         *
+     194              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     195              ;***************************************************************
+     196              
+     197 00000020       _Interrupt_defaultHandler:
+     198                      .dwcfi  cfa_offset, -2
+     199                      .dwcfi  save_reg_to_mem, 26, 0
+     200                      .dwcfi  save_reg_to_reg, 78, 26
+     201                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     202 00000020 7625   ESTOP0
+     203                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     204                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/inte
+     205 00000021 FF69          SPM       #0                    ; [CPU_] 
+     206              $C$DW$16        .dwtag  DW_TAG_TI_branch
+     207                      .dwattr $C$DW$16, DW_AT_low_pc(0x00)
+     208                      .dwattr $C$DW$16, DW_AT_TI_return
+     209 00000022 0006          LRETR     ; [CPU_] 
+     210                      ; return occurs ; [] 
+     211                      .dwattr $C$DW$15, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     212                      .dwattr $C$DW$15, DW_AT_TI_end_line(0x57)
+     213                      .dwattr $C$DW$15, DW_AT_TI_end_column(0x01)
+     214                      .dwendentry
+     215                      .dwendtag $C$DW$15
+     216              
+     217 00000023               .sect   ".text"
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    5
+
+     218                      .clink
+     219                      .global _ECAP_setEmulationMode
+     220              
+     221              $C$DW$17        .dwtag  DW_TAG_subprogram, DW_AT_name("ECAP_setEmulationMode")
+     222                      .dwattr $C$DW$17, DW_AT_low_pc(_ECAP_setEmulationMode)
+     223                      .dwattr $C$DW$17, DW_AT_high_pc(0x00)
+     224                      .dwattr $C$DW$17, DW_AT_TI_symbol_name("_ECAP_setEmulationMode")
+     225                      .dwattr $C$DW$17, DW_AT_external
+     226                      .dwattr $C$DW$17, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     227                      .dwattr $C$DW$17, DW_AT_TI_begin_line(0x14)
+     228                      .dwattr $C$DW$17, DW_AT_TI_begin_column(0x06)
+     229                      .dwattr $C$DW$17, DW_AT_TI_max_frame_size(-6)
+     230                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     231              
+     232                      .dwfde $C$DW$CIE, _ECAP_setEmulationMode
+     233              $C$DW$18        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     234                      .dwattr $C$DW$18, DW_AT_TI_symbol_name("_base")
+     235                      .dwattr $C$DW$18, DW_AT_type(*$C$DW$T$24)
+     236                      .dwattr $C$DW$18, DW_AT_location[DW_OP_reg0]
+     237              $C$DW$19        .dwtag  DW_TAG_formal_parameter, DW_AT_name("mode")
+     238                      .dwattr $C$DW$19, DW_AT_TI_symbol_name("_mode")
+     239                      .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$21)
+     240                      .dwattr $C$DW$19, DW_AT_location[DW_OP_reg12]
+     241              
+     242              ;***************************************************************
+     243              ;* FNAME: _ECAP_setEmulationMode        FR SIZE:   4           *
+     244              ;*                                                             *
+     245              ;* FUNCTION ENVIRONMENT                                        *
+     246              ;*                                                             *
+     247              ;* FUNCTION PROPERTIES                                         *
+     248              ;*                            0 Parameter,  3 Auto,  0 SOE     *
+     249              ;***************************************************************
+     250              
+     251 00000023       _ECAP_setEmulationMode:
+     252                      .dwcfi  cfa_offset, -2
+     253                      .dwcfi  save_reg_to_mem, 26, 0
+     254                      .dwcfi  save_reg_to_reg, 78, 26
+     255 00000023 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     256                      .dwcfi  cfa_offset, -6
+     257              $C$DW$20        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     258                      .dwattr $C$DW$20, DW_AT_TI_symbol_name("_base")
+     259                      .dwattr $C$DW$20, DW_AT_type(*$C$DW$T$24)
+     260                      .dwattr $C$DW$20, DW_AT_location[DW_OP_breg20 -2]
+     261              $C$DW$21        .dwtag  DW_TAG_variable, DW_AT_name("mode")
+     262                      .dwattr $C$DW$21, DW_AT_TI_symbol_name("_mode")
+     263                      .dwattr $C$DW$21, DW_AT_type(*$C$DW$T$21)
+     264                      .dwattr $C$DW$21, DW_AT_location[DW_OP_breg20 -3]
+     265 00000024 7C43          MOV       *-SP[3],AR4           ; [CPU_] |21| 
+     266 00000025 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |21| 
+     267                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     268 00000026 7622   EALLOW
+     269                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     270 00000027 0214          MOVB      ACC,#20               ; [CPU_] |26| 
+     271 00000028 0742          ADDL      ACC,*-SP[2]           ; [CPU_] |26| 
+     272 00000029 8AA9          MOVL      XAR4,ACC              ; [CPU_] |26| 
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    6
+
+     273 0000002a CCC4          AND       AL,*+XAR4[0],#0x3fff  ; [CPU_] |26| 
+         0000002b 3FFF 
+     274 0000002c 80A9          MOVZ      AR7,AL                ; [CPU_] |26| 
+     275 0000002d 5603          MOV       ACC,*-SP[3] << #14    ; [CPU_] |26| 
+         0000002e 0E43 
+     276 0000002f CAA7          OR        AL,AR7                ; [CPU_] |26| 
+     277 00000030 88A9          MOVZ      AR6,AL                ; [CPU_] |26| 
+     278 00000031 0214          MOVB      ACC,#20               ; [CPU_] |26| 
+     279 00000032 0742          ADDL      ACC,*-SP[2]           ; [CPU_] |26| 
+     280 00000033 8AA9          MOVL      XAR4,ACC              ; [CPU_] |26| 
+     281 00000034 7EC4          MOV       *+XAR4[0],AR6         ; [CPU_] |26| 
+     282                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     283 00000035 761A   EDIS
+     284                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     285 00000036 FF69          SPM       #0                    ; [CPU_] 
+     286 00000037 FE84          SUBB      SP,#4                 ; [CPU_U] 
+     287                      .dwcfi  cfa_offset, -2
+     288              $C$DW$22        .dwtag  DW_TAG_TI_branch
+     289                      .dwattr $C$DW$22, DW_AT_low_pc(0x00)
+     290                      .dwattr $C$DW$22, DW_AT_TI_return
+     291 00000038 0006          LRETR     ; [CPU_] 
+     292                      ; return occurs ; [] 
+     293                      .dwattr $C$DW$17, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     294                      .dwattr $C$DW$17, DW_AT_TI_end_line(0x1e)
+     295                      .dwattr $C$DW$17, DW_AT_TI_end_column(0x01)
+     296                      .dwendentry
+     297                      .dwendtag $C$DW$17
+     298              
+     299 00000039               .sect   ".text"
+     300                      .clink
+     301              
+     302              $C$DW$23        .dwtag  DW_TAG_subprogram, DW_AT_name("ECAP_getIntNumber")
+     303                      .dwattr $C$DW$23, DW_AT_low_pc(_ECAP_getIntNumber)
+     304                      .dwattr $C$DW$23, DW_AT_high_pc(0x00)
+     305                      .dwattr $C$DW$23, DW_AT_TI_symbol_name("_ECAP_getIntNumber")
+     306                      .dwattr $C$DW$23, DW_AT_type(*$C$DW$T$24)
+     307                      .dwattr $C$DW$23, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     308                      .dwattr $C$DW$23, DW_AT_TI_begin_line(0x2d)
+     309                      .dwattr $C$DW$23, DW_AT_TI_begin_column(0x11)
+     310                      .dwattr $C$DW$23, DW_AT_TI_max_frame_size(-6)
+     311                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     312              
+     313                      .dwfde $C$DW$CIE, _ECAP_getIntNumber
+     314              $C$DW$24        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     315                      .dwattr $C$DW$24, DW_AT_TI_symbol_name("_base")
+     316                      .dwattr $C$DW$24, DW_AT_type(*$C$DW$T$24)
+     317                      .dwattr $C$DW$24, DW_AT_location[DW_OP_reg0]
+     318              
+     319              ;***************************************************************
+     320              ;* FNAME: _ECAP_getIntNumber            FR SIZE:   4           *
+     321              ;*                                                             *
+     322              ;* FUNCTION ENVIRONMENT                                        *
+     323              ;*                                                             *
+     324              ;* FUNCTION PROPERTIES                                         *
+     325              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    7
+
+     326              ;***************************************************************
+     327              
+     328 00000039       _ECAP_getIntNumber:
+     329                      .dwcfi  cfa_offset, -2
+     330                      .dwcfi  save_reg_to_mem, 26, 0
+     331                      .dwcfi  save_reg_to_reg, 78, 26
+     332 00000039 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     333                      .dwcfi  cfa_offset, -6
+     334              $C$DW$25        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     335                      .dwattr $C$DW$25, DW_AT_TI_symbol_name("_base")
+     336                      .dwattr $C$DW$25, DW_AT_type(*$C$DW$T$24)
+     337                      .dwattr $C$DW$25, DW_AT_location[DW_OP_breg20 -2]
+     338              $C$DW$26        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     339                      .dwattr $C$DW$26, DW_AT_TI_symbol_name("_intNumber")
+     340                      .dwattr $C$DW$26, DW_AT_type(*$C$DW$T$24)
+     341                      .dwattr $C$DW$26, DW_AT_location[DW_OP_breg20 -4]
+     342 0000003a 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |46| 
+     343                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     344 0000003b 6F20          B         $C$L9,UNC             ; [CPU_] |52| 
+     345                      ; branch occurs ; [] |52| 
+     346 0000003c       $C$L1:    
+     347                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     348 0000003c 8F38          MOVL      XAR4,#3671041         ; [CPU_U] |55| 
+         0000003d 0401 
+     349 0000003e A844          MOVL      *-SP[4],XAR4          ; [CPU_] |55| 
+     350                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     351 0000003f 6F3D          B         $C$L11,UNC            ; [CPU_] |56| 
+     352                      ; branch occurs ; [] |56| 
+     353 00000040       $C$L2:    
+     354                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     355 00000040 8F39          MOVL      XAR4,#3736578         ; [CPU_U] |59| 
+         00000041 0402 
+     356 00000042 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |59| 
+     357                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     358 00000043 6F39          B         $C$L11,UNC            ; [CPU_] |60| 
+     359                      ; branch occurs ; [] |60| 
+     360 00000044       $C$L3:    
+     361                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     362 00000044 8F3A          MOVL      XAR4,#3802115         ; [CPU_U] |63| 
+         00000045 0403 
+     363 00000046 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |63| 
+     364                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     365 00000047 6F35          B         $C$L11,UNC            ; [CPU_] |64| 
+     366                      ; branch occurs ; [] |64| 
+     367 00000048       $C$L4:    
+     368                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     369 00000048 8F3B          MOVL      XAR4,#3867652         ; [CPU_U] |67| 
+         00000049 0404 
+     370 0000004a A844          MOVL      *-SP[4],XAR4          ; [CPU_] |67| 
+     371                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     372 0000004b 6F31          B         $C$L11,UNC            ; [CPU_] |68| 
+     373                      ; branch occurs ; [] |68| 
+     374 0000004c       $C$L5:    
+     375                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     376 0000004c 8F3C          MOVL      XAR4,#3933189         ; [CPU_U] |71| 
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    8
+
+         0000004d 0405 
+     377 0000004e A844          MOVL      *-SP[4],XAR4          ; [CPU_] |71| 
+     378                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     379 0000004f 6F2D          B         $C$L11,UNC            ; [CPU_] |72| 
+     380                      ; branch occurs ; [] |72| 
+     381 00000050       $C$L6:    
+     382                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     383 00000050 8F3D          MOVL      XAR4,#3998726         ; [CPU_U] |75| 
+         00000051 0406 
+     384 00000052 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |75| 
+     385                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     386 00000053 6F29          B         $C$L11,UNC            ; [CPU_] |76| 
+     387                      ; branch occurs ; [] |76| 
+     388 00000054       $C$L7:    
+     389                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     390 00000054 8F3E          MOVL      XAR4,#4064263         ; [CPU_U] |79| 
+         00000055 0407 
+     391 00000056 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |79| 
+     392                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     393 00000057 6F25          B         $C$L11,UNC            ; [CPU_] |80| 
+     394                      ; branch occurs ; [] |80| 
+     395 00000058       $C$L8:    
+     396                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     397 00000058 0200          MOVB      ACC,#0                ; [CPU_] |83| 
+     398 00000059 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |83| 
+     399                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     400 0000005a 6F22          B         $C$L11,UNC            ; [CPU_] |84| 
+     401                      ; branch occurs ; [] |84| 
+     402 0000005b       $C$L9:    
+     403                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     404 0000005b C442          MOVL      XAR6,*-SP[2]          ; [CPU_] |52| 
+     405 0000005c FF20          MOV       ACC,#21184            ; [CPU_] |52| 
+         0000005d 52C0 
+     406 0000005e 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     407 0000005f 6410          B         $C$L10,LT             ; [CPU_] |52| 
+     408                      ; branchcc occurs ; [] |52| 
+     409 00000060 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     410 00000061 ECE7          BF        $C$L4,EQ              ; [CPU_] |52| 
+     411                      ; branchcc occurs ; [] |52| 
+     412 00000062 FF20          MOV       ACC,#20992            ; [CPU_] |52| 
+         00000063 5200 
+     413 00000064 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     414 00000065 ECD7          BF        $C$L1,EQ              ; [CPU_] |52| 
+     415                      ; branchcc occurs ; [] |52| 
+     416 00000066 FF20          MOV       ACC,#21056            ; [CPU_] |52| 
+         00000067 5240 
+     417 00000068 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     418 00000069 ECD7          BF        $C$L2,EQ              ; [CPU_] |52| 
+     419                      ; branchcc occurs ; [] |52| 
+     420 0000006a FF20          MOV       ACC,#21120            ; [CPU_] |52| 
+         0000006b 5280 
+     421 0000006c 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     422 0000006d ECD7          BF        $C$L3,EQ              ; [CPU_] |52| 
+     423                      ; branchcc occurs ; [] |52| 
+     424 0000006e 6FEA          B         $C$L8,UNC             ; [CPU_] |52| 
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE    9
+
+     425                      ; branch occurs ; [] |52| 
+     426 0000006f       $C$L10:    
+     427 0000006f FF20          MOV       ACC,#21248            ; [CPU_] |52| 
+         00000070 5300 
+     428 00000071 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     429 00000072 ECDA          BF        $C$L5,EQ              ; [CPU_] |52| 
+     430                      ; branchcc occurs ; [] |52| 
+     431 00000073 FF20          MOV       ACC,#21312            ; [CPU_] |52| 
+         00000074 5340 
+     432 00000075 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     433 00000076 ECDA          BF        $C$L6,EQ              ; [CPU_] |52| 
+     434                      ; branchcc occurs ; [] |52| 
+     435 00000077 FF20          MOV       ACC,#21376            ; [CPU_] |52| 
+         00000078 5380 
+     436 00000079 0FA6          CMPL      ACC,XAR6              ; [CPU_] |52| 
+     437 0000007a ECDA          BF        $C$L7,EQ              ; [CPU_] |52| 
+     438                      ; branchcc occurs ; [] |52| 
+     439 0000007b 6FDD          B         $C$L8,UNC             ; [CPU_] |52| 
+     440                      ; branch occurs ; [] |52| 
+     441 0000007c       $C$L11:    
+     442                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     443 0000007c 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |87| 
+     444                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     445 0000007d FE84          SUBB      SP,#4                 ; [CPU_U] 
+     446                      .dwcfi  cfa_offset, -2
+     447              $C$DW$27        .dwtag  DW_TAG_TI_branch
+     448                      .dwattr $C$DW$27, DW_AT_low_pc(0x00)
+     449                      .dwattr $C$DW$27, DW_AT_TI_return
+     450 0000007e 0006          LRETR     ; [CPU_] 
+     451                      ; return occurs ; [] 
+     452                      .dwattr $C$DW$23, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     453                      .dwattr $C$DW$23, DW_AT_TI_end_line(0x58)
+     454                      .dwattr $C$DW$23, DW_AT_TI_end_column(0x01)
+     455                      .dwendentry
+     456                      .dwendtag $C$DW$23
+     457              
+     458 0000007f               .sect   ".text"
+     459                      .clink
+     460                      .global _ECAP_registerInterrupt
+     461              
+     462              $C$DW$28        .dwtag  DW_TAG_subprogram, DW_AT_name("ECAP_registerInterrupt")
+     463                      .dwattr $C$DW$28, DW_AT_low_pc(_ECAP_registerInterrupt)
+     464                      .dwattr $C$DW$28, DW_AT_high_pc(0x00)
+     465                      .dwattr $C$DW$28, DW_AT_TI_symbol_name("_ECAP_registerInterrupt")
+     466                      .dwattr $C$DW$28, DW_AT_external
+     467                      .dwattr $C$DW$28, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     468                      .dwattr $C$DW$28, DW_AT_TI_begin_line(0x5e)
+     469                      .dwattr $C$DW$28, DW_AT_TI_begin_column(0x06)
+     470                      .dwattr $C$DW$28, DW_AT_TI_max_frame_size(-8)
+     471                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     472              
+     473                      .dwfde $C$DW$CIE, _ECAP_registerInterrupt
+     474              $C$DW$29        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     475                      .dwattr $C$DW$29, DW_AT_TI_symbol_name("_base")
+     476                      .dwattr $C$DW$29, DW_AT_type(*$C$DW$T$24)
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   10
+
+     477                      .dwattr $C$DW$29, DW_AT_location[DW_OP_reg0]
+     478              $C$DW$30        .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+     479                      .dwattr $C$DW$30, DW_AT_TI_symbol_name("_handler")
+     480                      .dwattr $C$DW$30, DW_AT_type(*$C$DW$T$23)
+     481                      .dwattr $C$DW$30, DW_AT_location[DW_OP_reg12]
+     482              
+     483              ;***************************************************************
+     484              ;* FNAME: _ECAP_registerInterrupt       FR SIZE:   6           *
+     485              ;*                                                             *
+     486              ;* FUNCTION ENVIRONMENT                                        *
+     487              ;*                                                             *
+     488              ;* FUNCTION PROPERTIES                                         *
+     489              ;*                            0 Parameter,  6 Auto,  0 SOE     *
+     490              ;***************************************************************
+     491              
+     492 0000007f       _ECAP_registerInterrupt:
+     493                      .dwcfi  cfa_offset, -2
+     494                      .dwcfi  save_reg_to_mem, 26, 0
+     495                      .dwcfi  save_reg_to_reg, 78, 26
+     496 0000007f FE06          ADDB      SP,#6                 ; [CPU_U] 
+     497                      .dwcfi  cfa_offset, -8
+     498              $C$DW$31        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     499                      .dwattr $C$DW$31, DW_AT_TI_symbol_name("_base")
+     500                      .dwattr $C$DW$31, DW_AT_type(*$C$DW$T$24)
+     501                      .dwattr $C$DW$31, DW_AT_location[DW_OP_breg20 -2]
+     502              $C$DW$32        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+     503                      .dwattr $C$DW$32, DW_AT_TI_symbol_name("_handler")
+     504                      .dwattr $C$DW$32, DW_AT_type(*$C$DW$T$23)
+     505                      .dwattr $C$DW$32, DW_AT_location[DW_OP_breg20 -4]
+     506              $C$DW$33        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     507                      .dwattr $C$DW$33, DW_AT_TI_symbol_name("_intNumber")
+     508                      .dwattr $C$DW$33, DW_AT_type(*$C$DW$T$24)
+     509                      .dwattr $C$DW$33, DW_AT_location[DW_OP_breg20 -6]
+     510 00000080 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |95| 
+     511 00000081 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |95| 
+     512                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     513 00000082 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |101| 
+     514              $C$DW$34        .dwtag  DW_TAG_TI_branch
+     515                      .dwattr $C$DW$34, DW_AT_low_pc(0x00)
+     516                      .dwattr $C$DW$34, DW_AT_name("_ECAP_getIntNumber")
+     517                      .dwattr $C$DW$34, DW_AT_TI_call
+     518 00000083 7640'         LCR       #_ECAP_getIntNumber   ; [CPU_] |101| 
+         00000084 0039 
+     519                      ; call occurs [#_ECAP_getIntNumber] ; [] |101| 
+     520 00000085 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |101| 
+     521                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     522 00000086 8A44          MOVL      XAR4,*-SP[4]          ; [CPU_] |108| 
+     523 00000087 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |108| 
+     524              $C$DW$35        .dwtag  DW_TAG_TI_branch
+     525                      .dwattr $C$DW$35, DW_AT_low_pc(0x00)
+     526                      .dwattr $C$DW$35, DW_AT_name("_Interrupt_register")
+     527                      .dwattr $C$DW$35, DW_AT_TI_call
+     528 00000088 7640'         LCR       #_Interrupt_register  ; [CPU_] |108| 
+         00000089 0000 
+     529                      ; call occurs [#_Interrupt_register] ; [] |108| 
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   11
+
+     530                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     531 0000008a 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |113| 
+     532              $C$DW$36        .dwtag  DW_TAG_TI_branch
+     533                      .dwattr $C$DW$36, DW_AT_low_pc(0x00)
+     534                      .dwattr $C$DW$36, DW_AT_name("_Interrupt_enable")
+     535                      .dwattr $C$DW$36, DW_AT_TI_call
+     536 0000008b 7640!         LCR       #_Interrupt_enable    ; [CPU_] |113| 
+         0000008c 0000 
+     537                      ; call occurs [#_Interrupt_enable] ; [] |113| 
+     538                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     539 0000008d FE86          SUBB      SP,#6                 ; [CPU_U] 
+     540                      .dwcfi  cfa_offset, -2
+     541              $C$DW$37        .dwtag  DW_TAG_TI_branch
+     542                      .dwattr $C$DW$37, DW_AT_low_pc(0x00)
+     543                      .dwattr $C$DW$37, DW_AT_TI_return
+     544 0000008e 0006          LRETR     ; [CPU_] 
+     545                      ; return occurs ; [] 
+     546                      .dwattr $C$DW$28, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     547                      .dwattr $C$DW$28, DW_AT_TI_end_line(0x72)
+     548                      .dwattr $C$DW$28, DW_AT_TI_end_column(0x01)
+     549                      .dwendentry
+     550                      .dwendtag $C$DW$28
+     551              
+     552 0000008f               .sect   ".text"
+     553                      .clink
+     554                      .global _ECAP_unregisterInterrupt
+     555              
+     556              $C$DW$38        .dwtag  DW_TAG_subprogram, DW_AT_name("ECAP_unregisterInterrupt")
+     557                      .dwattr $C$DW$38, DW_AT_low_pc(_ECAP_unregisterInterrupt)
+     558                      .dwattr $C$DW$38, DW_AT_high_pc(0x00)
+     559                      .dwattr $C$DW$38, DW_AT_TI_symbol_name("_ECAP_unregisterInterrupt")
+     560                      .dwattr $C$DW$38, DW_AT_external
+     561                      .dwattr $C$DW$38, DW_AT_TI_begin_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F
+     562                      .dwattr $C$DW$38, DW_AT_TI_begin_line(0x78)
+     563                      .dwattr $C$DW$38, DW_AT_TI_begin_column(0x06)
+     564                      .dwattr $C$DW$38, DW_AT_TI_max_frame_size(-6)
+     565                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     566              
+     567                      .dwfde $C$DW$CIE, _ECAP_unregisterInterrupt
+     568              $C$DW$39        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     569                      .dwattr $C$DW$39, DW_AT_TI_symbol_name("_base")
+     570                      .dwattr $C$DW$39, DW_AT_type(*$C$DW$T$24)
+     571                      .dwattr $C$DW$39, DW_AT_location[DW_OP_reg0]
+     572              
+     573              ;***************************************************************
+     574              ;* FNAME: _ECAP_unregisterInterrupt     FR SIZE:   4           *
+     575              ;*                                                             *
+     576              ;* FUNCTION ENVIRONMENT                                        *
+     577              ;*                                                             *
+     578              ;* FUNCTION PROPERTIES                                         *
+     579              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+     580              ;***************************************************************
+     581              
+     582 0000008f       _ECAP_unregisterInterrupt:
+     583                      .dwcfi  cfa_offset, -2
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   12
+
+     584                      .dwcfi  save_reg_to_mem, 26, 0
+     585                      .dwcfi  save_reg_to_reg, 78, 26
+     586 0000008f FE04          ADDB      SP,#4                 ; [CPU_U] 
+     587                      .dwcfi  cfa_offset, -6
+     588              $C$DW$40        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     589                      .dwattr $C$DW$40, DW_AT_TI_symbol_name("_base")
+     590                      .dwattr $C$DW$40, DW_AT_type(*$C$DW$T$24)
+     591                      .dwattr $C$DW$40, DW_AT_location[DW_OP_breg20 -2]
+     592              $C$DW$41        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     593                      .dwattr $C$DW$41, DW_AT_TI_symbol_name("_intNumber")
+     594                      .dwattr $C$DW$41, DW_AT_type(*$C$DW$T$24)
+     595                      .dwattr $C$DW$41, DW_AT_location[DW_OP_breg20 -4]
+     596 00000090 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |121| 
+     597                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     598 00000091 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |130| 
+     599              $C$DW$42        .dwtag  DW_TAG_TI_branch
+     600                      .dwattr $C$DW$42, DW_AT_low_pc(0x00)
+     601                      .dwattr $C$DW$42, DW_AT_name("_ECAP_getIntNumber")
+     602                      .dwattr $C$DW$42, DW_AT_TI_call
+     603 00000092 7640'         LCR       #_ECAP_getIntNumber   ; [CPU_] |130| 
+         00000093 0039 
+     604                      ; call occurs [#_ECAP_getIntNumber] ; [] |130| 
+     605 00000094 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |130| 
+     606                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     607 00000095 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |137| 
+     608              $C$DW$43        .dwtag  DW_TAG_TI_branch
+     609                      .dwattr $C$DW$43, DW_AT_low_pc(0x00)
+     610                      .dwattr $C$DW$43, DW_AT_name("_Interrupt_disable")
+     611                      .dwattr $C$DW$43, DW_AT_TI_call
+     612 00000096 7640!         LCR       #_Interrupt_disable   ; [CPU_] |137| 
+         00000097 0000 
+     613                      ; call occurs [#_Interrupt_disable] ; [] |137| 
+     614                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     615 00000098 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |142| 
+     616              $C$DW$44        .dwtag  DW_TAG_TI_branch
+     617                      .dwattr $C$DW$44, DW_AT_low_pc(0x00)
+     618                      .dwattr $C$DW$44, DW_AT_name("_Interrupt_unregister")
+     619                      .dwattr $C$DW$44, DW_AT_TI_call
+     620 00000099 7640'         LCR       #_Interrupt_unregister ; [CPU_] |142| 
+         0000009a 0010 
+     621                      ; call occurs [#_Interrupt_unregister] ; [] |142| 
+     622                      .dwpsn  file "C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/driverlib/ecap
+     623 0000009b FE84          SUBB      SP,#4                 ; [CPU_U] 
+     624                      .dwcfi  cfa_offset, -2
+     625              $C$DW$45        .dwtag  DW_TAG_TI_branch
+     626                      .dwattr $C$DW$45, DW_AT_low_pc(0x00)
+     627                      .dwattr $C$DW$45, DW_AT_TI_return
+     628 0000009c 0006          LRETR     ; [CPU_] 
+     629                      ; return occurs ; [] 
+     630                      .dwattr $C$DW$38, DW_AT_TI_end_file("C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28
+     631                      .dwattr $C$DW$38, DW_AT_TI_end_line(0x8f)
+     632                      .dwattr $C$DW$38, DW_AT_TI_end_column(0x01)
+     633                      .dwendentry
+     634                      .dwendtag $C$DW$38
+     635              
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   13
+
+     636              ;**************************************************************
+     637              ;* UNDEFINED EXTERNAL REFERENCES                              *
+     638              ;**************************************************************
+     639                      .global _Interrupt_disable
+     640                      .global _Interrupt_enable
+     641              
+     642              ;***************************************************************
+     643              ;* TYPE INFORMATION                                            *
+     644              ;***************************************************************
+     645              
+     646              $C$DW$T$19      .dwtag  DW_TAG_enumeration_type
+     647                      .dwattr $C$DW$T$19, DW_AT_byte_size(0x01)
+     648              $C$DW$46        .dwtag  DW_TAG_enumerator, DW_AT_name("ECAP_EMULATION_STOP"), DW_AT_const_value(0x00)
+     649              $C$DW$47        .dwtag  DW_TAG_enumerator, DW_AT_name("ECAP_EMULATION_RUN_TO_ZERO"), DW_AT_const_value(0x01)
+     650              $C$DW$48        .dwtag  DW_TAG_enumerator, DW_AT_name("ECAP_EMULATION_FREE_RUN"), DW_AT_const_value(0x02)
+     651                      .dwendtag $C$DW$T$19
+     652              
+     653              $C$DW$T$20      .dwtag  DW_TAG_typedef, DW_AT_name("ECAP_EmulationMode")
+     654                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+     655                      .dwattr $C$DW$T$20, DW_AT_language(DW_LANG_C)
+     656              $C$DW$49        .dwtag  DW_TAG_TI_far_type
+     657                      .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$20)
+     658              $C$DW$T$21      .dwtag  DW_TAG_const_type
+     659                      .dwattr $C$DW$T$21, DW_AT_type(*$C$DW$49)
+     660              
+     661              $C$DW$T$22      .dwtag  DW_TAG_subroutine_type
+     662                      .dwattr $C$DW$T$22, DW_AT_language(DW_LANG_C)
+     663              $C$DW$T$23      .dwtag  DW_TAG_pointer_type
+     664                      .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$22)
+     665                      .dwattr $C$DW$T$23, DW_AT_address_class(0x16)
+     666              $C$DW$T$4       .dwtag  DW_TAG_base_type
+     667                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     668                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+     669                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     670              $C$DW$T$5       .dwtag  DW_TAG_base_type
+     671                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     672                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     673                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     674              $C$DW$T$6       .dwtag  DW_TAG_base_type
+     675                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     676                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     677                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     678              $C$DW$T$7       .dwtag  DW_TAG_base_type
+     679                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     680                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     681                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+     682              $C$DW$T$8       .dwtag  DW_TAG_base_type
+     683                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     684                      .dwattr $C$DW$T$8, DW_AT_name("short")
+     685                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+     686              $C$DW$T$9       .dwtag  DW_TAG_base_type
+     687                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     688                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     689                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+     690              $C$DW$T$30      .dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   14
+
+     691                      .dwattr $C$DW$T$30, DW_AT_type(*$C$DW$T$9)
+     692                      .dwattr $C$DW$T$30, DW_AT_language(DW_LANG_C)
+     693              $C$DW$T$10      .dwtag  DW_TAG_base_type
+     694                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     695                      .dwattr $C$DW$T$10, DW_AT_name("int")
+     696                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+     697              $C$DW$T$11      .dwtag  DW_TAG_base_type
+     698                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     699                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     700                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+     701              $C$DW$T$12      .dwtag  DW_TAG_base_type
+     702                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     703                      .dwattr $C$DW$T$12, DW_AT_name("long")
+     704                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+     705              $C$DW$T$13      .dwtag  DW_TAG_base_type
+     706                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     707                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     708                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+     709              $C$DW$T$24      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+     710                      .dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$13)
+     711                      .dwattr $C$DW$T$24, DW_AT_language(DW_LANG_C)
+     712              $C$DW$T$14      .dwtag  DW_TAG_base_type
+     713                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     714                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+     715                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+     716              $C$DW$T$15      .dwtag  DW_TAG_base_type
+     717                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     718                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     719                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+     720              $C$DW$T$16      .dwtag  DW_TAG_base_type
+     721                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     722                      .dwattr $C$DW$T$16, DW_AT_name("float")
+     723                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+     724              $C$DW$T$17      .dwtag  DW_TAG_base_type
+     725                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     726                      .dwattr $C$DW$T$17, DW_AT_name("double")
+     727                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+     728              $C$DW$T$18      .dwtag  DW_TAG_base_type
+     729                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     730                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+     731                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+     732                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     733              
+     734              ;***************************************************************
+     735              ;* DWARF CIE ENTRIES                                           *
+     736              ;***************************************************************
+     737              
+     738              $C$DW$CIE       .dwcie 78
+     739                      .dwcfi  cfa_register, 20
+     740                      .dwcfi  cfa_offset, 0
+     741                      .dwcfi  undefined, 0
+     742                      .dwcfi  undefined, 1
+     743                      .dwcfi  undefined, 2
+     744                      .dwcfi  undefined, 3
+     745                      .dwcfi  undefined, 20
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   15
+
+     746                      .dwcfi  undefined, 21
+     747                      .dwcfi  undefined, 22
+     748                      .dwcfi  undefined, 23
+     749                      .dwcfi  undefined, 24
+     750                      .dwcfi  undefined, 25
+     751                      .dwcfi  undefined, 26
+     752                      .dwcfi  same_value, 28
+     753                      .dwcfi  undefined, 29
+     754                      .dwcfi  undefined, 30
+     755                      .dwcfi  undefined, 31
+     756                      .dwcfi  undefined, 32
+     757                      .dwcfi  undefined, 33
+     758                      .dwcfi  undefined, 34
+     759                      .dwcfi  undefined, 35
+     760                      .dwcfi  undefined, 36
+     761                      .dwcfi  undefined, 37
+     762                      .dwcfi  undefined, 38
+     763                      .dwcfi  undefined, 75
+     764                      .dwcfi  undefined, 76
+     765                      .dwcfi  undefined, 77
+     766                      .dwcfi  undefined, 4
+     767                      .dwcfi  same_value, 6
+     768                      .dwcfi  same_value, 8
+     769                      .dwcfi  same_value, 10
+     770                      .dwcfi  undefined, 12
+     771                      .dwcfi  undefined, 14
+     772                      .dwcfi  undefined, 16
+     773                      .dwcfi  undefined, 17
+     774                      .dwcfi  undefined, 18
+     775                      .dwcfi  undefined, 19
+     776                      .dwcfi  undefined, 5
+     777                      .dwcfi  same_value, 7
+     778                      .dwcfi  same_value, 9
+     779                      .dwcfi  same_value, 11
+     780                      .dwcfi  undefined, 13
+     781                      .dwcfi  undefined, 15
+     782                      .dwcfi  undefined, 43
+     783                      .dwcfi  undefined, 44
+     784                      .dwcfi  undefined, 47
+     785                      .dwcfi  undefined, 48
+     786                      .dwcfi  undefined, 51
+     787                      .dwcfi  undefined, 52
+     788                      .dwcfi  undefined, 55
+     789                      .dwcfi  undefined, 56
+     790                      .dwcfi  same_value, 59
+     791                      .dwcfi  same_value, 60
+     792                      .dwcfi  same_value, 63
+     793                      .dwcfi  same_value, 64
+     794                      .dwcfi  same_value, 67
+     795                      .dwcfi  same_value, 68
+     796                      .dwcfi  same_value, 71
+     797                      .dwcfi  same_value, 72
+     798                      .dwcfi  undefined, 73
+     799                      .dwcfi  undefined, 74
+     800                      .dwcfi  undefined, 39
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   16
+
+     801                      .dwcfi  undefined, 40
+     802                      .dwcfi  undefined, 27
+     803                      .dwcfi  undefined, 78
+     804                      .dwendentry
+     805              
+     806              ;***************************************************************
+     807              ;* DWARF REGISTER MAP                                          *
+     808              ;***************************************************************
+     809              
+     810              $C$DW$50        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AL")
+     811                      .dwattr $C$DW$50, DW_AT_location[DW_OP_reg0]
+     812              $C$DW$51        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AH")
+     813                      .dwattr $C$DW$51, DW_AT_location[DW_OP_reg1]
+     814              $C$DW$52        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PL")
+     815                      .dwattr $C$DW$52, DW_AT_location[DW_OP_reg2]
+     816              $C$DW$53        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PH")
+     817                      .dwattr $C$DW$53, DW_AT_location[DW_OP_reg3]
+     818              $C$DW$54        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SP")
+     819                      .dwattr $C$DW$54, DW_AT_location[DW_OP_reg20]
+     820              $C$DW$55        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XT")
+     821                      .dwattr $C$DW$55, DW_AT_location[DW_OP_reg21]
+     822              $C$DW$56        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("T")
+     823                      .dwattr $C$DW$56, DW_AT_location[DW_OP_reg22]
+     824              $C$DW$57        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST0")
+     825                      .dwattr $C$DW$57, DW_AT_location[DW_OP_reg23]
+     826              $C$DW$58        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST1")
+     827                      .dwattr $C$DW$58, DW_AT_location[DW_OP_reg24]
+     828              $C$DW$59        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PC")
+     829                      .dwattr $C$DW$59, DW_AT_location[DW_OP_reg25]
+     830              $C$DW$60        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RPC")
+     831                      .dwattr $C$DW$60, DW_AT_location[DW_OP_reg26]
+     832              $C$DW$61        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FP")
+     833                      .dwattr $C$DW$61, DW_AT_location[DW_OP_reg28]
+     834              $C$DW$62        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("DP")
+     835                      .dwattr $C$DW$62, DW_AT_location[DW_OP_reg29]
+     836              $C$DW$63        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SXM")
+     837                      .dwattr $C$DW$63, DW_AT_location[DW_OP_reg30]
+     838              $C$DW$64        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PM")
+     839                      .dwattr $C$DW$64, DW_AT_location[DW_OP_reg31]
+     840              $C$DW$65        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("OVM")
+     841                      .dwattr $C$DW$65, DW_AT_location[DW_OP_regx 0x20]
+     842              $C$DW$66        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PAGE0")
+     843                      .dwattr $C$DW$66, DW_AT_location[DW_OP_regx 0x21]
+     844              $C$DW$67        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AMODE")
+     845                      .dwattr $C$DW$67, DW_AT_location[DW_OP_regx 0x22]
+     846              $C$DW$68        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("INTM")
+     847                      .dwattr $C$DW$68, DW_AT_location[DW_OP_regx 0x23]
+     848              $C$DW$69        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IFR")
+     849                      .dwattr $C$DW$69, DW_AT_location[DW_OP_regx 0x24]
+     850              $C$DW$70        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IER")
+     851                      .dwattr $C$DW$70, DW_AT_location[DW_OP_regx 0x25]
+     852              $C$DW$71        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("V")
+     853                      .dwattr $C$DW$71, DW_AT_location[DW_OP_regx 0x26]
+     854              $C$DW$72        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PSEUDOH")
+     855                      .dwattr $C$DW$72, DW_AT_location[DW_OP_regx 0x4c]
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   17
+
+     856              $C$DW$73        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("VOL")
+     857                      .dwattr $C$DW$73, DW_AT_location[DW_OP_regx 0x4d]
+     858              $C$DW$74        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR0")
+     859                      .dwattr $C$DW$74, DW_AT_location[DW_OP_reg4]
+     860              $C$DW$75        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR1")
+     861                      .dwattr $C$DW$75, DW_AT_location[DW_OP_reg6]
+     862              $C$DW$76        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR2")
+     863                      .dwattr $C$DW$76, DW_AT_location[DW_OP_reg8]
+     864              $C$DW$77        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR3")
+     865                      .dwattr $C$DW$77, DW_AT_location[DW_OP_reg10]
+     866              $C$DW$78        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR4")
+     867                      .dwattr $C$DW$78, DW_AT_location[DW_OP_reg12]
+     868              $C$DW$79        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR5")
+     869                      .dwattr $C$DW$79, DW_AT_location[DW_OP_reg14]
+     870              $C$DW$80        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR6")
+     871                      .dwattr $C$DW$80, DW_AT_location[DW_OP_reg16]
+     872              $C$DW$81        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR6")
+     873                      .dwattr $C$DW$81, DW_AT_location[DW_OP_reg17]
+     874              $C$DW$82        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR7")
+     875                      .dwattr $C$DW$82, DW_AT_location[DW_OP_reg18]
+     876              $C$DW$83        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR7")
+     877                      .dwattr $C$DW$83, DW_AT_location[DW_OP_reg19]
+     878              $C$DW$84        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR0")
+     879                      .dwattr $C$DW$84, DW_AT_location[DW_OP_reg5]
+     880              $C$DW$85        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR1")
+     881                      .dwattr $C$DW$85, DW_AT_location[DW_OP_reg7]
+     882              $C$DW$86        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR2")
+     883                      .dwattr $C$DW$86, DW_AT_location[DW_OP_reg9]
+     884              $C$DW$87        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR3")
+     885                      .dwattr $C$DW$87, DW_AT_location[DW_OP_reg11]
+     886              $C$DW$88        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR4")
+     887                      .dwattr $C$DW$88, DW_AT_location[DW_OP_reg13]
+     888              $C$DW$89        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR5")
+     889                      .dwattr $C$DW$89, DW_AT_location[DW_OP_reg15]
+     890              $C$DW$90        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0HL")
+     891                      .dwattr $C$DW$90, DW_AT_location[DW_OP_regx 0x2b]
+     892              $C$DW$91        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0H")
+     893                      .dwattr $C$DW$91, DW_AT_location[DW_OP_regx 0x2c]
+     894              $C$DW$92        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1HL")
+     895                      .dwattr $C$DW$92, DW_AT_location[DW_OP_regx 0x2f]
+     896              $C$DW$93        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1H")
+     897                      .dwattr $C$DW$93, DW_AT_location[DW_OP_regx 0x30]
+     898              $C$DW$94        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2HL")
+     899                      .dwattr $C$DW$94, DW_AT_location[DW_OP_regx 0x33]
+     900              $C$DW$95        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2H")
+     901                      .dwattr $C$DW$95, DW_AT_location[DW_OP_regx 0x34]
+     902              $C$DW$96        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3HL")
+     903                      .dwattr $C$DW$96, DW_AT_location[DW_OP_regx 0x37]
+     904              $C$DW$97        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3H")
+     905                      .dwattr $C$DW$97, DW_AT_location[DW_OP_regx 0x38]
+     906              $C$DW$98        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4HL")
+     907                      .dwattr $C$DW$98, DW_AT_location[DW_OP_regx 0x3b]
+     908              $C$DW$99        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4H")
+     909                      .dwattr $C$DW$99, DW_AT_location[DW_OP_regx 0x3c]
+     910              $C$DW$100       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5HL")
+TMS320C2000 Assembler PC v6.2.9 Tue Apr 14 13:31:50 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:\Users\a0272466\AppData\Local\Temp\0404010                         PAGE   18
+
+     911                      .dwattr $C$DW$100, DW_AT_location[DW_OP_regx 0x3f]
+     912              $C$DW$101       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5H")
+     913                      .dwattr $C$DW$101, DW_AT_location[DW_OP_regx 0x40]
+     914              $C$DW$102       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6HL")
+     915                      .dwattr $C$DW$102, DW_AT_location[DW_OP_regx 0x43]
+     916              $C$DW$103       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6H")
+     917                      .dwattr $C$DW$103, DW_AT_location[DW_OP_regx 0x44]
+     918              $C$DW$104       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7HL")
+     919                      .dwattr $C$DW$104, DW_AT_location[DW_OP_regx 0x47]
+     920              $C$DW$105       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7H")
+     921                      .dwattr $C$DW$105, DW_AT_location[DW_OP_regx 0x48]
+     922              $C$DW$106       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RBL")
+     923                      .dwattr $C$DW$106, DW_AT_location[DW_OP_regx 0x49]
+     924              $C$DW$107       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RB")
+     925                      .dwattr $C$DW$107, DW_AT_location[DW_OP_regx 0x4a]
+     926              $C$DW$108       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STFL")
+     927                      .dwattr $C$DW$108, DW_AT_location[DW_OP_regx 0x27]
+     928              $C$DW$109       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STF")
+     929                      .dwattr $C$DW$109, DW_AT_location[DW_OP_regx 0x28]
+     930              $C$DW$110       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FPUHAZ")
+     931                      .dwattr $C$DW$110, DW_AT_location[DW_OP_reg27]
+     932              $C$DW$111       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("CIE_RETA")
+     933                      .dwattr $C$DW$111, DW_AT_location[DW_OP_regx 0x4e]
+     934                      .dwendtag $C$DW$CU
+     935              
+
+No Assembly Errors, No Assembly Warnings

@@ -1,0 +1,2636 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.4.4 *
+       3              ;* Date/Time created: Tue Feb 14 14:43:12 2017                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --cla_support=cla0 --float_support=fpu32 --hll_source=on --mem_model:code=flat --mem_m
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C2000 C/C++ Codegen PC v6.4.4 Copyright (c) 1996-2015 Texa
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0
+      13              
+      14              $C$DW$1 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_enable")
+      15                      .dwattr $C$DW$1, DW_AT_TI_symbol_name("_Interrupt_enable")
+      16                      .dwattr $C$DW$1, DW_AT_declaration
+      17                      .dwattr $C$DW$1, DW_AT_external
+      18              $C$DW$2 .dwtag  DW_TAG_formal_parameter
+      19                      .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$25)
+      20                      .dwendtag $C$DW$1
+      21              
+      22              
+      23              $C$DW$3 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_disable")
+      24                      .dwattr $C$DW$3, DW_AT_TI_symbol_name("_Interrupt_disable")
+      25                      .dwattr $C$DW$3, DW_AT_declaration
+      26                      .dwattr $C$DW$3, DW_AT_external
+      27              $C$DW$4 .dwtag  DW_TAG_formal_parameter
+      28                      .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$25)
+      29                      .dwendtag $C$DW$3
+      30              
+      31              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.4\bin\ac2000.exe -@C:\\Users\\a0221343\\AppData\\Local\\T
+      32 00000000               .sect   ".text:_Interrupt_defaultHandler"
+      33                      .clink
+      34              
+      35              $C$DW$5 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_defaultHandler")
+      36                      .dwattr $C$DW$5, DW_AT_low_pc(_Interrupt_defaultHandler)
+      37                      .dwattr $C$DW$5, DW_AT_high_pc(0x00)
+      38                      .dwattr $C$DW$5, DW_AT_TI_symbol_name("_Interrupt_defaultHandler")
+      39                      .dwattr $C$DW$5, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_P
+      40                      .dwattr $C$DW$5, DW_AT_TI_begin_line(0x69)
+      41                      .dwattr $C$DW$5, DW_AT_TI_begin_column(0x0d)
+      42                      .dwattr $C$DW$5, DW_AT_TI_max_frame_size(-4)
+      43                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      44              
+      45                      .dwfde $C$DW$CIE, _Interrupt_defaultHandler
+      46              
+      47              ;***************************************************************
+      48              ;* FNAME: _Interrupt_defaultHandler     FR SIZE:   2           *
+      49              ;*                                                             *
+      50              ;* FUNCTION ENVIRONMENT                                        *
+      51              ;*                                                             *
+      52              ;* FUNCTION PROPERTIES                                         *
+      53              ;*                            0 Parameter,  1 Auto,  0 SOE     *
+      54              ;***************************************************************
+      55              
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    2
+
+      56 00000000       _Interrupt_defaultHandler:
+      57                      .dwcfi  cfa_offset, -2
+      58                      .dwcfi  save_reg_to_mem, 26, 0
+      59 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+      60                      .dwcfi  cfa_offset, -4
+      61              $C$DW$6 .dwtag  DW_TAG_variable, DW_AT_name("vectID")
+      62                      .dwattr $C$DW$6, DW_AT_TI_symbol_name("_vectID")
+      63                      .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$34)
+      64                      .dwattr $C$DW$6, DW_AT_location[DW_OP_breg20 -1]
+      65                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      66 00000001 F5A9          MOV       AL,*(0:0x0ce0)        ; [CPU_] |111| 
+         00000002 0CE0 
+      67 00000003 90FE          ANDB      AL,#0xfe              ; [CPU_] |111| 
+      68 00000004 FFC0          LSR       AL,1                  ; [CPU_] |111| 
+      69 00000005 9641          MOV       *-SP[1],AL            ; [CPU_] |111| 
+      70                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      71                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      72 00000006 7625   ESTOP0
+      73 00000007       $C$L1:    
+      74                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      75 00000007 6F00          B         $C$L1,UNC             ; [CPU_] |120| 
+      76                      ; branch occurs ; [] |120| 
+      77                      .dwattr $C$DW$5, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2
+      78                      .dwattr $C$DW$5, DW_AT_TI_end_line(0x79)
+      79                      .dwattr $C$DW$5, DW_AT_TI_end_column(0x01)
+      80                      .dwendentry
+      81                      .dwendtag $C$DW$5
+      82              
+      83 00000000               .sect   ".text:_Interrupt_register"
+      84                      .clink
+      85              
+      86              $C$DW$7 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_register")
+      87                      .dwattr $C$DW$7, DW_AT_low_pc(_Interrupt_register)
+      88                      .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+      89                      .dwattr $C$DW$7, DW_AT_TI_symbol_name("_Interrupt_register")
+      90                      .dwattr $C$DW$7, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_P
+      91                      .dwattr $C$DW$7, DW_AT_TI_begin_line(0xe6)
+      92                      .dwattr $C$DW$7, DW_AT_TI_begin_column(0x01)
+      93                      .dwattr $C$DW$7, DW_AT_TI_max_frame_size(-6)
+      94                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      95              
+      96                      .dwfde $C$DW$CIE, _Interrupt_register
+      97              $C$DW$8 .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+      98                      .dwattr $C$DW$8, DW_AT_TI_symbol_name("_interruptNumber")
+      99                      .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$25)
+     100                      .dwattr $C$DW$8, DW_AT_location[DW_OP_reg0]
+     101              $C$DW$9 .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+     102                      .dwattr $C$DW$9, DW_AT_TI_symbol_name("_handler")
+     103                      .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$24)
+     104                      .dwattr $C$DW$9, DW_AT_location[DW_OP_reg12]
+     105              
+     106              ;***************************************************************
+     107              ;* FNAME: _Interrupt_register           FR SIZE:   4           *
+     108              ;*                                                             *
+     109              ;* FUNCTION ENVIRONMENT                                        *
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    3
+
+     110              ;*                                                             *
+     111              ;* FUNCTION PROPERTIES                                         *
+     112              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+     113              ;***************************************************************
+     114              
+     115 00000000       _Interrupt_register:
+     116                      .dwcfi  cfa_offset, -2
+     117                      .dwcfi  save_reg_to_mem, 26, 0
+     118 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     119                      .dwcfi  cfa_offset, -6
+     120              $C$DW$10        .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+     121                      .dwattr $C$DW$10, DW_AT_TI_symbol_name("_interruptNumber")
+     122                      .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$25)
+     123                      .dwattr $C$DW$10, DW_AT_location[DW_OP_breg20 -2]
+     124              $C$DW$11        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+     125                      .dwattr $C$DW$11, DW_AT_TI_symbol_name("_handler")
+     126                      .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$24)
+     127                      .dwattr $C$DW$11, DW_AT_location[DW_OP_breg20 -4]
+     128 00000001 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |231| 
+     129 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |231| 
+     130                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     131 00000003 7622   EALLOW
+     132                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     133 00000004 0EA8          MOVU      ACC,AH                ; [CPU_] |234| 
+     134 00000005 C444          MOVL      XAR6,*-SP[4]          ; [CPU_] |234| 
+     135 00000006 FF30          LSL       ACC,1                 ; [CPU_] |234| 
+     136 00000007 FF18          ADD       ACC,#13 << 8          ; [CPU_] |234| 
+         00000008 000D 
+     137 00000009 8AA9          MOVL      XAR4,ACC              ; [CPU_] |234| 
+     138 0000000a C2C4          MOVL      *+XAR4[0],XAR6        ; [CPU_] |234| 
+     139                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     140 0000000b 761A   EDIS
+     141                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     142 0000000c FF69          SPM       #0                    ; [CPU_] 
+     143 0000000d FE84          SUBB      SP,#4                 ; [CPU_U] 
+     144                      .dwcfi  cfa_offset, -2
+     145              $C$DW$12        .dwtag  DW_TAG_TI_branch
+     146                      .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     147                      .dwattr $C$DW$12, DW_AT_TI_return
+     148 0000000e 0006          LRETR     ; [CPU_] 
+     149                      ; return occurs ; [] 
+     150                      .dwattr $C$DW$7, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2
+     151                      .dwattr $C$DW$7, DW_AT_TI_end_line(0xed)
+     152                      .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     153                      .dwendentry
+     154                      .dwendtag $C$DW$7
+     155              
+     156 00000000               .sect   ".text:_Interrupt_unregister"
+     157                      .clink
+     158              
+     159              $C$DW$13        .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_unregister")
+     160                      .dwattr $C$DW$13, DW_AT_low_pc(_Interrupt_unregister)
+     161                      .dwattr $C$DW$13, DW_AT_high_pc(0x00)
+     162                      .dwattr $C$DW$13, DW_AT_TI_symbol_name("_Interrupt_unregister")
+     163                      .dwattr $C$DW$13, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    4
+
+     164                      .dwattr $C$DW$13, DW_AT_TI_begin_line(0x104)
+     165                      .dwattr $C$DW$13, DW_AT_TI_begin_column(0x01)
+     166                      .dwattr $C$DW$13, DW_AT_TI_max_frame_size(-4)
+     167                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     168              
+     169                      .dwfde $C$DW$CIE, _Interrupt_unregister
+     170              $C$DW$14        .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+     171                      .dwattr $C$DW$14, DW_AT_TI_symbol_name("_interruptNumber")
+     172                      .dwattr $C$DW$14, DW_AT_type(*$C$DW$T$25)
+     173                      .dwattr $C$DW$14, DW_AT_location[DW_OP_reg0]
+     174              
+     175              ;***************************************************************
+     176              ;* FNAME: _Interrupt_unregister         FR SIZE:   2           *
+     177              ;*                                                             *
+     178              ;* FUNCTION ENVIRONMENT                                        *
+     179              ;*                                                             *
+     180              ;* FUNCTION PROPERTIES                                         *
+     181              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     182              ;***************************************************************
+     183              
+     184 00000000       _Interrupt_unregister:
+     185                      .dwcfi  cfa_offset, -2
+     186                      .dwcfi  save_reg_to_mem, 26, 0
+     187 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     188                      .dwcfi  cfa_offset, -4
+     189              $C$DW$15        .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+     190                      .dwattr $C$DW$15, DW_AT_TI_symbol_name("_interruptNumber")
+     191                      .dwattr $C$DW$15, DW_AT_type(*$C$DW$T$25)
+     192                      .dwattr $C$DW$15, DW_AT_location[DW_OP_breg20 -2]
+     193 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |261| 
+     194                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     195 00000002 7622   EALLOW
+     196                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     197 00000003 0EA8          MOVU      ACC,AH                ; [CPU_] |264| 
+     198 00000004 FF30          LSL       ACC,1                 ; [CPU_] |264| 
+     199 00000005 FF18          ADD       ACC,#13 << 8          ; [CPU_] |264| 
+         00000006 000D 
+     200 00000007 8AA9          MOVL      XAR4,ACC              ; [CPU_] |264| 
+     201 00000008 8F40+         MOVL      XAR5,#_Interrupt_defaultHandler ; [CPU_U] |264| 
+         00000009 0000 
+     202 0000000a A0C4          MOVL      *+XAR4[0],XAR5        ; [CPU_] |264| 
+     203                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     204 0000000b 761A   EDIS
+     205                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     206 0000000c FF69          SPM       #0                    ; [CPU_] 
+     207 0000000d FE82          SUBB      SP,#2                 ; [CPU_U] 
+     208                      .dwcfi  cfa_offset, -2
+     209              $C$DW$16        .dwtag  DW_TAG_TI_branch
+     210                      .dwattr $C$DW$16, DW_AT_low_pc(0x00)
+     211                      .dwattr $C$DW$16, DW_AT_TI_return
+     212 0000000e 0006          LRETR     ; [CPU_] 
+     213                      ; return occurs ; [] 
+     214                      .dwattr $C$DW$13, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG
+     215                      .dwattr $C$DW$13, DW_AT_TI_end_line(0x10b)
+     216                      .dwattr $C$DW$13, DW_AT_TI_end_column(0x01)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    5
+
+     217                      .dwendentry
+     218                      .dwendtag $C$DW$13
+     219              
+     220 00000000               .sect   ".text:_MemCfg_lockConfig"
+     221                      .clink
+     222                      .global _MemCfg_lockConfig
+     223              
+     224              $C$DW$17        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_lockConfig")
+     225                      .dwattr $C$DW$17, DW_AT_low_pc(_MemCfg_lockConfig)
+     226                      .dwattr $C$DW$17, DW_AT_high_pc(0x00)
+     227                      .dwattr $C$DW$17, DW_AT_TI_symbol_name("_MemCfg_lockConfig")
+     228                      .dwattr $C$DW$17, DW_AT_external
+     229                      .dwattr $C$DW$17, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     230                      .dwattr $C$DW$17, DW_AT_TI_begin_line(0x15)
+     231                      .dwattr $C$DW$17, DW_AT_TI_begin_column(0x01)
+     232                      .dwattr $C$DW$17, DW_AT_TI_max_frame_size(-4)
+     233                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     234              
+     235                      .dwfde $C$DW$CIE, _MemCfg_lockConfig
+     236              $C$DW$18        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSections")
+     237                      .dwattr $C$DW$18, DW_AT_TI_symbol_name("_ramSections")
+     238                      .dwattr $C$DW$18, DW_AT_type(*$C$DW$T$25)
+     239                      .dwattr $C$DW$18, DW_AT_location[DW_OP_reg0]
+     240              
+     241              ;***************************************************************
+     242              ;* FNAME: _MemCfg_lockConfig            FR SIZE:   2           *
+     243              ;*                                                             *
+     244              ;* FUNCTION ENVIRONMENT                                        *
+     245              ;*                                                             *
+     246              ;* FUNCTION PROPERTIES                                         *
+     247              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     248              ;***************************************************************
+     249              
+     250 00000000       _MemCfg_lockConfig:
+     251                      .dwcfi  cfa_offset, -2
+     252                      .dwcfi  save_reg_to_mem, 26, 0
+     253 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     254                      .dwcfi  cfa_offset, -4
+     255              $C$DW$19        .dwtag  DW_TAG_variable, DW_AT_name("ramSections")
+     256                      .dwattr $C$DW$19, DW_AT_TI_symbol_name("_ramSections")
+     257                      .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$25)
+     258                      .dwattr $C$DW$19, DW_AT_location[DW_OP_breg20 -2]
+     259 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |22| 
+     260                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     261 00000002 7622   EALLOW
+     262                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     263 00000003 6F23          B         $C$L6,UNC             ; [CPU_] |36| 
+     264                      ; branch occurs ; [] |36| 
+     265 00000004       $C$L2:    
+     266                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     267 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |39| 
+     268 00000005 8F05          MOVL      XAR4,#390144          ; [CPU_U] |39| 
+         00000006 F400 
+     269 00000007 91FF          ANDB      AH,#255               ; [CPU_] |39| 
+     270 00000008 98C4          OR        *+XAR4[0],AL          ; [CPU_] |39| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    6
+
+     271 00000009 99CC          OR        *+XAR4[1],AH          ; [CPU_] |39| 
+     272                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     273 0000000a 6F2E          B         $C$L7,UNC             ; [CPU_] |41| 
+     274                      ; branch occurs ; [] |41| 
+     275 0000000b       $C$L3:    
+     276                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     277 0000000b 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |44| 
+     278 0000000c 8F05          MOVL      XAR4,#390176          ; [CPU_U] |44| 
+         0000000d F420 
+     279 0000000e 91FF          ANDB      AH,#255               ; [CPU_] |44| 
+     280 0000000f 98C4          OR        *+XAR4[0],AL          ; [CPU_] |44| 
+     281 00000010 99CC          OR        *+XAR4[1],AH          ; [CPU_] |44| 
+     282                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     283 00000011 6F27          B         $C$L7,UNC             ; [CPU_] |46| 
+     284                      ; branch occurs ; [] |46| 
+     285 00000012       $C$L4:    
+     286                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     287 00000012 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |49| 
+     288 00000013 8F05          MOVL      XAR4,#390208          ; [CPU_U] |49| 
+         00000014 F440 
+     289 00000015 91FF          ANDB      AH,#255               ; [CPU_] |49| 
+     290 00000016 98C4          OR        *+XAR4[0],AL          ; [CPU_] |49| 
+     291 00000017 99CC          OR        *+XAR4[1],AH          ; [CPU_] |49| 
+     292                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     293 00000018 6F20          B         $C$L7,UNC             ; [CPU_] |51| 
+     294                      ; branch occurs ; [] |51| 
+     295 00000019       $C$L5:    
+     296                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     297 00000019 8F05          MOVL      XAR4,#390144          ; [CPU_U] |55| 
+         0000001a F400 
+     298 0000001b 1AC4          OR        *+XAR4[0],#3          ; [CPU_] |55| 
+         0000001c 0003 
+     299                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     300 0000001d 8F05          MOVL      XAR4,#390176          ; [CPU_U] |57| 
+         0000001e F420 
+     301 0000001f 1AC4          OR        *+XAR4[0],#255        ; [CPU_] |57| 
+         00000020 00FF 
+     302                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     303 00000021 8F05          MOVL      XAR4,#390208          ; [CPU_U] |59| 
+         00000022 F440 
+     304 00000023 1AC4          OR        *+XAR4[0],#15         ; [CPU_] |59| 
+         00000024 000F 
+     305                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     306 00000025 6F13          B         $C$L7,UNC             ; [CPU_] |61| 
+     307                      ; branch occurs ; [] |61| 
+     308 00000026       $C$L6:    
+     309                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     310 00000026 5608          AND       ACC,#65280 << 16      ; [CPU_] |36| 
+         00000027 FF00 
+     311 00000028 1EA6          MOVL      XAR6,ACC              ; [CPU_] |36| 
+     312 00000029 3B01          SETC      SXM                   ; [CPU_] 
+     313 0000002a FF2F          MOV       ACC,#-512 << 15       ; [CPU_] |36| 
+         0000002b FE00 
+     314 0000002c 0FA6          CMPL      ACC,XAR6              ; [CPU_] |36| 
+     315 0000002d ECEC          BF        $C$L5,EQ              ; [CPU_] |36| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    7
+
+     316                      ; branchcc occurs ; [] |36| 
+     317 0000002e 06A6          MOVL      ACC,XAR6              ; [CPU_] 
+     318 0000002f ECD5          BF        $C$L2,EQ              ; [CPU_] |36| 
+     319                      ; branchcc occurs ; [] |36| 
+     320 00000030 FF2F          MOV       ACC,#512 << 15        ; [CPU_] |36| 
+         00000031 0200 
+     321 00000032 0FA6          CMPL      ACC,XAR6              ; [CPU_] |36| 
+     322 00000033 ECD8          BF        $C$L3,EQ              ; [CPU_] |36| 
+     323                      ; branchcc occurs ; [] |36| 
+     324 00000034 FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |36| 
+         00000035 0400 
+     325 00000036 0FA6          CMPL      ACC,XAR6              ; [CPU_] |36| 
+     326 00000037 ECDB          BF        $C$L4,EQ              ; [CPU_] |36| 
+     327                      ; branchcc occurs ; [] |36| 
+     328 00000038       $C$L7:    
+     329                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     330 00000038 761A   EDIS
+     331                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     332 00000039 FE82          SUBB      SP,#2                 ; [CPU_U] 
+     333                      .dwcfi  cfa_offset, -2
+     334 0000003a FF69          SPM       #0                    ; [CPU_] 
+     335              $C$DW$20        .dwtag  DW_TAG_TI_branch
+     336                      .dwattr $C$DW$20, DW_AT_low_pc(0x00)
+     337                      .dwattr $C$DW$20, DW_AT_TI_return
+     338 0000003b 0006          LRETR     ; [CPU_] 
+     339                      ; return occurs ; [] 
+     340                      .dwattr $C$DW$17, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     341                      .dwattr $C$DW$17, DW_AT_TI_end_line(0x46)
+     342                      .dwattr $C$DW$17, DW_AT_TI_end_column(0x01)
+     343                      .dwendentry
+     344                      .dwendtag $C$DW$17
+     345              
+     346 00000000               .sect   ".text:_MemCfg_unlockConfig"
+     347                      .clink
+     348                      .global _MemCfg_unlockConfig
+     349              
+     350              $C$DW$21        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_unlockConfig")
+     351                      .dwattr $C$DW$21, DW_AT_low_pc(_MemCfg_unlockConfig)
+     352                      .dwattr $C$DW$21, DW_AT_high_pc(0x00)
+     353                      .dwattr $C$DW$21, DW_AT_TI_symbol_name("_MemCfg_unlockConfig")
+     354                      .dwattr $C$DW$21, DW_AT_external
+     355                      .dwattr $C$DW$21, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     356                      .dwattr $C$DW$21, DW_AT_TI_begin_line(0x4e)
+     357                      .dwattr $C$DW$21, DW_AT_TI_begin_column(0x01)
+     358                      .dwattr $C$DW$21, DW_AT_TI_max_frame_size(-4)
+     359                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     360              
+     361                      .dwfde $C$DW$CIE, _MemCfg_unlockConfig
+     362              $C$DW$22        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSections")
+     363                      .dwattr $C$DW$22, DW_AT_TI_symbol_name("_ramSections")
+     364                      .dwattr $C$DW$22, DW_AT_type(*$C$DW$T$25)
+     365                      .dwattr $C$DW$22, DW_AT_location[DW_OP_reg0]
+     366              
+     367              ;***************************************************************
+     368              ;* FNAME: _MemCfg_unlockConfig          FR SIZE:   2           *
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    8
+
+     369              ;*                                                             *
+     370              ;* FUNCTION ENVIRONMENT                                        *
+     371              ;*                                                             *
+     372              ;* FUNCTION PROPERTIES                                         *
+     373              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     374              ;***************************************************************
+     375              
+     376 00000000       _MemCfg_unlockConfig:
+     377                      .dwcfi  cfa_offset, -2
+     378                      .dwcfi  save_reg_to_mem, 26, 0
+     379 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     380                      .dwcfi  cfa_offset, -4
+     381              $C$DW$23        .dwtag  DW_TAG_variable, DW_AT_name("ramSections")
+     382                      .dwattr $C$DW$23, DW_AT_TI_symbol_name("_ramSections")
+     383                      .dwattr $C$DW$23, DW_AT_type(*$C$DW$T$25)
+     384                      .dwattr $C$DW$23, DW_AT_location[DW_OP_breg20 -2]
+     385 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |79| 
+     386                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     387 00000002 7622   EALLOW
+     388                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     389 00000003 6F26          B         $C$L12,UNC            ; [CPU_] |94| 
+     390                      ; branch occurs ; [] |94| 
+     391 00000004       $C$L8:    
+     392                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     393 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |97| 
+     394 00000005 8F05          MOVL      XAR4,#390144          ; [CPU_U] |97| 
+         00000006 F400 
+     395 00000007 91FF          ANDB      AH,#255               ; [CPU_] |97| 
+     396 00000008 FF55          NOT       ACC                   ; [CPU_] |97| 
+     397 00000009 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |97| 
+     398 0000000a C1CC          AND       *+XAR4[1],AH          ; [CPU_] |97| 
+     399                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     400 0000000b 6F30          B         $C$L13,UNC            ; [CPU_] |99| 
+     401                      ; branch occurs ; [] |99| 
+     402 0000000c       $C$L9:    
+     403                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     404 0000000c 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |102| 
+     405 0000000d 8F05          MOVL      XAR4,#390176          ; [CPU_U] |102| 
+         0000000e F420 
+     406 0000000f 91FF          ANDB      AH,#255               ; [CPU_] |102| 
+     407 00000010 FF55          NOT       ACC                   ; [CPU_] |102| 
+     408 00000011 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |102| 
+     409 00000012 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |102| 
+     410                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     411 00000013 6F28          B         $C$L13,UNC            ; [CPU_] |104| 
+     412                      ; branch occurs ; [] |104| 
+     413 00000014       $C$L10:    
+     414                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     415 00000014 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |107| 
+     416 00000015 8F05          MOVL      XAR4,#390208          ; [CPU_U] |107| 
+         00000016 F440 
+     417 00000017 91FF          ANDB      AH,#255               ; [CPU_] |107| 
+     418 00000018 FF55          NOT       ACC                   ; [CPU_] |107| 
+     419 00000019 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |107| 
+     420 0000001a C1CC          AND       *+XAR4[1],AH          ; [CPU_] |107| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE    9
+
+     421                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     422 0000001b 6F20          B         $C$L13,UNC            ; [CPU_] |109| 
+     423                      ; branch occurs ; [] |109| 
+     424 0000001c       $C$L11:    
+     425                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     426 0000001c 8F05          MOVL      XAR4,#390144          ; [CPU_U] |113| 
+         0000001d F400 
+     427 0000001e 18C4          AND       *+XAR4[0],#65532      ; [CPU_] |113| 
+         0000001f FFFC 
+     428                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     429 00000020 8F05          MOVL      XAR4,#390176          ; [CPU_U] |115| 
+         00000021 F420 
+     430 00000022 18C4          AND       *+XAR4[0],#65280      ; [CPU_] |115| 
+         00000023 FF00 
+     431                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     432 00000024 8F05          MOVL      XAR4,#390208          ; [CPU_U] |117| 
+         00000025 F440 
+     433 00000026 18C4          AND       *+XAR4[0],#65520      ; [CPU_] |117| 
+         00000027 FFF0 
+     434                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     435 00000028 6F13          B         $C$L13,UNC            ; [CPU_] |119| 
+     436                      ; branch occurs ; [] |119| 
+     437 00000029       $C$L12:    
+     438                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     439 00000029 5608          AND       ACC,#65280 << 16      ; [CPU_] |94| 
+         0000002a FF00 
+     440 0000002b 1EA6          MOVL      XAR6,ACC              ; [CPU_] |94| 
+     441 0000002c 3B01          SETC      SXM                   ; [CPU_] 
+     442 0000002d FF2F          MOV       ACC,#-512 << 15       ; [CPU_] |94| 
+         0000002e FE00 
+     443 0000002f 0FA6          CMPL      ACC,XAR6              ; [CPU_] |94| 
+     444 00000030 ECEC          BF        $C$L11,EQ             ; [CPU_] |94| 
+     445                      ; branchcc occurs ; [] |94| 
+     446 00000031 06A6          MOVL      ACC,XAR6              ; [CPU_] 
+     447 00000032 ECD2          BF        $C$L8,EQ              ; [CPU_] |94| 
+     448                      ; branchcc occurs ; [] |94| 
+     449 00000033 FF2F          MOV       ACC,#512 << 15        ; [CPU_] |94| 
+         00000034 0200 
+     450 00000035 0FA6          CMPL      ACC,XAR6              ; [CPU_] |94| 
+     451 00000036 ECD6          BF        $C$L9,EQ              ; [CPU_] |94| 
+     452                      ; branchcc occurs ; [] |94| 
+     453 00000037 FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |94| 
+         00000038 0400 
+     454 00000039 0FA6          CMPL      ACC,XAR6              ; [CPU_] |94| 
+     455 0000003a ECDA          BF        $C$L10,EQ             ; [CPU_] |94| 
+     456                      ; branchcc occurs ; [] |94| 
+     457 0000003b       $C$L13:    
+     458                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     459 0000003b 761A   EDIS
+     460                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     461 0000003c FE82          SUBB      SP,#2                 ; [CPU_U] 
+     462                      .dwcfi  cfa_offset, -2
+     463 0000003d FF69          SPM       #0                    ; [CPU_] 
+     464              $C$DW$24        .dwtag  DW_TAG_TI_branch
+     465                      .dwattr $C$DW$24, DW_AT_low_pc(0x00)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   10
+
+     466                      .dwattr $C$DW$24, DW_AT_TI_return
+     467 0000003e 0006          LRETR     ; [CPU_] 
+     468                      ; return occurs ; [] 
+     469                      .dwattr $C$DW$21, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     470                      .dwattr $C$DW$21, DW_AT_TI_end_line(0x80)
+     471                      .dwattr $C$DW$21, DW_AT_TI_end_column(0x01)
+     472                      .dwendentry
+     473                      .dwendtag $C$DW$21
+     474              
+     475 00000000               .sect   ".text:_MemCfg_commitConfig"
+     476                      .clink
+     477                      .global _MemCfg_commitConfig
+     478              
+     479              $C$DW$25        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_commitConfig")
+     480                      .dwattr $C$DW$25, DW_AT_low_pc(_MemCfg_commitConfig)
+     481                      .dwattr $C$DW$25, DW_AT_high_pc(0x00)
+     482                      .dwattr $C$DW$25, DW_AT_TI_symbol_name("_MemCfg_commitConfig")
+     483                      .dwattr $C$DW$25, DW_AT_external
+     484                      .dwattr $C$DW$25, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     485                      .dwattr $C$DW$25, DW_AT_TI_begin_line(0x88)
+     486                      .dwattr $C$DW$25, DW_AT_TI_begin_column(0x01)
+     487                      .dwattr $C$DW$25, DW_AT_TI_max_frame_size(-4)
+     488                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     489              
+     490                      .dwfde $C$DW$CIE, _MemCfg_commitConfig
+     491              $C$DW$26        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSections")
+     492                      .dwattr $C$DW$26, DW_AT_TI_symbol_name("_ramSections")
+     493                      .dwattr $C$DW$26, DW_AT_type(*$C$DW$T$25)
+     494                      .dwattr $C$DW$26, DW_AT_location[DW_OP_reg0]
+     495              
+     496              ;***************************************************************
+     497              ;* FNAME: _MemCfg_commitConfig          FR SIZE:   2           *
+     498              ;*                                                             *
+     499              ;* FUNCTION ENVIRONMENT                                        *
+     500              ;*                                                             *
+     501              ;* FUNCTION PROPERTIES                                         *
+     502              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     503              ;***************************************************************
+     504              
+     505 00000000       _MemCfg_commitConfig:
+     506                      .dwcfi  cfa_offset, -2
+     507                      .dwcfi  save_reg_to_mem, 26, 0
+     508 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     509                      .dwcfi  cfa_offset, -4
+     510              $C$DW$27        .dwtag  DW_TAG_variable, DW_AT_name("ramSections")
+     511                      .dwattr $C$DW$27, DW_AT_TI_symbol_name("_ramSections")
+     512                      .dwattr $C$DW$27, DW_AT_type(*$C$DW$T$25)
+     513                      .dwattr $C$DW$27, DW_AT_location[DW_OP_breg20 -2]
+     514 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |137| 
+     515                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     516 00000002 7622   EALLOW
+     517                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     518 00000003 6F23          B         $C$L18,UNC            ; [CPU_] |152| 
+     519                      ; branch occurs ; [] |152| 
+     520 00000004       $C$L14:    
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   11
+
+     521                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     522 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |155| 
+     523 00000005 8F05          MOVL      XAR4,#390146          ; [CPU_U] |155| 
+         00000006 F402 
+     524 00000007 91FF          ANDB      AH,#255               ; [CPU_] |155| 
+     525 00000008 98C4          OR        *+XAR4[0],AL          ; [CPU_] |155| 
+     526 00000009 99CC          OR        *+XAR4[1],AH          ; [CPU_] |155| 
+     527                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     528 0000000a 6F2E          B         $C$L19,UNC            ; [CPU_] |157| 
+     529                      ; branch occurs ; [] |157| 
+     530 0000000b       $C$L15:    
+     531                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     532 0000000b 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |160| 
+     533 0000000c 8F05          MOVL      XAR4,#390178          ; [CPU_U] |160| 
+         0000000d F422 
+     534 0000000e 91FF          ANDB      AH,#255               ; [CPU_] |160| 
+     535 0000000f 98C4          OR        *+XAR4[0],AL          ; [CPU_] |160| 
+     536 00000010 99CC          OR        *+XAR4[1],AH          ; [CPU_] |160| 
+     537                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     538 00000011 6F27          B         $C$L19,UNC            ; [CPU_] |162| 
+     539                      ; branch occurs ; [] |162| 
+     540 00000012       $C$L16:    
+     541                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     542 00000012 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |165| 
+     543 00000013 8F05          MOVL      XAR4,#390210          ; [CPU_U] |165| 
+         00000014 F442 
+     544 00000015 91FF          ANDB      AH,#255               ; [CPU_] |165| 
+     545 00000016 98C4          OR        *+XAR4[0],AL          ; [CPU_] |165| 
+     546 00000017 99CC          OR        *+XAR4[1],AH          ; [CPU_] |165| 
+     547                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     548 00000018 6F20          B         $C$L19,UNC            ; [CPU_] |167| 
+     549                      ; branch occurs ; [] |167| 
+     550 00000019       $C$L17:    
+     551                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     552 00000019 8F05          MOVL      XAR4,#390146          ; [CPU_U] |171| 
+         0000001a F402 
+     553 0000001b 1AC4          OR        *+XAR4[0],#3          ; [CPU_] |171| 
+         0000001c 0003 
+     554                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     555 0000001d 8F05          MOVL      XAR4,#390178          ; [CPU_U] |173| 
+         0000001e F422 
+     556 0000001f 1AC4          OR        *+XAR4[0],#255        ; [CPU_] |173| 
+         00000020 00FF 
+     557                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     558 00000021 8F05          MOVL      XAR4,#390210          ; [CPU_U] |175| 
+         00000022 F442 
+     559 00000023 1AC4          OR        *+XAR4[0],#15         ; [CPU_] |175| 
+         00000024 000F 
+     560                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     561 00000025 6F13          B         $C$L19,UNC            ; [CPU_] |177| 
+     562                      ; branch occurs ; [] |177| 
+     563 00000026       $C$L18:    
+     564                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     565 00000026 5608          AND       ACC,#65280 << 16      ; [CPU_] |152| 
+         00000027 FF00 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   12
+
+     566 00000028 1EA6          MOVL      XAR6,ACC              ; [CPU_] |152| 
+     567 00000029 3B01          SETC      SXM                   ; [CPU_] 
+     568 0000002a FF2F          MOV       ACC,#-512 << 15       ; [CPU_] |152| 
+         0000002b FE00 
+     569 0000002c 0FA6          CMPL      ACC,XAR6              ; [CPU_] |152| 
+     570 0000002d ECEC          BF        $C$L17,EQ             ; [CPU_] |152| 
+     571                      ; branchcc occurs ; [] |152| 
+     572 0000002e 06A6          MOVL      ACC,XAR6              ; [CPU_] 
+     573 0000002f ECD5          BF        $C$L14,EQ             ; [CPU_] |152| 
+     574                      ; branchcc occurs ; [] |152| 
+     575 00000030 FF2F          MOV       ACC,#512 << 15        ; [CPU_] |152| 
+         00000031 0200 
+     576 00000032 0FA6          CMPL      ACC,XAR6              ; [CPU_] |152| 
+     577 00000033 ECD8          BF        $C$L15,EQ             ; [CPU_] |152| 
+     578                      ; branchcc occurs ; [] |152| 
+     579 00000034 FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |152| 
+         00000035 0400 
+     580 00000036 0FA6          CMPL      ACC,XAR6              ; [CPU_] |152| 
+     581 00000037 ECDB          BF        $C$L16,EQ             ; [CPU_] |152| 
+     582                      ; branchcc occurs ; [] |152| 
+     583 00000038       $C$L19:    
+     584                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     585 00000038 761A   EDIS
+     586                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     587 00000039 FE82          SUBB      SP,#2                 ; [CPU_U] 
+     588                      .dwcfi  cfa_offset, -2
+     589 0000003a FF69          SPM       #0                    ; [CPU_] 
+     590              $C$DW$28        .dwtag  DW_TAG_TI_branch
+     591                      .dwattr $C$DW$28, DW_AT_low_pc(0x00)
+     592                      .dwattr $C$DW$28, DW_AT_TI_return
+     593 0000003b 0006          LRETR     ; [CPU_] 
+     594                      ; return occurs ; [] 
+     595                      .dwattr $C$DW$25, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     596                      .dwattr $C$DW$25, DW_AT_TI_end_line(0xba)
+     597                      .dwattr $C$DW$25, DW_AT_TI_end_column(0x01)
+     598                      .dwendentry
+     599                      .dwendtag $C$DW$25
+     600              
+     601 00000000               .sect   ".text:_MemCfg_setProtection"
+     602                      .clink
+     603                      .global _MemCfg_setProtection
+     604              
+     605              $C$DW$29        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_setProtection")
+     606                      .dwattr $C$DW$29, DW_AT_low_pc(_MemCfg_setProtection)
+     607                      .dwattr $C$DW$29, DW_AT_high_pc(0x00)
+     608                      .dwattr $C$DW$29, DW_AT_TI_symbol_name("_MemCfg_setProtection")
+     609                      .dwattr $C$DW$29, DW_AT_external
+     610                      .dwattr $C$DW$29, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     611                      .dwattr $C$DW$29, DW_AT_TI_begin_line(0xc2)
+     612                      .dwattr $C$DW$29, DW_AT_TI_begin_column(0x01)
+     613                      .dwattr $C$DW$29, DW_AT_TI_max_frame_size(-14)
+     614                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     615              
+     616                      .dwfde $C$DW$CIE, _MemCfg_setProtection
+     617              $C$DW$30        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSection")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   13
+
+     618                      .dwattr $C$DW$30, DW_AT_TI_symbol_name("_ramSection")
+     619                      .dwattr $C$DW$30, DW_AT_type(*$C$DW$T$25)
+     620                      .dwattr $C$DW$30, DW_AT_location[DW_OP_reg0]
+     621              $C$DW$31        .dwtag  DW_TAG_formal_parameter, DW_AT_name("protectMode")
+     622                      .dwattr $C$DW$31, DW_AT_TI_symbol_name("_protectMode")
+     623                      .dwattr $C$DW$31, DW_AT_type(*$C$DW$T$25)
+     624                      .dwattr $C$DW$31, DW_AT_location[DW_OP_breg20 -16]
+     625              
+     626              ;***************************************************************
+     627              ;* FNAME: _MemCfg_setProtection         FR SIZE:  12           *
+     628              ;*                                                             *
+     629              ;* FUNCTION ENVIRONMENT                                        *
+     630              ;*                                                             *
+     631              ;* FUNCTION PROPERTIES                                         *
+     632              ;*                            0 Parameter, 12 Auto,  0 SOE     *
+     633              ;***************************************************************
+     634              
+     635 00000000       _MemCfg_setProtection:
+     636                      .dwcfi  cfa_offset, -2
+     637                      .dwcfi  save_reg_to_mem, 26, 0
+     638 00000000 FE0C          ADDB      SP,#12                ; [CPU_U] 
+     639                      .dwcfi  cfa_offset, -14
+     640              $C$DW$32        .dwtag  DW_TAG_variable, DW_AT_name("ramSection")
+     641                      .dwattr $C$DW$32, DW_AT_TI_symbol_name("_ramSection")
+     642                      .dwattr $C$DW$32, DW_AT_type(*$C$DW$T$25)
+     643                      .dwattr $C$DW$32, DW_AT_location[DW_OP_breg20 -2]
+     644              $C$DW$33        .dwtag  DW_TAG_variable, DW_AT_name("shiftVal")
+     645                      .dwattr $C$DW$33, DW_AT_TI_symbol_name("_shiftVal")
+     646                      .dwattr $C$DW$33, DW_AT_type(*$C$DW$T$25)
+     647                      .dwattr $C$DW$33, DW_AT_location[DW_OP_breg20 -4]
+     648              $C$DW$34        .dwtag  DW_TAG_variable, DW_AT_name("maskVal")
+     649                      .dwattr $C$DW$34, DW_AT_TI_symbol_name("_maskVal")
+     650                      .dwattr $C$DW$34, DW_AT_type(*$C$DW$T$25)
+     651                      .dwattr $C$DW$34, DW_AT_location[DW_OP_breg20 -6]
+     652              $C$DW$35        .dwtag  DW_TAG_variable, DW_AT_name("regVal")
+     653                      .dwattr $C$DW$35, DW_AT_TI_symbol_name("_regVal")
+     654                      .dwattr $C$DW$35, DW_AT_type(*$C$DW$T$25)
+     655                      .dwattr $C$DW$35, DW_AT_location[DW_OP_breg20 -8]
+     656              $C$DW$36        .dwtag  DW_TAG_variable, DW_AT_name("sectionNum")
+     657                      .dwattr $C$DW$36, DW_AT_TI_symbol_name("_sectionNum")
+     658                      .dwattr $C$DW$36, DW_AT_type(*$C$DW$T$25)
+     659                      .dwattr $C$DW$36, DW_AT_location[DW_OP_breg20 -10]
+     660              $C$DW$37        .dwtag  DW_TAG_variable, DW_AT_name("regOffset")
+     661                      .dwattr $C$DW$37, DW_AT_TI_symbol_name("_regOffset")
+     662                      .dwattr $C$DW$37, DW_AT_type(*$C$DW$T$25)
+     663                      .dwattr $C$DW$37, DW_AT_location[DW_OP_breg20 -12]
+     664 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |195| 
+     665                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     666 00000002 0200          MOVB      ACC,#0                ; [CPU_] |196| 
+     667 00000003 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |196| 
+     668                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     669 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |214| 
+     670 00000005 91FF          ANDB      AH,#255               ; [CPU_] |214| 
+     671 00000006 1E4A          MOVL      *-SP[10],ACC          ; [CPU_] |214| 
+     672                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   14
+
+     673 00000007 0201          MOVB      ACC,#1                ; [CPU_] |216| 
+     674 00000008 0F4A          CMPL      ACC,*-SP[10]          ; [CPU_] |216| 
+     675 00000009 EC0B          BF        $C$L21,EQ             ; [CPU_] |216| 
+     676                      ; branchcc occurs ; [] |216| 
+     677 0000000a 2901          CLRC      SXM                   ; [CPU_] 
+     678 0000000b       $C$L20:    
+     679                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     680 0000000b 064A          MOVL      ACC,*-SP[10]          ; [CPU_] |218| 
+     681 0000000c FF40          SFR       ACC,1                 ; [CPU_] |218| 
+     682 0000000d 1E4A          MOVL      *-SP[10],ACC          ; [CPU_] |218| 
+     683                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     684 0000000e 0208          MOVB      ACC,#8                ; [CPU_] |219| 
+     685 0000000f 0744          ADDL      ACC,*-SP[4]           ; [CPU_] |219| 
+     686 00000010 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |219| 
+     687                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     688 00000011 0201          MOVB      ACC,#1                ; [CPU_] |216| 
+     689 00000012 0F4A          CMPL      ACC,*-SP[10]          ; [CPU_] |216| 
+     690 00000013 EDF8          BF        $C$L20,NEQ            ; [CPU_] |216| 
+     691                      ; branchcc occurs ; [] |216| 
+     692 00000014       $C$L21:    
+     693                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     694 00000014 8F00          MOVL      XAR4,#65504           ; [CPU_U] |226| 
+         00000015 FFE0 
+     695 00000016 2901          CLRC      SXM                   ; [CPU_] 
+     696 00000017 A8A9          MOVL      ACC,XAR4              ; [CPU_] |226| 
+     697 00000018 CE44          AND       AL,*-SP[4]            ; [CPU_] |226| 
+     698 00000019 CF43          AND       AH,*-SP[3]            ; [CPU_] |226| 
+     699 0000001a FF43          SFR       ACC,4                 ; [CPU_] |226| 
+     700 0000001b 1E4C          MOVL      *-SP[12],ACC          ; [CPU_] |226| 
+     701                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     702 0000001c 021F          MOVB      ACC,#31               ; [CPU_] |227| 
+     703 0000001d C044          AND       *-SP[4],AL            ; [CPU_] |227| 
+     704 0000001e C143          AND       *-SP[3],AH            ; [CPU_] |227| 
+     705                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     706 0000001f 2D44          MOV       T,*-SP[4]             ; [CPU_] |228| 
+     707 00000020 0207          MOVB      ACC,#7                ; [CPU_] |228| 
+     708 00000021 563B          LSLL      ACC,T                 ; [CPU_] |228| 
+     709 00000022 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |228| 
+     710                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     711 00000023 0650          MOVL      ACC,*-SP[16]          ; [CPU_] |229| 
+     712 00000024 563B          LSLL      ACC,T                 ; [CPU_] |229| 
+     713 00000025 1E48          MOVL      *-SP[8],ACC           ; [CPU_] |229| 
+     714                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     715 00000026 7622   EALLOW
+     716                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     717 00000027 6F37          B         $C$L25,UNC            ; [CPU_] |236| 
+     718                      ; branch occurs ; [] |236| 
+     719 00000028       $C$L22:    
+     720                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     721 00000028 8F05          MOVL      XAR4,#390152          ; [CPU_U] |239| 
+         00000029 F408 
+     722 0000002a A8A9          MOVL      ACC,XAR4              ; [CPU_] |239| 
+     723 0000002b 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |239| 
+     724 0000002c 8AA9          MOVL      XAR4,ACC              ; [CPU_] |239| 
+     725 0000002d 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |239| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   15
+
+     726 0000002e FF55          NOT       ACC                   ; [CPU_] |239| 
+     727 0000002f C0C4          AND       *+XAR4[0],AL          ; [CPU_] |239| 
+     728 00000030 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |239| 
+     729                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     730 00000031 8F05          MOVL      XAR4,#390152          ; [CPU_U] |240| 
+         00000032 F408 
+     731 00000033 A8A9          MOVL      ACC,XAR4              ; [CPU_] |240| 
+     732 00000034 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |240| 
+     733 00000035 8AA9          MOVL      XAR4,ACC              ; [CPU_] |240| 
+     734 00000036 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |240| 
+     735 00000037 98C4          OR        *+XAR4[0],AL          ; [CPU_] |240| 
+     736 00000038 99CC          OR        *+XAR4[1],AH          ; [CPU_] |240| 
+     737                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     738 00000039 6F32          B         $C$L26,UNC            ; [CPU_] |241| 
+     739                      ; branch occurs ; [] |241| 
+     740 0000003a       $C$L23:    
+     741                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     742 0000003a 8F05          MOVL      XAR4,#390184          ; [CPU_U] |244| 
+         0000003b F428 
+     743 0000003c A8A9          MOVL      ACC,XAR4              ; [CPU_] |244| 
+     744 0000003d 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |244| 
+     745 0000003e 8AA9          MOVL      XAR4,ACC              ; [CPU_] |244| 
+     746 0000003f 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |244| 
+     747 00000040 FF55          NOT       ACC                   ; [CPU_] |244| 
+     748 00000041 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |244| 
+     749 00000042 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |244| 
+     750                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     751 00000043 8F05          MOVL      XAR4,#390184          ; [CPU_U] |245| 
+         00000044 F428 
+     752 00000045 A8A9          MOVL      ACC,XAR4              ; [CPU_] |245| 
+     753 00000046 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |245| 
+     754 00000047 8AA9          MOVL      XAR4,ACC              ; [CPU_] |245| 
+     755 00000048 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |245| 
+     756 00000049 98C4          OR        *+XAR4[0],AL          ; [CPU_] |245| 
+     757 0000004a 99CC          OR        *+XAR4[1],AH          ; [CPU_] |245| 
+     758                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     759 0000004b 6F20          B         $C$L26,UNC            ; [CPU_] |246| 
+     760                      ; branch occurs ; [] |246| 
+     761 0000004c       $C$L24:    
+     762                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     763 0000004c 8F05          MOVL      XAR4,#390216          ; [CPU_U] |249| 
+         0000004d F448 
+     764 0000004e A8A9          MOVL      ACC,XAR4              ; [CPU_] |249| 
+     765 0000004f 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |249| 
+     766 00000050 8AA9          MOVL      XAR4,ACC              ; [CPU_] |249| 
+     767 00000051 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |249| 
+     768 00000052 FF55          NOT       ACC                   ; [CPU_] |249| 
+     769 00000053 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |249| 
+     770 00000054 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |249| 
+     771                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     772 00000055 8F05          MOVL      XAR4,#390216          ; [CPU_U] |250| 
+         00000056 F448 
+     773 00000057 A8A9          MOVL      ACC,XAR4              ; [CPU_] |250| 
+     774 00000058 074C          ADDL      ACC,*-SP[12]          ; [CPU_] |250| 
+     775 00000059 8AA9          MOVL      XAR4,ACC              ; [CPU_] |250| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   16
+
+     776 0000005a 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |250| 
+     777 0000005b 98C4          OR        *+XAR4[0],AL          ; [CPU_] |250| 
+     778 0000005c 99CC          OR        *+XAR4[1],AH          ; [CPU_] |250| 
+     779                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     780 0000005d 6F0E          B         $C$L26,UNC            ; [CPU_] |251| 
+     781                      ; branch occurs ; [] |251| 
+     782 0000005e       $C$L25:    
+     783                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     784 0000005e 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |236| 
+     785 0000005f 5608          AND       ACC,#65280 << 16      ; [CPU_] |236| 
+         00000060 FF00 
+     786 00000061 1EA6          MOVL      XAR6,ACC              ; [CPU_] |236| 
+     787 00000062 ECC6          BF        $C$L22,EQ             ; [CPU_] |236| 
+     788                      ; branchcc occurs ; [] |236| 
+     789 00000063 FF2F          MOV       ACC,#512 << 15        ; [CPU_] |236| 
+         00000064 0200 
+     790 00000065 0FA6          CMPL      ACC,XAR6              ; [CPU_] |236| 
+     791 00000066 ECD4          BF        $C$L23,EQ             ; [CPU_] |236| 
+     792                      ; branchcc occurs ; [] |236| 
+     793 00000067 FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |236| 
+         00000068 0400 
+     794 00000069 0FA6          CMPL      ACC,XAR6              ; [CPU_] |236| 
+     795 0000006a ECE2          BF        $C$L24,EQ             ; [CPU_] |236| 
+     796                      ; branchcc occurs ; [] |236| 
+     797 0000006b       $C$L26:    
+     798                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     799 0000006b 761A   EDIS
+     800                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     801 0000006c FE8C          SUBB      SP,#12                ; [CPU_U] 
+     802                      .dwcfi  cfa_offset, -2
+     803 0000006d FF69          SPM       #0                    ; [CPU_] 
+     804              $C$DW$38        .dwtag  DW_TAG_TI_branch
+     805                      .dwattr $C$DW$38, DW_AT_low_pc(0x00)
+     806                      .dwattr $C$DW$38, DW_AT_TI_return
+     807 0000006e 0006          LRETR     ; [CPU_] 
+     808                      ; return occurs ; [] 
+     809                      .dwattr $C$DW$29, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     810                      .dwattr $C$DW$29, DW_AT_TI_end_line(0x103)
+     811                      .dwattr $C$DW$29, DW_AT_TI_end_column(0x01)
+     812                      .dwendentry
+     813                      .dwendtag $C$DW$29
+     814              
+     815 00000000               .sect   ".text:_MemCfg_setLSRAMMasterSel"
+     816                      .clink
+     817                      .global _MemCfg_setLSRAMMasterSel
+     818              
+     819              $C$DW$39        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_setLSRAMMasterSel")
+     820                      .dwattr $C$DW$39, DW_AT_low_pc(_MemCfg_setLSRAMMasterSel)
+     821                      .dwattr $C$DW$39, DW_AT_high_pc(0x00)
+     822                      .dwattr $C$DW$39, DW_AT_TI_symbol_name("_MemCfg_setLSRAMMasterSel")
+     823                      .dwattr $C$DW$39, DW_AT_external
+     824                      .dwattr $C$DW$39, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     825                      .dwattr $C$DW$39, DW_AT_TI_begin_line(0x10b)
+     826                      .dwattr $C$DW$39, DW_AT_TI_begin_column(0x01)
+     827                      .dwattr $C$DW$39, DW_AT_TI_max_frame_size(-8)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   17
+
+     828                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     829              
+     830                      .dwfde $C$DW$CIE, _MemCfg_setLSRAMMasterSel
+     831              $C$DW$40        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSection")
+     832                      .dwattr $C$DW$40, DW_AT_TI_symbol_name("_ramSection")
+     833                      .dwattr $C$DW$40, DW_AT_type(*$C$DW$T$25)
+     834                      .dwattr $C$DW$40, DW_AT_location[DW_OP_reg0]
+     835              $C$DW$41        .dwtag  DW_TAG_formal_parameter, DW_AT_name("masterSel")
+     836                      .dwattr $C$DW$41, DW_AT_TI_symbol_name("_masterSel")
+     837                      .dwattr $C$DW$41, DW_AT_type(*$C$DW$T$20)
+     838                      .dwattr $C$DW$41, DW_AT_location[DW_OP_reg12]
+     839              
+     840              ;***************************************************************
+     841              ;* FNAME: _MemCfg_setLSRAMMasterSel     FR SIZE:   6           *
+     842              ;*                                                             *
+     843              ;* FUNCTION ENVIRONMENT                                        *
+     844              ;*                                                             *
+     845              ;* FUNCTION PROPERTIES                                         *
+     846              ;*                            0 Parameter,  6 Auto,  0 SOE     *
+     847              ;***************************************************************
+     848              
+     849 00000000       _MemCfg_setLSRAMMasterSel:
+     850                      .dwcfi  cfa_offset, -2
+     851                      .dwcfi  save_reg_to_mem, 26, 0
+     852 00000000 FE06          ADDB      SP,#6                 ; [CPU_U] 
+     853                      .dwcfi  cfa_offset, -8
+     854              $C$DW$42        .dwtag  DW_TAG_variable, DW_AT_name("ramSection")
+     855                      .dwattr $C$DW$42, DW_AT_TI_symbol_name("_ramSection")
+     856                      .dwattr $C$DW$42, DW_AT_type(*$C$DW$T$25)
+     857                      .dwattr $C$DW$42, DW_AT_location[DW_OP_breg20 -2]
+     858              $C$DW$43        .dwtag  DW_TAG_variable, DW_AT_name("masterSel")
+     859                      .dwattr $C$DW$43, DW_AT_TI_symbol_name("_masterSel")
+     860                      .dwattr $C$DW$43, DW_AT_type(*$C$DW$T$20)
+     861                      .dwattr $C$DW$43, DW_AT_location[DW_OP_breg20 -3]
+     862              $C$DW$44        .dwtag  DW_TAG_variable, DW_AT_name("shiftVal")
+     863                      .dwattr $C$DW$44, DW_AT_TI_symbol_name("_shiftVal")
+     864                      .dwattr $C$DW$44, DW_AT_type(*$C$DW$T$25)
+     865                      .dwattr $C$DW$44, DW_AT_location[DW_OP_breg20 -6]
+     866 00000001 7C43          MOV       *-SP[3],AR4           ; [CPU_] |268| 
+     867 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |268| 
+     868                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     869 00000003 0200          MOVB      ACC,#0                ; [CPU_] |281| 
+     870 00000004 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |281| 
+     871                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     872 00000005 1841          AND       *-SP[1],#255          ; [CPU_] |282| 
+         00000006 00FF 
+     873                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     874 00000007 0201          MOVB      ACC,#1                ; [CPU_] |284| 
+     875 00000008 0F42          CMPL      ACC,*-SP[2]           ; [CPU_] |284| 
+     876 00000009 EC0B          BF        $C$L28,EQ             ; [CPU_] |284| 
+     877                      ; branchcc occurs ; [] |284| 
+     878 0000000a 2901          CLRC      SXM                   ; [CPU_] 
+     879 0000000b       $C$L27:    
+     880                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     881 0000000b 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |286| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   18
+
+     882 0000000c FF40          SFR       ACC,1                 ; [CPU_] |286| 
+     883 0000000d 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |286| 
+     884                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     885 0000000e 0202          MOVB      ACC,#2                ; [CPU_] |287| 
+     886 0000000f 0746          ADDL      ACC,*-SP[6]           ; [CPU_] |287| 
+     887 00000010 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |287| 
+     888                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     889 00000011 0201          MOVB      ACC,#1                ; [CPU_] |284| 
+     890 00000012 0F42          CMPL      ACC,*-SP[2]           ; [CPU_] |284| 
+     891 00000013 EDF8          BF        $C$L27,NEQ            ; [CPU_] |284| 
+     892                      ; branchcc occurs ; [] |284| 
+     893 00000014       $C$L28:    
+     894                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     895 00000014 7622   EALLOW
+     896                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     897 00000015 2743          MOV       PL,*-SP[3]            ; [CPU_] |295| 
+     898 00000016 2BAA          MOV       PH,#0                 ; [CPU_] |295| 
+     899 00000017 FF69          SPM       #0                    ; [CPU_] 
+     900 00000018 1646          MOVP      T,*-SP[6]             ; [CPU_] 
+     901 00000019 563B          LSLL      ACC,T                 ; [CPU_] |295| 
+     902 0000001a FF5A          MOVL      P,ACC                 ; [CPU_] |295| 
+     903 0000001b 9A03          MOVB      AL,#3                 ; [CPU_] |295| 
+     904 0000001c FF66          LSL       AL,T                  ; [CPU_] |295| 
+     905 0000001d FF5E          NOT       AL                    ; [CPU_] |295| 
+     906 0000001e 88A9          MOVZ      AR6,AL                ; [CPU_] |295| 
+     907 0000001f 8F05          MOVL      XAR4,#390180          ; [CPU_U] |295| 
+         00000020 F424 
+     908 00000021 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |295| 
+     909 00000022 89A6          AND       ACC,AR6               ; [CPU_] |295| 
+     910 00000023 CAAB          OR        AL,PL                 ; [CPU_] |295| 
+     911 00000024 CBAA          OR        AH,PH                 ; [CPU_] |295| 
+     912 00000025 1EC4          MOVL      *+XAR4[0],ACC         ; [CPU_] |295| 
+     913                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     914 00000026 761A   EDIS
+     915                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     916 00000027 FF69          SPM       #0                    ; [CPU_] 
+     917 00000028 FE86          SUBB      SP,#6                 ; [CPU_U] 
+     918                      .dwcfi  cfa_offset, -2
+     919              $C$DW$45        .dwtag  DW_TAG_TI_branch
+     920                      .dwattr $C$DW$45, DW_AT_low_pc(0x00)
+     921                      .dwattr $C$DW$45, DW_AT_TI_return
+     922 00000029 0006          LRETR     ; [CPU_] 
+     923                      ; return occurs ; [] 
+     924                      .dwattr $C$DW$39, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     925                      .dwattr $C$DW$39, DW_AT_TI_end_line(0x12d)
+     926                      .dwattr $C$DW$39, DW_AT_TI_end_column(0x01)
+     927                      .dwendentry
+     928                      .dwendtag $C$DW$39
+     929              
+     930 00000000               .sect   ".text:_MemCfg_setTestMode"
+     931                      .clink
+     932                      .global _MemCfg_setTestMode
+     933              
+     934              $C$DW$46        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_setTestMode")
+     935                      .dwattr $C$DW$46, DW_AT_low_pc(_MemCfg_setTestMode)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   19
+
+     936                      .dwattr $C$DW$46, DW_AT_high_pc(0x00)
+     937                      .dwattr $C$DW$46, DW_AT_TI_symbol_name("_MemCfg_setTestMode")
+     938                      .dwattr $C$DW$46, DW_AT_external
+     939                      .dwattr $C$DW$46, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     940                      .dwattr $C$DW$46, DW_AT_TI_begin_line(0x135)
+     941                      .dwattr $C$DW$46, DW_AT_TI_begin_column(0x01)
+     942                      .dwattr $C$DW$46, DW_AT_TI_max_frame_size(-14)
+     943                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     944              
+     945                      .dwfde $C$DW$CIE, _MemCfg_setTestMode
+     946              $C$DW$47        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSection")
+     947                      .dwattr $C$DW$47, DW_AT_TI_symbol_name("_ramSection")
+     948                      .dwattr $C$DW$47, DW_AT_type(*$C$DW$T$25)
+     949                      .dwattr $C$DW$47, DW_AT_location[DW_OP_reg0]
+     950              $C$DW$48        .dwtag  DW_TAG_formal_parameter, DW_AT_name("testMode")
+     951                      .dwattr $C$DW$48, DW_AT_TI_symbol_name("_testMode")
+     952                      .dwattr $C$DW$48, DW_AT_type(*$C$DW$T$22)
+     953                      .dwattr $C$DW$48, DW_AT_location[DW_OP_reg12]
+     954              
+     955              ;***************************************************************
+     956              ;* FNAME: _MemCfg_setTestMode           FR SIZE:  12           *
+     957              ;*                                                             *
+     958              ;* FUNCTION ENVIRONMENT                                        *
+     959              ;*                                                             *
+     960              ;* FUNCTION PROPERTIES                                         *
+     961              ;*                            0 Parameter, 12 Auto,  0 SOE     *
+     962              ;***************************************************************
+     963              
+     964 00000000       _MemCfg_setTestMode:
+     965                      .dwcfi  cfa_offset, -2
+     966                      .dwcfi  save_reg_to_mem, 26, 0
+     967 00000000 FE0C          ADDB      SP,#12                ; [CPU_U] 
+     968                      .dwcfi  cfa_offset, -14
+     969              $C$DW$49        .dwtag  DW_TAG_variable, DW_AT_name("ramSection")
+     970                      .dwattr $C$DW$49, DW_AT_TI_symbol_name("_ramSection")
+     971                      .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$25)
+     972                      .dwattr $C$DW$49, DW_AT_location[DW_OP_breg20 -2]
+     973              $C$DW$50        .dwtag  DW_TAG_variable, DW_AT_name("testMode")
+     974                      .dwattr $C$DW$50, DW_AT_TI_symbol_name("_testMode")
+     975                      .dwattr $C$DW$50, DW_AT_type(*$C$DW$T$22)
+     976                      .dwattr $C$DW$50, DW_AT_location[DW_OP_breg20 -3]
+     977              $C$DW$51        .dwtag  DW_TAG_variable, DW_AT_name("shiftVal")
+     978                      .dwattr $C$DW$51, DW_AT_TI_symbol_name("_shiftVal")
+     979                      .dwattr $C$DW$51, DW_AT_type(*$C$DW$T$25)
+     980                      .dwattr $C$DW$51, DW_AT_location[DW_OP_breg20 -6]
+     981              $C$DW$52        .dwtag  DW_TAG_variable, DW_AT_name("maskVal")
+     982                      .dwattr $C$DW$52, DW_AT_TI_symbol_name("_maskVal")
+     983                      .dwattr $C$DW$52, DW_AT_type(*$C$DW$T$25)
+     984                      .dwattr $C$DW$52, DW_AT_location[DW_OP_breg20 -8]
+     985              $C$DW$53        .dwtag  DW_TAG_variable, DW_AT_name("regVal")
+     986                      .dwattr $C$DW$53, DW_AT_TI_symbol_name("_regVal")
+     987                      .dwattr $C$DW$53, DW_AT_type(*$C$DW$T$25)
+     988                      .dwattr $C$DW$53, DW_AT_location[DW_OP_breg20 -10]
+     989              $C$DW$54        .dwtag  DW_TAG_variable, DW_AT_name("sectionNum")
+     990                      .dwattr $C$DW$54, DW_AT_TI_symbol_name("_sectionNum")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   20
+
+     991                      .dwattr $C$DW$54, DW_AT_type(*$C$DW$T$25)
+     992                      .dwattr $C$DW$54, DW_AT_location[DW_OP_breg20 -12]
+     993 00000001 7C43          MOV       *-SP[3],AR4           ; [CPU_] |310| 
+     994 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |310| 
+     995                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     996 00000003 0200          MOVB      ACC,#0                ; [CPU_] |311| 
+     997 00000004 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |311| 
+     998                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     999 00000005 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |329| 
+    1000 00000006 91FF          ANDB      AH,#255               ; [CPU_] |329| 
+    1001 00000007 1E4C          MOVL      *-SP[12],ACC          ; [CPU_] |329| 
+    1002                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1003 00000008 0201          MOVB      ACC,#1                ; [CPU_] |331| 
+    1004 00000009 0F4C          CMPL      ACC,*-SP[12]          ; [CPU_] |331| 
+    1005 0000000a EC0B          BF        $C$L30,EQ             ; [CPU_] |331| 
+    1006                      ; branchcc occurs ; [] |331| 
+    1007 0000000b 2901          CLRC      SXM                   ; [CPU_] 
+    1008 0000000c       $C$L29:    
+    1009                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1010 0000000c 064C          MOVL      ACC,*-SP[12]          ; [CPU_] |333| 
+    1011 0000000d FF40          SFR       ACC,1                 ; [CPU_] |333| 
+    1012 0000000e 1E4C          MOVL      *-SP[12],ACC          ; [CPU_] |333| 
+    1013                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1014 0000000f 0202          MOVB      ACC,#2                ; [CPU_] |334| 
+    1015 00000010 0746          ADDL      ACC,*-SP[6]           ; [CPU_] |334| 
+    1016 00000011 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |334| 
+    1017                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1018 00000012 0201          MOVB      ACC,#1                ; [CPU_] |331| 
+    1019 00000013 0F4C          CMPL      ACC,*-SP[12]          ; [CPU_] |331| 
+    1020 00000014 EDF8          BF        $C$L29,NEQ            ; [CPU_] |331| 
+    1021                      ; branchcc occurs ; [] |331| 
+    1022 00000015       $C$L30:    
+    1023                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1024 00000015 0203          MOVB      ACC,#3                ; [CPU_] |337| 
+    1025 00000016 2D46          MOV       T,*-SP[6]             ; [CPU_] |337| 
+    1026 00000017 563B          LSLL      ACC,T                 ; [CPU_] |337| 
+    1027 00000018 1E48          MOVL      *-SP[8],ACC           ; [CPU_] |337| 
+    1028                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1029 00000019 0E43          MOVU      ACC,*-SP[3]           ; [CPU_] |338| 
+    1030 0000001a 563B          LSLL      ACC,T                 ; [CPU_] |338| 
+    1031 0000001b 1E4A          MOVL      *-SP[10],ACC          ; [CPU_] |338| 
+    1032                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1033 0000001c 7622   EALLOW
+    1034                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1035 0000001d 6F29          B         $C$L35,UNC            ; [CPU_] |345| 
+    1036                      ; branch occurs ; [] |345| 
+    1037 0000001e       $C$L31:    
+    1038                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1039 0000001e 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |348| 
+    1040 0000001f 8F05          MOVL      XAR4,#390160          ; [CPU_U] |348| 
+         00000020 F410 
+    1041 00000021 FF55          NOT       ACC                   ; [CPU_] |348| 
+    1042 00000022 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |348| 
+    1043 00000023 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |348| 
+    1044                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   21
+
+    1045 00000024 064A          MOVL      ACC,*-SP[10]          ; [CPU_] |349| 
+    1046 00000025 98C4          OR        *+XAR4[0],AL          ; [CPU_] |349| 
+    1047 00000026 99CC          OR        *+XAR4[1],AH          ; [CPU_] |349| 
+    1048                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1049 00000027 6F30          B         $C$L36,UNC            ; [CPU_] |350| 
+    1050                      ; branch occurs ; [] |350| 
+    1051 00000028       $C$L32:    
+    1052                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1053 00000028 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |353| 
+    1054 00000029 8F05          MOVL      XAR4,#390192          ; [CPU_U] |353| 
+         0000002a F430 
+    1055 0000002b FF55          NOT       ACC                   ; [CPU_] |353| 
+    1056 0000002c C0C4          AND       *+XAR4[0],AL          ; [CPU_] |353| 
+    1057 0000002d C1CC          AND       *+XAR4[1],AH          ; [CPU_] |353| 
+    1058                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1059 0000002e 064A          MOVL      ACC,*-SP[10]          ; [CPU_] |354| 
+    1060 0000002f 98C4          OR        *+XAR4[0],AL          ; [CPU_] |354| 
+    1061 00000030 99CC          OR        *+XAR4[1],AH          ; [CPU_] |354| 
+    1062                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1063 00000031 6F26          B         $C$L36,UNC            ; [CPU_] |355| 
+    1064                      ; branch occurs ; [] |355| 
+    1065 00000032       $C$L33:    
+    1066                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1067 00000032 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |358| 
+    1068 00000033 8F05          MOVL      XAR4,#390224          ; [CPU_U] |358| 
+         00000034 F450 
+    1069 00000035 FF55          NOT       ACC                   ; [CPU_] |358| 
+    1070 00000036 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |358| 
+    1071 00000037 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |358| 
+    1072                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1073 00000038 064A          MOVL      ACC,*-SP[10]          ; [CPU_] |359| 
+    1074 00000039 98C4          OR        *+XAR4[0],AL          ; [CPU_] |359| 
+    1075 0000003a 99CC          OR        *+XAR4[1],AH          ; [CPU_] |359| 
+    1076                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1077 0000003b 6F1C          B         $C$L36,UNC            ; [CPU_] |360| 
+    1078                      ; branch occurs ; [] |360| 
+    1079 0000003c       $C$L34:    
+    1080                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1081 0000003c 0648          MOVL      ACC,*-SP[8]           ; [CPU_] |363| 
+    1082 0000003d 8F05          MOVL      XAR4,#390256          ; [CPU_U] |363| 
+         0000003e F470 
+    1083 0000003f FF55          NOT       ACC                   ; [CPU_] |363| 
+    1084 00000040 C0C4          AND       *+XAR4[0],AL          ; [CPU_] |363| 
+    1085 00000041 C1CC          AND       *+XAR4[1],AH          ; [CPU_] |363| 
+    1086                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1087 00000042 064A          MOVL      ACC,*-SP[10]          ; [CPU_] |364| 
+    1088 00000043 98C4          OR        *+XAR4[0],AL          ; [CPU_] |364| 
+    1089 00000044 99CC          OR        *+XAR4[1],AH          ; [CPU_] |364| 
+    1090                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1091 00000045 6F12          B         $C$L36,UNC            ; [CPU_] |365| 
+    1092                      ; branch occurs ; [] |365| 
+    1093 00000046       $C$L35:    
+    1094                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1095 00000046 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |345| 
+    1096 00000047 5608          AND       ACC,#65280 << 16      ; [CPU_] |345| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   22
+
+         00000048 FF00 
+    1097 00000049 1EA6          MOVL      XAR6,ACC              ; [CPU_] |345| 
+    1098 0000004a ECD4          BF        $C$L31,EQ             ; [CPU_] |345| 
+    1099                      ; branchcc occurs ; [] |345| 
+    1100 0000004b FF2F          MOV       ACC,#512 << 15        ; [CPU_] |345| 
+         0000004c 0200 
+    1101 0000004d 0FA6          CMPL      ACC,XAR6              ; [CPU_] |345| 
+    1102 0000004e ECDA          BF        $C$L32,EQ             ; [CPU_] |345| 
+    1103                      ; branchcc occurs ; [] |345| 
+    1104 0000004f FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |345| 
+         00000050 0400 
+    1105 00000051 0FA6          CMPL      ACC,XAR6              ; [CPU_] |345| 
+    1106 00000052 ECE0          BF        $C$L33,EQ             ; [CPU_] |345| 
+    1107                      ; branchcc occurs ; [] |345| 
+    1108 00000053 FF2F          MOV       ACC,#1536 << 15       ; [CPU_] |345| 
+         00000054 0600 
+    1109 00000055 0FA6          CMPL      ACC,XAR6              ; [CPU_] |345| 
+    1110 00000056 ECE6          BF        $C$L34,EQ             ; [CPU_] |345| 
+    1111                      ; branchcc occurs ; [] |345| 
+    1112 00000057       $C$L36:    
+    1113                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1114 00000057 761A   EDIS
+    1115                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1116 00000058 FE8C          SUBB      SP,#12                ; [CPU_U] 
+    1117                      .dwcfi  cfa_offset, -2
+    1118 00000059 FF69          SPM       #0                    ; [CPU_] 
+    1119              $C$DW$55        .dwtag  DW_TAG_TI_branch
+    1120                      .dwattr $C$DW$55, DW_AT_low_pc(0x00)
+    1121                      .dwattr $C$DW$55, DW_AT_TI_return
+    1122 0000005a 0006          LRETR     ; [CPU_] 
+    1123                      ; return occurs ; [] 
+    1124                      .dwattr $C$DW$46, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1125                      .dwattr $C$DW$46, DW_AT_TI_end_line(0x175)
+    1126                      .dwattr $C$DW$46, DW_AT_TI_end_column(0x01)
+    1127                      .dwendentry
+    1128                      .dwendtag $C$DW$46
+    1129              
+    1130 00000000               .sect   ".text:_MemCfg_initSections"
+    1131                      .clink
+    1132                      .global _MemCfg_initSections
+    1133              
+    1134              $C$DW$56        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_initSections")
+    1135                      .dwattr $C$DW$56, DW_AT_low_pc(_MemCfg_initSections)
+    1136                      .dwattr $C$DW$56, DW_AT_high_pc(0x00)
+    1137                      .dwattr $C$DW$56, DW_AT_TI_symbol_name("_MemCfg_initSections")
+    1138                      .dwattr $C$DW$56, DW_AT_external
+    1139                      .dwattr $C$DW$56, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1140                      .dwattr $C$DW$56, DW_AT_TI_begin_line(0x17d)
+    1141                      .dwattr $C$DW$56, DW_AT_TI_begin_column(0x01)
+    1142                      .dwattr $C$DW$56, DW_AT_TI_max_frame_size(-4)
+    1143                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1144              
+    1145                      .dwfde $C$DW$CIE, _MemCfg_initSections
+    1146              $C$DW$57        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSections")
+    1147                      .dwattr $C$DW$57, DW_AT_TI_symbol_name("_ramSections")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   23
+
+    1148                      .dwattr $C$DW$57, DW_AT_type(*$C$DW$T$25)
+    1149                      .dwattr $C$DW$57, DW_AT_location[DW_OP_reg0]
+    1150              
+    1151              ;***************************************************************
+    1152              ;* FNAME: _MemCfg_initSections          FR SIZE:   2           *
+    1153              ;*                                                             *
+    1154              ;* FUNCTION ENVIRONMENT                                        *
+    1155              ;*                                                             *
+    1156              ;* FUNCTION PROPERTIES                                         *
+    1157              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+    1158              ;***************************************************************
+    1159              
+    1160 00000000       _MemCfg_initSections:
+    1161                      .dwcfi  cfa_offset, -2
+    1162                      .dwcfi  save_reg_to_mem, 26, 0
+    1163 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+    1164                      .dwcfi  cfa_offset, -4
+    1165              $C$DW$58        .dwtag  DW_TAG_variable, DW_AT_name("ramSections")
+    1166                      .dwattr $C$DW$58, DW_AT_TI_symbol_name("_ramSections")
+    1167                      .dwattr $C$DW$58, DW_AT_type(*$C$DW$T$25)
+    1168                      .dwattr $C$DW$58, DW_AT_location[DW_OP_breg20 -2]
+    1169 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |382| 
+    1170                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1171 00000002 7622   EALLOW
+    1172                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1173 00000003 6F2E          B         $C$L42,UNC            ; [CPU_] |398| 
+    1174                      ; branch occurs ; [] |398| 
+    1175 00000004       $C$L37:    
+    1176                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1177 00000004 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |401| 
+    1178 00000005 8F05          MOVL      XAR4,#390162          ; [CPU_U] |401| 
+         00000006 F412 
+    1179 00000007 91FF          ANDB      AH,#255               ; [CPU_] |401| 
+    1180 00000008 98C4          OR        *+XAR4[0],AL          ; [CPU_] |401| 
+    1181 00000009 99CC          OR        *+XAR4[1],AH          ; [CPU_] |401| 
+    1182                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1183 0000000a 6F41          B         $C$L44,UNC            ; [CPU_] |403| 
+    1184                      ; branch occurs ; [] |403| 
+    1185 0000000b       $C$L38:    
+    1186                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1187 0000000b 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |406| 
+    1188 0000000c 8F05          MOVL      XAR4,#390194          ; [CPU_U] |406| 
+         0000000d F432 
+    1189 0000000e 91FF          ANDB      AH,#255               ; [CPU_] |406| 
+    1190 0000000f 98C4          OR        *+XAR4[0],AL          ; [CPU_] |406| 
+    1191 00000010 99CC          OR        *+XAR4[1],AH          ; [CPU_] |406| 
+    1192                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1193 00000011 6F3A          B         $C$L44,UNC            ; [CPU_] |408| 
+    1194                      ; branch occurs ; [] |408| 
+    1195 00000012       $C$L39:    
+    1196                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1197 00000012 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |411| 
+    1198 00000013 8F05          MOVL      XAR4,#390226          ; [CPU_U] |411| 
+         00000014 F452 
+    1199 00000015 91FF          ANDB      AH,#255               ; [CPU_] |411| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   24
+
+    1200 00000016 98C4          OR        *+XAR4[0],AL          ; [CPU_] |411| 
+    1201 00000017 99CC          OR        *+XAR4[1],AH          ; [CPU_] |411| 
+    1202                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1203 00000018 6F33          B         $C$L44,UNC            ; [CPU_] |413| 
+    1204                      ; branch occurs ; [] |413| 
+    1205 00000019       $C$L40:    
+    1206                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1207 00000019 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |416| 
+    1208 0000001a 8F05          MOVL      XAR4,#390258          ; [CPU_U] |416| 
+         0000001b F472 
+    1209 0000001c 91FF          ANDB      AH,#255               ; [CPU_] |416| 
+    1210 0000001d 98C4          OR        *+XAR4[0],AL          ; [CPU_] |416| 
+    1211 0000001e 99CC          OR        *+XAR4[1],AH          ; [CPU_] |416| 
+    1212                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1213 0000001f 6F2C          B         $C$L44,UNC            ; [CPU_] |418| 
+    1214                      ; branch occurs ; [] |418| 
+    1215 00000020       $C$L41:    
+    1216                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1217 00000020 8F05          MOVL      XAR4,#390162          ; [CPU_U] |422| 
+         00000021 F412 
+    1218 00000022 1AC4          OR        *+XAR4[0],#3          ; [CPU_] |422| 
+         00000023 0003 
+    1219                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1220 00000024 8F05          MOVL      XAR4,#390194          ; [CPU_U] |424| 
+         00000025 F432 
+    1221 00000026 1AC4          OR        *+XAR4[0],#255        ; [CPU_] |424| 
+         00000027 00FF 
+    1222                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1223 00000028 8F05          MOVL      XAR4,#390226          ; [CPU_U] |426| 
+         00000029 F452 
+    1224 0000002a 1AC4          OR        *+XAR4[0],#15         ; [CPU_] |426| 
+         0000002b 000F 
+    1225                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1226 0000002c 8F05          MOVL      XAR4,#390258          ; [CPU_U] |428| 
+         0000002d F472 
+    1227 0000002e 1AC4          OR        *+XAR4[0],#6          ; [CPU_] |428| 
+         0000002f 0006 
+    1228                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1229 00000030 6F1B          B         $C$L44,UNC            ; [CPU_] |430| 
+    1230                      ; branch occurs ; [] |430| 
+    1231 00000031       $C$L42:    
+    1232                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1233 00000031 5608          AND       ACC,#65280 << 16      ; [CPU_] |398| 
+         00000032 FF00 
+    1234 00000033 1EA6          MOVL      XAR6,ACC              ; [CPU_] |398| 
+    1235 00000034 FF2F          MOV       ACC,#512 << 15        ; [CPU_] |398| 
+         00000035 0200 
+    1236 00000036 0FA6          CMPL      ACC,XAR6              ; [CPU_] |398| 
+    1237 00000037 56C4          BF        $C$L43,LT             ; [CPU_] |398| 
+         00000038 000C 
+    1238                      ; branchcc occurs ; [] |398| 
+    1239 00000039 0FA6          CMPL      ACC,XAR6              ; [CPU_] |398| 
+    1240 0000003a ECD1          BF        $C$L38,EQ             ; [CPU_] |398| 
+    1241                      ; branchcc occurs ; [] |398| 
+    1242 0000003b 3B01          SETC      SXM                   ; [CPU_] 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   25
+
+    1243 0000003c FF2F          MOV       ACC,#-512 << 15       ; [CPU_] |398| 
+         0000003d FE00 
+    1244 0000003e 0FA6          CMPL      ACC,XAR6              ; [CPU_] |398| 
+    1245 0000003f ECE1          BF        $C$L41,EQ             ; [CPU_] |398| 
+    1246                      ; branchcc occurs ; [] |398| 
+    1247 00000040 06A6          MOVL      ACC,XAR6              ; [CPU_] 
+    1248 00000041 ECC3          BF        $C$L37,EQ             ; [CPU_] |398| 
+    1249                      ; branchcc occurs ; [] |398| 
+    1250 00000042 6F09          B         $C$L44,UNC            ; [CPU_] |398| 
+    1251                      ; branch occurs ; [] |398| 
+    1252 00000043       $C$L43:    
+    1253 00000043 FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |398| 
+         00000044 0400 
+    1254 00000045 0FA6          CMPL      ACC,XAR6              ; [CPU_] |398| 
+    1255 00000046 ECCC          BF        $C$L39,EQ             ; [CPU_] |398| 
+    1256                      ; branchcc occurs ; [] |398| 
+    1257 00000047 FF2F          MOV       ACC,#1536 << 15       ; [CPU_] |398| 
+         00000048 0600 
+    1258 00000049 0FA6          CMPL      ACC,XAR6              ; [CPU_] |398| 
+    1259 0000004a ECCF          BF        $C$L40,EQ             ; [CPU_] |398| 
+    1260                      ; branchcc occurs ; [] |398| 
+    1261 0000004b       $C$L44:    
+    1262                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1263 0000004b 761A   EDIS
+    1264                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1265 0000004c FE82          SUBB      SP,#2                 ; [CPU_U] 
+    1266                      .dwcfi  cfa_offset, -2
+    1267 0000004d FF69          SPM       #0                    ; [CPU_] 
+    1268              $C$DW$59        .dwtag  DW_TAG_TI_branch
+    1269                      .dwattr $C$DW$59, DW_AT_low_pc(0x00)
+    1270                      .dwattr $C$DW$59, DW_AT_TI_return
+    1271 0000004e 0006          LRETR     ; [CPU_] 
+    1272                      ; return occurs ; [] 
+    1273                      .dwattr $C$DW$56, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1274                      .dwattr $C$DW$56, DW_AT_TI_end_line(0x1b7)
+    1275                      .dwattr $C$DW$56, DW_AT_TI_end_column(0x01)
+    1276                      .dwendentry
+    1277                      .dwendtag $C$DW$56
+    1278              
+    1279 00000000               .sect   ".text:_MemCfg_getInitStatus"
+    1280                      .clink
+    1281                      .global _MemCfg_getInitStatus
+    1282              
+    1283              $C$DW$60        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_getInitStatus")
+    1284                      .dwattr $C$DW$60, DW_AT_low_pc(_MemCfg_getInitStatus)
+    1285                      .dwattr $C$DW$60, DW_AT_high_pc(0x00)
+    1286                      .dwattr $C$DW$60, DW_AT_TI_symbol_name("_MemCfg_getInitStatus")
+    1287                      .dwattr $C$DW$60, DW_AT_external
+    1288                      .dwattr $C$DW$60, DW_AT_type(*$C$DW$T$40)
+    1289                      .dwattr $C$DW$60, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1290                      .dwattr $C$DW$60, DW_AT_TI_begin_line(0x1bf)
+    1291                      .dwattr $C$DW$60, DW_AT_TI_begin_column(0x01)
+    1292                      .dwattr $C$DW$60, DW_AT_TI_max_frame_size(-6)
+    1293                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1294              
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   26
+
+    1295                      .dwfde $C$DW$CIE, _MemCfg_getInitStatus
+    1296              $C$DW$61        .dwtag  DW_TAG_formal_parameter, DW_AT_name("ramSections")
+    1297                      .dwattr $C$DW$61, DW_AT_TI_symbol_name("_ramSections")
+    1298                      .dwattr $C$DW$61, DW_AT_type(*$C$DW$T$25)
+    1299                      .dwattr $C$DW$61, DW_AT_location[DW_OP_reg0]
+    1300              
+    1301              ;***************************************************************
+    1302              ;* FNAME: _MemCfg_getInitStatus         FR SIZE:   4           *
+    1303              ;*                                                             *
+    1304              ;* FUNCTION ENVIRONMENT                                        *
+    1305              ;*                                                             *
+    1306              ;* FUNCTION PROPERTIES                                         *
+    1307              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+    1308              ;***************************************************************
+    1309              
+    1310 00000000       _MemCfg_getInitStatus:
+    1311                      .dwcfi  cfa_offset, -2
+    1312                      .dwcfi  save_reg_to_mem, 26, 0
+    1313 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+    1314                      .dwcfi  cfa_offset, -6
+    1315              $C$DW$62        .dwtag  DW_TAG_variable, DW_AT_name("ramSections")
+    1316                      .dwattr $C$DW$62, DW_AT_TI_symbol_name("_ramSections")
+    1317                      .dwattr $C$DW$62, DW_AT_type(*$C$DW$T$25)
+    1318                      .dwattr $C$DW$62, DW_AT_location[DW_OP_breg20 -2]
+    1319              $C$DW$63        .dwtag  DW_TAG_variable, DW_AT_name("status")
+    1320                      .dwattr $C$DW$63, DW_AT_TI_symbol_name("_status")
+    1321                      .dwattr $C$DW$63, DW_AT_type(*$C$DW$T$25)
+    1322                      .dwattr $C$DW$63, DW_AT_location[DW_OP_breg20 -4]
+    1323 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |448| 
+    1324                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1325 00000002 6F37          B         $C$L51,UNC            ; [CPU_] |463| 
+    1326                      ; branch occurs ; [] |463| 
+    1327 00000003       $C$L45:    
+    1328                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1329 00000003 8F05          MOVL      XAR4,#390164          ; [CPU_U] |466| 
+         00000004 F414 
+    1330 00000005 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |466| 
+    1331 00000006 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |466| 
+    1332                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1333 00000007 6F4C          B         $C$L53,UNC            ; [CPU_] |467| 
+    1334                      ; branch occurs ; [] |467| 
+    1335 00000008       $C$L46:    
+    1336                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1337 00000008 8F05          MOVL      XAR4,#390196          ; [CPU_U] |470| 
+         00000009 F434 
+    1338 0000000a 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |470| 
+    1339 0000000b 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |470| 
+    1340                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1341 0000000c 6F47          B         $C$L53,UNC            ; [CPU_] |471| 
+    1342                      ; branch occurs ; [] |471| 
+    1343 0000000d       $C$L47:    
+    1344                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1345 0000000d 8F05          MOVL      XAR4,#390228          ; [CPU_U] |474| 
+         0000000e F454 
+    1346 0000000f 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |474| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   27
+
+    1347 00000010 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |474| 
+    1348                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1349 00000011 6F42          B         $C$L53,UNC            ; [CPU_] |475| 
+    1350                      ; branch occurs ; [] |475| 
+    1351 00000012       $C$L48:    
+    1352                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1353 00000012 8F05          MOVL      XAR4,#390260          ; [CPU_U] |478| 
+         00000013 F474 
+    1354 00000014 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |478| 
+    1355 00000015 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |478| 
+    1356                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1357 00000016 6F3D          B         $C$L53,UNC            ; [CPU_] |479| 
+    1358                      ; branch occurs ; [] |479| 
+    1359 00000017       $C$L49:    
+    1360                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1361 00000017 0203          MOVB      ACC,#3                ; [CPU_] |483| 
+    1362 00000018 8F05          MOVL      XAR4,#390164          ; [CPU_U] |483| 
+         00000019 F414 
+    1363 0000001a 0FC4          CMPL      ACC,*+XAR4[0]         ; [CPU_] |483| 
+    1364 0000001b ED1B          BF        $C$L50,NEQ            ; [CPU_] |483| 
+    1365                      ; branchcc occurs ; [] |483| 
+    1366 0000001c 9AFF          MOV       AL,#255               ; [CPU_] |483| 
+    1367 0000001d 28A8          MOV       AH,#256               ; [CPU_] |483| 
+         0000001e 0100 
+    1368 0000001f 8F05          MOVL      XAR4,#390196          ; [CPU_U] |483| 
+         00000020 F434 
+    1369 00000021 0FC4          CMPL      ACC,*+XAR4[0]         ; [CPU_] |483| 
+    1370 00000022 ED14          BF        $C$L50,NEQ            ; [CPU_] |483| 
+    1371                      ; branchcc occurs ; [] |483| 
+    1372 00000023 9A0F          MOV       AL,#15                ; [CPU_] |483| 
+    1373 00000024 28A8          MOV       AH,#512               ; [CPU_] |483| 
+         00000025 0200 
+    1374 00000026 8F05          MOVL      XAR4,#390228          ; [CPU_U] |483| 
+         00000027 F454 
+    1375 00000028 0FC4          CMPL      ACC,*+XAR4[0]         ; [CPU_] |483| 
+    1376 00000029 ED0D          BF        $C$L50,NEQ            ; [CPU_] |483| 
+    1377                      ; branchcc occurs ; [] |483| 
+    1378 0000002a 9A06          MOV       AL,#6                 ; [CPU_] |483| 
+    1379 0000002b 28A8          MOV       AH,#768               ; [CPU_] |483| 
+         0000002c 0300 
+    1380 0000002d 8F05          MOVL      XAR4,#390260          ; [CPU_U] |483| 
+         0000002e F474 
+    1381 0000002f 0FC4          CMPL      ACC,*+XAR4[0]         ; [CPU_] |483| 
+    1382 00000030 ED06          BF        $C$L50,NEQ            ; [CPU_] |483| 
+    1383                      ; branchcc occurs ; [] |483| 
+    1384                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1385 00000031 28A9          MOV       AL,#65535             ; [CPU_] |492| 
+         00000032 FFFF 
+    1386 00000033 9BFF          MOV       AH,#255               ; [CPU_] |492| 
+    1387 00000034 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |492| 
+    1388                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1389 00000035 6F1E          B         $C$L53,UNC            ; [CPU_] |493| 
+    1390                      ; branch occurs ; [] |493| 
+    1391 00000036       $C$L50:    
+    1392                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   28
+
+    1393 00000036 0200          MOVB      ACC,#0                ; [CPU_] |496| 
+    1394 00000037 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |496| 
+    1395                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1396 00000038 6F1B          B         $C$L53,UNC            ; [CPU_] |498| 
+    1397                      ; branch occurs ; [] |498| 
+    1398 00000039       $C$L51:    
+    1399                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1400 00000039 5608          AND       ACC,#65280 << 16      ; [CPU_] |463| 
+         0000003a FF00 
+    1401 0000003b 1EA6          MOVL      XAR6,ACC              ; [CPU_] |463| 
+    1402 0000003c FF2F          MOV       ACC,#512 << 15        ; [CPU_] |463| 
+         0000003d 0200 
+    1403 0000003e 0FA6          CMPL      ACC,XAR6              ; [CPU_] |463| 
+    1404 0000003f 56C4          BF        $C$L52,LT             ; [CPU_] |463| 
+         00000040 000C 
+    1405                      ; branchcc occurs ; [] |463| 
+    1406 00000041 0FA6          CMPL      ACC,XAR6              ; [CPU_] |463| 
+    1407 00000042 ECC6          BF        $C$L46,EQ             ; [CPU_] |463| 
+    1408                      ; branchcc occurs ; [] |463| 
+    1409 00000043 3B01          SETC      SXM                   ; [CPU_] 
+    1410 00000044 FF2F          MOV       ACC,#-512 << 15       ; [CPU_] |463| 
+         00000045 FE00 
+    1411 00000046 0FA6          CMPL      ACC,XAR6              ; [CPU_] |463| 
+    1412 00000047 ECD0          BF        $C$L49,EQ             ; [CPU_] |463| 
+    1413                      ; branchcc occurs ; [] |463| 
+    1414 00000048 06A6          MOVL      ACC,XAR6              ; [CPU_] 
+    1415 00000049 ECBA          BF        $C$L45,EQ             ; [CPU_] |463| 
+    1416                      ; branchcc occurs ; [] |463| 
+    1417 0000004a 6F09          B         $C$L53,UNC            ; [CPU_] |463| 
+    1418                      ; branch occurs ; [] |463| 
+    1419 0000004b       $C$L52:    
+    1420 0000004b FF2F          MOV       ACC,#1024 << 15       ; [CPU_] |463| 
+         0000004c 0400 
+    1421 0000004d 0FA6          CMPL      ACC,XAR6              ; [CPU_] |463| 
+    1422 0000004e ECBF          BF        $C$L47,EQ             ; [CPU_] |463| 
+    1423                      ; branchcc occurs ; [] |463| 
+    1424 0000004f FF2F          MOV       ACC,#1536 << 15       ; [CPU_] |463| 
+         00000050 0600 
+    1425 00000051 0FA6          CMPL      ACC,XAR6              ; [CPU_] |463| 
+    1426 00000052 ECC0          BF        $C$L48,EQ             ; [CPU_] |463| 
+    1427                      ; branchcc occurs ; [] |463| 
+    1428 00000053       $C$L53:    
+    1429                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1430 00000053 A342          MOVL      P,*-SP[2]             ; [CPU_] |506| 
+    1431 00000054 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |506| 
+    1432 00000055 18AA          AND       PH,#255               ; [CPU_] |506| 
+         00000056 00FF 
+    1433 00000057 CE42          AND       AL,*-SP[2]            ; [CPU_] |506| 
+    1434 00000058 CF41          AND       AH,*-SP[1]            ; [CPU_] |506| 
+    1435 00000059 0FAB          CMPL      ACC,P                 ; [CPU_] |506| 
+    1436 0000005a ED03          BF        $C$L54,NEQ            ; [CPU_] |506| 
+    1437                      ; branchcc occurs ; [] |506| 
+    1438                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1439 0000005b 9A01          MOVB      AL,#1                 ; [CPU_] |508| 
+    1440 0000005c 6F02          B         $C$L55,UNC            ; [CPU_] |508| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   29
+
+    1441                      ; branch occurs ; [] |508| 
+    1442 0000005d       $C$L54:    
+    1443                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1444 0000005d 9A00          MOVB      AL,#0                 ; [CPU_] |512| 
+    1445 0000005e       $C$L55:    
+    1446                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1447 0000005e FE84          SUBB      SP,#4                 ; [CPU_U] 
+    1448                      .dwcfi  cfa_offset, -2
+    1449              $C$DW$64        .dwtag  DW_TAG_TI_branch
+    1450                      .dwattr $C$DW$64, DW_AT_low_pc(0x00)
+    1451                      .dwattr $C$DW$64, DW_AT_TI_return
+    1452 0000005f 0006          LRETR     ; [CPU_] 
+    1453                      ; return occurs ; [] 
+    1454                      .dwattr $C$DW$60, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1455                      .dwattr $C$DW$60, DW_AT_TI_end_line(0x202)
+    1456                      .dwattr $C$DW$60, DW_AT_TI_end_column(0x01)
+    1457                      .dwendentry
+    1458                      .dwendtag $C$DW$60
+    1459              
+    1460 00000000               .sect   ".text:_MemCfg_registerViolationInterrupt"
+    1461                      .clink
+    1462                      .global _MemCfg_registerViolationInterrupt
+    1463              
+    1464              $C$DW$65        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_registerViolationInterrupt")
+    1465                      .dwattr $C$DW$65, DW_AT_low_pc(_MemCfg_registerViolationInterrupt)
+    1466                      .dwattr $C$DW$65, DW_AT_high_pc(0x00)
+    1467                      .dwattr $C$DW$65, DW_AT_TI_symbol_name("_MemCfg_registerViolationInterrupt")
+    1468                      .dwattr $C$DW$65, DW_AT_external
+    1469                      .dwattr $C$DW$65, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1470                      .dwattr $C$DW$65, DW_AT_TI_begin_line(0x20a)
+    1471                      .dwattr $C$DW$65, DW_AT_TI_begin_column(0x01)
+    1472                      .dwattr $C$DW$65, DW_AT_TI_max_frame_size(-4)
+    1473                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1474              
+    1475                      .dwfde $C$DW$CIE, _MemCfg_registerViolationInterrupt
+    1476              $C$DW$66        .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+    1477                      .dwattr $C$DW$66, DW_AT_TI_symbol_name("_handler")
+    1478                      .dwattr $C$DW$66, DW_AT_type(*$C$DW$T$24)
+    1479                      .dwattr $C$DW$66, DW_AT_location[DW_OP_reg12]
+    1480              
+    1481              ;***************************************************************
+    1482              ;* FNAME: _MemCfg_registerViolationInterrupt FR SIZE:   2           *
+    1483              ;*                                                             *
+    1484              ;* FUNCTION ENVIRONMENT                                        *
+    1485              ;*                                                             *
+    1486              ;* FUNCTION PROPERTIES                                         *
+    1487              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+    1488              ;***************************************************************
+    1489              
+    1490 00000000       _MemCfg_registerViolationInterrupt:
+    1491                      .dwcfi  cfa_offset, -2
+    1492                      .dwcfi  save_reg_to_mem, 26, 0
+    1493 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+    1494                      .dwcfi  cfa_offset, -4
+    1495              $C$DW$67        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   30
+
+    1496                      .dwattr $C$DW$67, DW_AT_TI_symbol_name("_handler")
+    1497                      .dwattr $C$DW$67, DW_AT_type(*$C$DW$T$24)
+    1498                      .dwattr $C$DW$67, DW_AT_location[DW_OP_breg20 -2]
+    1499 00000001 A842          MOVL      *-SP[2],XAR4          ; [CPU_] |523| 
+    1500                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1501 00000002 28A9          MOV       AL,#3084              ; [CPU_] |527| 
+         00000003 0C0C 
+    1502 00000004 9BDB          MOV       AH,#219               ; [CPU_] |527| 
+    1503              $C$DW$68        .dwtag  DW_TAG_TI_branch
+    1504                      .dwattr $C$DW$68, DW_AT_low_pc(0x00)
+    1505                      .dwattr $C$DW$68, DW_AT_name("_Interrupt_register")
+    1506                      .dwattr $C$DW$68, DW_AT_TI_call
+    1507 00000005 7640+         LCR       #_Interrupt_register  ; [CPU_] |527| 
+         00000006 0000 
+    1508                      ; call occurs [#_Interrupt_register] ; [] |527| 
+    1509                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1510 00000007 28A9          MOV       AL,#3084              ; [CPU_] |532| 
+         00000008 0C0C 
+    1511 00000009 9BDB          MOV       AH,#219               ; [CPU_] |532| 
+    1512              $C$DW$69        .dwtag  DW_TAG_TI_branch
+    1513                      .dwattr $C$DW$69, DW_AT_low_pc(0x00)
+    1514                      .dwattr $C$DW$69, DW_AT_name("_Interrupt_enable")
+    1515                      .dwattr $C$DW$69, DW_AT_TI_call
+    1516 0000000a 7640!         LCR       #_Interrupt_enable    ; [CPU_] |532| 
+         0000000b 0000 
+    1517                      ; call occurs [#_Interrupt_enable] ; [] |532| 
+    1518                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1519 0000000c FE82          SUBB      SP,#2                 ; [CPU_U] 
+    1520                      .dwcfi  cfa_offset, -2
+    1521              $C$DW$70        .dwtag  DW_TAG_TI_branch
+    1522                      .dwattr $C$DW$70, DW_AT_low_pc(0x00)
+    1523                      .dwattr $C$DW$70, DW_AT_TI_return
+    1524 0000000d 0006          LRETR     ; [CPU_] 
+    1525                      ; return occurs ; [] 
+    1526                      .dwattr $C$DW$65, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1527                      .dwattr $C$DW$65, DW_AT_TI_end_line(0x215)
+    1528                      .dwattr $C$DW$65, DW_AT_TI_end_column(0x01)
+    1529                      .dwendentry
+    1530                      .dwendtag $C$DW$65
+    1531              
+    1532 00000000               .sect   ".text:_MemCfg_unregisterViolationInterrupt"
+    1533                      .clink
+    1534                      .global _MemCfg_unregisterViolationInterrupt
+    1535              
+    1536              $C$DW$71        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_unregisterViolationInterrupt")
+    1537                      .dwattr $C$DW$71, DW_AT_low_pc(_MemCfg_unregisterViolationInterrupt)
+    1538                      .dwattr $C$DW$71, DW_AT_high_pc(0x00)
+    1539                      .dwattr $C$DW$71, DW_AT_TI_symbol_name("_MemCfg_unregisterViolationInterrupt")
+    1540                      .dwattr $C$DW$71, DW_AT_external
+    1541                      .dwattr $C$DW$71, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1542                      .dwattr $C$DW$71, DW_AT_TI_begin_line(0x21d)
+    1543                      .dwattr $C$DW$71, DW_AT_TI_begin_column(0x01)
+    1544                      .dwattr $C$DW$71, DW_AT_TI_max_frame_size(-2)
+    1545                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1546              
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   31
+
+    1547                      .dwfde $C$DW$CIE, _MemCfg_unregisterViolationInterrupt
+    1548              
+    1549              ;***************************************************************
+    1550              ;* FNAME: _MemCfg_unregisterViolationInterrupt FR SIZE:   0           *
+    1551              ;*                                                             *
+    1552              ;* FUNCTION ENVIRONMENT                                        *
+    1553              ;*                                                             *
+    1554              ;* FUNCTION PROPERTIES                                         *
+    1555              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+    1556              ;***************************************************************
+    1557              
+    1558 00000000       _MemCfg_unregisterViolationInterrupt:
+    1559                      .dwcfi  cfa_offset, -2
+    1560                      .dwcfi  save_reg_to_mem, 26, 0
+    1561                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1562 00000000 28A9          MOV       AL,#3084              ; [CPU_] |546| 
+         00000001 0C0C 
+    1563 00000002 9BDB          MOV       AH,#219               ; [CPU_] |546| 
+    1564              $C$DW$72        .dwtag  DW_TAG_TI_branch
+    1565                      .dwattr $C$DW$72, DW_AT_low_pc(0x00)
+    1566                      .dwattr $C$DW$72, DW_AT_name("_Interrupt_disable")
+    1567                      .dwattr $C$DW$72, DW_AT_TI_call
+    1568 00000003 7640!         LCR       #_Interrupt_disable   ; [CPU_] |546| 
+         00000004 0000 
+    1569                      ; call occurs [#_Interrupt_disable] ; [] |546| 
+    1570                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1571 00000005 28A9          MOV       AL,#3084              ; [CPU_] |551| 
+         00000006 0C0C 
+    1572 00000007 9BDB          MOV       AH,#219               ; [CPU_] |551| 
+    1573              $C$DW$73        .dwtag  DW_TAG_TI_branch
+    1574                      .dwattr $C$DW$73, DW_AT_low_pc(0x00)
+    1575                      .dwattr $C$DW$73, DW_AT_name("_Interrupt_unregister")
+    1576                      .dwattr $C$DW$73, DW_AT_TI_call
+    1577 00000008 7640+         LCR       #_Interrupt_unregister ; [CPU_] |551| 
+         00000009 0000 
+    1578                      ; call occurs [#_Interrupt_unregister] ; [] |551| 
+    1579                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1580              $C$DW$74        .dwtag  DW_TAG_TI_branch
+    1581                      .dwattr $C$DW$74, DW_AT_low_pc(0x00)
+    1582                      .dwattr $C$DW$74, DW_AT_TI_return
+    1583 0000000a 0006          LRETR     ; [CPU_] 
+    1584                      ; return occurs ; [] 
+    1585                      .dwattr $C$DW$71, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1586                      .dwattr $C$DW$71, DW_AT_TI_end_line(0x228)
+    1587                      .dwattr $C$DW$71, DW_AT_TI_end_column(0x01)
+    1588                      .dwendentry
+    1589                      .dwendtag $C$DW$71
+    1590              
+    1591 00000000               .sect   ".text:_MemCfg_getViolationAddress"
+    1592                      .clink
+    1593                      .global _MemCfg_getViolationAddress
+    1594              
+    1595              $C$DW$75        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_getViolationAddress")
+    1596                      .dwattr $C$DW$75, DW_AT_low_pc(_MemCfg_getViolationAddress)
+    1597                      .dwattr $C$DW$75, DW_AT_high_pc(0x00)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   32
+
+    1598                      .dwattr $C$DW$75, DW_AT_TI_symbol_name("_MemCfg_getViolationAddress")
+    1599                      .dwattr $C$DW$75, DW_AT_external
+    1600                      .dwattr $C$DW$75, DW_AT_type(*$C$DW$T$25)
+    1601                      .dwattr $C$DW$75, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1602                      .dwattr $C$DW$75, DW_AT_TI_begin_line(0x230)
+    1603                      .dwattr $C$DW$75, DW_AT_TI_begin_column(0x01)
+    1604                      .dwattr $C$DW$75, DW_AT_TI_max_frame_size(-8)
+    1605                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1606              
+    1607                      .dwfde $C$DW$CIE, _MemCfg_getViolationAddress
+    1608              $C$DW$76        .dwtag  DW_TAG_formal_parameter, DW_AT_name("intFlag")
+    1609                      .dwattr $C$DW$76, DW_AT_TI_symbol_name("_intFlag")
+    1610                      .dwattr $C$DW$76, DW_AT_type(*$C$DW$T$25)
+    1611                      .dwattr $C$DW$76, DW_AT_location[DW_OP_reg0]
+    1612              
+    1613              ;***************************************************************
+    1614              ;* FNAME: _MemCfg_getViolationAddress   FR SIZE:   6           *
+    1615              ;*                                                             *
+    1616              ;* FUNCTION ENVIRONMENT                                        *
+    1617              ;*                                                             *
+    1618              ;* FUNCTION PROPERTIES                                         *
+    1619              ;*                            0 Parameter,  6 Auto,  0 SOE     *
+    1620              ;***************************************************************
+    1621              
+    1622 00000000       _MemCfg_getViolationAddress:
+    1623                      .dwcfi  cfa_offset, -2
+    1624                      .dwcfi  save_reg_to_mem, 26, 0
+    1625 00000000 FE06          ADDB      SP,#6                 ; [CPU_U] 
+    1626                      .dwcfi  cfa_offset, -8
+    1627              $C$DW$77        .dwtag  DW_TAG_variable, DW_AT_name("intFlag")
+    1628                      .dwattr $C$DW$77, DW_AT_TI_symbol_name("_intFlag")
+    1629                      .dwattr $C$DW$77, DW_AT_type(*$C$DW$T$25)
+    1630                      .dwattr $C$DW$77, DW_AT_location[DW_OP_breg20 -2]
+    1631              $C$DW$78        .dwtag  DW_TAG_variable, DW_AT_name("address")
+    1632                      .dwattr $C$DW$78, DW_AT_TI_symbol_name("_address")
+    1633                      .dwattr $C$DW$78, DW_AT_type(*$C$DW$T$25)
+    1634                      .dwattr $C$DW$78, DW_AT_location[DW_OP_breg20 -4]
+    1635              $C$DW$79        .dwtag  DW_TAG_variable, DW_AT_name("stsNumber")
+    1636                      .dwattr $C$DW$79, DW_AT_TI_symbol_name("_stsNumber")
+    1637                      .dwattr $C$DW$79, DW_AT_type(*$C$DW$T$25)
+    1638                      .dwattr $C$DW$79, DW_AT_location[DW_OP_breg20 -6]
+    1639 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |561| 
+    1640                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1641 00000002 8F00          MOVL      XAR4,#61440           ; [CPU_U] |568| 
+         00000003 F000 
+    1642 00000004 A8A9          MOVL      ACC,XAR4              ; [CPU_] |568| 
+    1643 00000005 CE42          AND       AL,*-SP[2]            ; [CPU_] |568| 
+    1644 00000006 CF41          AND       AH,*-SP[1]            ; [CPU_] |568| 
+    1645 00000007 FF58          TEST      ACC                   ; [CPU_] |568| 
+    1646 00000008 EC09          BF        $C$L56,EQ             ; [CPU_] |568| 
+    1647                      ; branchcc occurs ; [] |568| 
+    1648                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1649 00000009 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |570| 
+    1650 0000000a 2901          CLRC      SXM                   ; [CPU_] 
+    1651 0000000b FF4B          SFR       ACC,12                ; [CPU_] |570| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   33
+
+    1652 0000000c 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |570| 
+    1653                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1654 0000000d 8F05          MOVL      XAR4,#390376          ; [CPU_U] |571| 
+         0000000e F4E8 
+    1655 0000000f A844          MOVL      *-SP[4],XAR4          ; [CPU_] |571| 
+    1656                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1657 00000010 6F06          B         $C$L57,UNC            ; [CPU_] |572| 
+    1658                      ; branch occurs ; [] |572| 
+    1659 00000011       $C$L56:    
+    1660                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1661 00000011 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |575| 
+    1662 00000012 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |575| 
+    1663                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1664 00000013 8F05          MOVL      XAR4,#390344          ; [CPU_U] |576| 
+         00000014 F4C8 
+    1665 00000015 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |576| 
+    1666 00000016       $C$L57:    
+    1667                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1668 00000016 0201          MOVB      ACC,#1                ; [CPU_] |579| 
+    1669 00000017 0F46          CMPL      ACC,*-SP[6]           ; [CPU_] |579| 
+    1670 00000018 56C7          BF        $C$L59,HIS            ; [CPU_] |579| 
+         00000019 000D 
+    1671                      ; branchcc occurs ; [] |579| 
+    1672 0000001a 2901          CLRC      SXM                   ; [CPU_] 
+    1673 0000001b       $C$L58:    
+    1674                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1675 0000001b 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |581| 
+    1676 0000001c FF40          SFR       ACC,1                 ; [CPU_] |581| 
+    1677 0000001d 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |581| 
+    1678                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1679 0000001e 0202          MOVB      ACC,#2                ; [CPU_] |582| 
+    1680 0000001f 0744          ADDL      ACC,*-SP[4]           ; [CPU_] |582| 
+    1681 00000020 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |582| 
+    1682                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1683 00000021 0201          MOVB      ACC,#1                ; [CPU_] |579| 
+    1684 00000022 0F46          CMPL      ACC,*-SP[6]           ; [CPU_] |579| 
+    1685 00000023 56C8          BF        $C$L58,LO             ; [CPU_] |579| 
+         00000024 FFF8 
+    1686                      ; branchcc occurs ; [] |579| 
+    1687 00000025       $C$L59:    
+    1688                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1689 00000025 8A44          MOVL      XAR4,*-SP[4]          ; [CPU_] |588| 
+    1690 00000026 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |588| 
+    1691                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1692 00000027 FE86          SUBB      SP,#6                 ; [CPU_U] 
+    1693                      .dwcfi  cfa_offset, -2
+    1694              $C$DW$80        .dwtag  DW_TAG_TI_branch
+    1695                      .dwattr $C$DW$80, DW_AT_low_pc(0x00)
+    1696                      .dwattr $C$DW$80, DW_AT_TI_return
+    1697 00000028 0006          LRETR     ; [CPU_] 
+    1698                      ; return occurs ; [] 
+    1699                      .dwattr $C$DW$75, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1700                      .dwattr $C$DW$75, DW_AT_TI_end_line(0x24d)
+    1701                      .dwattr $C$DW$75, DW_AT_TI_end_column(0x01)
+    1702                      .dwendentry
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   34
+
+    1703                      .dwendtag $C$DW$75
+    1704              
+    1705 00000000               .sect   ".text:_MemCfg_registerCorrErrorInterrupt"
+    1706                      .clink
+    1707                      .global _MemCfg_registerCorrErrorInterrupt
+    1708              
+    1709              $C$DW$81        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_registerCorrErrorInterrupt")
+    1710                      .dwattr $C$DW$81, DW_AT_low_pc(_MemCfg_registerCorrErrorInterrupt)
+    1711                      .dwattr $C$DW$81, DW_AT_high_pc(0x00)
+    1712                      .dwattr $C$DW$81, DW_AT_TI_symbol_name("_MemCfg_registerCorrErrorInterrupt")
+    1713                      .dwattr $C$DW$81, DW_AT_external
+    1714                      .dwattr $C$DW$81, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1715                      .dwattr $C$DW$81, DW_AT_TI_begin_line(0x255)
+    1716                      .dwattr $C$DW$81, DW_AT_TI_begin_column(0x01)
+    1717                      .dwattr $C$DW$81, DW_AT_TI_max_frame_size(-4)
+    1718                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1719              
+    1720                      .dwfde $C$DW$CIE, _MemCfg_registerCorrErrorInterrupt
+    1721              $C$DW$82        .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+    1722                      .dwattr $C$DW$82, DW_AT_TI_symbol_name("_handler")
+    1723                      .dwattr $C$DW$82, DW_AT_type(*$C$DW$T$24)
+    1724                      .dwattr $C$DW$82, DW_AT_location[DW_OP_reg12]
+    1725              
+    1726              ;***************************************************************
+    1727              ;* FNAME: _MemCfg_registerCorrErrorInterrupt FR SIZE:   2           *
+    1728              ;*                                                             *
+    1729              ;* FUNCTION ENVIRONMENT                                        *
+    1730              ;*                                                             *
+    1731              ;* FUNCTION PROPERTIES                                         *
+    1732              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+    1733              ;***************************************************************
+    1734              
+    1735 00000000       _MemCfg_registerCorrErrorInterrupt:
+    1736                      .dwcfi  cfa_offset, -2
+    1737                      .dwcfi  save_reg_to_mem, 26, 0
+    1738 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+    1739                      .dwcfi  cfa_offset, -4
+    1740              $C$DW$83        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+    1741                      .dwattr $C$DW$83, DW_AT_TI_symbol_name("_handler")
+    1742                      .dwattr $C$DW$83, DW_AT_type(*$C$DW$T$24)
+    1743                      .dwattr $C$DW$83, DW_AT_location[DW_OP_breg20 -2]
+    1744 00000001 A842          MOVL      *-SP[2],XAR4          ; [CPU_] |598| 
+    1745                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1746 00000002 28A9          MOV       AL,#3082              ; [CPU_] |602| 
+         00000003 0C0A 
+    1747 00000004 9BD9          MOV       AH,#217               ; [CPU_] |602| 
+    1748              $C$DW$84        .dwtag  DW_TAG_TI_branch
+    1749                      .dwattr $C$DW$84, DW_AT_low_pc(0x00)
+    1750                      .dwattr $C$DW$84, DW_AT_name("_Interrupt_register")
+    1751                      .dwattr $C$DW$84, DW_AT_TI_call
+    1752 00000005 7640+         LCR       #_Interrupt_register  ; [CPU_] |602| 
+         00000006 0000 
+    1753                      ; call occurs [#_Interrupt_register] ; [] |602| 
+    1754                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1755 00000007 28A9          MOV       AL,#3082              ; [CPU_] |607| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   35
+
+         00000008 0C0A 
+    1756 00000009 9BD9          MOV       AH,#217               ; [CPU_] |607| 
+    1757              $C$DW$85        .dwtag  DW_TAG_TI_branch
+    1758                      .dwattr $C$DW$85, DW_AT_low_pc(0x00)
+    1759                      .dwattr $C$DW$85, DW_AT_name("_Interrupt_enable")
+    1760                      .dwattr $C$DW$85, DW_AT_TI_call
+    1761 0000000a 7640!         LCR       #_Interrupt_enable    ; [CPU_] |607| 
+         0000000b 0000 
+    1762                      ; call occurs [#_Interrupt_enable] ; [] |607| 
+    1763                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1764 0000000c FE82          SUBB      SP,#2                 ; [CPU_U] 
+    1765                      .dwcfi  cfa_offset, -2
+    1766              $C$DW$86        .dwtag  DW_TAG_TI_branch
+    1767                      .dwattr $C$DW$86, DW_AT_low_pc(0x00)
+    1768                      .dwattr $C$DW$86, DW_AT_TI_return
+    1769 0000000d 0006          LRETR     ; [CPU_] 
+    1770                      ; return occurs ; [] 
+    1771                      .dwattr $C$DW$81, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1772                      .dwattr $C$DW$81, DW_AT_TI_end_line(0x260)
+    1773                      .dwattr $C$DW$81, DW_AT_TI_end_column(0x01)
+    1774                      .dwendentry
+    1775                      .dwendtag $C$DW$81
+    1776              
+    1777 00000000               .sect   ".text:_MemCfg_unregisterCorrErrorInterrupt"
+    1778                      .clink
+    1779                      .global _MemCfg_unregisterCorrErrorInterrupt
+    1780              
+    1781              $C$DW$87        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_unregisterCorrErrorInterrupt")
+    1782                      .dwattr $C$DW$87, DW_AT_low_pc(_MemCfg_unregisterCorrErrorInterrupt)
+    1783                      .dwattr $C$DW$87, DW_AT_high_pc(0x00)
+    1784                      .dwattr $C$DW$87, DW_AT_TI_symbol_name("_MemCfg_unregisterCorrErrorInterrupt")
+    1785                      .dwattr $C$DW$87, DW_AT_external
+    1786                      .dwattr $C$DW$87, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1787                      .dwattr $C$DW$87, DW_AT_TI_begin_line(0x268)
+    1788                      .dwattr $C$DW$87, DW_AT_TI_begin_column(0x01)
+    1789                      .dwattr $C$DW$87, DW_AT_TI_max_frame_size(-2)
+    1790                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1791              
+    1792                      .dwfde $C$DW$CIE, _MemCfg_unregisterCorrErrorInterrupt
+    1793              
+    1794              ;***************************************************************
+    1795              ;* FNAME: _MemCfg_unregisterCorrErrorInterrupt FR SIZE:   0           *
+    1796              ;*                                                             *
+    1797              ;* FUNCTION ENVIRONMENT                                        *
+    1798              ;*                                                             *
+    1799              ;* FUNCTION PROPERTIES                                         *
+    1800              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+    1801              ;***************************************************************
+    1802              
+    1803 00000000       _MemCfg_unregisterCorrErrorInterrupt:
+    1804                      .dwcfi  cfa_offset, -2
+    1805                      .dwcfi  save_reg_to_mem, 26, 0
+    1806                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1807 00000000 28A9          MOV       AL,#3082              ; [CPU_] |621| 
+         00000001 0C0A 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   36
+
+    1808 00000002 9BD9          MOV       AH,#217               ; [CPU_] |621| 
+    1809              $C$DW$88        .dwtag  DW_TAG_TI_branch
+    1810                      .dwattr $C$DW$88, DW_AT_low_pc(0x00)
+    1811                      .dwattr $C$DW$88, DW_AT_name("_Interrupt_disable")
+    1812                      .dwattr $C$DW$88, DW_AT_TI_call
+    1813 00000003 7640!         LCR       #_Interrupt_disable   ; [CPU_] |621| 
+         00000004 0000 
+    1814                      ; call occurs [#_Interrupt_disable] ; [] |621| 
+    1815                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1816 00000005 28A9          MOV       AL,#3082              ; [CPU_] |626| 
+         00000006 0C0A 
+    1817 00000007 9BD9          MOV       AH,#217               ; [CPU_] |626| 
+    1818              $C$DW$89        .dwtag  DW_TAG_TI_branch
+    1819                      .dwattr $C$DW$89, DW_AT_low_pc(0x00)
+    1820                      .dwattr $C$DW$89, DW_AT_name("_Interrupt_unregister")
+    1821                      .dwattr $C$DW$89, DW_AT_TI_call
+    1822 00000008 7640+         LCR       #_Interrupt_unregister ; [CPU_] |626| 
+         00000009 0000 
+    1823                      ; call occurs [#_Interrupt_unregister] ; [] |626| 
+    1824                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1825              $C$DW$90        .dwtag  DW_TAG_TI_branch
+    1826                      .dwattr $C$DW$90, DW_AT_low_pc(0x00)
+    1827                      .dwattr $C$DW$90, DW_AT_TI_return
+    1828 0000000a 0006          LRETR     ; [CPU_] 
+    1829                      ; return occurs ; [] 
+    1830                      .dwattr $C$DW$87, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1831                      .dwattr $C$DW$87, DW_AT_TI_end_line(0x273)
+    1832                      .dwattr $C$DW$87, DW_AT_TI_end_column(0x01)
+    1833                      .dwendentry
+    1834                      .dwendtag $C$DW$87
+    1835              
+    1836 00000000               .sect   ".text:_MemCfg_getCorrErrorAddress"
+    1837                      .clink
+    1838                      .global _MemCfg_getCorrErrorAddress
+    1839              
+    1840              $C$DW$91        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_getCorrErrorAddress")
+    1841                      .dwattr $C$DW$91, DW_AT_low_pc(_MemCfg_getCorrErrorAddress)
+    1842                      .dwattr $C$DW$91, DW_AT_high_pc(0x00)
+    1843                      .dwattr $C$DW$91, DW_AT_TI_symbol_name("_MemCfg_getCorrErrorAddress")
+    1844                      .dwattr $C$DW$91, DW_AT_external
+    1845                      .dwattr $C$DW$91, DW_AT_type(*$C$DW$T$25)
+    1846                      .dwattr $C$DW$91, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1847                      .dwattr $C$DW$91, DW_AT_TI_begin_line(0x27b)
+    1848                      .dwattr $C$DW$91, DW_AT_TI_begin_column(0x01)
+    1849                      .dwattr $C$DW$91, DW_AT_TI_max_frame_size(-4)
+    1850                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1851              
+    1852                      .dwfde $C$DW$CIE, _MemCfg_getCorrErrorAddress
+    1853              $C$DW$92        .dwtag  DW_TAG_formal_parameter, DW_AT_name("stsFlag")
+    1854                      .dwattr $C$DW$92, DW_AT_TI_symbol_name("_stsFlag")
+    1855                      .dwattr $C$DW$92, DW_AT_type(*$C$DW$T$25)
+    1856                      .dwattr $C$DW$92, DW_AT_location[DW_OP_reg0]
+    1857              
+    1858              ;***************************************************************
+    1859              ;* FNAME: _MemCfg_getCorrErrorAddress   FR SIZE:   2           *
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   37
+
+    1860              ;*                                                             *
+    1861              ;* FUNCTION ENVIRONMENT                                        *
+    1862              ;*                                                             *
+    1863              ;* FUNCTION PROPERTIES                                         *
+    1864              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+    1865              ;***************************************************************
+    1866              
+    1867 00000000       _MemCfg_getCorrErrorAddress:
+    1868                      .dwcfi  cfa_offset, -2
+    1869                      .dwcfi  save_reg_to_mem, 26, 0
+    1870 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+    1871                      .dwcfi  cfa_offset, -4
+    1872              $C$DW$93        .dwtag  DW_TAG_variable, DW_AT_name("stsFlag")
+    1873                      .dwattr $C$DW$93, DW_AT_TI_symbol_name("_stsFlag")
+    1874                      .dwattr $C$DW$93, DW_AT_type(*$C$DW$T$25)
+    1875                      .dwattr $C$DW$93, DW_AT_location[DW_OP_breg20 -2]
+    1876 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |636| 
+    1877                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1878 00000002 8F05          MOVL      XAR4,#390438          ; [CPU_U] |645| 
+         00000003 F526 
+    1879 00000004 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |645| 
+    1880                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1881 00000005 FE82          SUBB      SP,#2                 ; [CPU_U] 
+    1882                      .dwcfi  cfa_offset, -2
+    1883              $C$DW$94        .dwtag  DW_TAG_TI_branch
+    1884                      .dwattr $C$DW$94, DW_AT_low_pc(0x00)
+    1885                      .dwattr $C$DW$94, DW_AT_TI_return
+    1886 00000006 0006          LRETR     ; [CPU_] 
+    1887                      ; return occurs ; [] 
+    1888                      .dwattr $C$DW$91, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1889                      .dwattr $C$DW$91, DW_AT_TI_end_line(0x286)
+    1890                      .dwattr $C$DW$91, DW_AT_TI_end_column(0x01)
+    1891                      .dwendentry
+    1892                      .dwendtag $C$DW$91
+    1893              
+    1894 00000000               .sect   ".text:_MemCfg_getUncorrErrorAddress"
+    1895                      .clink
+    1896                      .global _MemCfg_getUncorrErrorAddress
+    1897              
+    1898              $C$DW$95        .dwtag  DW_TAG_subprogram, DW_AT_name("MemCfg_getUncorrErrorAddress")
+    1899                      .dwattr $C$DW$95, DW_AT_low_pc(_MemCfg_getUncorrErrorAddress)
+    1900                      .dwattr $C$DW$95, DW_AT_high_pc(0x00)
+    1901                      .dwattr $C$DW$95, DW_AT_TI_symbol_name("_MemCfg_getUncorrErrorAddress")
+    1902                      .dwattr $C$DW$95, DW_AT_external
+    1903                      .dwattr $C$DW$95, DW_AT_type(*$C$DW$T$25)
+    1904                      .dwattr $C$DW$95, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+    1905                      .dwattr $C$DW$95, DW_AT_TI_begin_line(0x28e)
+    1906                      .dwattr $C$DW$95, DW_AT_TI_begin_column(0x01)
+    1907                      .dwattr $C$DW$95, DW_AT_TI_max_frame_size(-6)
+    1908                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1909              
+    1910                      .dwfde $C$DW$CIE, _MemCfg_getUncorrErrorAddress
+    1911              $C$DW$96        .dwtag  DW_TAG_formal_parameter, DW_AT_name("stsFlag")
+    1912                      .dwattr $C$DW$96, DW_AT_TI_symbol_name("_stsFlag")
+    1913                      .dwattr $C$DW$96, DW_AT_type(*$C$DW$T$25)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   38
+
+    1914                      .dwattr $C$DW$96, DW_AT_location[DW_OP_reg0]
+    1915              
+    1916              ;***************************************************************
+    1917              ;* FNAME: _MemCfg_getUncorrErrorAddress FR SIZE:   4           *
+    1918              ;*                                                             *
+    1919              ;* FUNCTION ENVIRONMENT                                        *
+    1920              ;*                                                             *
+    1921              ;* FUNCTION PROPERTIES                                         *
+    1922              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+    1923              ;***************************************************************
+    1924              
+    1925 00000000       _MemCfg_getUncorrErrorAddress:
+    1926                      .dwcfi  cfa_offset, -2
+    1927                      .dwcfi  save_reg_to_mem, 26, 0
+    1928 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+    1929                      .dwcfi  cfa_offset, -6
+    1930              $C$DW$97        .dwtag  DW_TAG_variable, DW_AT_name("stsFlag")
+    1931                      .dwattr $C$DW$97, DW_AT_TI_symbol_name("_stsFlag")
+    1932                      .dwattr $C$DW$97, DW_AT_type(*$C$DW$T$25)
+    1933                      .dwattr $C$DW$97, DW_AT_location[DW_OP_breg20 -2]
+    1934              $C$DW$98        .dwtag  DW_TAG_variable, DW_AT_name("address")
+    1935                      .dwattr $C$DW$98, DW_AT_TI_symbol_name("_address")
+    1936                      .dwattr $C$DW$98, DW_AT_type(*$C$DW$T$25)
+    1937                      .dwattr $C$DW$98, DW_AT_location[DW_OP_breg20 -4]
+    1938 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |655| 
+    1939                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1940 00000002 8F05          MOVL      XAR4,#390406          ; [CPU_U] |661| 
+         00000003 F506 
+    1941 00000004 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |661| 
+    1942                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1943 00000005 0201          MOVB      ACC,#1                ; [CPU_] |663| 
+    1944 00000006 0F42          CMPL      ACC,*-SP[2]           ; [CPU_] |663| 
+    1945 00000007 56C7          BF        $C$L61,HIS            ; [CPU_] |663| 
+         00000008 000D 
+    1946                      ; branchcc occurs ; [] |663| 
+    1947 00000009 2901          CLRC      SXM                   ; [CPU_] 
+    1948 0000000a       $C$L60:    
+    1949                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1950 0000000a 0642          MOVL      ACC,*-SP[2]           ; [CPU_] |665| 
+    1951 0000000b FF40          SFR       ACC,1                 ; [CPU_] |665| 
+    1952 0000000c 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |665| 
+    1953                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1954 0000000d 0202          MOVB      ACC,#2                ; [CPU_] |666| 
+    1955 0000000e 0744          ADDL      ACC,*-SP[4]           ; [CPU_] |666| 
+    1956 0000000f 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |666| 
+    1957                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1958 00000010 0201          MOVB      ACC,#1                ; [CPU_] |663| 
+    1959 00000011 0F42          CMPL      ACC,*-SP[2]           ; [CPU_] |663| 
+    1960 00000012 56C8          BF        $C$L60,LO             ; [CPU_] |663| 
+         00000013 FFF8 
+    1961                      ; branchcc occurs ; [] |663| 
+    1962 00000014       $C$L61:    
+    1963                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1964 00000014 8A44          MOVL      XAR4,*-SP[4]          ; [CPU_] |672| 
+    1965 00000015 06C4          MOVL      ACC,*+XAR4[0]         ; [CPU_] |672| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   39
+
+    1966                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+    1967 00000016 FE84          SUBB      SP,#4                 ; [CPU_U] 
+    1968                      .dwcfi  cfa_offset, -2
+    1969              $C$DW$99        .dwtag  DW_TAG_TI_branch
+    1970                      .dwattr $C$DW$99, DW_AT_low_pc(0x00)
+    1971                      .dwattr $C$DW$99, DW_AT_TI_return
+    1972 00000017 0006          LRETR     ; [CPU_] 
+    1973                      ; return occurs ; [] 
+    1974                      .dwattr $C$DW$95, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+    1975                      .dwattr $C$DW$95, DW_AT_TI_end_line(0x2a1)
+    1976                      .dwattr $C$DW$95, DW_AT_TI_end_column(0x01)
+    1977                      .dwendentry
+    1978                      .dwendtag $C$DW$95
+    1979              
+    1980              ;**************************************************************
+    1981              ;* UNDEFINED EXTERNAL REFERENCES                              *
+    1982              ;**************************************************************
+    1983                      .global _Interrupt_enable
+    1984                      .global _Interrupt_disable
+    1985              
+    1986              ;***************************************************************
+    1987              ;* TYPE INFORMATION                                            *
+    1988              ;***************************************************************
+    1989              
+    1990              $C$DW$T$19      .dwtag  DW_TAG_enumeration_type
+    1991                      .dwattr $C$DW$T$19, DW_AT_byte_size(0x01)
+    1992              $C$DW$100       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_LSRAMMASTER_CPU_ONLY"), DW_AT_const_value(0x00)
+    1993              $C$DW$101       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_LSRAMMASTER_CPU_CLA1"), DW_AT_const_value(0x01)
+    1994                      .dwendtag $C$DW$T$19
+    1995              
+    1996              $C$DW$T$20      .dwtag  DW_TAG_typedef, DW_AT_name("MemCfg_LSRAMMasterSel")
+    1997                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+    1998                      .dwattr $C$DW$T$20, DW_AT_language(DW_LANG_C)
+    1999              
+    2000              $C$DW$T$21      .dwtag  DW_TAG_enumeration_type
+    2001                      .dwattr $C$DW$T$21, DW_AT_byte_size(0x01)
+    2002              $C$DW$102       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_TEST_FUNCTIONAL"), DW_AT_const_value(0x00)
+    2003              $C$DW$103       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_TEST_WRITE_DATA"), DW_AT_const_value(0x01)
+    2004              $C$DW$104       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_TEST_WRITE_ECC"), DW_AT_const_value(0x02)
+    2005              $C$DW$105       .dwtag  DW_TAG_enumerator, DW_AT_name("MEMCFG_TEST_WRITE_PARITY"), DW_AT_const_value(0x02)
+    2006                      .dwendtag $C$DW$T$21
+    2007              
+    2008              $C$DW$T$22      .dwtag  DW_TAG_typedef, DW_AT_name("MemCfg_TestMode")
+    2009                      .dwattr $C$DW$T$22, DW_AT_type(*$C$DW$T$21)
+    2010                      .dwattr $C$DW$T$22, DW_AT_language(DW_LANG_C)
+    2011              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+    2012                      .dwattr $C$DW$T$2, DW_AT_name("void")
+    2013              
+    2014              $C$DW$T$23      .dwtag  DW_TAG_subroutine_type
+    2015                      .dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
+    2016              $C$DW$T$24      .dwtag  DW_TAG_pointer_type
+    2017                      .dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$23)
+    2018                      .dwattr $C$DW$T$24, DW_AT_address_class(0x20)
+    2019              $C$DW$T$4       .dwtag  DW_TAG_base_type
+    2020                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   40
+
+    2021                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+    2022                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+    2023              $C$DW$T$5       .dwtag  DW_TAG_base_type
+    2024                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+    2025                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+    2026                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+    2027              $C$DW$T$6       .dwtag  DW_TAG_base_type
+    2028                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+    2029                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+    2030                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+    2031              $C$DW$T$7       .dwtag  DW_TAG_base_type
+    2032                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+    2033                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+    2034                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+    2035              $C$DW$T$8       .dwtag  DW_TAG_base_type
+    2036                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+    2037                      .dwattr $C$DW$T$8, DW_AT_name("short")
+    2038                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+    2039              $C$DW$T$9       .dwtag  DW_TAG_base_type
+    2040                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+    2041                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+    2042                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+    2043              $C$DW$T$10      .dwtag  DW_TAG_base_type
+    2044                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+    2045                      .dwattr $C$DW$T$10, DW_AT_name("int")
+    2046                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+    2047              $C$DW$T$11      .dwtag  DW_TAG_base_type
+    2048                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+    2049                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+    2050                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+    2051              $C$DW$T$34      .dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+    2052                      .dwattr $C$DW$T$34, DW_AT_type(*$C$DW$T$11)
+    2053                      .dwattr $C$DW$T$34, DW_AT_language(DW_LANG_C)
+    2054              $C$DW$T$12      .dwtag  DW_TAG_base_type
+    2055                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+    2056                      .dwattr $C$DW$T$12, DW_AT_name("long")
+    2057                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+    2058              $C$DW$T$13      .dwtag  DW_TAG_base_type
+    2059                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+    2060                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+    2061                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+    2062              $C$DW$T$25      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+    2063                      .dwattr $C$DW$T$25, DW_AT_type(*$C$DW$T$13)
+    2064                      .dwattr $C$DW$T$25, DW_AT_language(DW_LANG_C)
+    2065              $C$DW$T$14      .dwtag  DW_TAG_base_type
+    2066                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+    2067                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+    2068                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+    2069              $C$DW$T$15      .dwtag  DW_TAG_base_type
+    2070                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+    2071                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+    2072                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+    2073              $C$DW$T$16      .dwtag  DW_TAG_base_type
+    2074                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+    2075                      .dwattr $C$DW$T$16, DW_AT_name("float")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   41
+
+    2076                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+    2077              $C$DW$T$17      .dwtag  DW_TAG_base_type
+    2078                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+    2079                      .dwattr $C$DW$T$17, DW_AT_name("double")
+    2080                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+    2081              $C$DW$T$18      .dwtag  DW_TAG_base_type
+    2082                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+    2083                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+    2084                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+    2085              $C$DW$T$40      .dwtag  DW_TAG_base_type
+    2086                      .dwattr $C$DW$T$40, DW_AT_encoding(DW_ATE_unsigned_char)
+    2087                      .dwattr $C$DW$T$40, DW_AT_name("unsigned char")
+    2088                      .dwattr $C$DW$T$40, DW_AT_byte_size(0x01)
+    2089                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+    2090              
+    2091              ;***************************************************************
+    2092              ;* DWARF CIE ENTRIES                                           *
+    2093              ;***************************************************************
+    2094              
+    2095              $C$DW$CIE       .dwcie 26
+    2096                      .dwcfi  cfa_register, 20
+    2097                      .dwcfi  cfa_offset, 0
+    2098                      .dwcfi  undefined, 0
+    2099                      .dwcfi  undefined, 1
+    2100                      .dwcfi  undefined, 2
+    2101                      .dwcfi  undefined, 3
+    2102                      .dwcfi  undefined, 20
+    2103                      .dwcfi  undefined, 21
+    2104                      .dwcfi  undefined, 22
+    2105                      .dwcfi  undefined, 23
+    2106                      .dwcfi  undefined, 24
+    2107                      .dwcfi  undefined, 25
+    2108                      .dwcfi  undefined, 26
+    2109                      .dwcfi  same_value, 28
+    2110                      .dwcfi  undefined, 29
+    2111                      .dwcfi  undefined, 30
+    2112                      .dwcfi  undefined, 31
+    2113                      .dwcfi  undefined, 32
+    2114                      .dwcfi  undefined, 33
+    2115                      .dwcfi  undefined, 34
+    2116                      .dwcfi  undefined, 35
+    2117                      .dwcfi  undefined, 36
+    2118                      .dwcfi  undefined, 37
+    2119                      .dwcfi  undefined, 38
+    2120                      .dwcfi  undefined, 75
+    2121                      .dwcfi  undefined, 76
+    2122                      .dwcfi  undefined, 77
+    2123                      .dwcfi  undefined, 4
+    2124                      .dwcfi  undefined, 5
+    2125                      .dwcfi  same_value, 6
+    2126                      .dwcfi  same_value, 7
+    2127                      .dwcfi  same_value, 8
+    2128                      .dwcfi  same_value, 9
+    2129                      .dwcfi  same_value, 10
+    2130                      .dwcfi  same_value, 11
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   42
+
+    2131                      .dwcfi  undefined, 12
+    2132                      .dwcfi  undefined, 13
+    2133                      .dwcfi  undefined, 14
+    2134                      .dwcfi  undefined, 15
+    2135                      .dwcfi  undefined, 16
+    2136                      .dwcfi  undefined, 17
+    2137                      .dwcfi  undefined, 18
+    2138                      .dwcfi  undefined, 19
+    2139                      .dwcfi  undefined, 43
+    2140                      .dwcfi  undefined, 44
+    2141                      .dwcfi  undefined, 47
+    2142                      .dwcfi  undefined, 48
+    2143                      .dwcfi  undefined, 51
+    2144                      .dwcfi  undefined, 52
+    2145                      .dwcfi  undefined, 55
+    2146                      .dwcfi  undefined, 56
+    2147                      .dwcfi  same_value, 59
+    2148                      .dwcfi  same_value, 60
+    2149                      .dwcfi  same_value, 63
+    2150                      .dwcfi  same_value, 64
+    2151                      .dwcfi  same_value, 67
+    2152                      .dwcfi  same_value, 68
+    2153                      .dwcfi  same_value, 71
+    2154                      .dwcfi  same_value, 72
+    2155                      .dwcfi  undefined, 73
+    2156                      .dwcfi  undefined, 74
+    2157                      .dwcfi  undefined, 39
+    2158                      .dwcfi  undefined, 40
+    2159                      .dwcfi  undefined, 27
+    2160                      .dwendentry
+    2161              
+    2162              ;***************************************************************
+    2163              ;* DWARF REGISTER MAP                                          *
+    2164              ;***************************************************************
+    2165              
+    2166              $C$DW$106       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AL")
+    2167                      .dwattr $C$DW$106, DW_AT_location[DW_OP_reg0]
+    2168              $C$DW$107       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AH")
+    2169                      .dwattr $C$DW$107, DW_AT_location[DW_OP_reg1]
+    2170              $C$DW$108       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PL")
+    2171                      .dwattr $C$DW$108, DW_AT_location[DW_OP_reg2]
+    2172              $C$DW$109       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PH")
+    2173                      .dwattr $C$DW$109, DW_AT_location[DW_OP_reg3]
+    2174              $C$DW$110       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SP")
+    2175                      .dwattr $C$DW$110, DW_AT_location[DW_OP_reg20]
+    2176              $C$DW$111       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XT")
+    2177                      .dwattr $C$DW$111, DW_AT_location[DW_OP_reg21]
+    2178              $C$DW$112       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("T")
+    2179                      .dwattr $C$DW$112, DW_AT_location[DW_OP_reg22]
+    2180              $C$DW$113       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST0")
+    2181                      .dwattr $C$DW$113, DW_AT_location[DW_OP_reg23]
+    2182              $C$DW$114       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST1")
+    2183                      .dwattr $C$DW$114, DW_AT_location[DW_OP_reg24]
+    2184              $C$DW$115       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PC")
+    2185                      .dwattr $C$DW$115, DW_AT_location[DW_OP_reg25]
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   43
+
+    2186              $C$DW$116       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RPC")
+    2187                      .dwattr $C$DW$116, DW_AT_location[DW_OP_reg26]
+    2188              $C$DW$117       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FP")
+    2189                      .dwattr $C$DW$117, DW_AT_location[DW_OP_reg28]
+    2190              $C$DW$118       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("DP")
+    2191                      .dwattr $C$DW$118, DW_AT_location[DW_OP_reg29]
+    2192              $C$DW$119       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SXM")
+    2193                      .dwattr $C$DW$119, DW_AT_location[DW_OP_reg30]
+    2194              $C$DW$120       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PM")
+    2195                      .dwattr $C$DW$120, DW_AT_location[DW_OP_reg31]
+    2196              $C$DW$121       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("OVM")
+    2197                      .dwattr $C$DW$121, DW_AT_location[DW_OP_regx 0x20]
+    2198              $C$DW$122       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PAGE0")
+    2199                      .dwattr $C$DW$122, DW_AT_location[DW_OP_regx 0x21]
+    2200              $C$DW$123       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AMODE")
+    2201                      .dwattr $C$DW$123, DW_AT_location[DW_OP_regx 0x22]
+    2202              $C$DW$124       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("INTM")
+    2203                      .dwattr $C$DW$124, DW_AT_location[DW_OP_regx 0x23]
+    2204              $C$DW$125       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IFR")
+    2205                      .dwattr $C$DW$125, DW_AT_location[DW_OP_regx 0x24]
+    2206              $C$DW$126       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IER")
+    2207                      .dwattr $C$DW$126, DW_AT_location[DW_OP_regx 0x25]
+    2208              $C$DW$127       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("V")
+    2209                      .dwattr $C$DW$127, DW_AT_location[DW_OP_regx 0x26]
+    2210              $C$DW$128       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PSEUDOH")
+    2211                      .dwattr $C$DW$128, DW_AT_location[DW_OP_regx 0x4c]
+    2212              $C$DW$129       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("VOL")
+    2213                      .dwattr $C$DW$129, DW_AT_location[DW_OP_regx 0x4d]
+    2214              $C$DW$130       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR0")
+    2215                      .dwattr $C$DW$130, DW_AT_location[DW_OP_reg4]
+    2216              $C$DW$131       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR0")
+    2217                      .dwattr $C$DW$131, DW_AT_location[DW_OP_reg5]
+    2218              $C$DW$132       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR1")
+    2219                      .dwattr $C$DW$132, DW_AT_location[DW_OP_reg6]
+    2220              $C$DW$133       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR1")
+    2221                      .dwattr $C$DW$133, DW_AT_location[DW_OP_reg7]
+    2222              $C$DW$134       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR2")
+    2223                      .dwattr $C$DW$134, DW_AT_location[DW_OP_reg8]
+    2224              $C$DW$135       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR2")
+    2225                      .dwattr $C$DW$135, DW_AT_location[DW_OP_reg9]
+    2226              $C$DW$136       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR3")
+    2227                      .dwattr $C$DW$136, DW_AT_location[DW_OP_reg10]
+    2228              $C$DW$137       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR3")
+    2229                      .dwattr $C$DW$137, DW_AT_location[DW_OP_reg11]
+    2230              $C$DW$138       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR4")
+    2231                      .dwattr $C$DW$138, DW_AT_location[DW_OP_reg12]
+    2232              $C$DW$139       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR4")
+    2233                      .dwattr $C$DW$139, DW_AT_location[DW_OP_reg13]
+    2234              $C$DW$140       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR5")
+    2235                      .dwattr $C$DW$140, DW_AT_location[DW_OP_reg14]
+    2236              $C$DW$141       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR5")
+    2237                      .dwattr $C$DW$141, DW_AT_location[DW_OP_reg15]
+    2238              $C$DW$142       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR6")
+    2239                      .dwattr $C$DW$142, DW_AT_location[DW_OP_reg16]
+    2240              $C$DW$143       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR6")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:12 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0937210                         PAGE   44
+
+    2241                      .dwattr $C$DW$143, DW_AT_location[DW_OP_reg17]
+    2242              $C$DW$144       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR7")
+    2243                      .dwattr $C$DW$144, DW_AT_location[DW_OP_reg18]
+    2244              $C$DW$145       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR7")
+    2245                      .dwattr $C$DW$145, DW_AT_location[DW_OP_reg19]
+    2246              $C$DW$146       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0HL")
+    2247                      .dwattr $C$DW$146, DW_AT_location[DW_OP_regx 0x2b]
+    2248              $C$DW$147       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0H")
+    2249                      .dwattr $C$DW$147, DW_AT_location[DW_OP_regx 0x2c]
+    2250              $C$DW$148       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1HL")
+    2251                      .dwattr $C$DW$148, DW_AT_location[DW_OP_regx 0x2f]
+    2252              $C$DW$149       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1H")
+    2253                      .dwattr $C$DW$149, DW_AT_location[DW_OP_regx 0x30]
+    2254              $C$DW$150       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2HL")
+    2255                      .dwattr $C$DW$150, DW_AT_location[DW_OP_regx 0x33]
+    2256              $C$DW$151       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2H")
+    2257                      .dwattr $C$DW$151, DW_AT_location[DW_OP_regx 0x34]
+    2258              $C$DW$152       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3HL")
+    2259                      .dwattr $C$DW$152, DW_AT_location[DW_OP_regx 0x37]
+    2260              $C$DW$153       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3H")
+    2261                      .dwattr $C$DW$153, DW_AT_location[DW_OP_regx 0x38]
+    2262              $C$DW$154       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4HL")
+    2263                      .dwattr $C$DW$154, DW_AT_location[DW_OP_regx 0x3b]
+    2264              $C$DW$155       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4H")
+    2265                      .dwattr $C$DW$155, DW_AT_location[DW_OP_regx 0x3c]
+    2266              $C$DW$156       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5HL")
+    2267                      .dwattr $C$DW$156, DW_AT_location[DW_OP_regx 0x3f]
+    2268              $C$DW$157       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5H")
+    2269                      .dwattr $C$DW$157, DW_AT_location[DW_OP_regx 0x40]
+    2270              $C$DW$158       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6HL")
+    2271                      .dwattr $C$DW$158, DW_AT_location[DW_OP_regx 0x43]
+    2272              $C$DW$159       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6H")
+    2273                      .dwattr $C$DW$159, DW_AT_location[DW_OP_regx 0x44]
+    2274              $C$DW$160       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7HL")
+    2275                      .dwattr $C$DW$160, DW_AT_location[DW_OP_regx 0x47]
+    2276              $C$DW$161       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7H")
+    2277                      .dwattr $C$DW$161, DW_AT_location[DW_OP_regx 0x48]
+    2278              $C$DW$162       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RBL")
+    2279                      .dwattr $C$DW$162, DW_AT_location[DW_OP_regx 0x49]
+    2280              $C$DW$163       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RB")
+    2281                      .dwattr $C$DW$163, DW_AT_location[DW_OP_regx 0x4a]
+    2282              $C$DW$164       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STFL")
+    2283                      .dwattr $C$DW$164, DW_AT_location[DW_OP_regx 0x27]
+    2284              $C$DW$165       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STF")
+    2285                      .dwattr $C$DW$165, DW_AT_location[DW_OP_regx 0x28]
+    2286              $C$DW$166       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FPUHAZ")
+    2287                      .dwattr $C$DW$166, DW_AT_location[DW_OP_reg27]
+    2288                      .dwendtag $C$DW$CU
+    2289              
+
+No Assembly Errors, No Assembly Warnings

@@ -1,0 +1,169 @@
+TMS320C2000 Assembler PC v6.2.9 Mon May 18 15:29:45 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/bootROM/source/cpubrom_api_table.asm PAGE    1
+
+       1              ;; TI File $Revision: /main/1 $
+       2              ;; Checkin $Date: August 13, 2012   11:53:42 $
+       3              ;;###########################################################################
+       4              ;;
+       5              ;; FILE:    cpubrom_api_table.asm
+       6              ;;
+       7              ;; TITLE:   Boot Rom API Table.
+       8              ;;
+       9              ;; Functions:
+      10              ;;
+      11              ;;     
+      12              ;;     
+      13              ;;
+      14              ;; Notes:
+      15              ;;
+      16              ;;###########################################################################
+      17              ;; $TI Release: F2837X Boot ROM V1.0 $
+      18              ;; $Release Date: November 1, 2012 $
+      19              ;;###########################################################################
+      20              
+      21 00000000               .sect ".rom_api_table"
+      22              
+      23                      .def    _romApiTable_start
+      24              
+      25                      .def    _rom_rom_ApiTable_start
+      26                      .def    _rom_rom_spi_boot
+      27                      .def    __rom_SPI_Boot
+      28                      .def    __rom_SPIA_SetAddress_KeyChk
+      29                      .def    __rom_SPIA_GetWordData
+      30                      .def    __rom_SelectBootMode
+      31                      .def    __rom_WaitBoot
+      32                      .def    __rom_CAN_Boot
+      33                      .def    __rom_CAN_Init
+      34                      .def    __rom_CAN_GetWordData
+      35                      .def    __rom_I2C_Boot
+      36                      .def    __rom_I2C_GetWord
+      37                      .def    __rom_Parallel_Boot
+      38                      .def    __rom_Parallel_GetWordData_8bit
+      39                      .def    __rom_SCI_Boot
+      40                      .def    __rom_SCIA_GetWordData
+      41                      .def    __rom_CopyData
+      42                      .def    __rom_GetLongData
+      43                      .def    __rom_ReadReservedFn
+      44                      .def    __rom_WatchDogDisable
+      45                      .def    __rom_WatchDogEnable
+      46                      .def    _rom_rom_ApiTable_end
+      47              
+      48                      .def    _rom_flash_ApiTable_start
+      49              
+      50                      .def    _rom_flash_ApiTable_end
+      51              
+      52                      .def    _romApiTable_end
+      53              
+      54              
+      55                      .ref    _SPI_Boot
+TMS320C2000 Assembler PC v6.2.9 Mon May 18 15:29:45 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/bootROM/source/cpubrom_api_table.asm PAGE    2
+
+      56                      .ref    _SPIA_SetAddress_KeyChk
+      57                      .ref    _SPIA_GetWordData
+      58                      .ref    _SelectBootMode
+      59                      .ref    _WaitBoot
+      60                      .ref    _CAN_Boot
+      61                      .ref    _CAN_Init
+      62                      .ref    _CAN_GetWordData
+      63                      .ref    _I2C_Boot
+      64                      .ref    _I2C_GetWord
+      65                      .ref    _Parallel_Boot
+      66                      .ref    _Parallel_GetWordData_8bit
+      67                      .ref    _SCI_Boot
+      68                      .ref    _SCIA_GetWordData
+      69                      .ref    _CopyData
+      70                      .ref    _GetLongData
+      71                      .ref    _ReadReservedFn
+      72                      .ref    _WatchDogDisable
+      73                      .ref    _WatchDogEnable
+      74              
+      75              
+      76              
+      77 00000000               .sect ".romApiTable"
+      78 00000000       _romApiTable_start:
+      79 00000000 0100          .word   0x0100          ;rom API table version v0.1
+      80 00000001 0715          .word   0x0715          ; month/year (ex: 0x1010 = 10/10 = Oct 2010)
+      81              
+      82 00000002       _rom_rom_ApiTable_start:
+      83              
+      84 00000002       _rom_rom_spi_boot:
+      85 00000002       __rom_SPI_Boot:
+      86 00000002 0040!         LB      _SPI_Boot
+         00000003 0000 
+      87 00000004       __rom_SPIA_SetAddress_KeyChk:
+      88 00000004 0040!         LB      _SPIA_SetAddress_KeyChk
+         00000005 0000 
+      89 00000006       __rom_SPIA_GetWordData:
+      90 00000006 0040!         LB      _SPIA_GetWordData
+         00000007 0000 
+      91 00000008       __rom_SelectBootMode:
+      92 00000008 0040!         LB      _SelectBootMode
+         00000009 0000 
+      93 0000000a       __rom_WaitBoot:
+      94 0000000a 0040!         LB      _WaitBoot
+         0000000b 0000 
+      95 0000000c       __rom_CAN_Boot:
+      96 0000000c 0040!         LB      _CAN_Boot
+         0000000d 0000 
+      97 0000000e       __rom_CAN_Init:
+      98 0000000e 0040!         LB      _CAN_Init
+         0000000f 0000 
+      99 00000010       __rom_CAN_GetWordData:
+     100 00000010 0040!         LB      _CAN_GetWordData
+         00000011 0000 
+     101 00000012       __rom_I2C_Boot:
+     102 00000012 0040!         LB      _I2C_Boot
+TMS320C2000 Assembler PC v6.2.9 Mon May 18 15:29:45 2015
+
+Tools Copyright (c) 1996-2014 Texas Instruments Incorporated
+C:/work/grepos/c2000_bootROM/f28004x_bootrom/F28004x_ROM_dev/F28004x_ROM/bootROM/source/cpubrom_api_table.asm PAGE    3
+
+         00000013 0000 
+     103 00000014       __rom_I2C_GetWord:
+     104 00000014 0040!         LB      _I2C_GetWord
+         00000015 0000 
+     105 00000016       __rom_Parallel_Boot:
+     106 00000016 0040!         LB      _Parallel_Boot
+         00000017 0000 
+     107 00000018       __rom_Parallel_GetWordData_8bit:
+     108 00000018 0040!         LB      _Parallel_GetWordData_8bit
+         00000019 0000 
+     109 0000001a       __rom_SCI_Boot:
+     110 0000001a 0040!         LB      _SCI_Boot
+         0000001b 0000 
+     111 0000001c       __rom_SCIA_GetWordData:
+     112 0000001c 0040!         LB      _SCIA_GetWordData
+         0000001d 0000 
+     113 0000001e       __rom_CopyData:
+     114 0000001e 0040!         LB      _CopyData
+         0000001f 0000 
+     115 00000020       __rom_GetLongData:
+     116 00000020 0040!         LB      _GetLongData
+         00000021 0000 
+     117 00000022       __rom_ReadReservedFn:
+     118 00000022 0040!         LB      _ReadReservedFn
+         00000023 0000 
+     119 00000024       __rom_WatchDogDisable:
+     120 00000024 0040!         LB      _WatchDogDisable
+         00000025 0000 
+     121 00000026       __rom_WatchDogEnable:
+     122 00000026 0040!         LB      _WatchDogEnable
+         00000027 0000 
+     123 00000028       _rom_rom_ApiTable_end:
+     124              
+     125 00000028       _rom_flash_ApiTable_start:
+     126 00000028       _rom_flash_ApiTable_end:
+     127              
+     128              
+     129 00000028       _romApiTable_end:
+     130              
+     131                      
+     132                      
+     133              ;eof ----------
+
+No Assembly Errors, No Assembly Warnings

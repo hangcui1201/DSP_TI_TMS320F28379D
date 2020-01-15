@@ -1,0 +1,1 @@
+var additionalPackages = ["ti.ndk"];

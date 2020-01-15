@@ -1,0 +1,27 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:27 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/ClaROM/source/cla_rom_version.asm PAGE    1
+
+       1              ;;###########################################################################
+       2              ;;
+       3              ;; FILE:    cla_rom_version.asm
+       4              ;;
+       5              ;; TITLE:   CLA data ROM Version and checksum values.
+       6              ;;
+       7              ;; Functions:
+       8              ;;
+       9              ;;
+      10              ;; Notes:
+      11              ;;
+      12              ;;###########################################################################
+      13              ;; $TI Release: F28004x Boot ROM V1.0 $
+      14              ;; $Release Date: July 2015 $
+      15              ;;###########################################################################
+      16              
+      17 00000000           .sect ".CROMVersion"
+      18 00000000 0100      .word 0x0100     ; Boot ROM Version v1.0
+      19 00000001 0715      .word 0x0715     ; Month/Year: (ex: 0x0109 = 1/09 = Jan 2009)
+      20              
+
+No Assembly Errors, No Assembly Warnings

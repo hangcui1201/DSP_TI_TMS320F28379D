@@ -1,0 +1,93 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:13 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0948010                         PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.4.4 *
+       3              ;* Date/Time created: Tue Feb 14 14:43:13 2017                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --cla_support=cla0 --float_support=fpu32 --hll_source=on --mem_model:code=flat --mem_m
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C2000 C/C++ Codegen PC v6.4.4 Copyright (c) 1996-2015 Texa
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0
+      13              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.4\bin\ac2000.exe -@C:\\Users\\a0221343\\AppData\\Local\\T
+      14              
+      15              ;***************************************************************
+      16              ;* TYPE INFORMATION                                            *
+      17              ;***************************************************************
+      18              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+      19                      .dwattr $C$DW$T$2, DW_AT_name("void")
+      20              $C$DW$T$4       .dwtag  DW_TAG_base_type
+      21                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+      22                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+      23                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+      24              $C$DW$T$5       .dwtag  DW_TAG_base_type
+      25                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+      26                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+      27                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+      28              $C$DW$T$6       .dwtag  DW_TAG_base_type
+      29                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+      30                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+      31                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+      32              $C$DW$T$7       .dwtag  DW_TAG_base_type
+      33                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+      34                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+      35                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+      36              $C$DW$T$8       .dwtag  DW_TAG_base_type
+      37                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+      38                      .dwattr $C$DW$T$8, DW_AT_name("short")
+      39                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+      40              $C$DW$T$9       .dwtag  DW_TAG_base_type
+      41                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+      42                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+      43                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+      44              $C$DW$T$10      .dwtag  DW_TAG_base_type
+      45                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+      46                      .dwattr $C$DW$T$10, DW_AT_name("int")
+      47                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+      48              $C$DW$T$11      .dwtag  DW_TAG_base_type
+      49                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+      50                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+      51                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+      52              $C$DW$T$12      .dwtag  DW_TAG_base_type
+      53                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+      54                      .dwattr $C$DW$T$12, DW_AT_name("long")
+      55                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:43:13 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0948010                         PAGE    2
+
+      56              $C$DW$T$13      .dwtag  DW_TAG_base_type
+      57                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+      58                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+      59                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+      60              $C$DW$T$14      .dwtag  DW_TAG_base_type
+      61                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+      62                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+      63                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+      64              $C$DW$T$15      .dwtag  DW_TAG_base_type
+      65                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+      66                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+      67                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+      68              $C$DW$T$16      .dwtag  DW_TAG_base_type
+      69                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+      70                      .dwattr $C$DW$T$16, DW_AT_name("float")
+      71                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+      72              $C$DW$T$17      .dwtag  DW_TAG_base_type
+      73                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+      74                      .dwattr $C$DW$T$17, DW_AT_name("double")
+      75                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+      76              $C$DW$T$18      .dwtag  DW_TAG_base_type
+      77                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+      78                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+      79                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+      80                      .dwendtag $C$DW$CU
+      81              
+
+No Assembly Errors, No Assembly Warnings

@@ -1,0 +1,969 @@
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.4.4 *
+       3              ;* Date/Time created: Tue Feb 14 14:42:58 2017                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --cla_support=cla0 --float_support=fpu32 --hll_source=on --mem_model:code=flat --mem_m
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C2000 C/C++ Codegen PC v6.4.4 Copyright (c) 1996-2015 Texa
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0
+      13              
+      14              $C$DW$1 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_disable")
+      15                      .dwattr $C$DW$1, DW_AT_TI_symbol_name("_Interrupt_disable")
+      16                      .dwattr $C$DW$1, DW_AT_declaration
+      17                      .dwattr $C$DW$1, DW_AT_external
+      18              $C$DW$2 .dwtag  DW_TAG_formal_parameter
+      19                      .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$23)
+      20                      .dwendtag $C$DW$1
+      21              
+      22              
+      23              $C$DW$3 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_enable")
+      24                      .dwattr $C$DW$3, DW_AT_TI_symbol_name("_Interrupt_enable")
+      25                      .dwattr $C$DW$3, DW_AT_declaration
+      26                      .dwattr $C$DW$3, DW_AT_external
+      27              $C$DW$4 .dwtag  DW_TAG_formal_parameter
+      28                      .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$23)
+      29                      .dwendtag $C$DW$3
+      30              
+      31              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.4\bin\ac2000.exe -@C:\\Users\\a0221343\\AppData\\Local\\T
+      32 00000000               .sect   ".text:_Interrupt_defaultHandler"
+      33                      .clink
+      34              
+      35              $C$DW$5 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_defaultHandler")
+      36                      .dwattr $C$DW$5, DW_AT_low_pc(_Interrupt_defaultHandler)
+      37                      .dwattr $C$DW$5, DW_AT_high_pc(0x00)
+      38                      .dwattr $C$DW$5, DW_AT_TI_symbol_name("_Interrupt_defaultHandler")
+      39                      .dwattr $C$DW$5, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_P
+      40                      .dwattr $C$DW$5, DW_AT_TI_begin_line(0x69)
+      41                      .dwattr $C$DW$5, DW_AT_TI_begin_column(0x0d)
+      42                      .dwattr $C$DW$5, DW_AT_TI_max_frame_size(-4)
+      43                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      44              
+      45                      .dwfde $C$DW$CIE, _Interrupt_defaultHandler
+      46              
+      47              ;***************************************************************
+      48              ;* FNAME: _Interrupt_defaultHandler     FR SIZE:   2           *
+      49              ;*                                                             *
+      50              ;* FUNCTION ENVIRONMENT                                        *
+      51              ;*                                                             *
+      52              ;* FUNCTION PROPERTIES                                         *
+      53              ;*                            0 Parameter,  1 Auto,  0 SOE     *
+      54              ;***************************************************************
+      55              
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    2
+
+      56 00000000       _Interrupt_defaultHandler:
+      57                      .dwcfi  cfa_offset, -2
+      58                      .dwcfi  save_reg_to_mem, 26, 0
+      59 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+      60                      .dwcfi  cfa_offset, -4
+      61              $C$DW$6 .dwtag  DW_TAG_variable, DW_AT_name("vectID")
+      62                      .dwattr $C$DW$6, DW_AT_TI_symbol_name("_vectID")
+      63                      .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$29)
+      64                      .dwattr $C$DW$6, DW_AT_location[DW_OP_breg20 -1]
+      65                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      66 00000001 F5A9          MOV       AL,*(0:0x0ce0)        ; [CPU_] |111| 
+         00000002 0CE0 
+      67 00000003 90FE          ANDB      AL,#0xfe              ; [CPU_] |111| 
+      68 00000004 FFC0          LSR       AL,1                  ; [CPU_] |111| 
+      69 00000005 9641          MOV       *-SP[1],AL            ; [CPU_] |111| 
+      70                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      71                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      72 00000006 7625   ESTOP0
+      73 00000007       $C$L1:    
+      74                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      75 00000007 6F00          B         $C$L1,UNC             ; [CPU_] |120| 
+      76                      ; branch occurs ; [] |120| 
+      77                      .dwattr $C$DW$5, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2
+      78                      .dwattr $C$DW$5, DW_AT_TI_end_line(0x79)
+      79                      .dwattr $C$DW$5, DW_AT_TI_end_column(0x01)
+      80                      .dwendentry
+      81                      .dwendtag $C$DW$5
+      82              
+      83 00000000               .sect   ".text:_Interrupt_register"
+      84                      .clink
+      85              
+      86              $C$DW$7 .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_register")
+      87                      .dwattr $C$DW$7, DW_AT_low_pc(_Interrupt_register)
+      88                      .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+      89                      .dwattr $C$DW$7, DW_AT_TI_symbol_name("_Interrupt_register")
+      90                      .dwattr $C$DW$7, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_P
+      91                      .dwattr $C$DW$7, DW_AT_TI_begin_line(0xe6)
+      92                      .dwattr $C$DW$7, DW_AT_TI_begin_column(0x01)
+      93                      .dwattr $C$DW$7, DW_AT_TI_max_frame_size(-6)
+      94                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+      95              
+      96                      .dwfde $C$DW$CIE, _Interrupt_register
+      97              $C$DW$8 .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+      98                      .dwattr $C$DW$8, DW_AT_TI_symbol_name("_interruptNumber")
+      99                      .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$23)
+     100                      .dwattr $C$DW$8, DW_AT_location[DW_OP_reg0]
+     101              $C$DW$9 .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+     102                      .dwattr $C$DW$9, DW_AT_TI_symbol_name("_handler")
+     103                      .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$22)
+     104                      .dwattr $C$DW$9, DW_AT_location[DW_OP_reg12]
+     105              
+     106              ;***************************************************************
+     107              ;* FNAME: _Interrupt_register           FR SIZE:   4           *
+     108              ;*                                                             *
+     109              ;* FUNCTION ENVIRONMENT                                        *
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    3
+
+     110              ;*                                                             *
+     111              ;* FUNCTION PROPERTIES                                         *
+     112              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+     113              ;***************************************************************
+     114              
+     115 00000000       _Interrupt_register:
+     116                      .dwcfi  cfa_offset, -2
+     117                      .dwcfi  save_reg_to_mem, 26, 0
+     118 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     119                      .dwcfi  cfa_offset, -6
+     120              $C$DW$10        .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+     121                      .dwattr $C$DW$10, DW_AT_TI_symbol_name("_interruptNumber")
+     122                      .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$23)
+     123                      .dwattr $C$DW$10, DW_AT_location[DW_OP_breg20 -2]
+     124              $C$DW$11        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+     125                      .dwattr $C$DW$11, DW_AT_TI_symbol_name("_handler")
+     126                      .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$22)
+     127                      .dwattr $C$DW$11, DW_AT_location[DW_OP_breg20 -4]
+     128 00000001 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |231| 
+     129 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |231| 
+     130                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     131 00000003 7622   EALLOW
+     132                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     133 00000004 0EA8          MOVU      ACC,AH                ; [CPU_] |234| 
+     134 00000005 C444          MOVL      XAR6,*-SP[4]          ; [CPU_] |234| 
+     135 00000006 FF30          LSL       ACC,1                 ; [CPU_] |234| 
+     136 00000007 FF18          ADD       ACC,#13 << 8          ; [CPU_] |234| 
+         00000008 000D 
+     137 00000009 8AA9          MOVL      XAR4,ACC              ; [CPU_] |234| 
+     138 0000000a C2C4          MOVL      *+XAR4[0],XAR6        ; [CPU_] |234| 
+     139                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     140 0000000b 761A   EDIS
+     141                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     142 0000000c FF69          SPM       #0                    ; [CPU_] 
+     143 0000000d FE84          SUBB      SP,#4                 ; [CPU_U] 
+     144                      .dwcfi  cfa_offset, -2
+     145              $C$DW$12        .dwtag  DW_TAG_TI_branch
+     146                      .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     147                      .dwattr $C$DW$12, DW_AT_TI_return
+     148 0000000e 0006          LRETR     ; [CPU_] 
+     149                      ; return occurs ; [] 
+     150                      .dwattr $C$DW$7, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2
+     151                      .dwattr $C$DW$7, DW_AT_TI_end_line(0xed)
+     152                      .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     153                      .dwendentry
+     154                      .dwendtag $C$DW$7
+     155              
+     156 00000000               .sect   ".text:_Interrupt_unregister"
+     157                      .clink
+     158              
+     159              $C$DW$13        .dwtag  DW_TAG_subprogram, DW_AT_name("Interrupt_unregister")
+     160                      .dwattr $C$DW$13, DW_AT_low_pc(_Interrupt_unregister)
+     161                      .dwattr $C$DW$13, DW_AT_high_pc(0x00)
+     162                      .dwattr $C$DW$13, DW_AT_TI_symbol_name("_Interrupt_unregister")
+     163                      .dwattr $C$DW$13, DW_AT_TI_begin_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    4
+
+     164                      .dwattr $C$DW$13, DW_AT_TI_begin_line(0x104)
+     165                      .dwattr $C$DW$13, DW_AT_TI_begin_column(0x01)
+     166                      .dwattr $C$DW$13, DW_AT_TI_max_frame_size(-4)
+     167                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     168              
+     169                      .dwfde $C$DW$CIE, _Interrupt_unregister
+     170              $C$DW$14        .dwtag  DW_TAG_formal_parameter, DW_AT_name("interruptNumber")
+     171                      .dwattr $C$DW$14, DW_AT_TI_symbol_name("_interruptNumber")
+     172                      .dwattr $C$DW$14, DW_AT_type(*$C$DW$T$23)
+     173                      .dwattr $C$DW$14, DW_AT_location[DW_OP_reg0]
+     174              
+     175              ;***************************************************************
+     176              ;* FNAME: _Interrupt_unregister         FR SIZE:   2           *
+     177              ;*                                                             *
+     178              ;* FUNCTION ENVIRONMENT                                        *
+     179              ;*                                                             *
+     180              ;* FUNCTION PROPERTIES                                         *
+     181              ;*                            0 Parameter,  2 Auto,  0 SOE     *
+     182              ;***************************************************************
+     183              
+     184 00000000       _Interrupt_unregister:
+     185                      .dwcfi  cfa_offset, -2
+     186                      .dwcfi  save_reg_to_mem, 26, 0
+     187 00000000 FE02          ADDB      SP,#2                 ; [CPU_U] 
+     188                      .dwcfi  cfa_offset, -4
+     189              $C$DW$15        .dwtag  DW_TAG_variable, DW_AT_name("interruptNumber")
+     190                      .dwattr $C$DW$15, DW_AT_TI_symbol_name("_interruptNumber")
+     191                      .dwattr $C$DW$15, DW_AT_type(*$C$DW$T$23)
+     192                      .dwattr $C$DW$15, DW_AT_location[DW_OP_breg20 -2]
+     193 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |261| 
+     194                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     195 00000002 7622   EALLOW
+     196                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     197 00000003 0EA8          MOVU      ACC,AH                ; [CPU_] |264| 
+     198 00000004 FF30          LSL       ACC,1                 ; [CPU_] |264| 
+     199 00000005 FF18          ADD       ACC,#13 << 8          ; [CPU_] |264| 
+         00000006 000D 
+     200 00000007 8AA9          MOVL      XAR4,ACC              ; [CPU_] |264| 
+     201 00000008 8F40+         MOVL      XAR5,#_Interrupt_defaultHandler ; [CPU_U] |264| 
+         00000009 0000 
+     202 0000000a A0C4          MOVL      *+XAR4[0],XAR5        ; [CPU_] |264| 
+     203                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     204 0000000b 761A   EDIS
+     205                      .dwpsn  file "C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG2.0\F28004x_ROM\driverl
+     206 0000000c FF69          SPM       #0                    ; [CPU_] 
+     207 0000000d FE82          SUBB      SP,#2                 ; [CPU_U] 
+     208                      .dwcfi  cfa_offset, -2
+     209              $C$DW$16        .dwtag  DW_TAG_TI_branch
+     210                      .dwattr $C$DW$16, DW_AT_low_pc(0x00)
+     211                      .dwattr $C$DW$16, DW_AT_TI_return
+     212 0000000e 0006          LRETR     ; [CPU_] 
+     213                      ; return occurs ; [] 
+     214                      .dwattr $C$DW$13, DW_AT_TI_end_file("C:\Users\a0221343\Git\bootROM\f28004x_bootrom\F28004x_ROM_dev_PG
+     215                      .dwattr $C$DW$13, DW_AT_TI_end_line(0x10b)
+     216                      .dwattr $C$DW$13, DW_AT_TI_end_column(0x01)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    5
+
+     217                      .dwendentry
+     218                      .dwendtag $C$DW$13
+     219              
+     220 00000000               .sect   ".text:_CPUTimer_setEmulationMode"
+     221                      .clink
+     222                      .global _CPUTimer_setEmulationMode
+     223              
+     224              $C$DW$17        .dwtag  DW_TAG_subprogram, DW_AT_name("CPUTimer_setEmulationMode")
+     225                      .dwattr $C$DW$17, DW_AT_low_pc(_CPUTimer_setEmulationMode)
+     226                      .dwattr $C$DW$17, DW_AT_high_pc(0x00)
+     227                      .dwattr $C$DW$17, DW_AT_TI_symbol_name("_CPUTimer_setEmulationMode")
+     228                      .dwattr $C$DW$17, DW_AT_external
+     229                      .dwattr $C$DW$17, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     230                      .dwattr $C$DW$17, DW_AT_TI_begin_line(0x14)
+     231                      .dwattr $C$DW$17, DW_AT_TI_begin_column(0x06)
+     232                      .dwattr $C$DW$17, DW_AT_TI_max_frame_size(-6)
+     233                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     234              
+     235                      .dwfde $C$DW$CIE, _CPUTimer_setEmulationMode
+     236              $C$DW$18        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     237                      .dwattr $C$DW$18, DW_AT_TI_symbol_name("_base")
+     238                      .dwattr $C$DW$18, DW_AT_type(*$C$DW$T$23)
+     239                      .dwattr $C$DW$18, DW_AT_location[DW_OP_reg0]
+     240              $C$DW$19        .dwtag  DW_TAG_formal_parameter, DW_AT_name("mode")
+     241                      .dwattr $C$DW$19, DW_AT_TI_symbol_name("_mode")
+     242                      .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$20)
+     243                      .dwattr $C$DW$19, DW_AT_location[DW_OP_reg12]
+     244              
+     245              ;***************************************************************
+     246              ;* FNAME: _CPUTimer_setEmulationMode    FR SIZE:   4           *
+     247              ;*                                                             *
+     248              ;* FUNCTION ENVIRONMENT                                        *
+     249              ;*                                                             *
+     250              ;* FUNCTION PROPERTIES                                         *
+     251              ;*                            0 Parameter,  3 Auto,  0 SOE     *
+     252              ;***************************************************************
+     253              
+     254 00000000       _CPUTimer_setEmulationMode:
+     255                      .dwcfi  cfa_offset, -2
+     256                      .dwcfi  save_reg_to_mem, 26, 0
+     257 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     258                      .dwcfi  cfa_offset, -6
+     259              $C$DW$20        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     260                      .dwattr $C$DW$20, DW_AT_TI_symbol_name("_base")
+     261                      .dwattr $C$DW$20, DW_AT_type(*$C$DW$T$23)
+     262                      .dwattr $C$DW$20, DW_AT_location[DW_OP_breg20 -2]
+     263              $C$DW$21        .dwtag  DW_TAG_variable, DW_AT_name("mode")
+     264                      .dwattr $C$DW$21, DW_AT_TI_symbol_name("_mode")
+     265                      .dwattr $C$DW$21, DW_AT_type(*$C$DW$T$20)
+     266                      .dwattr $C$DW$21, DW_AT_location[DW_OP_breg20 -3]
+     267 00000001 7C43          MOV       *-SP[3],AR4           ; [CPU_] |21| 
+     268 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |21| 
+     269                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     270 00000003 8A42          MOVL      XAR4,*-SP[2]          ; [CPU_] |24| 
+     271 00000004 CCE4          AND       AL,*+XAR4[4],#0xf3ff  ; [CPU_] |24| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    6
+
+         00000005 F3FF 
+     272 00000006 CA43          OR        AL,*-SP[3]            ; [CPU_] |24| 
+     273 00000007 96E4          MOV       *+XAR4[4],AL          ; [CPU_] |24| 
+     274                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     275 00000008 FE84          SUBB      SP,#4                 ; [CPU_U] 
+     276                      .dwcfi  cfa_offset, -2
+     277              $C$DW$22        .dwtag  DW_TAG_TI_branch
+     278                      .dwattr $C$DW$22, DW_AT_low_pc(0x00)
+     279                      .dwattr $C$DW$22, DW_AT_TI_return
+     280 00000009 0006          LRETR     ; [CPU_] 
+     281                      ; return occurs ; [] 
+     282                      .dwattr $C$DW$17, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     283                      .dwattr $C$DW$17, DW_AT_TI_end_line(0x1c)
+     284                      .dwattr $C$DW$17, DW_AT_TI_end_column(0x01)
+     285                      .dwendentry
+     286                      .dwendtag $C$DW$17
+     287              
+     288 00000000               .sect   ".text:_CPUTimer_getIntNumber"
+     289                      .clink
+     290              
+     291              $C$DW$23        .dwtag  DW_TAG_subprogram, DW_AT_name("CPUTimer_getIntNumber")
+     292                      .dwattr $C$DW$23, DW_AT_low_pc(_CPUTimer_getIntNumber)
+     293                      .dwattr $C$DW$23, DW_AT_high_pc(0x00)
+     294                      .dwattr $C$DW$23, DW_AT_TI_symbol_name("_CPUTimer_getIntNumber")
+     295                      .dwattr $C$DW$23, DW_AT_type(*$C$DW$T$23)
+     296                      .dwattr $C$DW$23, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     297                      .dwattr $C$DW$23, DW_AT_TI_begin_line(0x2a)
+     298                      .dwattr $C$DW$23, DW_AT_TI_begin_column(0x11)
+     299                      .dwattr $C$DW$23, DW_AT_TI_max_frame_size(-6)
+     300                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     301              
+     302                      .dwfde $C$DW$CIE, _CPUTimer_getIntNumber
+     303              $C$DW$24        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     304                      .dwattr $C$DW$24, DW_AT_TI_symbol_name("_base")
+     305                      .dwattr $C$DW$24, DW_AT_type(*$C$DW$T$23)
+     306                      .dwattr $C$DW$24, DW_AT_location[DW_OP_reg0]
+     307              
+     308              ;***************************************************************
+     309              ;* FNAME: _CPUTimer_getIntNumber        FR SIZE:   4           *
+     310              ;*                                                             *
+     311              ;* FUNCTION ENVIRONMENT                                        *
+     312              ;*                                                             *
+     313              ;* FUNCTION PROPERTIES                                         *
+     314              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+     315              ;***************************************************************
+     316              
+     317 00000000       _CPUTimer_getIntNumber:
+     318                      .dwcfi  cfa_offset, -2
+     319                      .dwcfi  save_reg_to_mem, 26, 0
+     320 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     321                      .dwcfi  cfa_offset, -6
+     322              $C$DW$25        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     323                      .dwattr $C$DW$25, DW_AT_TI_symbol_name("_base")
+     324                      .dwattr $C$DW$25, DW_AT_type(*$C$DW$T$23)
+     325                      .dwattr $C$DW$25, DW_AT_location[DW_OP_breg20 -2]
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    7
+
+     326              $C$DW$26        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     327                      .dwattr $C$DW$26, DW_AT_TI_symbol_name("_intNumber")
+     328                      .dwattr $C$DW$26, DW_AT_type(*$C$DW$T$23)
+     329                      .dwattr $C$DW$26, DW_AT_location[DW_OP_breg20 -4]
+     330 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |43| 
+     331                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     332 00000002 6F10          B         $C$L6,UNC             ; [CPU_] |48| 
+     333                      ; branch occurs ; [] |48| 
+     334 00000003       $C$L2:    
+     335                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     336 00000003 8F26          MOVL      XAR4,#2490631         ; [CPU_U] |51| 
+         00000004 0107 
+     337 00000005 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |51| 
+     338                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     339 00000006 6F1D          B         $C$L7,UNC             ; [CPU_] |52| 
+     340                      ; branch occurs ; [] |52| 
+     341 00000007       $C$L3:    
+     342                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     343 00000007 8F0D          MOVL      XAR4,#851968          ; [CPU_U] |55| 
+         00000008 0000 
+     344 00000009 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |55| 
+     345                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     346 0000000a 6F19          B         $C$L7,UNC             ; [CPU_] |56| 
+     347                      ; branch occurs ; [] |56| 
+     348 0000000b       $C$L4:    
+     349                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     350 0000000b 8F0E          MOVL      XAR4,#917504          ; [CPU_U] |59| 
+         0000000c 0000 
+     351 0000000d A844          MOVL      *-SP[4],XAR4          ; [CPU_] |59| 
+     352                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     353 0000000e 6F15          B         $C$L7,UNC             ; [CPU_] |60| 
+     354                      ; branch occurs ; [] |60| 
+     355 0000000f       $C$L5:    
+     356                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     357 0000000f 0200          MOVB      ACC,#0                ; [CPU_] |63| 
+     358 00000010 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |63| 
+     359                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     360 00000011 6F12          B         $C$L7,UNC             ; [CPU_] |64| 
+     361                      ; branch occurs ; [] |64| 
+     362 00000012       $C$L6:    
+     363                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     364 00000012 C442          MOVL      XAR6,*-SP[2]          ; [CPU_] |48| 
+     365 00000013 8F00          MOVL      XAR4,#3072            ; [CPU_U] |48| 
+         00000014 0C00 
+     366 00000015 A8A9          MOVL      ACC,XAR4              ; [CPU_] |48| 
+     367 00000016 0FA6          CMPL      ACC,XAR6              ; [CPU_] |48| 
+     368 00000017 ECEC          BF        $C$L2,EQ              ; [CPU_] |48| 
+     369                      ; branchcc occurs ; [] |48| 
+     370 00000018 8F00          MOVL      XAR4,#3080            ; [CPU_U] |48| 
+         00000019 0C08 
+     371 0000001a A8A9          MOVL      ACC,XAR4              ; [CPU_] |48| 
+     372 0000001b 0FA6          CMPL      ACC,XAR6              ; [CPU_] |48| 
+     373 0000001c ECEB          BF        $C$L3,EQ              ; [CPU_] |48| 
+     374                      ; branchcc occurs ; [] |48| 
+     375 0000001d 8F00          MOVL      XAR4,#3088            ; [CPU_U] |48| 
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    8
+
+         0000001e 0C10 
+     376 0000001f A8A9          MOVL      ACC,XAR4              ; [CPU_] |48| 
+     377 00000020 0FA6          CMPL      ACC,XAR6              ; [CPU_] |48| 
+     378 00000021 ECEA          BF        $C$L4,EQ              ; [CPU_] |48| 
+     379                      ; branchcc occurs ; [] |48| 
+     380 00000022 6FED          B         $C$L5,UNC             ; [CPU_] |48| 
+     381                      ; branch occurs ; [] |48| 
+     382 00000023       $C$L7:    
+     383                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     384 00000023 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |67| 
+     385                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     386 00000024 FE84          SUBB      SP,#4                 ; [CPU_U] 
+     387                      .dwcfi  cfa_offset, -2
+     388              $C$DW$27        .dwtag  DW_TAG_TI_branch
+     389                      .dwattr $C$DW$27, DW_AT_low_pc(0x00)
+     390                      .dwattr $C$DW$27, DW_AT_TI_return
+     391 00000025 0006          LRETR     ; [CPU_] 
+     392                      ; return occurs ; [] 
+     393                      .dwattr $C$DW$23, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     394                      .dwattr $C$DW$23, DW_AT_TI_end_line(0x44)
+     395                      .dwattr $C$DW$23, DW_AT_TI_end_column(0x01)
+     396                      .dwendentry
+     397                      .dwendtag $C$DW$23
+     398              
+     399 00000000               .sect   ".text:_CPUTimer_registerInterrupt"
+     400                      .clink
+     401                      .global _CPUTimer_registerInterrupt
+     402              
+     403              $C$DW$28        .dwtag  DW_TAG_subprogram, DW_AT_name("CPUTimer_registerInterrupt")
+     404                      .dwattr $C$DW$28, DW_AT_low_pc(_CPUTimer_registerInterrupt)
+     405                      .dwattr $C$DW$28, DW_AT_high_pc(0x00)
+     406                      .dwattr $C$DW$28, DW_AT_TI_symbol_name("_CPUTimer_registerInterrupt")
+     407                      .dwattr $C$DW$28, DW_AT_external
+     408                      .dwattr $C$DW$28, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     409                      .dwattr $C$DW$28, DW_AT_TI_begin_line(0x4b)
+     410                      .dwattr $C$DW$28, DW_AT_TI_begin_column(0x06)
+     411                      .dwattr $C$DW$28, DW_AT_TI_max_frame_size(-8)
+     412                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     413              
+     414                      .dwfde $C$DW$CIE, _CPUTimer_registerInterrupt
+     415              $C$DW$29        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     416                      .dwattr $C$DW$29, DW_AT_TI_symbol_name("_base")
+     417                      .dwattr $C$DW$29, DW_AT_type(*$C$DW$T$23)
+     418                      .dwattr $C$DW$29, DW_AT_location[DW_OP_reg0]
+     419              $C$DW$30        .dwtag  DW_TAG_formal_parameter, DW_AT_name("handler")
+     420                      .dwattr $C$DW$30, DW_AT_TI_symbol_name("_handler")
+     421                      .dwattr $C$DW$30, DW_AT_type(*$C$DW$T$22)
+     422                      .dwattr $C$DW$30, DW_AT_location[DW_OP_reg12]
+     423              
+     424              ;***************************************************************
+     425              ;* FNAME: _CPUTimer_registerInterrupt   FR SIZE:   6           *
+     426              ;*                                                             *
+     427              ;* FUNCTION ENVIRONMENT                                        *
+     428              ;*                                                             *
+     429              ;* FUNCTION PROPERTIES                                         *
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE    9
+
+     430              ;*                            0 Parameter,  6 Auto,  0 SOE     *
+     431              ;***************************************************************
+     432              
+     433 00000000       _CPUTimer_registerInterrupt:
+     434                      .dwcfi  cfa_offset, -2
+     435                      .dwcfi  save_reg_to_mem, 26, 0
+     436 00000000 FE06          ADDB      SP,#6                 ; [CPU_U] 
+     437                      .dwcfi  cfa_offset, -8
+     438              $C$DW$31        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     439                      .dwattr $C$DW$31, DW_AT_TI_symbol_name("_base")
+     440                      .dwattr $C$DW$31, DW_AT_type(*$C$DW$T$23)
+     441                      .dwattr $C$DW$31, DW_AT_location[DW_OP_breg20 -2]
+     442              $C$DW$32        .dwtag  DW_TAG_variable, DW_AT_name("handler")
+     443                      .dwattr $C$DW$32, DW_AT_TI_symbol_name("_handler")
+     444                      .dwattr $C$DW$32, DW_AT_type(*$C$DW$T$22)
+     445                      .dwattr $C$DW$32, DW_AT_location[DW_OP_breg20 -4]
+     446              $C$DW$33        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     447                      .dwattr $C$DW$33, DW_AT_TI_symbol_name("_intNumber")
+     448                      .dwattr $C$DW$33, DW_AT_type(*$C$DW$T$23)
+     449                      .dwattr $C$DW$33, DW_AT_location[DW_OP_breg20 -6]
+     450 00000001 A844          MOVL      *-SP[4],XAR4          ; [CPU_] |76| 
+     451 00000002 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |76| 
+     452                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     453              $C$DW$34        .dwtag  DW_TAG_TI_branch
+     454                      .dwattr $C$DW$34, DW_AT_low_pc(0x00)
+     455                      .dwattr $C$DW$34, DW_AT_name("_CPUTimer_getIntNumber")
+     456                      .dwattr $C$DW$34, DW_AT_TI_call
+     457 00000003 7640+         LCR       #_CPUTimer_getIntNumber ; [CPU_] |87| 
+         00000004 0000 
+     458                      ; call occurs [#_CPUTimer_getIntNumber] ; [] |87| 
+     459 00000005 1E46          MOVL      *-SP[6],ACC           ; [CPU_] |87| 
+     460                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     461 00000006 8A44          MOVL      XAR4,*-SP[4]          ; [CPU_] |94| 
+     462              $C$DW$35        .dwtag  DW_TAG_TI_branch
+     463                      .dwattr $C$DW$35, DW_AT_low_pc(0x00)
+     464                      .dwattr $C$DW$35, DW_AT_name("_Interrupt_register")
+     465                      .dwattr $C$DW$35, DW_AT_TI_call
+     466 00000007 7640+         LCR       #_Interrupt_register  ; [CPU_] |94| 
+         00000008 0000 
+     467                      ; call occurs [#_Interrupt_register] ; [] |94| 
+     468                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     469 00000009 0646          MOVL      ACC,*-SP[6]           ; [CPU_] |99| 
+     470              $C$DW$36        .dwtag  DW_TAG_TI_branch
+     471                      .dwattr $C$DW$36, DW_AT_low_pc(0x00)
+     472                      .dwattr $C$DW$36, DW_AT_name("_Interrupt_enable")
+     473                      .dwattr $C$DW$36, DW_AT_TI_call
+     474 0000000a 7640!         LCR       #_Interrupt_enable    ; [CPU_] |99| 
+         0000000b 0000 
+     475                      ; call occurs [#_Interrupt_enable] ; [] |99| 
+     476                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     477 0000000c FE86          SUBB      SP,#6                 ; [CPU_U] 
+     478                      .dwcfi  cfa_offset, -2
+     479              $C$DW$37        .dwtag  DW_TAG_TI_branch
+     480                      .dwattr $C$DW$37, DW_AT_low_pc(0x00)
+     481                      .dwattr $C$DW$37, DW_AT_TI_return
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   10
+
+     482 0000000d 0006          LRETR     ; [CPU_] 
+     483                      ; return occurs ; [] 
+     484                      .dwattr $C$DW$28, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     485                      .dwattr $C$DW$28, DW_AT_TI_end_line(0x64)
+     486                      .dwattr $C$DW$28, DW_AT_TI_end_column(0x01)
+     487                      .dwendentry
+     488                      .dwendtag $C$DW$28
+     489              
+     490 00000000               .sect   ".text:_CPUTimer_unregisterInterrupt"
+     491                      .clink
+     492                      .global _CPUTimer_unregisterInterrupt
+     493              
+     494              $C$DW$38        .dwtag  DW_TAG_subprogram, DW_AT_name("CPUTimer_unregisterInterrupt")
+     495                      .dwattr $C$DW$38, DW_AT_low_pc(_CPUTimer_unregisterInterrupt)
+     496                      .dwattr $C$DW$38, DW_AT_high_pc(0x00)
+     497                      .dwattr $C$DW$38, DW_AT_TI_symbol_name("_CPUTimer_unregisterInterrupt")
+     498                      .dwattr $C$DW$38, DW_AT_external
+     499                      .dwattr $C$DW$38, DW_AT_TI_begin_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_
+     500                      .dwattr $C$DW$38, DW_AT_TI_begin_line(0x6b)
+     501                      .dwattr $C$DW$38, DW_AT_TI_begin_column(0x06)
+     502                      .dwattr $C$DW$38, DW_AT_TI_max_frame_size(-6)
+     503                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     504              
+     505                      .dwfde $C$DW$CIE, _CPUTimer_unregisterInterrupt
+     506              $C$DW$39        .dwtag  DW_TAG_formal_parameter, DW_AT_name("base")
+     507                      .dwattr $C$DW$39, DW_AT_TI_symbol_name("_base")
+     508                      .dwattr $C$DW$39, DW_AT_type(*$C$DW$T$23)
+     509                      .dwattr $C$DW$39, DW_AT_location[DW_OP_reg0]
+     510              
+     511              ;***************************************************************
+     512              ;* FNAME: _CPUTimer_unregisterInterrupt FR SIZE:   4           *
+     513              ;*                                                             *
+     514              ;* FUNCTION ENVIRONMENT                                        *
+     515              ;*                                                             *
+     516              ;* FUNCTION PROPERTIES                                         *
+     517              ;*                            0 Parameter,  4 Auto,  0 SOE     *
+     518              ;***************************************************************
+     519              
+     520 00000000       _CPUTimer_unregisterInterrupt:
+     521                      .dwcfi  cfa_offset, -2
+     522                      .dwcfi  save_reg_to_mem, 26, 0
+     523 00000000 FE04          ADDB      SP,#4                 ; [CPU_U] 
+     524                      .dwcfi  cfa_offset, -6
+     525              $C$DW$40        .dwtag  DW_TAG_variable, DW_AT_name("base")
+     526                      .dwattr $C$DW$40, DW_AT_TI_symbol_name("_base")
+     527                      .dwattr $C$DW$40, DW_AT_type(*$C$DW$T$23)
+     528                      .dwattr $C$DW$40, DW_AT_location[DW_OP_breg20 -2]
+     529              $C$DW$41        .dwtag  DW_TAG_variable, DW_AT_name("intNumber")
+     530                      .dwattr $C$DW$41, DW_AT_TI_symbol_name("_intNumber")
+     531                      .dwattr $C$DW$41, DW_AT_type(*$C$DW$T$23)
+     532                      .dwattr $C$DW$41, DW_AT_location[DW_OP_breg20 -4]
+     533 00000001 1E42          MOVL      *-SP[2],ACC           ; [CPU_] |108| 
+     534                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     535              $C$DW$42        .dwtag  DW_TAG_TI_branch
+     536                      .dwattr $C$DW$42, DW_AT_low_pc(0x00)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   11
+
+     537                      .dwattr $C$DW$42, DW_AT_name("_CPUTimer_getIntNumber")
+     538                      .dwattr $C$DW$42, DW_AT_TI_call
+     539 00000002 7640+         LCR       #_CPUTimer_getIntNumber ; [CPU_] |119| 
+         00000003 0000 
+     540                      ; call occurs [#_CPUTimer_getIntNumber] ; [] |119| 
+     541 00000004 1E44          MOVL      *-SP[4],ACC           ; [CPU_] |119| 
+     542                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     543              $C$DW$43        .dwtag  DW_TAG_TI_branch
+     544                      .dwattr $C$DW$43, DW_AT_low_pc(0x00)
+     545                      .dwattr $C$DW$43, DW_AT_name("_Interrupt_disable")
+     546                      .dwattr $C$DW$43, DW_AT_TI_call
+     547 00000005 7640!         LCR       #_Interrupt_disable   ; [CPU_] |126| 
+         00000006 0000 
+     548                      ; call occurs [#_Interrupt_disable] ; [] |126| 
+     549                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     550 00000007 0644          MOVL      ACC,*-SP[4]           ; [CPU_] |131| 
+     551              $C$DW$44        .dwtag  DW_TAG_TI_branch
+     552                      .dwattr $C$DW$44, DW_AT_low_pc(0x00)
+     553                      .dwattr $C$DW$44, DW_AT_name("_Interrupt_unregister")
+     554                      .dwattr $C$DW$44, DW_AT_TI_call
+     555 00000008 7640+         LCR       #_Interrupt_unregister ; [CPU_] |131| 
+         00000009 0000 
+     556                      ; call occurs [#_Interrupt_unregister] ; [] |131| 
+     557                      .dwpsn  file "C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG2.0/F28004x_ROM/driverl
+     558 0000000a FE84          SUBB      SP,#4                 ; [CPU_U] 
+     559                      .dwcfi  cfa_offset, -2
+     560              $C$DW$45        .dwtag  DW_TAG_TI_branch
+     561                      .dwattr $C$DW$45, DW_AT_low_pc(0x00)
+     562                      .dwattr $C$DW$45, DW_AT_TI_return
+     563 0000000b 0006          LRETR     ; [CPU_] 
+     564                      ; return occurs ; [] 
+     565                      .dwattr $C$DW$38, DW_AT_TI_end_file("C:/Users/a0221343/Git/bootROM/f28004x_bootrom/F28004x_ROM_dev_PG
+     566                      .dwattr $C$DW$38, DW_AT_TI_end_line(0x84)
+     567                      .dwattr $C$DW$38, DW_AT_TI_end_column(0x01)
+     568                      .dwendentry
+     569                      .dwendtag $C$DW$38
+     570              
+     571              ;**************************************************************
+     572              ;* UNDEFINED EXTERNAL REFERENCES                              *
+     573              ;**************************************************************
+     574                      .global _Interrupt_disable
+     575                      .global _Interrupt_enable
+     576              
+     577              ;***************************************************************
+     578              ;* TYPE INFORMATION                                            *
+     579              ;***************************************************************
+     580              
+     581              $C$DW$T$19      .dwtag  DW_TAG_enumeration_type
+     582                      .dwattr $C$DW$T$19, DW_AT_byte_size(0x01)
+     583              $C$DW$46        .dwtag  DW_TAG_enumerator, DW_AT_name("CPUTIMER_EMULATIONMODE_STOPAFTERNEXTDECREMENT"), DW_AT
+     584              $C$DW$47        .dwtag  DW_TAG_enumerator, DW_AT_name("CPUTIMER_EMULATIONMODE_STOPATZERO"), DW_AT_const_value
+     585              $C$DW$48        .dwtag  DW_TAG_enumerator, DW_AT_name("CPUTIMER_EMULATIONMODE_RUNFREE"), DW_AT_const_value(0x
+     586                      .dwendtag $C$DW$T$19
+     587              
+     588              $C$DW$T$20      .dwtag  DW_TAG_typedef, DW_AT_name("CPUTimer_EmulationMode")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   12
+
+     589                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+     590                      .dwattr $C$DW$T$20, DW_AT_language(DW_LANG_C)
+     591              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+     592                      .dwattr $C$DW$T$2, DW_AT_name("void")
+     593              
+     594              $C$DW$T$21      .dwtag  DW_TAG_subroutine_type
+     595                      .dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+     596              $C$DW$T$22      .dwtag  DW_TAG_pointer_type
+     597                      .dwattr $C$DW$T$22, DW_AT_type(*$C$DW$T$21)
+     598                      .dwattr $C$DW$T$22, DW_AT_address_class(0x20)
+     599              $C$DW$T$4       .dwtag  DW_TAG_base_type
+     600                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     601                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+     602                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     603              $C$DW$T$5       .dwtag  DW_TAG_base_type
+     604                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     605                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     606                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     607              $C$DW$T$6       .dwtag  DW_TAG_base_type
+     608                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     609                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     610                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     611              $C$DW$T$7       .dwtag  DW_TAG_base_type
+     612                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     613                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     614                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+     615              $C$DW$T$8       .dwtag  DW_TAG_base_type
+     616                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     617                      .dwattr $C$DW$T$8, DW_AT_name("short")
+     618                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+     619              $C$DW$T$9       .dwtag  DW_TAG_base_type
+     620                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     621                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     622                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+     623              $C$DW$T$10      .dwtag  DW_TAG_base_type
+     624                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     625                      .dwattr $C$DW$T$10, DW_AT_name("int")
+     626                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+     627              $C$DW$T$11      .dwtag  DW_TAG_base_type
+     628                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     629                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     630                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+     631              $C$DW$T$29      .dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+     632                      .dwattr $C$DW$T$29, DW_AT_type(*$C$DW$T$11)
+     633                      .dwattr $C$DW$T$29, DW_AT_language(DW_LANG_C)
+     634              $C$DW$T$12      .dwtag  DW_TAG_base_type
+     635                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     636                      .dwattr $C$DW$T$12, DW_AT_name("long")
+     637                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+     638              $C$DW$T$13      .dwtag  DW_TAG_base_type
+     639                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     640                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     641                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+     642              $C$DW$T$23      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+     643                      .dwattr $C$DW$T$23, DW_AT_type(*$C$DW$T$13)
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   13
+
+     644                      .dwattr $C$DW$T$23, DW_AT_language(DW_LANG_C)
+     645              $C$DW$T$14      .dwtag  DW_TAG_base_type
+     646                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     647                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+     648                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+     649              $C$DW$T$15      .dwtag  DW_TAG_base_type
+     650                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     651                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     652                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+     653              $C$DW$T$16      .dwtag  DW_TAG_base_type
+     654                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     655                      .dwattr $C$DW$T$16, DW_AT_name("float")
+     656                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+     657              $C$DW$T$17      .dwtag  DW_TAG_base_type
+     658                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     659                      .dwattr $C$DW$T$17, DW_AT_name("double")
+     660                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+     661              $C$DW$T$18      .dwtag  DW_TAG_base_type
+     662                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     663                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+     664                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+     665                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     666              
+     667              ;***************************************************************
+     668              ;* DWARF CIE ENTRIES                                           *
+     669              ;***************************************************************
+     670              
+     671              $C$DW$CIE       .dwcie 26
+     672                      .dwcfi  cfa_register, 20
+     673                      .dwcfi  cfa_offset, 0
+     674                      .dwcfi  undefined, 0
+     675                      .dwcfi  undefined, 1
+     676                      .dwcfi  undefined, 2
+     677                      .dwcfi  undefined, 3
+     678                      .dwcfi  undefined, 20
+     679                      .dwcfi  undefined, 21
+     680                      .dwcfi  undefined, 22
+     681                      .dwcfi  undefined, 23
+     682                      .dwcfi  undefined, 24
+     683                      .dwcfi  undefined, 25
+     684                      .dwcfi  undefined, 26
+     685                      .dwcfi  same_value, 28
+     686                      .dwcfi  undefined, 29
+     687                      .dwcfi  undefined, 30
+     688                      .dwcfi  undefined, 31
+     689                      .dwcfi  undefined, 32
+     690                      .dwcfi  undefined, 33
+     691                      .dwcfi  undefined, 34
+     692                      .dwcfi  undefined, 35
+     693                      .dwcfi  undefined, 36
+     694                      .dwcfi  undefined, 37
+     695                      .dwcfi  undefined, 38
+     696                      .dwcfi  undefined, 75
+     697                      .dwcfi  undefined, 76
+     698                      .dwcfi  undefined, 77
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   14
+
+     699                      .dwcfi  undefined, 4
+     700                      .dwcfi  undefined, 5
+     701                      .dwcfi  same_value, 6
+     702                      .dwcfi  same_value, 7
+     703                      .dwcfi  same_value, 8
+     704                      .dwcfi  same_value, 9
+     705                      .dwcfi  same_value, 10
+     706                      .dwcfi  same_value, 11
+     707                      .dwcfi  undefined, 12
+     708                      .dwcfi  undefined, 13
+     709                      .dwcfi  undefined, 14
+     710                      .dwcfi  undefined, 15
+     711                      .dwcfi  undefined, 16
+     712                      .dwcfi  undefined, 17
+     713                      .dwcfi  undefined, 18
+     714                      .dwcfi  undefined, 19
+     715                      .dwcfi  undefined, 43
+     716                      .dwcfi  undefined, 44
+     717                      .dwcfi  undefined, 47
+     718                      .dwcfi  undefined, 48
+     719                      .dwcfi  undefined, 51
+     720                      .dwcfi  undefined, 52
+     721                      .dwcfi  undefined, 55
+     722                      .dwcfi  undefined, 56
+     723                      .dwcfi  same_value, 59
+     724                      .dwcfi  same_value, 60
+     725                      .dwcfi  same_value, 63
+     726                      .dwcfi  same_value, 64
+     727                      .dwcfi  same_value, 67
+     728                      .dwcfi  same_value, 68
+     729                      .dwcfi  same_value, 71
+     730                      .dwcfi  same_value, 72
+     731                      .dwcfi  undefined, 73
+     732                      .dwcfi  undefined, 74
+     733                      .dwcfi  undefined, 39
+     734                      .dwcfi  undefined, 40
+     735                      .dwcfi  undefined, 27
+     736                      .dwendentry
+     737              
+     738              ;***************************************************************
+     739              ;* DWARF REGISTER MAP                                          *
+     740              ;***************************************************************
+     741              
+     742              $C$DW$49        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AL")
+     743                      .dwattr $C$DW$49, DW_AT_location[DW_OP_reg0]
+     744              $C$DW$50        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AH")
+     745                      .dwattr $C$DW$50, DW_AT_location[DW_OP_reg1]
+     746              $C$DW$51        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PL")
+     747                      .dwattr $C$DW$51, DW_AT_location[DW_OP_reg2]
+     748              $C$DW$52        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PH")
+     749                      .dwattr $C$DW$52, DW_AT_location[DW_OP_reg3]
+     750              $C$DW$53        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SP")
+     751                      .dwattr $C$DW$53, DW_AT_location[DW_OP_reg20]
+     752              $C$DW$54        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XT")
+     753                      .dwattr $C$DW$54, DW_AT_location[DW_OP_reg21]
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   15
+
+     754              $C$DW$55        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("T")
+     755                      .dwattr $C$DW$55, DW_AT_location[DW_OP_reg22]
+     756              $C$DW$56        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST0")
+     757                      .dwattr $C$DW$56, DW_AT_location[DW_OP_reg23]
+     758              $C$DW$57        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST1")
+     759                      .dwattr $C$DW$57, DW_AT_location[DW_OP_reg24]
+     760              $C$DW$58        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PC")
+     761                      .dwattr $C$DW$58, DW_AT_location[DW_OP_reg25]
+     762              $C$DW$59        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RPC")
+     763                      .dwattr $C$DW$59, DW_AT_location[DW_OP_reg26]
+     764              $C$DW$60        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FP")
+     765                      .dwattr $C$DW$60, DW_AT_location[DW_OP_reg28]
+     766              $C$DW$61        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("DP")
+     767                      .dwattr $C$DW$61, DW_AT_location[DW_OP_reg29]
+     768              $C$DW$62        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SXM")
+     769                      .dwattr $C$DW$62, DW_AT_location[DW_OP_reg30]
+     770              $C$DW$63        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PM")
+     771                      .dwattr $C$DW$63, DW_AT_location[DW_OP_reg31]
+     772              $C$DW$64        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("OVM")
+     773                      .dwattr $C$DW$64, DW_AT_location[DW_OP_regx 0x20]
+     774              $C$DW$65        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PAGE0")
+     775                      .dwattr $C$DW$65, DW_AT_location[DW_OP_regx 0x21]
+     776              $C$DW$66        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AMODE")
+     777                      .dwattr $C$DW$66, DW_AT_location[DW_OP_regx 0x22]
+     778              $C$DW$67        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("INTM")
+     779                      .dwattr $C$DW$67, DW_AT_location[DW_OP_regx 0x23]
+     780              $C$DW$68        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IFR")
+     781                      .dwattr $C$DW$68, DW_AT_location[DW_OP_regx 0x24]
+     782              $C$DW$69        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IER")
+     783                      .dwattr $C$DW$69, DW_AT_location[DW_OP_regx 0x25]
+     784              $C$DW$70        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("V")
+     785                      .dwattr $C$DW$70, DW_AT_location[DW_OP_regx 0x26]
+     786              $C$DW$71        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PSEUDOH")
+     787                      .dwattr $C$DW$71, DW_AT_location[DW_OP_regx 0x4c]
+     788              $C$DW$72        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("VOL")
+     789                      .dwattr $C$DW$72, DW_AT_location[DW_OP_regx 0x4d]
+     790              $C$DW$73        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR0")
+     791                      .dwattr $C$DW$73, DW_AT_location[DW_OP_reg4]
+     792              $C$DW$74        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR0")
+     793                      .dwattr $C$DW$74, DW_AT_location[DW_OP_reg5]
+     794              $C$DW$75        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR1")
+     795                      .dwattr $C$DW$75, DW_AT_location[DW_OP_reg6]
+     796              $C$DW$76        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR1")
+     797                      .dwattr $C$DW$76, DW_AT_location[DW_OP_reg7]
+     798              $C$DW$77        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR2")
+     799                      .dwattr $C$DW$77, DW_AT_location[DW_OP_reg8]
+     800              $C$DW$78        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR2")
+     801                      .dwattr $C$DW$78, DW_AT_location[DW_OP_reg9]
+     802              $C$DW$79        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR3")
+     803                      .dwattr $C$DW$79, DW_AT_location[DW_OP_reg10]
+     804              $C$DW$80        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR3")
+     805                      .dwattr $C$DW$80, DW_AT_location[DW_OP_reg11]
+     806              $C$DW$81        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR4")
+     807                      .dwattr $C$DW$81, DW_AT_location[DW_OP_reg12]
+     808              $C$DW$82        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR4")
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   16
+
+     809                      .dwattr $C$DW$82, DW_AT_location[DW_OP_reg13]
+     810              $C$DW$83        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR5")
+     811                      .dwattr $C$DW$83, DW_AT_location[DW_OP_reg14]
+     812              $C$DW$84        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR5")
+     813                      .dwattr $C$DW$84, DW_AT_location[DW_OP_reg15]
+     814              $C$DW$85        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR6")
+     815                      .dwattr $C$DW$85, DW_AT_location[DW_OP_reg16]
+     816              $C$DW$86        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR6")
+     817                      .dwattr $C$DW$86, DW_AT_location[DW_OP_reg17]
+     818              $C$DW$87        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR7")
+     819                      .dwattr $C$DW$87, DW_AT_location[DW_OP_reg18]
+     820              $C$DW$88        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR7")
+     821                      .dwattr $C$DW$88, DW_AT_location[DW_OP_reg19]
+     822              $C$DW$89        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0HL")
+     823                      .dwattr $C$DW$89, DW_AT_location[DW_OP_regx 0x2b]
+     824              $C$DW$90        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R0H")
+     825                      .dwattr $C$DW$90, DW_AT_location[DW_OP_regx 0x2c]
+     826              $C$DW$91        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1HL")
+     827                      .dwattr $C$DW$91, DW_AT_location[DW_OP_regx 0x2f]
+     828              $C$DW$92        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R1H")
+     829                      .dwattr $C$DW$92, DW_AT_location[DW_OP_regx 0x30]
+     830              $C$DW$93        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2HL")
+     831                      .dwattr $C$DW$93, DW_AT_location[DW_OP_regx 0x33]
+     832              $C$DW$94        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R2H")
+     833                      .dwattr $C$DW$94, DW_AT_location[DW_OP_regx 0x34]
+     834              $C$DW$95        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3HL")
+     835                      .dwattr $C$DW$95, DW_AT_location[DW_OP_regx 0x37]
+     836              $C$DW$96        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R3H")
+     837                      .dwattr $C$DW$96, DW_AT_location[DW_OP_regx 0x38]
+     838              $C$DW$97        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4HL")
+     839                      .dwattr $C$DW$97, DW_AT_location[DW_OP_regx 0x3b]
+     840              $C$DW$98        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R4H")
+     841                      .dwattr $C$DW$98, DW_AT_location[DW_OP_regx 0x3c]
+     842              $C$DW$99        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5HL")
+     843                      .dwattr $C$DW$99, DW_AT_location[DW_OP_regx 0x3f]
+     844              $C$DW$100       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R5H")
+     845                      .dwattr $C$DW$100, DW_AT_location[DW_OP_regx 0x40]
+     846              $C$DW$101       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6HL")
+     847                      .dwattr $C$DW$101, DW_AT_location[DW_OP_regx 0x43]
+     848              $C$DW$102       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R6H")
+     849                      .dwattr $C$DW$102, DW_AT_location[DW_OP_regx 0x44]
+     850              $C$DW$103       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7HL")
+     851                      .dwattr $C$DW$103, DW_AT_location[DW_OP_regx 0x47]
+     852              $C$DW$104       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("R7H")
+     853                      .dwattr $C$DW$104, DW_AT_location[DW_OP_regx 0x48]
+     854              $C$DW$105       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RBL")
+     855                      .dwattr $C$DW$105, DW_AT_location[DW_OP_regx 0x49]
+     856              $C$DW$106       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RB")
+     857                      .dwattr $C$DW$106, DW_AT_location[DW_OP_regx 0x4a]
+     858              $C$DW$107       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STFL")
+     859                      .dwattr $C$DW$107, DW_AT_location[DW_OP_regx 0x27]
+     860              $C$DW$108       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("STF")
+     861                      .dwattr $C$DW$108, DW_AT_location[DW_OP_regx 0x28]
+     862              $C$DW$109       .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FPUHAZ")
+     863                      .dwattr $C$DW$109, DW_AT_location[DW_OP_reg27]
+TMS320C2000 Assembler PC v6.4.4 Tue Feb 14 14:42:58 2017
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\a0221343\AppData\Local\Temp\0947610                         PAGE   17
+
+     864                      .dwendtag $C$DW$CU
+     865              
+
+No Assembly Errors, No Assembly Warnings
