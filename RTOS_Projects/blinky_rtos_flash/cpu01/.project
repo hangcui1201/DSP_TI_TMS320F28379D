@@ -25,4 +25,11 @@
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>F28379D_Spi.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/custom_support/source/F28379D_Spi.c</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

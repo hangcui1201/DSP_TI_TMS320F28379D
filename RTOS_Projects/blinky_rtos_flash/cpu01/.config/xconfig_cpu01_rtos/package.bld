@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: 'C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu01/cpu01_rtos.cfg',
+        cfgScript: 'C:/Github_Repo/DSP_TI_TMS320F28379D/RTOS_Projects/blinky_rtos_flash/cpu01/cpu01_rtos.cfg',
         profile: 'release',
         cfgHome: 'xconfig_cpu01_rtos',
 });
@@ -40,8 +40,8 @@ else {
 }
 
 var thisObj = {
-    cfg:        'C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu01/cpu01_rtos.cfg',
-    outputPath: 'C:/Github_Repo/TMS320F28379D/blinky_rtos_flash/cpu01/.config/xconfig_cpu01_rtos',
+    cfg:        'C:/Github_Repo/DSP_TI_TMS320F28379D/RTOS_Projects/blinky_rtos_flash/cpu01/cpu01_rtos.cfg',
+    outputPath: 'C:/Github_Repo/DSP_TI_TMS320F28379D/RTOS_Projects/blinky_rtos_flash/cpu01/.config/xconfig_cpu01_rtos',
     exeName:    'cpu01_rtos' + suffix,
     exeIntName: 'cpu01_rtos' + suffix.replace('.', '_'),
     targ:       targ,

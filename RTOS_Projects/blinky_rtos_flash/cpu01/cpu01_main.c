@@ -17,9 +17,18 @@
 
 // Customized functions
 #include "LCD.h"
+#include "LS7366R.h"
 #include "F28379D_EPwm.h"
 #include "F28379D_EQep.h"
 #include "F28379D_Serial.h"
+#include "F28379D_Spi.h"
+
+#define PI       3.1415926535897932384626433832795
+#define TWOPI    6.2831853071795864769252867665590
+#define HALFPI   1.5707963267948966192313216916398
+
+///* Swi handle defined in swi.cfg */
+//extern const Swi_Handle SWI_control;
 
 #ifdef _FLASH
     // These are defined by the linker (see device linker command file)
@@ -56,34 +65,44 @@ float errSum = 0;      // integral
 float errSum_pre = 0;
 
 
+// LS7366R
+
+extern int SPIenc_state;
+extern long SPIenc1_reading;
+extern long SPIenc2_reading;
+
+float SPIB_enc1_rad = 0;
+float SPIB_enc2_rad = 0;
+
+
 // SYS/BIOS Clock function
 long int time_counter = 0;
 void DoEveryMilliSecond_CPU1(void){
 
-    enc_read1_cur = read_Enc1();
-
-    motor_speed = (enc_read1_cur - enc_read1_pre)/dt;  // rad/s
-
-    enc_read1_pre = enc_read1_cur;
-
-    err = motor_speed_refer - motor_speed;
-
-    errSum = errSum_pre + 0.0005 * (err + err_pre);
-
-    u_ctrl_1a = Kp * err + Ki * errSum;
-
-    if((u_ctrl_1a >= 10) || (u_ctrl_1a <= -10)){
-        // do not update errSum
-        errSum = errSum_pre;
-    }
-    else{
-        // update errSum as usual
-        errSum_pre = errSum;
-    }
-
-    err_pre = err;
-
-    set_EPWM1A(u_ctrl_1a);
+//    enc_read1_cur = read_Enc1();
+//
+//    motor_speed = (enc_read1_cur - enc_read1_pre)/dt;  // rad/s
+//
+//    enc_read1_pre = enc_read1_cur;
+//
+//    err = motor_speed_refer - motor_speed;
+//
+//    errSum = errSum_pre + 0.0005 * (err + err_pre);
+//
+//    u_ctrl_1a = Kp * err + Ki * errSum;
+//
+//    if((u_ctrl_1a >= 10) || (u_ctrl_1a <= -10)){
+//        // do not update errSum
+//        errSum = errSum_pre;
+//    }
+//    else{
+//        // update errSum as usual
+//        errSum_pre = errSum;
+//    }
+//
+//    err_pre = err;
+//
+//    set_EPWM1A(u_ctrl_1a);
 
 //    if((time_counter%100)==0){
 //        UART_printfLine(1,"u=%.3f Ik=%.3f", u_ctrl_1a, errSum);
@@ -91,6 +110,8 @@ void DoEveryMilliSecond_CPU1(void){
 //    }
 //
 //    time_counter++;
+
+    start_SPIB_LS7366R();
 
 }
 
@@ -100,6 +121,16 @@ void DoEveryMilliSecond_CPU1(void){
 void DoEverySecond_CPU1(void){
     GpioDataRegs.GPADAT.bit.GPIO31 ^= 1;
 }
+
+
+void control(void) {
+
+    // 30*100*4 = 12000
+    SPIB_enc1_rad = ((float) SPIenc1_reading)*(TWOPI/(12000.0f)); // left encoder
+//    SPIB_enc1_rad = -SPIB_enc1_rad;
+    SPIB_enc2_rad = ((float) SPIenc2_reading)*(TWOPI/(12000.0f)); // right encoder
+}
+
 
 
 
@@ -157,32 +188,39 @@ int main() {
 
     EDIS;
 
-    /********************************** Init EPwm1A **********************************/
-    init_EPWM1A_GPIO();      // init GPIO0 as EPWM1A (J4-40)
-    init_EPWM1A();           // init EPWM1A with a 20KHz carrier frequency PWM signal.
-    set_EPWM1A(u_ctrl_1a);   // set to 0 (50% duty cycle)at the beginning, update in SYS/BIOS
+//    /********************************** Init EPwm1A **********************************/
+//    init_EPWM1A_GPIO();      // init GPIO0 as EPWM1A (J4-40)
+//    init_EPWM1A();           // init EPWM1A with a 20KHz carrier frequency PWM signal.
+//    set_EPWM1A(u_ctrl_1a);   // set to 0 (50% duty cycle)at the beginning, update in SYS/BIOS
+//
+//    init_EPWM1B_GPIO();      // init GPIO1 as EPWM1A (J4-39)
+//    init_EPWM1B();           // init EPWM1B with a 20KHz carrier frequency PWM signal.
+//    set_EPWM1B(u_ctrl_1b);   // set to 0 (50% duty cycle)at the beginning, update in SYS/BIOS
+//
+//
+//    /****************************** Init EQep1 and EQep2 *****************************/
+//    // J14 - EQEP1A(GPIO20), EQEP1B(GPIO21), J15 - EQEP2A(GPIO54), EQEP2B(GPIO55)
+//    init_EQEPs();
+//    enc_read1 = read_Enc1(); // read encoder1 at the beginning, update in SYS/BIOS func
+//    enc_read2 = read_Enc2(); // read encoder2 at the beginning, update in SYS/BIOS func
+//
+//
+//    /********************************* Init Text LCD *********************************/
+//
+//    init_serial(&SerialC, 19200, NULL);
+//    init_lcd(90);
+//
+//    UART_printfLine(1, "Digital Control 0f");
+//    UART_printfLine(2, "Dynamic Systems");
+//    UART_printfLine(3, "Univer of Illinois");
+//    UART_printfLine(4, "at Urbana-Champaign");
 
-    init_EPWM1B_GPIO();      // init GPIO1 as EPWM1A (J4-39)
-    init_EPWM1B();           // init EPWM1B with a 20KHz carrier frequency PWM signal.
-    set_EPWM1B(u_ctrl_1b);   // set to 0 (50% duty cycle)at the beginning, update in SYS/BIOS
+    /********************************* Init SPIB GPIO *********************************/
+    init_SPIB_GPIO();
+    init_SPIB_LS7366R();
 
 
-    /****************************** Init EQep1 and EQep2 *****************************/
-    // J14 - EQEP1A(GPIO20), EQEP1B(GPIO21), J15 - EQEP2A(GPIO54), EQEP2B(GPIO55)
-    init_EQEPs();
-    enc_read1 = read_Enc1(); // read encoder1 at the beginning, update in SYS/BIOS func
-    enc_read2 = read_Enc2(); // read encoder2 at the beginning, update in SYS/BIOS func
 
-
-    /********************************* Init Text LCD *********************************/
-
-    init_serial(&SerialC, 19200, NULL);
-    init_lcd(90);
-
-    UART_printfLine(1, "Digital Control 0f");
-    UART_printfLine(2, "Dynamic Systems");
-    UART_printfLine(3, "Univer of Illinois");
-    UART_printfLine(4, "at Urbana-Champaign");
 
 
     /*************************  NO CODE below here in Main() *************************/
